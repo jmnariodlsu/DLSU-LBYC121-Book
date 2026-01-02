@@ -1,5 +1,11 @@
 introduction
 about-me
+syllabus
+course-description
+final-course-outputs
+generative-ai-use-policy
+classroom-policies
+excused-absences-policy
 assessments
 in-weekly-exercises
 problem-sets-1-and-2
@@ -27,9 +33,3 @@ render-using-rstudio-button-do-this
 working-directories-and-file-management
 file-naming-convention-mandatory
 mini-exercise-first-quarto-render-mandatory-per-individual
-syllabus
-course-description
-final-course-outputs
-generative-ai-use-policy
-classroom-policies
-excused-absences-policy
