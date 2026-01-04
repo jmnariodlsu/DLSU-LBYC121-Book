@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>5 Differentiation Rules | LBYC121 Course Book</title>
+  <meta name="description" content="An introduction to the LBYC121 Course Book." />
+  <meta name="generator" content="bookdown 0.46 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="5 Differentiation Rules | LBYC121 Course Book" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="An introduction to the LBYC121 Course Book." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="5 Differentiation Rules | LBYC121 Course Book" />
+  
+  <meta name="twitter:description" content="An introduction to the LBYC121 Course Book." />
+  
+
+<meta name="author" content="Jem Marie M. Nario" />
+
+
+<meta name="date" content="2026-01-04" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="basic-introduction-to-r.html"/>
+
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<h1>LBYC121 Course Book</h1>
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#about-me"><i class="fa fa-check"></i><b>1.1</b> About Me</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="syllabus.html"><a href="syllabus.html"><i class="fa fa-check"></i><b>2</b> Syllabus</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="syllabus.html"><a href="syllabus.html#course-description"><i class="fa fa-check"></i><b>2.1</b> Course Description</a></li>
+<li class="chapter" data-level="2.2" data-path="syllabus.html"><a href="syllabus.html#final-course-outputs"><i class="fa fa-check"></i><b>2.2</b> Final Course Outputs</a></li>
+<li class="chapter" data-level="2.3" data-path="syllabus.html"><a href="syllabus.html#generative-ai-use-policy"><i class="fa fa-check"></i><b>2.3</b> Generative AI-Use Policy</a></li>
+<li class="chapter" data-level="2.4" data-path="syllabus.html"><a href="syllabus.html#classroom-policies"><i class="fa fa-check"></i><b>2.4</b> Classroom Policies</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="syllabus.html"><a href="syllabus.html#excused-absences-policy"><i class="fa fa-check"></i><b>2.4.1</b> <strong>EXCUSED ABSENCES POLICY:</strong></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="assessments.html"><a href="assessments.html"><i class="fa fa-check"></i><b>3</b> Assessments</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="assessments.html"><a href="assessments.html#in-weekly-exercises"><i class="fa fa-check"></i><b>3.1</b> In-Weekly Exercises</a></li>
+<li class="chapter" data-level="3.2" data-path="assessments.html"><a href="assessments.html#problem-sets-1-and-2"><i class="fa fa-check"></i><b>3.2</b> Problem Sets 1 and 2</a></li>
+<li class="chapter" data-level="3.3" data-path="assessments.html"><a href="assessments.html#grading-system"><i class="fa fa-check"></i><b>3.3</b> Grading System</a></li>
+<li class="chapter" data-level="3.4" data-path="assessments.html"><a href="assessments.html#grading-scale"><i class="fa fa-check"></i><b>3.4</b> Grading Scale</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html"><i class="fa fa-check"></i><b>4</b> Basic Introduction to R</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#session-information"><i class="fa fa-check"></i><b>4.1</b> Session Information</a></li>
+<li class="chapter" data-level="4.2" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#preliminaries"><i class="fa fa-check"></i><b>4.2</b> Preliminaries</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#understanding-the-rstudio-screen"><i class="fa fa-check"></i><b>4.2.1</b> Understanding the RStudio Screen</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#packages"><i class="fa fa-check"></i><b>4.3</b> Packages</a></li>
+<li class="chapter" data-level="4.4" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#setting-up-the-working-directory"><i class="fa fa-check"></i><b>4.4</b> Setting up the Working Directory</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#what-is-a-working-directory"><i class="fa fa-check"></i><b>4.4.1</b> What is a Working Directory?</a></li>
+<li class="chapter" data-level="4.4.2" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#required-folder-structure"><i class="fa fa-check"></i><b>4.4.2</b> Required Folder Structure</a></li>
+<li class="chapter" data-level="4.4.3" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#setting-the-working-directory-in-rstudio"><i class="fa fa-check"></i><b>4.4.3</b> Setting the Working Directory in RStudio</a></li>
+<li class="chapter" data-level="4.4.4" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#setting-the-working-directory-using-code"><i class="fa fa-check"></i><b>4.4.4</b> Setting the Working Directory Using Code</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#cleaning-the-environment-do-this-regularly"><i class="fa fa-check"></i><b>4.5</b> Cleaning the Environment (Do This Regularly)</a></li>
+<li class="chapter" data-level="4.6" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#quarto-markdown"><i class="fa fa-check"></i><b>4.6</b> Quarto Markdown</a>
+<ul>
+<li class="chapter" data-level="4.6.1" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#installing-quarto-in-r"><i class="fa fa-check"></i><b>4.6.1</b> Installing Quarto in R</a></li>
+<li class="chapter" data-level="4.6.2" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#starting-a-quarto-document"><i class="fa fa-check"></i><b>4.6.2</b> Starting a Quarto Document</a></li>
+<li class="chapter" data-level="4.6.3" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#yaml-header-use"><i class="fa fa-check"></i><b>4.6.3</b> YAML Header Use</a></li>
+<li class="chapter" data-level="4.6.4" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#quarto-key-features"><i class="fa fa-check"></i><b>4.6.4</b> Quarto Key Features</a></li>
+<li class="chapter" data-level="4.6.5" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#quarto-markdown-shortcuts"><i class="fa fa-check"></i><b>4.6.5</b> Quarto Markdown Shortcuts</a></li>
+<li class="chapter" data-level="4.6.6" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#rendering-a-quarto-document"><i class="fa fa-check"></i><b>4.6.6</b> Rendering a Quarto Document</a></li>
+</ul></li>
+<li class="chapter" data-level="4.7" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#working-directories-and-file-management"><i class="fa fa-check"></i><b>4.7</b> Working Directories and File Management</a>
+<ul>
+<li class="chapter" data-level="4.7.1" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#file-naming-convention-mandatory"><i class="fa fa-check"></i><b>4.7.1</b> File Naming Convention (Mandatory)</a></li>
+</ul></li>
+<li class="chapter" data-level="4.8" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#mini-exercise-first-quarto-render-mandatory-per-individual"><i class="fa fa-check"></i><b>4.8</b> Mini-Exercise: First Quarto Render (Mandatory per Individual)</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="differentiation-rules.html"><a href="differentiation-rules.html"><i class="fa fa-check"></i><b>5</b> Differentiation Rules</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="differentiation-rules.html"><a href="differentiation-rules.html#introduction-1"><i class="fa fa-check"></i><b>5.1</b> Introduction</a></li>
+<li class="chapter" data-level="5.2" data-path="differentiation-rules.html"><a href="differentiation-rules.html#structure-of-differentiation"><i class="fa fa-check"></i><b>5.2</b> Structure of Differentiation</a></li>
+<li class="chapter" data-level="5.3" data-path="differentiation-rules.html"><a href="differentiation-rules.html#constant-rule"><i class="fa fa-check"></i><b>5.3</b> Constant Rule</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="differentiation-rules.html"><a href="differentiation-rules.html#example"><i class="fa fa-check"></i><b>5.3.1</b> Example</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="differentiation-rules.html"><a href="differentiation-rules.html#power-rule"><i class="fa fa-check"></i><b>5.4</b> Power Rule</a>
+<ul>
+<li class="chapter" data-level="5.4.1" data-path="differentiation-rules.html"><a href="differentiation-rules.html#example-1"><i class="fa fa-check"></i><b>5.4.1</b> Example</a></li>
+<li class="chapter" data-level="5.4.2" data-path="differentiation-rules.html"><a href="differentiation-rules.html#example-2"><i class="fa fa-check"></i><b>5.4.2</b> Example</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="differentiation-rules.html"><a href="differentiation-rules.html#constant-multiple-rule"><i class="fa fa-check"></i><b>5.5</b> Constant Multiple Rule</a>
+<ul>
+<li class="chapter" data-level="5.5.1" data-path="differentiation-rules.html"><a href="differentiation-rules.html#example-3"><i class="fa fa-check"></i><b>5.5.1</b> Example</a></li>
+</ul></li>
+<li class="chapter" data-level="5.6" data-path="differentiation-rules.html"><a href="differentiation-rules.html#sum-and-difference-rule"><i class="fa fa-check"></i><b>5.6</b> Sum and Difference Rule</a>
+<ul>
+<li class="chapter" data-level="5.6.1" data-path="differentiation-rules.html"><a href="differentiation-rules.html#example-4"><i class="fa fa-check"></i><b>5.6.1</b> Example</a></li>
+</ul></li>
+<li class="chapter" data-level="5.7" data-path="differentiation-rules.html"><a href="differentiation-rules.html#polynomial-functions-combined-rules"><i class="fa fa-check"></i><b>5.7</b> Polynomial Functions (Combined Rules)</a>
+<ul>
+<li class="chapter" data-level="5.7.1" data-path="differentiation-rules.html"><a href="differentiation-rules.html#example-5"><i class="fa fa-check"></i><b>5.7.1</b> Example</a></li>
+</ul></li>
+<li class="chapter" data-level="5.8" data-path="differentiation-rules.html"><a href="differentiation-rules.html#exponential-functions"><i class="fa fa-check"></i><b>5.8</b> Exponential Functions</a>
+<ul>
+<li class="chapter" data-level="5.8.1" data-path="differentiation-rules.html"><a href="differentiation-rules.html#example-6"><i class="fa fa-check"></i><b>5.8.1</b> Example</a></li>
+<li class="chapter" data-level="5.8.2" data-path="differentiation-rules.html"><a href="differentiation-rules.html#example-7"><i class="fa fa-check"></i><b>5.8.2</b> Example</a></li>
+</ul></li>
+<li class="chapter" data-level="5.9" data-path="differentiation-rules.html"><a href="differentiation-rules.html#logarithmic-functions"><i class="fa fa-check"></i><b>5.9</b> Logarithmic Functions</a>
+<ul>
+<li class="chapter" data-level="5.9.1" data-path="differentiation-rules.html"><a href="differentiation-rules.html#example-8"><i class="fa fa-check"></i><b>5.9.1</b> Example</a></li>
+<li class="chapter" data-level="5.9.2" data-path="differentiation-rules.html"><a href="differentiation-rules.html#example-9"><i class="fa fa-check"></i><b>5.9.2</b> Example</a></li>
+</ul></li>
+<li class="chapter" data-level="5.10" data-path="differentiation-rules.html"><a href="differentiation-rules.html#product-rule"><i class="fa fa-check"></i><b>5.10</b> Product Rule</a>
+<ul>
+<li class="chapter" data-level="5.10.1" data-path="differentiation-rules.html"><a href="differentiation-rules.html#example-10"><i class="fa fa-check"></i><b>5.10.1</b> Example</a></li>
+</ul></li>
+<li class="chapter" data-level="5.11" data-path="differentiation-rules.html"><a href="differentiation-rules.html#quotient-rule"><i class="fa fa-check"></i><b>5.11</b> Quotient Rule</a>
+<ul>
+<li class="chapter" data-level="5.11.1" data-path="differentiation-rules.html"><a href="differentiation-rules.html#example-11"><i class="fa fa-check"></i><b>5.11.1</b> Example</a></li>
+<li class="chapter" data-level="5.11.2" data-path="differentiation-rules.html"><a href="differentiation-rules.html#example-12"><i class="fa fa-check"></i><b>5.11.2</b> Example</a></li>
+</ul></li>
+<li class="chapter" data-level="5.12" data-path="differentiation-rules.html"><a href="differentiation-rules.html#chain-rule"><i class="fa fa-check"></i><b>5.12</b> Chain Rule</a>
+<ul>
+<li class="chapter" data-level="5.12.1" data-path="differentiation-rules.html"><a href="differentiation-rules.html#example-13"><i class="fa fa-check"></i><b>5.12.1</b> Example</a></li>
+</ul></li>
+<li class="chapter" data-level="5.13" data-path="differentiation-rules.html"><a href="differentiation-rules.html#things-to-note"><i class="fa fa-check"></i><b>5.13</b> Things to Note:</a></li>
+<li class="chapter" data-level="5.14" data-path="differentiation-rules.html"><a href="differentiation-rules.html#exercises"><i class="fa fa-check"></i><b>5.14</b> Exercises</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">LBYC121 Course Book</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="differentiation-rules" class="section level1 hasAnchor" number="5">
+<h1><span class="header-section-number">5</span> Differentiation Rules<a href="differentiation-rules.html#differentiation-rules" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="introduction-1" class="section level2 hasAnchor" number="5.1">
+<h2><span class="header-section-number">5.1</span> Introduction<a href="differentiation-rules.html#introduction-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Differentiation measures the instantaneous rate of change of a function wrt its variable. We use differentiation in getting the marginal cost, marginal utility or the marginal product.</p>
+<p>In R, derivatives are computed symbolically (using expressions) or numerically.</p>
+</div>
+<div id="structure-of-differentiation" class="section level2 hasAnchor" number="5.2">
+<h2><span class="header-section-number">5.2</span> Structure of Differentiation<a href="differentiation-rules.html#structure-of-differentiation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><code>D()</code> is R’s built-in symbolic differentiation function. It takes a mathematical expression and returns its derivative wrt a variable.</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="differentiation-rules.html#cb17-1" tabindex="-1"></a><span class="fu">D</span>(expr, name)</span></code></pre></div>
+<p><code>expr</code> is the function you want to differentiate</p>
+<p><code>name</code> is the variable you differentiate with respect to.</p>
+<p><strong>Example</strong>:</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="differentiation-rules.html#cb18-1" tabindex="-1"></a><span class="fu">D</span>(<span class="fu">expression</span>(x<span class="sc">^</span><span class="dv">2</span>), <span class="st">&quot;x&quot;</span>)</span></code></pre></div>
+<pre><code>## 2 * x</code></pre>
+<p>There is a need to put <code>expression</code>, because without it, R cannot do it. For example I made <code>x</code> have a value because if it is simply <span class="math display">\[x^3\]</span> there will be an error. Here is the difference:</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="differentiation-rules.html#cb20-1" tabindex="-1"></a><span class="fu">D</span>(<span class="fu">expression</span>(x<span class="sc">^</span><span class="dv">3</span>), <span class="st">&quot;x&quot;</span>)</span></code></pre></div>
+<pre><code>## 3 * x^2</code></pre>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="differentiation-rules.html#cb22-1" tabindex="-1"></a>x<span class="ot">&lt;-</span><span class="dv">3</span></span>
+<span id="cb22-2"><a href="differentiation-rules.html#cb22-2" tabindex="-1"></a><span class="fu">D</span>((x<span class="sc">^</span><span class="dv">3</span>), <span class="st">&quot;x&quot;</span>)</span></code></pre></div>
+<pre><code>## [1] 0</code></pre>
+<p>Basically, the <code>expression</code> preserves the equation that you are trying to differentiate.</p>
+</div>
+<div id="constant-rule" class="section level2 hasAnchor" number="5.3">
+<h2><span class="header-section-number">5.3</span> Constant Rule<a href="differentiation-rules.html#constant-rule" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>If <span class="math display">\[f(x)=c\]</span> where <code>c</code> is a constant, then <span class="math display">\[f&#39;(x)=0 \]</span></p>
+<div id="example" class="section level3 hasAnchor" number="5.3.1">
+<h3><span class="header-section-number">5.3.1</span> Example<a href="differentiation-rules.html#example" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><span class="math display">\[
+f(x)=10
+\]</span></p>
+<p>Derivative: <span class="math display">\[f&#39;(x)=0\]</span></p>
+<div id="r-implementation" class="section level4 hasAnchor" number="5.3.1.1">
+<h4><span class="header-section-number">5.3.1.1</span> R Implementation<a href="differentiation-rules.html#r-implementation" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="differentiation-rules.html#cb24-1" tabindex="-1"></a><span class="fu">D</span>(<span class="fu">expression</span>(<span class="dv">10</span>), <span class="st">&quot;x&quot;</span>)</span></code></pre></div>
+<pre><code>## [1] 0</code></pre>
+</div>
+</div>
+</div>
+<div id="power-rule" class="section level2 hasAnchor" number="5.4">
+<h2><span class="header-section-number">5.4</span> Power Rule<a href="differentiation-rules.html#power-rule" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>If <span class="math display">\[f(x)=x^n\]</span> then <span class="math display">\[f&#39;(x)=nx^{n-1}\]</span></p>
+<div id="example-1" class="section level3 hasAnchor" number="5.4.1">
+<h3><span class="header-section-number">5.4.1</span> Example<a href="differentiation-rules.html#example-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><span class="math display">\[
+f(x)=x^3
+\]</span></p>
+<p>Derivative: <span class="math display">\[f&#39;(x) = 3x^2\]</span></p>
+<div id="r-implementation-1" class="section level4 hasAnchor" number="5.4.1.1">
+<h4><span class="header-section-number">5.4.1.1</span> R Implementation<a href="differentiation-rules.html#r-implementation-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="differentiation-rules.html#cb26-1" tabindex="-1"></a><span class="fu">D</span>(<span class="fu">expression</span>(x<span class="sc">^</span><span class="dv">3</span>),<span class="st">&quot;x&quot;</span>)</span></code></pre></div>
+<pre><code>## 3 * x^2</code></pre>
+</div>
+</div>
+<div id="example-2" class="section level3 hasAnchor" number="5.4.2">
+<h3><span class="header-section-number">5.4.2</span> Example<a href="differentiation-rules.html#example-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><span class="math display">\[
+f(x)=x^{1/2}
+\]</span></p>
+<p>Derivative:</p>
+<p><span class="math display">\[
+f&#39;(x)=\frac{1}{2}x^{\frac{-1}{2}}
+\]</span></p>
+<div id="r-implementation-2" class="section level4 hasAnchor" number="5.4.2.1">
+<h4><span class="header-section-number">5.4.2.1</span> R Implementation<a href="differentiation-rules.html#r-implementation-2" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="differentiation-rules.html#cb28-1" tabindex="-1"></a><span class="fu">D</span>(<span class="fu">expression</span>(x<span class="sc">^</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>)), <span class="st">&quot;x&quot;</span>)</span></code></pre></div>
+<pre><code>## x^((1/2) - 1) * (1/2)</code></pre>
+</div>
+</div>
+</div>
+<div id="constant-multiple-rule" class="section level2 hasAnchor" number="5.5">
+<h2><span class="header-section-number">5.5</span> Constant Multiple Rule<a href="differentiation-rules.html#constant-multiple-rule" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>If <span class="math display">\[f(x)=a*g(x)\]</span> then <span class="math display">\[f&#39;(x) = a*g&#39;(x)\]</span></p>
+<div id="example-3" class="section level3 hasAnchor" number="5.5.1">
+<h3><span class="header-section-number">5.5.1</span> Example<a href="differentiation-rules.html#example-3" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><span class="math display">\[
+f(x)=5x^2
+\]</span></p>
+<p>Derivative: <span class="math display">\[f&#39;(x)=10x\]</span></p>
+<div id="r-implementation-3" class="section level4 hasAnchor" number="5.5.1.1">
+<h4><span class="header-section-number">5.5.1.1</span> R Implementation<a href="differentiation-rules.html#r-implementation-3" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="differentiation-rules.html#cb30-1" tabindex="-1"></a><span class="fu">D</span>(<span class="fu">expression</span>(<span class="dv">5</span><span class="sc">*</span>x<span class="sc">^</span><span class="dv">2</span>), <span class="st">&quot;x&quot;</span>)</span></code></pre></div>
+<pre><code>## 5 * (2 * x)</code></pre>
+</div>
+</div>
+</div>
+<div id="sum-and-difference-rule" class="section level2 hasAnchor" number="5.6">
+<h2><span class="header-section-number">5.6</span> Sum and Difference Rule<a href="differentiation-rules.html#sum-and-difference-rule" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>If <span class="math display">\[f(x)=g(x)+h(x)\]</span> then <span class="math display">\[f&#39;(x)=g&#39;(x)+h&#39;(x)\]</span></p>
+<p>Same applies for subtraction.</p>
+<div id="example-4" class="section level3 hasAnchor" number="5.6.1">
+<h3><span class="header-section-number">5.6.1</span> Example<a href="differentiation-rules.html#example-4" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><span class="math display">\[
+f(x)=x^2+3x+9
+\]</span></p>
+<p>Derivative: <span class="math display">\[f&#39;(x)=2x+3\]</span></p>
+<div id="r-implementation-4" class="section level4 hasAnchor" number="5.6.1.1">
+<h4><span class="header-section-number">5.6.1.1</span> R Implementation<a href="differentiation-rules.html#r-implementation-4" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="differentiation-rules.html#cb32-1" tabindex="-1"></a><span class="fu">D</span>(<span class="fu">expression</span>(x<span class="sc">^</span><span class="dv">2</span><span class="sc">+</span><span class="dv">3</span><span class="sc">*</span>x<span class="sc">+</span><span class="dv">9</span>), <span class="st">&quot;x&quot;</span>)</span></code></pre></div>
+<pre><code>## 2 * x + 3</code></pre>
+</div>
+</div>
+</div>
+<div id="polynomial-functions-combined-rules" class="section level2 hasAnchor" number="5.7">
+<h2><span class="header-section-number">5.7</span> Polynomial Functions (Combined Rules)<a href="differentiation-rules.html#polynomial-functions-combined-rules" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<blockquote>
+<p>Most economic functions are polynomials (i.e. cost function)</p>
+</blockquote>
+<div id="example-5" class="section level3 hasAnchor" number="5.7.1">
+<h3><span class="header-section-number">5.7.1</span> Example<a href="differentiation-rules.html#example-5" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><span class="math display">\[
+C(q)=2q^3-5q^2+10q-100
+\]</span></p>
+<p>This is a cost function.</p>
+<p>Derivative (Marginal Cost): <span class="math display">\[MC(q)=6q^2-10q+10\]</span></p>
+<div id="r-implementation-5" class="section level4 hasAnchor" number="5.7.1.1">
+<h4><span class="header-section-number">5.7.1.1</span> R Implementation<a href="differentiation-rules.html#r-implementation-5" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="differentiation-rules.html#cb34-1" tabindex="-1"></a><span class="fu">D</span>(<span class="fu">expression</span>(<span class="dv">2</span><span class="sc">*</span>q<span class="sc">^</span><span class="dv">3-5</span><span class="sc">*</span>q<span class="sc">^</span><span class="dv">2</span><span class="sc">+</span><span class="dv">10</span><span class="sc">*</span>q<span class="sc">+</span><span class="dv">100</span>), <span class="st">&quot;q&quot;</span>)</span></code></pre></div>
+<pre><code>## 2 * (3 * q^2) - 5 * (2 * q) + 10</code></pre>
+</div>
+</div>
+</div>
+<div id="exponential-functions" class="section level2 hasAnchor" number="5.8">
+<h2><span class="header-section-number">5.8</span> Exponential Functions<a href="differentiation-rules.html#exponential-functions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>If <span class="math display">\[f(x)=e^x\]</span> then <span class="math display">\[f&#39;(x)=e^x\]</span></p>
+<p>If <span class="math display">\[f(x)=a^x\]</span> then <span class="math display">\[f&#39;(x)=a^x ln(a)\]</span></p>
+<div id="example-6" class="section level3 hasAnchor" number="5.8.1">
+<h3><span class="header-section-number">5.8.1</span> Example<a href="differentiation-rules.html#example-6" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><span class="math display">\[
+f(x)=e^x
+\]</span></p>
+<div id="r-implementation-6" class="section level4 hasAnchor" number="5.8.1.1">
+<h4><span class="header-section-number">5.8.1.1</span> R Implementation<a href="differentiation-rules.html#r-implementation-6" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="differentiation-rules.html#cb36-1" tabindex="-1"></a><span class="fu">D</span>(<span class="fu">expression</span>(<span class="fu">exp</span>(x)), <span class="st">&quot;x&quot;</span>)</span></code></pre></div>
+<pre><code>## exp(x)</code></pre>
+</div>
+</div>
+<div id="example-7" class="section level3 hasAnchor" number="5.8.2">
+<h3><span class="header-section-number">5.8.2</span> Example<a href="differentiation-rules.html#example-7" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><span class="math display">\[
+f(x)=2^x
+\]</span></p>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="differentiation-rules.html#cb38-1" tabindex="-1"></a><span class="fu">D</span>(<span class="fu">expression</span>(<span class="dv">2</span><span class="sc">^</span>x), <span class="st">&quot;x&quot;</span>)</span></code></pre></div>
+<pre><code>## 2^x * log(2)</code></pre>
+</div>
+</div>
+<div id="logarithmic-functions" class="section level2 hasAnchor" number="5.9">
+<h2><span class="header-section-number">5.9</span> Logarithmic Functions<a href="differentiation-rules.html#logarithmic-functions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>If <span class="math display">\[f(x)=ln(x)\]</span> then <span class="math display">\[f&#39;(x)=\frac{1}{x}\]</span></p>
+<p>If <span class="math display">\[f(x)=ln(g(x))\]</span> then <span class="math display">\[f&#39;(x)=\frac{g&#39;(x)}{g(x)}\]</span></p>
+<blockquote>
+<p>This is usually for elasticities, utility or diminishing returns</p>
+</blockquote>
+<div id="example-8" class="section level3 hasAnchor" number="5.9.1">
+<h3><span class="header-section-number">5.9.1</span> Example<a href="differentiation-rules.html#example-8" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><span class="math display">\[
+f(x)=ln(x)
+\]</span></p>
+<div id="r-implementation-7" class="section level4 hasAnchor" number="5.9.1.1">
+<h4><span class="header-section-number">5.9.1.1</span> R Implementation<a href="differentiation-rules.html#r-implementation-7" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="differentiation-rules.html#cb40-1" tabindex="-1"></a><span class="fu">D</span>(<span class="fu">expression</span>(<span class="fu">log</span>(x)), <span class="st">&quot;x&quot;</span>)</span></code></pre></div>
+<pre><code>## 1/x</code></pre>
+</div>
+</div>
+<div id="example-9" class="section level3 hasAnchor" number="5.9.2">
+<h3><span class="header-section-number">5.9.2</span> Example<a href="differentiation-rules.html#example-9" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><span class="math display">\[
+f(x)=ln(5x)
+\]</span></p>
+<div id="r-implementation-8" class="section level4 hasAnchor" number="5.9.2.1">
+<h4><span class="header-section-number">5.9.2.1</span> R Implementation<a href="differentiation-rules.html#r-implementation-8" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="differentiation-rules.html#cb42-1" tabindex="-1"></a><span class="fu">D</span>(<span class="fu">expression</span>(<span class="fu">log</span>(<span class="dv">5</span><span class="sc">*</span>x)), <span class="st">&quot;x&quot;</span>)</span></code></pre></div>
+<pre><code>## 5/(5 * x)</code></pre>
+</div>
+</div>
+</div>
+<div id="product-rule" class="section level2 hasAnchor" number="5.10">
+<h2><span class="header-section-number">5.10</span> Product Rule<a href="differentiation-rules.html#product-rule" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>If <span class="math display">\[f(x)=g(x)h(x)\]</span> then <span class="math display">\[f&#39;(x)=g&#39;(x)h(x)+g(x)h&#39;(x)\]</span></p>
+<blockquote>
+<p>This is especially used for Revenue = Price*Quantity</p>
+</blockquote>
+<div id="example-10" class="section level3 hasAnchor" number="5.10.1">
+<h3><span class="header-section-number">5.10.1</span> Example<a href="differentiation-rules.html#example-10" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><span class="math display">\[
+R(q)=q(10-q)
+\]</span></p>
+<p>Derivative: <span class="math display">\[R&#39;(q)=10-2q\]</span></p>
+<div id="r-implementation-9" class="section level4 hasAnchor" number="5.10.1.1">
+<h4><span class="header-section-number">5.10.1.1</span> R Implementation<a href="differentiation-rules.html#r-implementation-9" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="differentiation-rules.html#cb44-1" tabindex="-1"></a><span class="fu">D</span>(<span class="fu">expression</span>(q<span class="sc">*</span>(<span class="dv">10</span><span class="sc">-</span>q)), <span class="st">&quot;q&quot;</span>)</span></code></pre></div>
+<pre><code>## (10 - q) - q</code></pre>
+</div>
+</div>
+</div>
+<div id="quotient-rule" class="section level2 hasAnchor" number="5.11">
+<h2><span class="header-section-number">5.11</span> Quotient Rule<a href="differentiation-rules.html#quotient-rule" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>If <span class="math display">\[f(x)=\frac{g(x)}{h(x)}\]</span> then <span class="math display">\[f&#39;(x)=\frac{g&#39;(x)h(x)-g(x)h&#39;(x)}{h(x)^2}\]</span></p>
+<blockquote>
+<p>This is used for average cost or average product</p>
+</blockquote>
+<div id="example-11" class="section level3 hasAnchor" number="5.11.1">
+<h3><span class="header-section-number">5.11.1</span> Example<a href="differentiation-rules.html#example-11" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><span class="math display">\[
+AC(q)=\frac{2q^2+10}{q}
+\]</span></p>
+<div id="r-implementation-10" class="section level4 hasAnchor" number="5.11.1.1">
+<h4><span class="header-section-number">5.11.1.1</span> R Implementation<a href="differentiation-rules.html#r-implementation-10" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="differentiation-rules.html#cb46-1" tabindex="-1"></a><span class="fu">D</span>(<span class="fu">expression</span>((<span class="dv">2</span><span class="sc">*</span>q<span class="sc">^</span><span class="dv">2</span><span class="sc">+</span><span class="dv">10</span>)<span class="sc">/</span>q),<span class="st">&quot;q&quot;</span>)</span></code></pre></div>
+<pre><code>## 2 * (2 * q)/q - (2 * q^2 + 10)/q^2</code></pre>
+</div>
+</div>
+<div id="example-12" class="section level3 hasAnchor" number="5.11.2">
+<h3><span class="header-section-number">5.11.2</span> Example<a href="differentiation-rules.html#example-12" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>If you are given the following:</p>
+<p><span class="math display">\[
+TC(q)=q^3+4q^2+10q+100
+\]</span></p>
+<p>so, you need to construct average cost:</p>
+<p><span class="math display">\[
+AC(q)=\frac{q^3+4q^2+10q+100}{q}
+\]</span></p>
+<div id="r-implementation-11" class="section level4 hasAnchor" number="5.11.2.1">
+<h4><span class="header-section-number">5.11.2.1</span> R Implementation<a href="differentiation-rules.html#r-implementation-11" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="differentiation-rules.html#cb48-1" tabindex="-1"></a><span class="fu">D</span>(<span class="fu">expression</span>((q<span class="sc">^</span><span class="dv">3</span><span class="sc">+</span><span class="dv">4</span><span class="sc">*</span>q<span class="sc">^</span><span class="dv">2</span><span class="sc">+</span><span class="dv">10</span><span class="sc">*</span>q<span class="sc">+</span><span class="dv">100</span>)<span class="sc">/</span>q),<span class="st">&quot;q&quot;</span>)</span></code></pre></div>
+<pre><code>## (3 * q^2 + 4 * (2 * q) + 10)/q - (q^3 + 4 * q^2 + 10 * q + 100)/q^2</code></pre>
+</div>
+</div>
+</div>
+<div id="chain-rule" class="section level2 hasAnchor" number="5.12">
+<h2><span class="header-section-number">5.12</span> Chain Rule<a href="differentiation-rules.html#chain-rule" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>If <span class="math display">\[f(x)=g(h(x))\]</span> then <span class="math display">\[f&#39;(x)=g&#39;(h(x))\cdot h&#39;(x)\]</span></p>
+<blockquote>
+<p>This is used in CES functions</p>
+</blockquote>
+<div id="example-13" class="section level3 hasAnchor" number="5.12.1">
+<h3><span class="header-section-number">5.12.1</span> Example<a href="differentiation-rules.html#example-13" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><span class="math display">\[
+f(x)=ln(x^2+1)
+\]</span></p>
+<p>Derivative: <span class="math display">\[f&#39;(x)=\frac{2x}{x^2+1}\]</span></p>
+<div id="r-implementation-12" class="section level4 hasAnchor" number="5.12.1.1">
+<h4><span class="header-section-number">5.12.1.1</span> R Implementation<a href="differentiation-rules.html#r-implementation-12" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="differentiation-rules.html#cb50-1" tabindex="-1"></a><span class="fu">D</span>(<span class="fu">expression</span>(<span class="fu">log</span>(x<span class="sc">^</span><span class="dv">2</span><span class="sc">+</span><span class="dv">1</span>)), <span class="st">&quot;x&quot;</span>)</span></code></pre></div>
+<pre><code>## 2 * x/(x^2 + 1)</code></pre>
+</div>
+</div>
+</div>
+<div id="things-to-note" class="section level2 hasAnchor" number="5.13">
+<h2><span class="header-section-number">5.13</span> Things to Note:<a href="differentiation-rules.html#things-to-note" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ol style="list-style-type: decimal">
+<li>You have to check that you are typing the correct codes, equations, etc.</li>
+<li>You need to write <code>expression()</code> completely as <code>exp</code> is different.</li>
+<li>Always check the parentheses, commas, etc.</li>
+</ol>
+</div>
+<div id="exercises" class="section level2 hasAnchor" number="5.14">
+<h2><span class="header-section-number">5.14</span> Exercises<a href="differentiation-rules.html#exercises" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>For this exercise, please place final answers in the first part while the next parts would show the R codes per question.</p>
+<p>For the <strong>Peer Review</strong>, please look at whether the codes are complete and correctly written. Write comments based on the rubric for checking.</p>
+<p>Since this is simply for recalling purposes, simply differentiate the following equations:</p>
+<ol style="list-style-type: decimal">
+<li><p><span class="math display">\[
+f(x)=101314
+\]</span></p></li>
+<li><p><span class="math display">\[
+f(x)=x^4
+\]</span></p></li>
+<li><p><span class="math display">\[
+f(x)11x^4
+\]</span></p></li>
+<li><p><span class="math display">\[
+f(x)=x^2+5x-9
+\]</span></p></li>
+<li><p><span class="math display">\[
+f(x)=x^2-10x+20
+\]</span></p></li>
+<li><p><span class="math display">\[
+C(q)=q^3-4q^2+6Q+50
+\]</span></p></li>
+<li><p><span class="math display">\[
+f(x)=e^{2x}
+\]</span></p></li>
+<li><p><span class="math display">\[
+f(x)=ln(3x^2)
+\]</span></p></li>
+<li><p><span class="math display">\[
+R(q)=q(20-2q)
+\]</span></p></li>
+<li><p><span class="math display">\[
+AC(q)=\frac{5q^2+20}{q}
+\]</span></p></li>
+<li><p>Total Product is <span class="math display">\[TP(L)=10L^2 -L^3\]</span></p>
+<p>Get <span class="math display">\[AP(L)\]</span></p>
+<p>Differentiate <span class="math display">\[AP(L)\]</span> with respect to <span class="math display">\[L\]</span></p></li>
+<li><p><span class="math display">\[
+f(x)=ln(1+x^3)
+\]</span></p></li>
+</ol>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="basic-introduction-to-r.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": null,
+    "text": null
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": ["LBYC121_Course_Book.pdf", "LBYC121_Course_Book.epub"],
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "section",
+    "depth": 4
+  }
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
