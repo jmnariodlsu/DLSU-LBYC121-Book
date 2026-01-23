@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>9 Data Management (Cross-Sectional) Feedback | LBOMETR Course Book</title>
+  <meta name="description" content="An introduction to the LBOMETR Course Book." />
+  <meta name="generator" content="bookdown 0.41 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="9 Data Management (Cross-Sectional) Feedback | LBOMETR Course Book" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="An introduction to the LBOMETR Course Book." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="9 Data Management (Cross-Sectional) Feedback | LBOMETR Course Book" />
+  
+  <meta name="twitter:description" content="An introduction to the LBOMETR Course Book." />
+  
+
+<meta name="author" content="Jem Marie M. Nario" />
+
+
+<meta name="date" content="2025-02-16" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="data-management-practical.html"/>
+<link rel="next" href="data-management---time-series-and-panel-data.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<h1>LBOMETR Course Book</h1>
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#about-me"><i class="fa fa-check"></i><b>1.1</b> About Me</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="syllabus.html"><a href="syllabus.html"><i class="fa fa-check"></i><b>2</b> Syllabus</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="syllabus.html"><a href="syllabus.html#course-description"><i class="fa fa-check"></i><b>2.1</b> Course Description</a></li>
+<li class="chapter" data-level="2.2" data-path="syllabus.html"><a href="syllabus.html#learning-outcomes"><i class="fa fa-check"></i><b>2.2</b> Learning Outcomes</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="syllabus.html"><a href="syllabus.html#knowledge"><i class="fa fa-check"></i><b>2.2.1</b> Knowledge</a></li>
+<li class="chapter" data-level="2.2.2" data-path="syllabus.html"><a href="syllabus.html#skills"><i class="fa fa-check"></i><b>2.2.2</b> Skills</a></li>
+<li class="chapter" data-level="2.2.3" data-path="syllabus.html"><a href="syllabus.html#behaviorattitude"><i class="fa fa-check"></i><b>2.2.3</b> Behavior/Attitude</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="syllabus.html"><a href="syllabus.html#grading"><i class="fa fa-check"></i><b>2.3</b> Grading</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="syllabus.html"><a href="syllabus.html#grade-components"><i class="fa fa-check"></i><b>2.3.1</b> Grade Components</a></li>
+<li class="chapter" data-level="2.3.2" data-path="syllabus.html"><a href="syllabus.html#grade-scale"><i class="fa fa-check"></i><b>2.3.2</b> Grade Scale</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="course-assessments.html"><a href="course-assessments.html"><i class="fa fa-check"></i><b>3</b> Course Assessments</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="course-assessments.html"><a href="course-assessments.html#data-story-archive"><i class="fa fa-check"></i><b>3.1</b> Data Story Archive</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="course-assessments.html"><a href="course-assessments.html#requirements"><i class="fa fa-check"></i><b>3.1.1</b> Requirements</a></li>
+<li class="chapter" data-level="3.1.2" data-path="course-assessments.html"><a href="course-assessments.html#submission"><i class="fa fa-check"></i><b>3.1.2</b> Submission</a></li>
+<li class="chapter" data-level="3.1.3" data-path="course-assessments.html"><a href="course-assessments.html#grading-rubric-for-data-story-archive"><i class="fa fa-check"></i><b>3.1.3</b> Grading Rubric for Data Story Archive</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="course-assessments.html"><a href="course-assessments.html#data-story-presentation"><i class="fa fa-check"></i><b>3.2</b> Data Story Presentation</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="course-assessments.html"><a href="course-assessments.html#requirements-1"><i class="fa fa-check"></i><b>3.2.1</b> Requirements</a></li>
+<li class="chapter" data-level="3.2.2" data-path="course-assessments.html"><a href="course-assessments.html#grading-rubric"><i class="fa fa-check"></i><b>3.2.2</b> Grading Rubric</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="grouping-process.html"><a href="grouping-process.html"><i class="fa fa-check"></i><b>4</b> Grouping Process</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="grouping-process.html"><a href="grouping-process.html#survey"><i class="fa fa-check"></i><b>4.1</b> Survey</a></li>
+<li class="chapter" data-level="4.2" data-path="grouping-process.html"><a href="grouping-process.html#how-groups-are-formed"><i class="fa fa-check"></i><b>4.2</b> How Groups Are Formed</a></li>
+<li class="chapter" data-level="4.3" data-path="grouping-process.html"><a href="grouping-process.html#announcement-of-groups"><i class="fa fa-check"></i><b>4.3</b> Announcement of Groups</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="data-story-research-question.html"><a href="data-story-research-question.html"><i class="fa fa-check"></i><b>5</b> Data Story Research Question</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="data-story-research-question.html"><a href="data-story-research-question.html#guidelines-in-conducting-data-story"><i class="fa fa-check"></i><b>5.1</b> Guidelines in Conducting Data Story</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="data-story-research-question.html"><a href="data-story-research-question.html#research-question"><i class="fa fa-check"></i><b>5.1.1</b> Research Question:</a></li>
+<li class="chapter" data-level="5.1.2" data-path="data-story-research-question.html"><a href="data-story-research-question.html#relevance"><i class="fa fa-check"></i><b>5.1.2</b> Relevance</a></li>
+<li class="chapter" data-level="5.1.3" data-path="data-story-research-question.html"><a href="data-story-research-question.html#for-the-data-story-should-i-use-kaggle"><i class="fa fa-check"></i><b>5.1.3</b> For the data story, should I use Kaggle?</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="data-story-research-question.html"><a href="data-story-research-question.html#comments-on-research-questions"><i class="fa fa-check"></i><b>5.2</b> Comments on Research Questions:</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html"><i class="fa fa-check"></i><b>6</b> Basic Introduction to R</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#session-information"><i class="fa fa-check"></i><b>6.1</b> Session Information</a></li>
+<li class="chapter" data-level="6.2" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#preliminaries"><i class="fa fa-check"></i><b>6.2</b> Preliminaries</a></li>
+<li class="chapter" data-level="6.3" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#quarto-markdown"><i class="fa fa-check"></i><b>6.3</b> Quarto Markdown</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#starting-a-quarto-file"><i class="fa fa-check"></i><b>6.3.1</b> 1. Starting a Quarto File</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#packages"><i class="fa fa-check"></i><b>6.4</b> Packages</a></li>
+<li class="chapter" data-level="6.5" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#instructions-for-managing-working-directories"><i class="fa fa-check"></i><b>6.5</b> Instructions for Managing Working Directories</a>
+<ul>
+<li class="chapter" data-level="6.5.1" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#local-working-directory-setup"><i class="fa fa-check"></i><b>6.5.1</b> 1. Local Working Directory Setup</a></li>
+<li class="chapter" data-level="6.5.2" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#file-naming-convention"><i class="fa fa-check"></i><b>6.5.2</b> 2. File Naming Convention</a></li>
+<li class="chapter" data-level="6.5.3" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#shared-google-drive-setup"><i class="fa fa-check"></i><b>6.5.3</b> 3. Shared Google Drive Setup</a></li>
+<li class="chapter" data-level="6.5.4" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#workflow-for-.qmd-files"><i class="fa fa-check"></i><b>6.5.4</b> 4. Workflow for <code>.qmd</code> files</a></li>
+<li class="chapter" data-level="6.5.5" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#rendering-the-final-report"><i class="fa fa-check"></i><b>6.5.5</b> 5. Rendering the Final Report</a></li>
+<li class="chapter" data-level="6.5.6" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#summary-workflow"><i class="fa fa-check"></i><b>6.5.6</b> Summary Workflow</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="data-management---cross-sectional-data.html"><a href="data-management---cross-sectional-data.html"><i class="fa fa-check"></i><b>7</b> Data Management - Cross-Sectional Data</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="data-management---cross-sectional-data.html"><a href="data-management---cross-sectional-data.html#where-to-get-data"><i class="fa fa-check"></i><b>7.1</b> Where to Get Data?</a></li>
+<li class="chapter" data-level="7.2" data-path="data-management---cross-sectional-data.html"><a href="data-management---cross-sectional-data.html#preliminaries-1"><i class="fa fa-check"></i><b>7.2</b> Preliminaries</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="data-management---cross-sectional-data.html"><a href="data-management---cross-sectional-data.html#dataset"><i class="fa fa-check"></i><b>7.2.1</b> Dataset</a></li>
+<li class="chapter" data-level="7.2.2" data-path="data-management---cross-sectional-data.html"><a href="data-management---cross-sectional-data.html#packages-1"><i class="fa fa-check"></i><b>7.2.2</b> Packages</a></li>
+<li class="chapter" data-level="7.2.3" data-path="data-management---cross-sectional-data.html"><a href="data-management---cross-sectional-data.html#setting-up-the-directory"><i class="fa fa-check"></i><b>7.2.3</b> Setting up the Directory</a></li>
+<li class="chapter" data-level="7.2.4" data-path="data-management---cross-sectional-data.html"><a href="data-management---cross-sectional-data.html#clean-everything"><i class="fa fa-check"></i><b>7.2.4</b> Clean Everything</a></li>
+<li class="chapter" data-level="7.2.5" data-path="data-management---cross-sectional-data.html"><a href="data-management---cross-sectional-data.html#importing-the-dataset"><i class="fa fa-check"></i><b>7.2.5</b> Importing the Dataset</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="data-management---cross-sectional-data.html"><a href="data-management---cross-sectional-data.html#data-cleaning"><i class="fa fa-check"></i><b>7.3</b> Data Cleaning</a>
+<ul>
+<li class="chapter" data-level="7.3.1" data-path="data-management---cross-sectional-data.html"><a href="data-management---cross-sectional-data.html#renaming-the-variables"><i class="fa fa-check"></i><b>7.3.1</b> Renaming the Variables</a></li>
+<li class="chapter" data-level="7.3.2" data-path="data-management---cross-sectional-data.html"><a href="data-management---cross-sectional-data.html#sorting-certain-values"><i class="fa fa-check"></i><b>7.3.2</b> Sorting certain values</a></li>
+<li class="chapter" data-level="7.3.3" data-path="data-management---cross-sectional-data.html"><a href="data-management---cross-sectional-data.html#pipe-operator"><i class="fa fa-check"></i><b>7.3.3</b> Pipe Operator</a></li>
+<li class="chapter" data-level="7.3.4" data-path="data-management---cross-sectional-data.html"><a href="data-management---cross-sectional-data.html#adding-columns"><i class="fa fa-check"></i><b>7.3.4</b> Adding columns</a></li>
+<li class="chapter" data-level="7.3.5" data-path="data-management---cross-sectional-data.html"><a href="data-management---cross-sectional-data.html#transforming-values"><i class="fa fa-check"></i><b>7.3.5</b> Transforming values</a></li>
+<li class="chapter" data-level="7.3.6" data-path="data-management---cross-sectional-data.html"><a href="data-management---cross-sectional-data.html#summarizing"><i class="fa fa-check"></i><b>7.3.6</b> Summarizing</a></li>
+<li class="chapter" data-level="7.3.7" data-path="data-management---cross-sectional-data.html"><a href="data-management---cross-sectional-data.html#merging-datasets"><i class="fa fa-check"></i><b>7.3.7</b> Merging datasets</a></li>
+<li class="chapter" data-level="7.3.8" data-path="data-management---cross-sectional-data.html"><a href="data-management---cross-sectional-data.html#splitting-datasets"><i class="fa fa-check"></i><b>7.3.8</b> Splitting datasets</a></li>
+<li class="chapter" data-level="7.3.9" data-path="data-management---cross-sectional-data.html"><a href="data-management---cross-sectional-data.html#dates"><i class="fa fa-check"></i><b>7.3.9</b> Dates</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="data-management-practical.html"><a href="data-management-practical.html"><i class="fa fa-check"></i><b>8</b> Data Management Practical</a></li>
+<li class="chapter" data-level="9" data-path="data-management-cross-sectional-feedback.html"><a href="data-management-cross-sectional-feedback.html"><i class="fa fa-check"></i><b>9</b> Data Management (Cross-Sectional) Feedback</a></li>
+<li class="chapter" data-level="10" data-path="data-management---time-series-and-panel-data.html"><a href="data-management---time-series-and-panel-data.html"><i class="fa fa-check"></i><b>10</b> Data Management - Time Series and Panel Data</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="data-management---time-series-and-panel-data.html"><a href="data-management---time-series-and-panel-data.html#topic-guide"><i class="fa fa-check"></i><b>10.1</b> Topic Guide:</a></li>
+<li class="chapter" data-level="10.2" data-path="data-management---time-series-and-panel-data.html"><a href="data-management---time-series-and-panel-data.html#time-series-data"><i class="fa fa-check"></i><b>10.2</b> Time Series Data</a>
+<ul>
+<li class="chapter" data-level="10.2.1" data-path="data-management---time-series-and-panel-data.html"><a href="data-management---time-series-and-panel-data.html#preliminaries-2"><i class="fa fa-check"></i><b>10.2.1</b> Preliminaries</a></li>
+<li class="chapter" data-level="10.2.2" data-path="data-management---time-series-and-panel-data.html"><a href="data-management---time-series-and-panel-data.html#convert-to-date-format"><i class="fa fa-check"></i><b>10.2.2</b> Convert to Date Format</a></li>
+<li class="chapter" data-level="10.2.3" data-path="data-management---time-series-and-panel-data.html"><a href="data-management---time-series-and-panel-data.html#aggregate-data"><i class="fa fa-check"></i><b>10.2.3</b> Aggregate Data</a></li>
+</ul></li>
+<li class="chapter" data-level="10.3" data-path="data-management---time-series-and-panel-data.html"><a href="data-management---time-series-and-panel-data.html#modifying-long-and-wide-datasets"><i class="fa fa-check"></i><b>10.3</b> Modifying Long and Wide Datasets</a>
+<ul>
+<li class="chapter" data-level="10.3.1" data-path="data-management---time-series-and-panel-data.html"><a href="data-management---time-series-and-panel-data.html#how-to-determine"><i class="fa fa-check"></i><b>10.3.1</b> How to Determine</a></li>
+<li class="chapter" data-level="10.3.2" data-path="data-management---time-series-and-panel-data.html"><a href="data-management---time-series-and-panel-data.html#setting-up-the-dataset"><i class="fa fa-check"></i><b>10.3.2</b> Setting up the Dataset</a></li>
+</ul></li>
+<li class="chapter" data-level="10.4" data-path="data-management---time-series-and-panel-data.html"><a href="data-management---time-series-and-panel-data.html#missing-values"><i class="fa fa-check"></i><b>10.4</b> Missing Values</a>
+<ul>
+<li class="chapter" data-level="10.4.1" data-path="data-management---time-series-and-panel-data.html"><a href="data-management---time-series-and-panel-data.html#setting-up-a-sample-dataset"><i class="fa fa-check"></i><b>10.4.1</b> Setting up a Sample Dataset</a></li>
+<li class="chapter" data-level="10.4.2" data-path="data-management---time-series-and-panel-data.html"><a href="data-management---time-series-and-panel-data.html#replace-with-0"><i class="fa fa-check"></i><b>10.4.2</b> Replace with <code>0</code></a></li>
+<li class="chapter" data-level="10.4.3" data-path="data-management---time-series-and-panel-data.html"><a href="data-management---time-series-and-panel-data.html#remove-rows-or-columns-with-missing-values"><i class="fa fa-check"></i><b>10.4.3</b> Remove Rows or Columns with Missing Values</a></li>
+<li class="chapter" data-level="10.4.4" data-path="data-management---time-series-and-panel-data.html"><a href="data-management---time-series-and-panel-data.html#imputing-missing-values-with-the-mean"><i class="fa fa-check"></i><b>10.4.4</b> Imputing Missing Values with the Mean</a></li>
+<li class="chapter" data-level="10.4.5" data-path="data-management---time-series-and-panel-data.html"><a href="data-management---time-series-and-panel-data.html#note"><i class="fa fa-check"></i><b>10.4.5</b> Note:</a></li>
+<li class="chapter" data-level="10.4.6" data-path="data-management---time-series-and-panel-data.html"><a href="data-management---time-series-and-panel-data.html#best-practice"><i class="fa fa-check"></i><b>10.4.6</b> Best Practice:</a></li>
+<li class="chapter" data-level="10.4.7" data-path="data-management---time-series-and-panel-data.html"><a href="data-management---time-series-and-panel-data.html#next-meeting"><i class="fa fa-check"></i><b>10.4.7</b> Next Meeting:</a></li>
+<li class="chapter" data-level="10.4.8" data-path="data-management---time-series-and-panel-data.html"><a href="data-management---time-series-and-panel-data.html#final-note"><i class="fa fa-check"></i><b>10.4.8</b> Final Note:</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="visualizations-using-ggplot2.html"><a href="visualizations-using-ggplot2.html"><i class="fa fa-check"></i><b>11</b> Visualizations using ggplot2</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="visualizations-using-ggplot2.html"><a href="visualizations-using-ggplot2.html#preliminaries-3"><i class="fa fa-check"></i><b>11.1</b> Preliminaries</a>
+<ul>
+<li class="chapter" data-level="11.1.1" data-path="visualizations-using-ggplot2.html"><a href="visualizations-using-ggplot2.html#load-the-dataset"><i class="fa fa-check"></i><b>11.1.1</b> Load the dataset</a></li>
+<li class="chapter" data-level="11.1.2" data-path="visualizations-using-ggplot2.html"><a href="visualizations-using-ggplot2.html#template"><i class="fa fa-check"></i><b>11.1.2</b> Template</a></li>
+</ul></li>
+<li class="chapter" data-level="11.2" data-path="visualizations-using-ggplot2.html"><a href="visualizations-using-ggplot2.html#visualizing-data-using-geom"><i class="fa fa-check"></i><b>11.2</b> Visualizing Data using <code>geom</code></a>
+<ul>
+<li class="chapter" data-level="11.2.1" data-path="visualizations-using-ggplot2.html"><a href="visualizations-using-ggplot2.html#scatterplots"><i class="fa fa-check"></i><b>11.2.1</b> Scatterplots</a></li>
+<li class="chapter" data-level="11.2.2" data-path="visualizations-using-ggplot2.html"><a href="visualizations-using-ggplot2.html#boxplots"><i class="fa fa-check"></i><b>11.2.2</b> Boxplots</a></li>
+<li class="chapter" data-level="11.2.3" data-path="visualizations-using-ggplot2.html"><a href="visualizations-using-ggplot2.html#bar-plots"><i class="fa fa-check"></i><b>11.2.3</b> Bar plots</a></li>
+<li class="chapter" data-level="11.2.4" data-path="visualizations-using-ggplot2.html"><a href="visualizations-using-ggplot2.html#faceting"><i class="fa fa-check"></i><b>11.2.4</b> Faceting</a></li>
+<li class="chapter" data-level="11.2.5" data-path="visualizations-using-ggplot2.html"><a href="visualizations-using-ggplot2.html#pie-chart"><i class="fa fa-check"></i><b>11.2.5</b> Pie Chart</a></li>
+<li class="chapter" data-level="11.2.6" data-path="visualizations-using-ggplot2.html"><a href="visualizations-using-ggplot2.html#histogram"><i class="fa fa-check"></i><b>11.2.6</b> Histogram</a></li>
+</ul></li>
+<li class="chapter" data-level="11.3" data-path="visualizations-using-ggplot2.html"><a href="visualizations-using-ggplot2.html#visualizing-time-series-data"><i class="fa fa-check"></i><b>11.3</b> Visualizing Time Series Data</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="practical-visualizations.html"><a href="practical-visualizations.html"><i class="fa fa-check"></i><b>12</b> Practical: Visualizations</a></li>
+<li class="chapter" data-level="13" data-path="feedback-practical-visualizations.html"><a href="feedback-practical-visualizations.html"><i class="fa fa-check"></i><b>13</b> Feedback: Practical Visualizations</a></li>
+<li class="chapter" data-level="14" data-path="advanced-visualizations.html"><a href="advanced-visualizations.html"><i class="fa fa-check"></i><b>14</b> Advanced Visualizations</a>
+<ul>
+<li class="chapter" data-level="14.1" data-path="advanced-visualizations.html"><a href="advanced-visualizations.html#preliminaries-4"><i class="fa fa-check"></i><b>14.1</b> Preliminaries</a>
+<ul>
+<li class="chapter" data-level="14.1.1" data-path="advanced-visualizations.html"><a href="advanced-visualizations.html#install-packages"><i class="fa fa-check"></i><b>14.1.1</b> Install Packages</a></li>
+</ul></li>
+<li class="chapter" data-level="14.2" data-path="advanced-visualizations.html"><a href="advanced-visualizations.html#animated-visualizations"><i class="fa fa-check"></i><b>14.2</b> Animated Visualizations</a>
+<ul>
+<li class="chapter" data-level="14.2.1" data-path="advanced-visualizations.html"><a href="advanced-visualizations.html#animated-bar-chart"><i class="fa fa-check"></i><b>14.2.1</b> Animated Bar Chart</a></li>
+<li class="chapter" data-level="14.2.2" data-path="advanced-visualizations.html"><a href="advanced-visualizations.html#animated-scatter-plot"><i class="fa fa-check"></i><b>14.2.2</b> Animated Scatter Plot</a></li>
+<li class="chapter" data-level="14.2.3" data-path="advanced-visualizations.html"><a href="advanced-visualizations.html#animated-faceted-scatter-plot"><i class="fa fa-check"></i><b>14.2.3</b> Animated Faceted Scatter Plot</a></li>
+</ul></li>
+<li class="chapter" data-level="14.3" data-path="advanced-visualizations.html"><a href="advanced-visualizations.html#animated-time-series"><i class="fa fa-check"></i><b>14.3</b> Animated Time Series</a></li>
+<li class="chapter" data-level="14.4" data-path="advanced-visualizations.html"><a href="advanced-visualizations.html#animated-faceted-time-series"><i class="fa fa-check"></i><b>14.4</b> Animated Faceted Time Series</a>
+<ul>
+<li class="chapter" data-level="14.4.1" data-path="advanced-visualizations.html"><a href="advanced-visualizations.html#saving-in-quarto"><i class="fa fa-check"></i><b>14.4.1</b> Saving in Quarto</a></li>
+</ul></li>
+<li class="chapter" data-level="14.5" data-path="advanced-visualizations.html"><a href="advanced-visualizations.html#maps"><i class="fa fa-check"></i><b>14.5</b> Maps</a>
+<ul>
+<li class="chapter" data-level="14.5.1" data-path="advanced-visualizations.html"><a href="advanced-visualizations.html#where-to-get-shapefiles"><i class="fa fa-check"></i><b>14.5.1</b> Where to get shapefiles?</a></li>
+</ul></li>
+<li class="chapter" data-level="14.6" data-path="advanced-visualizations.html"><a href="advanced-visualizations.html#static-maps"><i class="fa fa-check"></i><b>14.6</b> Static Maps</a>
+<ul>
+<li class="chapter" data-level="14.6.1" data-path="advanced-visualizations.html"><a href="advanced-visualizations.html#fetching-gdp-data-from-wdi"><i class="fa fa-check"></i><b>14.6.1</b> Fetching GDP Data from WDI</a></li>
+</ul></li>
+<li class="chapter" data-level="14.7" data-path="advanced-visualizations.html"><a href="advanced-visualizations.html#philippine-regional-map"><i class="fa fa-check"></i><b>14.7</b> Philippine Regional Map</a></li>
+<li class="chapter" data-level="14.8" data-path="advanced-visualizations.html"><a href="advanced-visualizations.html#animated-map"><i class="fa fa-check"></i><b>14.8</b> Animated Map</a></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="practical-advanced-visualizations.html"><a href="practical-advanced-visualizations.html"><i class="fa fa-check"></i><b>15</b> Practical: Advanced Visualizations</a></li>
+<li class="chapter" data-level="16" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html"><i class="fa fa-check"></i><b>16</b> Descriptive Statistics</a>
+<ul>
+<li class="chapter" data-level="16.1" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#preliminaries-5"><i class="fa fa-check"></i><b>16.1</b> Preliminaries</a>
+<ul>
+<li class="chapter" data-level="16.1.1" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#install-packages-1"><i class="fa fa-check"></i><b>16.1.1</b> Install Packages</a></li>
+<li class="chapter" data-level="16.1.2" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#load-the-dataset-1"><i class="fa fa-check"></i><b>16.1.2</b> Load the dataset</a></li>
+</ul></li>
+<li class="chapter" data-level="16.2" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#frequency-table"><i class="fa fa-check"></i><b>16.2</b> Frequency Table</a>
+<ul>
+<li class="chapter" data-level="16.2.1" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#male"><i class="fa fa-check"></i><b>16.2.1</b> Male</a></li>
+</ul></li>
+<li class="chapter" data-level="16.3" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#histogram-1"><i class="fa fa-check"></i><b>16.3</b> Histogram</a></li>
+<li class="chapter" data-level="16.4" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#summary-table"><i class="fa fa-check"></i><b>16.4</b> Summary Table</a></li>
+<li class="chapter" data-level="16.5" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#interpretation-of-descriptive-statistics"><i class="fa fa-check"></i><b>16.5</b> Interpretation of Descriptive Statistics:</a>
+<ul>
+<li class="chapter" data-level="16.5.1" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#key-components-of-descriptive-statistics"><i class="fa fa-check"></i><b>16.5.1</b> <strong>Key Components of Descriptive Statistics</strong></a></li>
+<li class="chapter" data-level="16.5.2" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#when-to-use-mean-or-median"><i class="fa fa-check"></i><b>16.5.2</b> <strong>When to Use Mean or Median</strong></a></li>
+<li class="chapter" data-level="16.5.3" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#purpose-of-descriptive-statistics"><i class="fa fa-check"></i><b>16.5.3</b> <strong>Purpose of Descriptive Statistics</strong></a></li>
+<li class="chapter" data-level="16.5.4" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#limitations"><i class="fa fa-check"></i><b>16.5.4</b> <strong>Limitations</strong></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="17" data-path="practical-descriptive-statistics.html"><a href="practical-descriptive-statistics.html"><i class="fa fa-check"></i><b>17</b> Practical: Descriptive Statistics</a>
+<ul>
+<li class="chapter" data-level="17.0.1" data-path="practical-descriptive-statistics.html"><a href="practical-descriptive-statistics.html#descriptive-statistics-questions"><i class="fa fa-check"></i><b>17.0.1</b> <strong>Descriptive Statistics Questions</strong></a></li>
+</ul></li>
+<li class="chapter" data-level="18" data-path="hypothesis-testing.html"><a href="hypothesis-testing.html"><i class="fa fa-check"></i><b>18</b> Hypothesis Testing</a>
+<ul>
+<li class="chapter" data-level="18.1" data-path="hypothesis-testing.html"><a href="hypothesis-testing.html#steps-1"><i class="fa fa-check"></i><b>18.1</b> Steps:</a></li>
+<li class="chapter" data-level="18.2" data-path="hypothesis-testing.html"><a href="hypothesis-testing.html#difference-between-one-tailed-test-and-two-tailed-test"><i class="fa fa-check"></i><b>18.2</b> Difference between one-tailed test and two-tailed test</a>
+<ul>
+<li class="chapter" data-level="18.2.1" data-path="hypothesis-testing.html"><a href="hypothesis-testing.html#deciding-between-one-tailed-versus-two-tailed"><i class="fa fa-check"></i><b>18.2.1</b> Deciding between One-Tailed versus Two-Tailed</a></li>
+</ul></li>
+<li class="chapter" data-level="18.3" data-path="hypothesis-testing.html"><a href="hypothesis-testing.html#test-of-proportions"><i class="fa fa-check"></i><b>18.3</b> Test of Proportions</a>
+<ul>
+<li class="chapter" data-level="18.3.1" data-path="hypothesis-testing.html"><a href="hypothesis-testing.html#one-sample-test-of-proportion"><i class="fa fa-check"></i><b>18.3.1</b> <strong>One-Sample Test of Proportion</strong></a></li>
+<li class="chapter" data-level="18.3.2" data-path="hypothesis-testing.html"><a href="hypothesis-testing.html#two-sample-test-of-proportion"><i class="fa fa-check"></i><b>18.3.2</b> <strong>Two-Sample Test of Proportion</strong></a></li>
+<li class="chapter" data-level="18.3.3" data-path="hypothesis-testing.html"><a href="hypothesis-testing.html#real-world-example"><i class="fa fa-check"></i><b>18.3.3</b> Real-World Example:</a></li>
+</ul></li>
+<li class="chapter" data-level="18.4" data-path="hypothesis-testing.html"><a href="hypothesis-testing.html#t-tests"><i class="fa fa-check"></i><b>18.4</b> T-Tests</a>
+<ul>
+<li class="chapter" data-level="18.4.1" data-path="hypothesis-testing.html"><a href="hypothesis-testing.html#one-sample-t-test"><i class="fa fa-check"></i><b>18.4.1</b> One-Sample T-Test</a></li>
+<li class="chapter" data-level="18.4.2" data-path="hypothesis-testing.html"><a href="hypothesis-testing.html#real-world-example-1"><i class="fa fa-check"></i><b>18.4.2</b> Real-World Example</a></li>
+<li class="chapter" data-level="18.4.3" data-path="hypothesis-testing.html"><a href="hypothesis-testing.html#independent-samples-t-test"><i class="fa fa-check"></i><b>18.4.3</b> Independent-Samples T-Test</a></li>
+<li class="chapter" data-level="18.4.4" data-path="hypothesis-testing.html"><a href="hypothesis-testing.html#real-world-example-2"><i class="fa fa-check"></i><b>18.4.4</b> Real-World Example</a></li>
+<li class="chapter" data-level="18.4.5" data-path="hypothesis-testing.html"><a href="hypothesis-testing.html#paired-samples-t-test"><i class="fa fa-check"></i><b>18.4.5</b> Paired-Samples T-Test</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="19" data-path="ordinary-least-squares.html"><a href="ordinary-least-squares.html"><i class="fa fa-check"></i><b>19</b> Ordinary Least Squares</a>
+<ul>
+<li class="chapter" data-level="19.1" data-path="ordinary-least-squares.html"><a href="ordinary-least-squares.html#general-description-and-notation-of-a-linear-regression"><i class="fa fa-check"></i><b>19.1</b> <strong>General Description and notation of a Linear Regression</strong></a>
+<ul>
+<li class="chapter" data-level="19.1.1" data-path="ordinary-least-squares.html"><a href="ordinary-least-squares.html#the-notation"><i class="fa fa-check"></i><b>19.1.1</b> The notation</a></li>
+</ul></li>
+<li class="chapter" data-level="19.2" data-path="ordinary-least-squares.html"><a href="ordinary-least-squares.html#running-and-reporting-ols-regression"><i class="fa fa-check"></i><b>19.2</b> <strong>Running and reporting OLS Regression</strong></a></li>
+<li class="chapter" data-level="19.3" data-path="ordinary-least-squares.html"><a href="ordinary-least-squares.html#interpretation-of-coefficients"><i class="fa fa-check"></i><b>19.3</b> <strong>Interpretation of Coefficients</strong></a></li>
+<li class="chapter" data-level="19.4" data-path="ordinary-least-squares.html"><a href="ordinary-least-squares.html#goodness-of-fit-f-statistics-and-adjusted-r-squared"><i class="fa fa-check"></i><b>19.4</b> <strong>Goodness of Fit (F-Statistics and Adjusted R-squared)</strong></a></li>
+<li class="chapter" data-level="19.5" data-path="ordinary-least-squares.html"><a href="ordinary-least-squares.html#assumption-diagnostics"><i class="fa fa-check"></i><b>19.5</b> <strong>Assumption Diagnostics</strong></a></li>
+<li class="chapter" data-level="19.6" data-path="ordinary-least-squares.html"><a href="ordinary-least-squares.html#real-world-example-3"><i class="fa fa-check"></i><b>19.6</b> Real-World Example</a></li>
+</ul></li>
+<li class="chapter" data-level="20" data-path="practical-hypothesis-testing-and-ols.html"><a href="practical-hypothesis-testing-and-ols.html"><i class="fa fa-check"></i><b>20</b> Practical: Hypothesis Testing and OLS</a>
+<ul>
+<li class="chapter" data-level="20.1" data-path="practical-hypothesis-testing-and-ols.html"><a href="practical-hypothesis-testing-and-ols.html#hypothesis-testing-1"><i class="fa fa-check"></i><b>20.1</b> Hypothesis Testing</a></li>
+<li class="chapter" data-level="20.2" data-path="practical-hypothesis-testing-and-ols.html"><a href="practical-hypothesis-testing-and-ols.html#ols"><i class="fa fa-check"></i><b>20.2</b> OLS</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">LBOMETR Course Book</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="data-management-cross-sectional-feedback" class="section level1 hasAnchor" number="9">
+<h1><span class="header-section-number">9</span> Data Management (Cross-Sectional) Feedback<a href="data-management-cross-sectional-feedback.html#data-management-cross-sectional-feedback" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>This feedback will contain only what the answers should look like and some clues and hints. It does not contain the entire codes.</p>
+<ol style="list-style-type: decimal">
+<li>Loading the dataset and loading the needed libraries: <code>dplyr</code> and <code>lubridate</code></li>
+</ol>
+<pre><code>##   Stage.Name.Stage.Name Full.Name.Full.Name Korean.Name.Korean.Name K..Stage.Name.K..Stage.Name
+## 1               Taeyeon         Kim Taeyeon                  김태연                        태연
+## 2                 Sunny          Lee Sunkyu                  이순규                        써니
+## 3               Tiffany       Hwang Miyoung                  황미영                      티파니
+## 4               Hyoyeon         Kim Hyoyeon                  김효연                        효연
+## 5                  Yuri           Kwon Yuri                  권유리                        유리
+## 6              Sooyoung       Choi Sooyoung                  최수영                        수영
+##   Date.of.Birth.Date.of.Birth Group.Group Country.Country Height.Height Weight.Weight Birthplace.Birthplace
+## 1                    3/9/1989        SNSD     South Korea           160            44                Jeonju
+## 2                   5/15/1989        SNSD     South Korea           158            43            California
+## 3                    8/1/1989        SNSD     South Korea           163            50         San Francisco
+## 4                   9/22/1989        SNSD     South Korea           158            48               Incheon
+## 5                   12/5/1989        SNSD     South Korea           167            45                Goyang
+## 6                   2/10/1990        SNSD     South Korea           170            48               Gwangju
+##   Gender.Gender Instagram.Instagram
+## 1             F          taeyeon_ss
+## 2             F          svnnynight
+## 3             F        xolovestephi
+## 4             F         watasiwahyo
+## 5             F             yulyulk
+## 6             F          hotsootuff</code></pre>
+<ol start="2" style="list-style-type: decimal">
+<li><p>Separate the dataset into Males and Females and save as CSVs. You might notice that the column name is <code>Gender.Gender</code>. You have to type it out. Later, we will change the names.</p>
+<pre><code>##   Stage.Name.Stage.Name Full.Name.Full.Name Korean.Name.Korean.Name K..Stage.Name.K..Stage.Name
+## 1                 T.O.P      Choi Seunghyun                  최승현                          탑
+## 2               Taeyang       Dong Youngbae                  동영배                        태양
+## 3              G-Dragon         Kwon Jiyong                  권지용                    지드래곤
+## 4               Daesung             Daesung                  강대성                        대성
+## 5               Seungri       Lee Seunghyun                  이승현                        승리
+## 6               Leeteuk        Park Jeongsu                  박정수                        이특
+##   Date.of.Birth.Date.of.Birth  Group.Group Country.Country Height.Height Weight.Weight Birthplace.Birthplace
+## 1                   11/4/1987      BIGBANG     South Korea           180            65                 Seoul
+## 2                   5/18/1988      BIGBANG     South Korea           174            56             Uljeongbu
+## 3                   8/18/1988      BIGBANG     South Korea           177            58                 Seoul
+## 4                   4/26/1989      BIGBANG     South Korea           178            63               Incheon
+## 5                  12/12/1990                  South Korea           176            60               Gwangju
+## 6                    7/1/1983 Super Junior     South Korea           179            59                 Seoul
+##   Gender.Gender Instagram.Instagram
+## 1             M                    
+## 2             M                    
+## 3             M                    
+## 4             M                    
+## 5             M                    
+## 6             M</code></pre>
+<pre><code>##   Stage.Name.Stage.Name Full.Name.Full.Name Korean.Name.Korean.Name K..Stage.Name.K..Stage.Name
+## 1               Taeyeon         Kim Taeyeon                  김태연                        태연
+## 2                 Sunny          Lee Sunkyu                  이순규                        써니
+## 3               Tiffany       Hwang Miyoung                  황미영                      티파니
+## 4               Hyoyeon         Kim Hyoyeon                  김효연                        효연
+## 5                  Yuri           Kwon Yuri                  권유리                        유리
+## 6              Sooyoung       Choi Sooyoung                  최수영                        수영
+##   Date.of.Birth.Date.of.Birth Group.Group Country.Country Height.Height Weight.Weight Birthplace.Birthplace
+## 1                    3/9/1989        SNSD     South Korea           160            44                Jeonju
+## 2                   5/15/1989        SNSD     South Korea           158            43            California
+## 3                    8/1/1989        SNSD     South Korea           163            50         San Francisco
+## 4                   9/22/1989        SNSD     South Korea           158            48               Incheon
+## 5                   12/5/1989        SNSD     South Korea           167            45                Goyang
+## 6                   2/10/1990        SNSD     South Korea           170            48               Gwangju
+##   Gender.Gender Instagram.Instagram
+## 1             F          taeyeon_ss
+## 2             F          svnnynight
+## 3             F        xolovestephi
+## 4             F         watasiwahyo
+## 5             F             yulyulk
+## 6             F          hotsootuff</code></pre></li>
+<li><p>Edit Column Names and Remove Unnecessary Columns</p></li>
+</ol>
+<pre><code>We are going to use the pipe operator for this and if you are lazy to type all the column names you need to remove, you can create like a collection of the columns you will keep.
+
+
+``` r
+#only those that remain
+#col&lt;-c(&quot;Full.Name.Full.Name&quot;, &quot;Date.of.Birth.Date.of.Birth&quot;...)
+```
+
+THEN, after you select the columns to keep, you can rename. Note that you need to follow the old conventions for R to find the column names before renaming them using `rename`. In the `rename`, say
+
+
+```
+##       Full_Name       DOB  Grp     Country  Ht Wt            BP Gender
+## 1   Kim Taeyeon  3/9/1989 SNSD South Korea 160 44        Jeonju      F
+## 2    Lee Sunkyu 5/15/1989 SNSD South Korea 158 43    California      F
+## 3 Hwang Miyoung  8/1/1989 SNSD South Korea 163 50 San Francisco      F
+## 4   Kim Hyoyeon 9/22/1989 SNSD South Korea 158 48       Incheon      F
+## 5     Kwon Yuri 12/5/1989 SNSD South Korea 167 45        Goyang      F
+## 6 Choi Sooyoung 2/10/1990 SNSD South Korea 170 48       Gwangju      F
+```
+
+```
+##        Full_Name        DOB          Grp     Country  Ht Wt        BP Gender
+## 1 Choi Seunghyun  11/4/1987      BIGBANG South Korea 180 65     Seoul      M
+## 2  Dong Youngbae  5/18/1988      BIGBANG South Korea 174 56 Uljeongbu      M
+## 3    Kwon Jiyong  8/18/1988      BIGBANG South Korea 177 58     Seoul      M
+## 4        Daesung  4/26/1989      BIGBANG South Korea 178 63   Incheon      M
+## 5  Lee Seunghyun 12/12/1990              South Korea 176 60   Gwangju      M
+## 6   Park Jeongsu   7/1/1983 Super Junior South Korea 179 59     Seoul      M
+```</code></pre>
+<ol start="4" style="list-style-type: decimal">
+<li><p>Count the Number of Males and Females</p>
+<p>As mentioned, use <code>nrow</code>. Now, I will introduce you to the <code>cat</code> function, The <code>cat</code> function will print in the result some text and what will be seen when you include the object you created that reveals the number of males (or females). We should all have the same number. If not, something is wrong.</p>
+<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="data-management-cross-sectional-feedback.html#cb71-1" tabindex="-1"></a><span class="co">#cat(&quot;Number of males:&quot;, nummale,&quot;\n&quot;)</span></span></code></pre></div>
+<pre><code>## Number of males: 843</code></pre>
+<pre><code>## Number of females: 823</code></pre></li>
+<li><p>Create a binary variable <code>not_seoul</code></p>
+<p>Here, create a new column for not_seoul in both males and females. Use <code>ifelse</code> and the statement should include <code>!=</code></p></li>
+<li><p>Count Individuals from and not from Seoul</p>
+<p>I introduce the <code>count</code> function. Simply add <code>count</code> after choosing the dataset. So, the code is choose males THEN count those that are not_seoul. We should have the same number.</p>
+<pre><code>## Males from Seoul and not Seoul:</code></pre>
+<pre><code>## From Seoul: 98</code></pre>
+<pre><code>## Not from Seoul: 745</code></pre>
+<pre><code>## Females from Seoul and not Seoul:</code></pre>
+<pre><code>## From Seoul: 108</code></pre>
+<pre><code>## Not from Seoul: 715</code></pre></li>
+<li><p>Filter Males Eligible for Military Service</p>
+<p>Use reference date and when you filter, you can actually combine filtering the Age to be: Age<code>&gt;= 18, Age&lt;=28, Country == "South Korea"</code>. We should have the same number.</p></li>
+</ol>
+<pre><code>## Number of males eligible for military service: 496</code></pre>
+<ol start="8" style="list-style-type: decimal">
+<li><p>Assign Generations Based on Age</p>
+<p>We should have the same numbers. If you have created an <code>Age</code> column for males before, you cannot use that for this number since the reference dates are different. You need to create a new column for <code>Age</code> for both males and females.</p>
+<pre><code>## Generation distribution for males:</code></pre>
+<pre><code>## 1st Gen: 8
+## 2nd Gen: 137
+## 3rd Gen: 358
+## 4th Gen: 340</code></pre>
+<pre><code>## Generation distribution for females:</code></pre>
+<pre><code>## 1st Gen: 4
+## 2nd Gen: 131
+## 3rd Gen: 302
+## 4th Gen: 386</code></pre></li>
+<li><p>Create Income Column Based on Hypothesis</p>
+<p>My hypothesis is that older idols earn more since they have been in the industry much longer. I also hypothesize that females earn less than males.</p>
+<p>I introduce a new function here, it is the <code>runif(n(), value, value)</code>. This function is to just create income values which will be in-line with the number of rows in the dataset. However, I am amenable in any strategy you employ to generate income here. I just need to know your hypothesis and how you plan to do the income column. In fact, if you want, you can even create the income column in Excel already. Just let me know.</p>
+<p>Another strategy is to still do <code>case_when</code> and have smaller increments in <code>Age</code> then have income values. Another, have the same income for each generation, that is also fine. Again, this is for practice purposes.</p>
+<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb85-1"><a href="data-management-cross-sectional-feedback.html#cb85-1" tabindex="-1"></a><span class="co"># Generate income values based on age group directly</span></span>
+<span id="cb85-2"><a href="data-management-cross-sectional-feedback.html#cb85-2" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)  <span class="co"># For reproducibility</span></span>
+<span id="cb85-3"><a href="data-management-cross-sectional-feedback.html#cb85-3" tabindex="-1"></a></span>
+<span id="cb85-4"><a href="data-management-cross-sectional-feedback.html#cb85-4" tabindex="-1"></a>males <span class="ot">&lt;-</span> males <span class="sc">%&gt;%</span></span>
+<span id="cb85-5"><a href="data-management-cross-sectional-feedback.html#cb85-5" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Income =</span> <span class="fu">case_when</span>(</span>
+<span id="cb85-6"><a href="data-management-cross-sectional-feedback.html#cb85-6" tabindex="-1"></a>    Age2 <span class="sc">&gt;=</span> <span class="dv">40</span> <span class="sc">~</span> <span class="fu">runif</span>(<span class="fu">n</span>(), <span class="dv">50000</span>, <span class="dv">70000</span>),  <span class="co"># 1st Gen</span></span>
+<span id="cb85-7"><a href="data-management-cross-sectional-feedback.html#cb85-7" tabindex="-1"></a>    Age2 <span class="sc">&gt;=</span> <span class="dv">31</span> <span class="sc">&amp;</span> Age2 <span class="sc">&lt;=</span> <span class="dv">39</span> <span class="sc">~</span> <span class="fu">runif</span>(<span class="fu">n</span>(), <span class="dv">40000</span>, <span class="dv">60000</span>),  <span class="co"># 2nd Gen</span></span>
+<span id="cb85-8"><a href="data-management-cross-sectional-feedback.html#cb85-8" tabindex="-1"></a>    Age2 <span class="sc">&gt;=</span> <span class="dv">25</span> <span class="sc">&amp;</span> Age2 <span class="sc">&lt;=</span> <span class="dv">30</span> <span class="sc">~</span> <span class="fu">runif</span>(<span class="fu">n</span>(), <span class="dv">30000</span>, <span class="dv">50000</span>),  <span class="co"># 3rd Gen</span></span>
+<span id="cb85-9"><a href="data-management-cross-sectional-feedback.html#cb85-9" tabindex="-1"></a>    Age2 <span class="sc">&lt;=</span> <span class="dv">24</span> <span class="sc">~</span> <span class="fu">runif</span>(<span class="fu">n</span>(), <span class="dv">20000</span>, <span class="dv">40000</span>)  <span class="co"># 4th Gen</span></span>
+<span id="cb85-10"><a href="data-management-cross-sectional-feedback.html#cb85-10" tabindex="-1"></a>  ))</span>
+<span id="cb85-11"><a href="data-management-cross-sectional-feedback.html#cb85-11" tabindex="-1"></a></span>
+<span id="cb85-12"><a href="data-management-cross-sectional-feedback.html#cb85-12" tabindex="-1"></a>females <span class="ot">&lt;-</span> females <span class="sc">%&gt;%</span></span>
+<span id="cb85-13"><a href="data-management-cross-sectional-feedback.html#cb85-13" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Income =</span> <span class="fu">case_when</span>(</span>
+<span id="cb85-14"><a href="data-management-cross-sectional-feedback.html#cb85-14" tabindex="-1"></a>    Age2 <span class="sc">&gt;=</span> <span class="dv">40</span> <span class="sc">~</span> <span class="fu">runif</span>(<span class="fu">n</span>(), <span class="dv">50000</span>, <span class="dv">70000</span>),  <span class="co"># 1st Gen</span></span>
+<span id="cb85-15"><a href="data-management-cross-sectional-feedback.html#cb85-15" tabindex="-1"></a>    Age2 <span class="sc">&gt;=</span> <span class="dv">31</span> <span class="sc">&amp;</span> Age2 <span class="sc">&lt;=</span> <span class="dv">39</span> <span class="sc">~</span> <span class="fu">runif</span>(<span class="fu">n</span>(), <span class="dv">40000</span>, <span class="dv">60000</span>),  <span class="co"># 2nd Gen</span></span>
+<span id="cb85-16"><a href="data-management-cross-sectional-feedback.html#cb85-16" tabindex="-1"></a>    Age2 <span class="sc">&gt;=</span> <span class="dv">25</span> <span class="sc">&amp;</span> Age2 <span class="sc">&lt;=</span> <span class="dv">30</span> <span class="sc">~</span> <span class="fu">runif</span>(<span class="fu">n</span>(), <span class="dv">30000</span>, <span class="dv">50000</span>),  <span class="co"># 3rd Gen</span></span>
+<span id="cb85-17"><a href="data-management-cross-sectional-feedback.html#cb85-17" tabindex="-1"></a>    Age2 <span class="sc">&lt;=</span> <span class="dv">24</span> <span class="sc">~</span> <span class="fu">runif</span>(<span class="fu">n</span>(), <span class="dv">20000</span>, <span class="dv">40000</span>)  <span class="co"># 4th Gen</span></span>
+<span id="cb85-18"><a href="data-management-cross-sectional-feedback.html#cb85-18" tabindex="-1"></a>  ))</span></code></pre></div></li>
+<li><p>Combine datasets</p>
+<p>So, I taught you how to merge the datasets. You can do that as well, however, it is important to determine which came from the males, which came from the females so, you need to create a new column in the males and the females that would include the Gender.</p>
+<p>I also show a different way of merging datasets. I use <code>bind_rows</code> since males and females have the same columns. However, if you view the <code>combined</code> dataset, you will notice that the females will appear after the males. This is fine.</p>
+<div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb86-1"><a href="data-management-cross-sectional-feedback.html#cb86-1" tabindex="-1"></a><span class="co"># Ensure column names match and add a Gender column</span></span>
+<span id="cb86-2"><a href="data-management-cross-sectional-feedback.html#cb86-2" tabindex="-1"></a>males <span class="ot">&lt;-</span> males <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">Gender =</span> <span class="st">&quot;Male&quot;</span>)</span>
+<span id="cb86-3"><a href="data-management-cross-sectional-feedback.html#cb86-3" tabindex="-1"></a>females <span class="ot">&lt;-</span> females <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">Gender =</span> <span class="st">&quot;Female&quot;</span>)</span>
+<span id="cb86-4"><a href="data-management-cross-sectional-feedback.html#cb86-4" tabindex="-1"></a></span>
+<span id="cb86-5"><a href="data-management-cross-sectional-feedback.html#cb86-5" tabindex="-1"></a><span class="co"># Combine the datasets</span></span>
+<span id="cb86-6"><a href="data-management-cross-sectional-feedback.html#cb86-6" tabindex="-1"></a>combined <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(males, females)</span>
+<span id="cb86-7"><a href="data-management-cross-sectional-feedback.html#cb86-7" tabindex="-1"></a></span>
+<span id="cb86-8"><a href="data-management-cross-sectional-feedback.html#cb86-8" tabindex="-1"></a><span class="co"># View the combined dataset</span></span>
+<span id="cb86-9"><a href="data-management-cross-sectional-feedback.html#cb86-9" tabindex="-1"></a><span class="fu">View</span>(combined)</span></code></pre></div></li>
+</ol>
+<p>Calculate the Income Difference</p>
+<p>I use the <code>group_by</code> function and the <code>summarise</code> function. I got the Mean and the Median. Later on, I will discuss the difference between getting the mean and the median or when best to use the mean or the median.</p>
+<pre><code>## # A tibble: 2 × 3
+##   Gender Mean_Income Median_Income
+##   &lt;chr&gt;        &lt;dbl&gt;         &lt;dbl&gt;
+## 1 Female      36858.        36414.
+## 2 Male        37907.        37246.</code></pre>
+<pre><code>## The gender with the higher mean income is: Male</code></pre>
+<pre><code>## The gender with the higher median income is: Male</code></pre>
+<ol start="11" style="list-style-type: decimal">
+<li>Now that we have the combined dataset, simply save it as a CSV file and you are done with the practical.</li>
+</ol>
+
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="data-management-practical.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="data-management---time-series-and-panel-data.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["LBOMETR_Course_Book.pdf", "LBOMETR_Course_Book.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "section",
+"depth": 4
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

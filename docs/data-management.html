@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>6 Data Management | LBOMETR Course Book</title>
+  <meta name="description" content="An introduction to the LBOMETR Course Book." />
+  <meta name="generator" content="bookdown 0.41 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="6 Data Management | LBOMETR Course Book" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="An introduction to the LBOMETR Course Book." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="6 Data Management | LBOMETR Course Book" />
+  
+  <meta name="twitter:description" content="An introduction to the LBOMETR Course Book." />
+  
+
+<meta name="author" content="Jem Marie M. Nario" />
+
+
+<meta name="date" content="2025-01-13" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="basic-introduction-to-r.html"/>
+<link rel="next" href="data-management-practical.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<h1>LBOMETR Course Book</h1>
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#about-me"><i class="fa fa-check"></i><b>1.1</b> About Me</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="syllabus.html"><a href="syllabus.html"><i class="fa fa-check"></i><b>2</b> Syllabus</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="syllabus.html"><a href="syllabus.html#course-description"><i class="fa fa-check"></i><b>2.1</b> Course Description</a></li>
+<li class="chapter" data-level="2.2" data-path="syllabus.html"><a href="syllabus.html#learning-outcomes"><i class="fa fa-check"></i><b>2.2</b> Learning Outcomes</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="syllabus.html"><a href="syllabus.html#knowledge"><i class="fa fa-check"></i><b>2.2.1</b> Knowledge</a></li>
+<li class="chapter" data-level="2.2.2" data-path="syllabus.html"><a href="syllabus.html#skills"><i class="fa fa-check"></i><b>2.2.2</b> Skills</a></li>
+<li class="chapter" data-level="2.2.3" data-path="syllabus.html"><a href="syllabus.html#behaviorattitude"><i class="fa fa-check"></i><b>2.2.3</b> Behavior/Attitude</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="syllabus.html"><a href="syllabus.html#grading"><i class="fa fa-check"></i><b>2.3</b> Grading</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="syllabus.html"><a href="syllabus.html#grade-components"><i class="fa fa-check"></i><b>2.3.1</b> Grade Components</a></li>
+<li class="chapter" data-level="2.3.2" data-path="syllabus.html"><a href="syllabus.html#grade-scale"><i class="fa fa-check"></i><b>2.3.2</b> Grade Scale</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="course-assessments.html"><a href="course-assessments.html"><i class="fa fa-check"></i><b>3</b> Course Assessments</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="course-assessments.html"><a href="course-assessments.html#data-story-archive"><i class="fa fa-check"></i><b>3.1</b> Data Story Archive</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="course-assessments.html"><a href="course-assessments.html#requirements"><i class="fa fa-check"></i><b>3.1.1</b> Requirements</a></li>
+<li class="chapter" data-level="3.1.2" data-path="course-assessments.html"><a href="course-assessments.html#submission"><i class="fa fa-check"></i><b>3.1.2</b> Submission</a></li>
+<li class="chapter" data-level="3.1.3" data-path="course-assessments.html"><a href="course-assessments.html#grading-rubric-for-data-story-archive"><i class="fa fa-check"></i><b>3.1.3</b> Grading Rubric for Data Story Archive</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="course-assessments.html"><a href="course-assessments.html#data-story-presentation"><i class="fa fa-check"></i><b>3.2</b> Data Story Presentation</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="course-assessments.html"><a href="course-assessments.html#requirements-1"><i class="fa fa-check"></i><b>3.2.1</b> Requirements</a></li>
+<li class="chapter" data-level="3.2.2" data-path="course-assessments.html"><a href="course-assessments.html#grading-rubric"><i class="fa fa-check"></i><b>3.2.2</b> Grading Rubric</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="grouping-process.html"><a href="grouping-process.html"><i class="fa fa-check"></i><b>4</b> Grouping Process</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="grouping-process.html"><a href="grouping-process.html#survey"><i class="fa fa-check"></i><b>4.1</b> Survey</a></li>
+<li class="chapter" data-level="4.2" data-path="grouping-process.html"><a href="grouping-process.html#how-groups-are-formed"><i class="fa fa-check"></i><b>4.2</b> How Groups Are Formed</a></li>
+<li class="chapter" data-level="4.3" data-path="grouping-process.html"><a href="grouping-process.html#announcement-of-groups"><i class="fa fa-check"></i><b>4.3</b> Announcement of Groups</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html"><i class="fa fa-check"></i><b>5</b> Basic Introduction to R</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#session-information"><i class="fa fa-check"></i><b>5.1</b> Session Information</a></li>
+<li class="chapter" data-level="5.2" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#preliminaries"><i class="fa fa-check"></i><b>5.2</b> Preliminaries</a></li>
+<li class="chapter" data-level="5.3" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#quarto-markdown"><i class="fa fa-check"></i><b>5.3</b> Quarto Markdown</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#starting-a-quarto-file"><i class="fa fa-check"></i><b>5.3.1</b> 1. Starting a Quarto File</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#packages"><i class="fa fa-check"></i><b>5.4</b> Packages</a></li>
+<li class="chapter" data-level="5.5" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#instructions-for-managing-working-directories"><i class="fa fa-check"></i><b>5.5</b> Instructions for Managing Working Directories</a>
+<ul>
+<li class="chapter" data-level="5.5.1" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#local-working-directory-setup"><i class="fa fa-check"></i><b>5.5.1</b> 1. Local Working Directory Setup</a></li>
+<li class="chapter" data-level="5.5.2" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#file-naming-convention"><i class="fa fa-check"></i><b>5.5.2</b> 2. File Naming Convention</a></li>
+<li class="chapter" data-level="5.5.3" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#shared-google-drive-setup"><i class="fa fa-check"></i><b>5.5.3</b> 3. Shared Google Drive Setup</a></li>
+<li class="chapter" data-level="5.5.4" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#workflow-for-.qmd-files"><i class="fa fa-check"></i><b>5.5.4</b> 4. Workflow for <code>.qmd</code> files</a></li>
+<li class="chapter" data-level="5.5.5" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#rendering-the-final-report"><i class="fa fa-check"></i><b>5.5.5</b> 5. Rendering the Final Report</a></li>
+<li class="chapter" data-level="5.5.6" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#summary-workflow"><i class="fa fa-check"></i><b>5.5.6</b> Summary Workflow</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="data-management.html"><a href="data-management.html"><i class="fa fa-check"></i><b>6</b> Data Management</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="data-management.html"><a href="data-management.html#where-to-get-data"><i class="fa fa-check"></i><b>6.1</b> Where to Get Data?</a></li>
+<li class="chapter" data-level="6.2" data-path="data-management.html"><a href="data-management.html#preliminaries-1"><i class="fa fa-check"></i><b>6.2</b> Preliminaries</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="data-management.html"><a href="data-management.html#dataset"><i class="fa fa-check"></i><b>6.2.1</b> Dataset</a></li>
+<li class="chapter" data-level="6.2.2" data-path="data-management.html"><a href="data-management.html#packages-1"><i class="fa fa-check"></i><b>6.2.2</b> Packages</a></li>
+<li class="chapter" data-level="6.2.3" data-path="data-management.html"><a href="data-management.html#setting-up-the-directory"><i class="fa fa-check"></i><b>6.2.3</b> Setting up the Directory</a></li>
+<li class="chapter" data-level="6.2.4" data-path="data-management.html"><a href="data-management.html#clean-everything"><i class="fa fa-check"></i><b>6.2.4</b> Clean Everything</a></li>
+<li class="chapter" data-level="6.2.5" data-path="data-management.html"><a href="data-management.html#importing-the-dataset"><i class="fa fa-check"></i><b>6.2.5</b> Importing the Dataset</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="data-management.html"><a href="data-management.html#data-cleaning"><i class="fa fa-check"></i><b>6.3</b> Data Cleaning</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="data-management.html"><a href="data-management.html#renaming-the-variables"><i class="fa fa-check"></i><b>6.3.1</b> Renaming the Variables</a></li>
+<li class="chapter" data-level="6.3.2" data-path="data-management.html"><a href="data-management.html#sorting-certain-values"><i class="fa fa-check"></i><b>6.3.2</b> Sorting certain values</a></li>
+<li class="chapter" data-level="6.3.3" data-path="data-management.html"><a href="data-management.html#pipe-operator"><i class="fa fa-check"></i><b>6.3.3</b> Pipe Operator</a></li>
+<li class="chapter" data-level="6.3.4" data-path="data-management.html"><a href="data-management.html#adding-columns"><i class="fa fa-check"></i><b>6.3.4</b> Adding columns</a></li>
+<li class="chapter" data-level="6.3.5" data-path="data-management.html"><a href="data-management.html#transforming-values"><i class="fa fa-check"></i><b>6.3.5</b> Transforming values</a></li>
+<li class="chapter" data-level="6.3.6" data-path="data-management.html"><a href="data-management.html#summarizing"><i class="fa fa-check"></i><b>6.3.6</b> Summarizing</a></li>
+<li class="chapter" data-level="6.3.7" data-path="data-management.html"><a href="data-management.html#merging-datasets"><i class="fa fa-check"></i><b>6.3.7</b> Merging datasets</a></li>
+<li class="chapter" data-level="6.3.8" data-path="data-management.html"><a href="data-management.html#splitting-datasets"><i class="fa fa-check"></i><b>6.3.8</b> Splitting datasets</a></li>
+<li class="chapter" data-level="6.3.9" data-path="data-management.html"><a href="data-management.html#dates"><i class="fa fa-check"></i><b>6.3.9</b> Dates</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="data-management.html"><a href="data-management.html#next-meeting"><i class="fa fa-check"></i><b>6.4</b> Next Meeting</a>
+<ul>
+<li class="chapter" data-level="6.4.1" data-path="data-management.html"><a href="data-management.html#topics"><i class="fa fa-check"></i><b>6.4.1</b> Topics:</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="data-management-practical.html"><a href="data-management-practical.html"><i class="fa fa-check"></i><b>7</b> Data Management Practical</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="data-management-practical.html"><a href="data-management-practical.html#end"><i class="fa fa-check"></i><b>7.1</b> End!</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">LBOMETR Course Book</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="data-management" class="section level1 hasAnchor" number="6">
+<h1><span class="header-section-number">6</span> Data Management<a href="data-management.html#data-management" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="where-to-get-data" class="section level2 hasAnchor" number="6.1">
+<h2><span class="header-section-number">6.1</span> Where to Get Data?<a href="data-management.html#where-to-get-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Before we proceed to Data Management, let us first find where we can get data for the Data Story Archive. Note that the data you collect should still ensure that you are following the Code of Ethics and analyze Ethical Considerations.</p>
+<p>Please view the necessary documents from the Office of the Vice Chancellor for Research and Innovation (<a href="https://www.dlsu.edu.ph/research/research-manual/" class="uri">https://www.dlsu.edu.ph/research/research-manual/</a>)</p>
+<p>A list of links you can search and get data from:</p>
+<p>Note: I will not include the best links as they are pretty straightforward and these are governmental databases like the ones from World Bank, IMF, UN, Philippine Statistics Authority, and Bangko Sentral ng Pilipinas. The list here is a general list but use with proper discretion.</p>
+<table>
+<colgroup>
+<col width="25%" />
+<col width="25%" />
+<col width="50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Link</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Kaggle</td>
+<td><a href="https://www.kaggle.com/datasets" class="uri">https://www.kaggle.com/datasets</a></td>
+<td>Kaggle is where users can provide datasets; it is important to cite the sources. Mostly, datasets in Kaggle can be used for your practice.</td>
+</tr>
+<tr class="even">
+<td>Awesome Public Datasets</td>
+<td><a href="https://github.com/awesomedata/awesome-public-datasets" class="uri">https://github.com/awesomedata/awesome-public-datasets</a></td>
+<td>This repository is filled with public datasets, mostly from International contexts.</td>
+</tr>
+<tr class="odd">
+<td>Google Dataset Search</td>
+<td><a href="https://datasetsearch.research.google.com/" class="uri">https://datasetsearch.research.google.com/</a></td>
+<td>You can download publicly available datasets from searching through Google. Though, sometimes the datasets come from ‘Statista.com’. You can check the sources from the search.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="preliminaries-1" class="section level2 hasAnchor" number="6.2">
+<h2><span class="header-section-number">6.2</span> Preliminaries<a href="data-management.html#preliminaries-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="dataset" class="section level3 hasAnchor" number="6.2.1">
+<h3><span class="header-section-number">6.2.1</span> Dataset<a href="data-management.html#dataset" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The dataset to be used can be downloaded here: <a href="%22C:/Users/jemma/OneDrive/Documents/DLSU/LBOMETR_Book/Ch2Practice.csv%22">Chapter2 Practice</a> and will be included in the Files in Animospace. The dataset was modified from the Wooldridge package in R as practice material. The particular dataset is the ‘htv’ dataset.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="data-management.html#cb10-1" tabindex="-1"></a><span class="co">#install the wooldridge package. Check previous chapter on how to install packages.</span></span>
+<span id="cb10-2"><a href="data-management.html#cb10-2" tabindex="-1"></a><span class="fu">load</span>(wooldridge)</span>
+<span id="cb10-3"><a href="data-management.html#cb10-3" tabindex="-1"></a>?htv <span class="co">#to find out about the particular dataset.</span></span></code></pre></div>
+<p>NOTE: The htv dataset help will tell you what the variables mean, however, for our practice, we will use the modified version of this dataset.</p>
+</div>
+<div id="packages-1" class="section level3 hasAnchor" number="6.2.2">
+<h3><span class="header-section-number">6.2.2</span> Packages<a href="data-management.html#packages-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>We will mostly use the <code>tidyverse</code> package, in particular, the <code>dplyr</code> package and the <code>tidyr</code> package; double-check in your Packages list whether you have these two packages; if not, you can simply install them.</p>
+</div>
+<div id="setting-up-the-directory" class="section level3 hasAnchor" number="6.2.3">
+<h3><span class="header-section-number">6.2.3</span> Setting up the Directory<a href="data-management.html#setting-up-the-directory" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>This is the most important step! Make sure to place the downloaded file in this folder: <strong>DLSU_LBOMETR_Section</strong> in your laptops. Remember, this is your local working directory. This is the working directory you choose. You can set up your working directory in the following ways:</p>
+<ol style="list-style-type: decimal">
+<li><p>Using the R Studio Menu (works for both Mac and Windows)</p>
+<p>a. Go to <strong>Session &gt; Set Working Directory &gt; Choose Working Directory</strong></p></li>
+<li><p>Windows:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="data-management.html#cb11-1" tabindex="-1"></a><span class="co"># Use double backslashes `\\` or forward slashes `/`</span></span>
+<span id="cb11-2"><a href="data-management.html#cb11-2" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">&quot;C:</span><span class="sc">\\</span><span class="st">Users</span><span class="sc">\\</span><span class="st">YourUsername</span><span class="sc">\\</span><span class="st">Documents&quot;</span>)  <span class="co"># Example with backslashes</span></span>
+<span id="cb11-3"><a href="data-management.html#cb11-3" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">&quot;C:/Users/YourUsername/Documents&quot;</span>)     <span class="co"># Example with forward slashes</span></span></code></pre></div></li>
+<li><p>Mac</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="data-management.html#cb12-1" tabindex="-1"></a><span class="co"># Use forward slashes `/`</span></span>
+<span id="cb12-2"><a href="data-management.html#cb12-2" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">&quot;/Users/YourUsername/Documents&quot;</span>)</span></code></pre></div></li>
+</ol>
+<p>To check:</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="data-management.html#cb13-1" tabindex="-1"></a><span class="fu">getwd</span>()</span></code></pre></div>
+</div>
+<div id="clean-everything" class="section level3 hasAnchor" number="6.2.4">
+<h3><span class="header-section-number">6.2.4</span> Clean Everything<a href="data-management.html#clean-everything" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Do this step every time you use other data or when we do the other chapters.</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="data-management.html#cb14-1" tabindex="-1"></a><span class="co"># Remove all objects in the global environment</span></span>
+<span id="cb14-2"><a href="data-management.html#cb14-2" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list =</span> <span class="fu">ls</span>())</span>
+<span id="cb14-3"><a href="data-management.html#cb14-3" tabindex="-1"></a></span>
+<span id="cb14-4"><a href="data-management.html#cb14-4" tabindex="-1"></a><span class="co"># Perform garbage collection to free up memory</span></span>
+<span id="cb14-5"><a href="data-management.html#cb14-5" tabindex="-1"></a><span class="fu">gc</span>()</span></code></pre></div>
+<pre><code>##           used (Mb) gc trigger  (Mb) max used  (Mb)
+## Ncells 1197688 64.0    1872572 100.1  1872572 100.1
+## Vcells 2801210 21.4    8388608  64.0  8388471  64.0</code></pre>
+</div>
+<div id="importing-the-dataset" class="section level3 hasAnchor" number="6.2.5">
+<h3><span class="header-section-number">6.2.5</span> Importing the Dataset<a href="data-management.html#importing-the-dataset" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>We can use the <code>read.csv()</code> to load the <code>csv</code> file into R. Always call the file as something short and easily understandable. Ensure the downloaded file is in the working directory before you load the file. If the downloaded file is not located in the working directory, you will encounter issues.</p>
+<p>I will name the file as <code>ch2_p1</code></p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="data-management.html#cb16-1" tabindex="-1"></a>ch2_p1<span class="ot">&lt;-</span><span class="fu">read.csv</span>(<span class="st">&quot;Ch2Practice.csv&quot;</span>)</span></code></pre></div>
+<p>We can use the <code>head()</code> function to inspect the first six rows of the dataset:</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="data-management.html#cb17-1" tabindex="-1"></a><span class="fu">head</span>(ch2_p1)</span></code></pre></div>
+<pre><code>##        WAGE  ABILITY EDUCATION NORTHEAST NORTHCENTRAL WEST SOUTH EXPERIENCE MOTHEREDUC FATHEREDUC BROKENHOME14
+## 1 12.019231 5.027738        15        no           no  yes    no          9         12         12            0
+## 2  8.912656 2.037170        13       yes           no   no    no          8         12         10            1
+## 3 15.514334 2.475895        15       yes           no   no    no         11         12         16            0
+## 4 13.333333 3.609240        15       yes           no   no    no          6         12         12            0
+## 5 11.070110 2.636546        13       yes           no   no    no         15         12         15            1
+## 6 17.482517 3.474334        18       yes           no   no    no          8         12         12            0
+##   SIBLINGS URBAN X18INNORTHEAST X18INNORTHCENTRAL X18INSOUTH X18INWEST X18INURBAN X17TUITION X18TUITION  LOGWAGE
+## 1        1   yes              1                 0          0         0          1   7.582914   7.260242 2.486508
+## 2        4   yes              1                 0          0         0          1   8.595144   9.499537 2.187472
+## 3        2   yes              1                 0          0         0          1   7.311346   7.311346 2.741764
+## 4        1   yes              1                 0          0         0          1   9.499537  10.162070 2.590267
+## 5        2   yes              1                 0          0         0          1   7.311346   7.311346 2.404249
+## 6        2   yes              1                 0          0         0          1   7.311346   7.311346 2.861201
+##   EXPER.2
+## 1      81
+## 2      64
+## 3     121
+## 4      36
+## 5     225
+## 6      64</code></pre>
+</div>
+</div>
+<div id="data-cleaning" class="section level2 hasAnchor" number="6.3">
+<h2><span class="header-section-number">6.3</span> Data Cleaning<a href="data-management.html#data-cleaning" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>As you can see, there are 22 columns. Let’s simplify by only choosing the following: WAGE, URBAN, X17TUITION, X18TUITION and EXPER.2. We can do this using the <code>select()</code> function in <code>dplyr</code>. We will save them into a new data frame, <code>ch2_p1.1.</code></p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="data-management.html#cb19-1" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="data-management.html#cb20-1" tabindex="-1"></a>ch2_p1<span class="fl">.1</span><span class="ot">&lt;-</span><span class="fu">select</span>(ch2_p1, <span class="co">#the original dataset </span></span>
+<span id="cb20-2"><a href="data-management.html#cb20-2" tabindex="-1"></a>       WAGE, URBAN, X17TUITION, X18TUITION, EXPER<span class="fl">.2</span>)</span></code></pre></div>
+<div id="renaming-the-variables" class="section level3 hasAnchor" number="6.3.1">
+<h3><span class="header-section-number">6.3.1</span> Renaming the Variables<a href="data-management.html#renaming-the-variables" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>We will edit the names to much easier conventions. First, let us say that we just want to change them to lowercase names.</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="data-management.html#cb21-1" tabindex="-1"></a><span class="fu">names</span>(ch2_p1<span class="fl">.1</span>)<span class="ot">&lt;-</span><span class="fu">tolower</span>(<span class="fu">names</span>(ch2_p1<span class="fl">.1</span>))</span></code></pre></div>
+<p>Inspect:</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="data-management.html#cb22-1" tabindex="-1"></a><span class="fu">head</span>(ch2_p1<span class="fl">.1</span>)</span></code></pre></div>
+<pre><code>##        wage urban x17tuition x18tuition exper.2
+## 1 12.019231   yes   7.582914   7.260242      81
+## 2  8.912656   yes   8.595144   9.499537      64
+## 3 15.514334   yes   7.311346   7.311346     121
+## 4 13.333333   yes   9.499537  10.162070      36
+## 5 11.070110   yes   7.311346   7.311346     225
+## 6 17.482517   yes   7.311346   7.311346      64</code></pre>
+<p>Let us change the names of <code>x17tuition, x18tuition,</code>and<code>exper.2</code> to the names similar to what is found in the ‘htv’ dataset: <code>x17tuition</code> to <code>tuit17</code>, <code>x18tuition</code> to <code>tuit18</code> and <code>exper.2</code> to <code>expersq</code> . To do this, we will use the <code>rename()</code> in <code>dplyr</code>. We will also use the (<code>%&gt;%</code>) for this.</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="data-management.html#cb24-1" tabindex="-1"></a>ch2_p1<span class="fl">.1</span><span class="ot">&lt;-</span>ch2_p1<span class="fl">.1</span> <span class="sc">%&gt;%</span> </span>
+<span id="cb24-2"><a href="data-management.html#cb24-2" tabindex="-1"></a>  <span class="fu">rename</span>(</span>
+<span id="cb24-3"><a href="data-management.html#cb24-3" tabindex="-1"></a>    <span class="at">tuit17 =</span> x17tuition,</span>
+<span id="cb24-4"><a href="data-management.html#cb24-4" tabindex="-1"></a>    <span class="at">tuit18 =</span> x18tuition, </span>
+<span id="cb24-5"><a href="data-management.html#cb24-5" tabindex="-1"></a>    <span class="at">expersq =</span> exper<span class="fl">.2</span></span>
+<span id="cb24-6"><a href="data-management.html#cb24-6" tabindex="-1"></a>  )</span></code></pre></div>
+<p>Inspect again:</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="data-management.html#cb25-1" tabindex="-1"></a><span class="fu">head</span>(ch2_p1<span class="fl">.1</span>)</span></code></pre></div>
+<pre><code>##        wage urban   tuit17    tuit18 expersq
+## 1 12.019231   yes 7.582914  7.260242      81
+## 2  8.912656   yes 8.595144  9.499537      64
+## 3 15.514334   yes 7.311346  7.311346     121
+## 4 13.333333   yes 9.499537 10.162070      36
+## 5 11.070110   yes 7.311346  7.311346     225
+## 6 17.482517   yes 7.311346  7.311346      64</code></pre>
+</div>
+<div id="sorting-certain-values" class="section level3 hasAnchor" number="6.3.2">
+<h3><span class="header-section-number">6.3.2</span> Sorting certain values<a href="data-management.html#sorting-certain-values" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Let’s say, we want to arrange <code>wage</code>. We will create a different data for this. We use <code>arrange</code> in <code>dplyr</code> package.</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="data-management.html#cb27-1" tabindex="-1"></a>ch2_p1sort<span class="ot">&lt;-</span><span class="fu">arrange</span>(ch2_p1<span class="fl">.1</span>,</span>
+<span id="cb27-2"><a href="data-management.html#cb27-2" tabindex="-1"></a>                    wage)</span></code></pre></div>
+<p>Inspect:</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="data-management.html#cb28-1" tabindex="-1"></a><span class="fu">head</span>(ch2_p1sort)</span></code></pre></div>
+<pre><code>##       wage urban    tuit17    tuit18 expersq
+## 1 1.023529   yes  2.088957  2.251239     169
+## 2 1.073345    no  7.520245  7.520245     196
+## 3 1.102362   yes  7.355460  6.922371     196
+## 4 1.250000   yes  9.417682  8.826549     100
+## 5 1.373626   yes  9.692757  9.692757     225
+## 6 1.442308    no 11.280367 11.280367      NA</code></pre>
+<p>What if you have this kind of data?</p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="data-management.html#cb30-1" tabindex="-1"></a><span class="fu">head</span>(ch2_p2)</span></code></pre></div>
+<pre><code>##    ch2_p2
+## 1 $10,000
+## 2 $20,500
+## 3 $15,250
+## 4 $30,000
+## 5 $50,750</code></pre>
+<p>Let’s sort this:</p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="data-management.html#cb32-1" tabindex="-1"></a>ch2_p2sort<span class="ot">&lt;-</span><span class="fu">arrange</span>(ch2_p2)</span>
+<span id="cb32-2"><a href="data-management.html#cb32-2" tabindex="-1"></a><span class="fu">head</span>(ch2_p2)</span></code></pre></div>
+<pre><code>##    ch2_p2
+## 1 $10,000
+## 2 $20,500
+## 3 $15,250
+## 4 $30,000
+## 5 $50,750</code></pre>
+<p>It did not work. The problem is, <code>ch2_p2</code> is not numeric. We can check:</p>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="data-management.html#cb34-1" tabindex="-1"></a><span class="fu">class</span>(ch2_p2<span class="sc">$</span>ch2_p2)</span></code></pre></div>
+<pre><code>## [1] &quot;factor&quot;</code></pre>
+<p>We need to make it into a numeric value but we have a <code>,</code> and $. We need to remove them. We use the <code>str_replace</code> function in the <code>stringr</code> package.</p>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="data-management.html#cb36-1" tabindex="-1"></a><span class="fu">library</span>(stringr)</span></code></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="data-management.html#cb37-1" tabindex="-1"></a>ch2_p2<span class="sc">$</span>ch2_p2<span class="ot">&lt;-</span><span class="fu">str_replace</span>(</span>
+<span id="cb37-2"><a href="data-management.html#cb37-2" tabindex="-1"></a>  ch2_p2<span class="sc">$</span>ch2_p2, <span class="co">#column we want to edit</span></span>
+<span id="cb37-3"><a href="data-management.html#cb37-3" tabindex="-1"></a>  <span class="at">pattern =</span> <span class="st">&#39;,&#39;</span>, <span class="co">#what to find</span></span>
+<span id="cb37-4"><a href="data-management.html#cb37-4" tabindex="-1"></a>  <span class="at">replacement =</span> <span class="st">&#39;&#39;</span> <span class="co">#what to replace it with</span></span>
+<span id="cb37-5"><a href="data-management.html#cb37-5" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="data-management.html#cb38-1" tabindex="-1"></a><span class="fu">head</span>(ch2_p2)</span></code></pre></div>
+<pre><code>##   ch2_p2
+## 1 $10000
+## 2 $20500
+## 3 $15250
+## 4 $30000
+## 5 $50750</code></pre>
+<p>Now, let us remove the dollar sign; usually, simply doing the same thing we did with the comma works, but, there are some symbols that are used as “special character”. To “force” R to replace the presence of ‘$’, we add two backslashes before the dollar sign.</p>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="data-management.html#cb40-1" tabindex="-1"></a>ch2_p2<span class="sc">$</span>ch2_p2<span class="ot">&lt;-</span><span class="fu">str_replace</span>(</span>
+<span id="cb40-2"><a href="data-management.html#cb40-2" tabindex="-1"></a>  ch2_p2<span class="sc">$</span>ch2_p2, </span>
+<span id="cb40-3"><a href="data-management.html#cb40-3" tabindex="-1"></a>  <span class="at">pattern =</span> <span class="st">&#39;</span><span class="sc">\\</span><span class="st">$&#39;</span>,</span>
+<span id="cb40-4"><a href="data-management.html#cb40-4" tabindex="-1"></a>  <span class="at">replacement =</span> <span class="st">&#39;&#39;</span></span>
+<span id="cb40-5"><a href="data-management.html#cb40-5" tabindex="-1"></a>)</span></code></pre></div>
+<p>Can you inspect it on your own?</p>
+<p>Simply type the code in the empty code chunk then run it by pressing <strong>Ctrl+Enter</strong> or <strong>Cmd+Enter</strong></p>
+<p>Now, sort <code>ch2_p2</code></p>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="data-management.html#cb41-1" tabindex="-1"></a>ch2_p2sort<span class="ot">&lt;-</span><span class="fu">arrange</span>(</span>
+<span id="cb41-2"><a href="data-management.html#cb41-2" tabindex="-1"></a>  ch2_p2,</span>
+<span id="cb41-3"><a href="data-management.html#cb41-3" tabindex="-1"></a>  ch2_p2</span>
+<span id="cb41-4"><a href="data-management.html#cb41-4" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="data-management.html#cb42-1" tabindex="-1"></a><span class="fu">head</span>(ch2_p2sort)</span></code></pre></div>
+<pre><code>##   ch2_p2
+## 1  10000
+## 2  15250
+## 3  20500
+## 4  30000
+## 5  50750</code></pre>
+<p>We can see that it was arranged, however, take a look at the way ch2_p2 was encoded; it is not numeric. So, we need to change this.</p>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="data-management.html#cb44-1" tabindex="-1"></a><span class="fu">class</span>(ch2_p2<span class="sc">$</span>ch2_p2)</span></code></pre></div>
+<pre><code>## [1] &quot;character&quot;</code></pre>
+<p>Change to numeric through <code>as.numeric()</code></p>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="data-management.html#cb46-1" tabindex="-1"></a>ch2_p2<span class="sc">$</span>ch2_p2<span class="ot">&lt;-</span><span class="fu">as.numeric</span>(ch2_p2<span class="sc">$</span>ch2_p2)</span></code></pre></div>
+<p>Inspect on your own:</p>
+</div>
+<div id="pipe-operator" class="section level3 hasAnchor" number="6.3.3">
+<h3><span class="header-section-number">6.3.3</span> Pipe Operator<a href="data-management.html#pipe-operator" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><code>%&gt;%</code> allows functions to be chained; it can be read as “then” - it tells R to do whatever comes after it to the stuff that comes before it.</p>
+</div>
+<div id="adding-columns" class="section level3 hasAnchor" number="6.3.4">
+<h3><span class="header-section-number">6.3.4</span> Adding columns<a href="data-management.html#adding-columns" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>We will be using the pipe operator and the <code>mutate</code> to add a new column to <code>ch2_p1.1</code> based from details found in <code>ch2_p1</code>, particularly, NORTHEAST, NORTHCENTRAL, WEST, and SOUTH. We will call this new column as <code>location</code></p>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="data-management.html#cb47-1" tabindex="-1"></a>ch2_p1<span class="fl">.1</span><span class="ot">&lt;-</span>ch2_p1<span class="fl">.1</span> <span class="sc">%&gt;%</span> </span>
+<span id="cb47-2"><a href="data-management.html#cb47-2" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb47-3"><a href="data-management.html#cb47-3" tabindex="-1"></a>    <span class="at">location =</span> <span class="fu">case_when</span>( <span class="co">#creates conditional statements</span></span>
+<span id="cb47-4"><a href="data-management.html#cb47-4" tabindex="-1"></a>      ch2_p1<span class="sc">$</span>NORTHEAST <span class="sc">==</span> <span class="st">&quot;yes&quot;</span> <span class="sc">~</span> <span class="st">&quot;northeast&quot;</span>, <span class="co">#If NE is &quot;yes&quot;, location is &quot;northeast&quot;</span></span>
+<span id="cb47-5"><a href="data-management.html#cb47-5" tabindex="-1"></a>    ch2_p1<span class="sc">$</span>WEST <span class="sc">==</span> <span class="st">&quot;yes&quot;</span><span class="sc">~</span><span class="st">&quot;west&quot;</span>, <span class="co">#If WEST is &quot;yes&quot;, location is &quot;west&quot;</span></span>
+<span id="cb47-6"><a href="data-management.html#cb47-6" tabindex="-1"></a>    ch2_p1<span class="sc">$</span>NORTHCENTRAL <span class="sc">==</span> <span class="st">&quot;yes&quot;</span><span class="sc">~</span> <span class="st">&quot;northcen&quot;</span>,</span>
+<span id="cb47-7"><a href="data-management.html#cb47-7" tabindex="-1"></a>      ch2_p1<span class="sc">$</span>SOUTH <span class="sc">==</span> <span class="st">&quot;yes&quot;</span><span class="sc">~</span> <span class="st">&quot;south&quot;</span>,</span>
+<span id="cb47-8"><a href="data-management.html#cb47-8" tabindex="-1"></a>    <span class="cn">TRUE</span><span class="sc">~</span><span class="st">&quot;other&quot;</span>)</span>
+<span id="cb47-9"><a href="data-management.html#cb47-9" tabindex="-1"></a>  )</span></code></pre></div>
+<p>Inspect the data:</p>
+<p>Now I want you to create a new column called, <code>tuit_diff</code> wherein it is the difference between <code>tuit18</code> and <code>tuit17</code>. In this case, there is no need to use <code>case_when</code> since there is no conditional statements to be used. It is straightforward that you simply need to subtract <code>tuit17</code> from <code>tuit18</code>. You will need to use <code>mutate</code> still. How will you create that?</p>
+</div>
+<div id="transforming-values" class="section level3 hasAnchor" number="6.3.5">
+<h3><span class="header-section-number">6.3.5</span> Transforming values<a href="data-management.html#transforming-values" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Now, you can see that urban is a <code>character</code> that is “yes/no”. We need to change that to numeric value. This is particularly useful when we use dummy variables later on. We will not use <code>case_when</code> as it is not necessary; rather, we will use <code>ifelse</code>:</p>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="data-management.html#cb48-1" tabindex="-1"></a>ch2_p1<span class="fl">.1</span><span class="ot">&lt;-</span>ch2_p1<span class="fl">.1</span> <span class="sc">%&gt;%</span> </span>
+<span id="cb48-2"><a href="data-management.html#cb48-2" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb48-3"><a href="data-management.html#cb48-3" tabindex="-1"></a>    <span class="at">urban =</span> <span class="fu">ifelse</span>(urban<span class="sc">==</span><span class="st">&quot;yes&quot;</span>, <span class="dv">1</span>,<span class="dv">0</span>) <span class="co">#replace &quot;yes&quot; with 1 and &quot;no&quot; with 0</span></span>
+<span id="cb48-4"><a href="data-management.html#cb48-4" tabindex="-1"></a>  )</span>
+<span id="cb48-5"><a href="data-management.html#cb48-5" tabindex="-1"></a><span class="fu">head</span>(ch2_p1<span class="fl">.1</span>) <span class="co">#default is first 6 rows</span></span></code></pre></div>
+<pre><code>##        wage urban   tuit17    tuit18 expersq  location
+## 1 12.019231     1 7.582914  7.260242      81      west
+## 2  8.912656     1 8.595144  9.499537      64 northeast
+## 3 15.514334     1 7.311346  7.311346     121 northeast
+## 4 13.333333     1 9.499537 10.162070      36 northeast
+## 5 11.070110     1 7.311346  7.311346     225 northeast
+## 6 17.482517     1 7.311346  7.311346      64 northeast</code></pre>
+<p>Now, I want you to create groups for <code>expersq</code>. <code>NA</code> should now be 0, assign 1 if less than 50, assign 2 if between 50 and 100, assign 3 if between 100 and 200, and for the rest, assign 4.</p>
+<p>Clue: conditional statements like between 50 and 100 should be like this:</p>
+<p><code>values&gt;=50 &amp; values &lt; 100</code></p>
+<p>Your answer should look like this:</p>
+<pre><code>##        wage urban   tuit17    tuit18 expersq  location
+## 1 12.019231     1 7.582914  7.260242       2      west
+## 2  8.912656     1 8.595144  9.499537       2 northeast
+## 3 15.514334     1 7.311346  7.311346       3 northeast
+## 4 13.333333     1 9.499537 10.162070       1 northeast
+## 5 11.070110     1 7.311346  7.311346       4 northeast
+## 6 17.482517     1 7.311346  7.311346       2 northeast</code></pre>
+</div>
+<div id="summarizing" class="section level3 hasAnchor" number="6.3.6">
+<h3><span class="header-section-number">6.3.6</span> Summarizing<a href="data-management.html#summarizing" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Let us get the average of wages by location, which we’ll call <code>ave.wage</code>, by using the <code>group_by()</code> and <code>summarise()</code> functions in dplyr</p>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="data-management.html#cb51-1" tabindex="-1"></a>ch2_p1<span class="fl">.1</span>ave<span class="ot">&lt;-</span>ch2_p1<span class="fl">.1</span> <span class="sc">%&gt;%</span> </span>
+<span id="cb51-2"><a href="data-management.html#cb51-2" tabindex="-1"></a>  <span class="fu">group_by</span>(location) <span class="sc">%&gt;%</span> <span class="co">#group by location, THEN</span></span>
+<span id="cb51-3"><a href="data-management.html#cb51-3" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">ave.wage=</span><span class="fu">mean</span>(wage)) <span class="co">#calculate the mean of wages for each location</span></span>
+<span id="cb51-4"><a href="data-management.html#cb51-4" tabindex="-1"></a><span class="fu">head</span>(ch2_p1<span class="fl">.1</span>ave)</span></code></pre></div>
+<pre><code>## # A tibble: 4 × 2
+##   location  ave.wage
+##   &lt;chr&gt;        &lt;dbl&gt;
+## 1 northcen      12.5
+## 2 northeast     15.0
+## 3 south         12.4
+## 4 west          14.1</code></pre>
+<p>Say that you want to see the average wage in the south area. We can do this by using <code>filter()</code></p>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="data-management.html#cb53-1" tabindex="-1"></a>ch2_p1<span class="fl">.1</span>ave <span class="sc">%&gt;%</span> <span class="fu">filter</span>(location<span class="sc">==</span><span class="st">&quot;south&quot;</span>)</span></code></pre></div>
+<pre><code>## # A tibble: 1 × 2
+##   location ave.wage
+##   &lt;chr&gt;       &lt;dbl&gt;
+## 1 south        12.4</code></pre>
+<p>How would you sort the dataset by average wage, from highest to lowest? Now you see that it is arranged alphabetically, so how will you arrange it?</p>
+</div>
+<div id="merging-datasets" class="section level3 hasAnchor" number="6.3.7">
+<h3><span class="header-section-number">6.3.7</span> Merging datasets<a href="data-management.html#merging-datasets" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>We have two main datasets, <code>ch2_p1.1</code> and <code>ch2_p1.1ave</code>. By doing this, we could compare side-by-side each observation compared to the average per location.</p>
+<p>We will join the datasets by <code>location</code> variable, since that is consistent across both datasets. We name the new file as <code>ch2_p1merged</code>:</p>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="data-management.html#cb55-1" tabindex="-1"></a>ch2_p1merged<span class="ot">&lt;-</span><span class="fu">merge</span>(<span class="at">x=</span>ch2_p1<span class="fl">.1</span>, <span class="at">y=</span>ch2_p1<span class="fl">.1</span>ave, <span class="at">by=</span><span class="st">&quot;location&quot;</span>)</span>
+<span id="cb55-2"><a href="data-management.html#cb55-2" tabindex="-1"></a><span class="fu">head</span>(ch2_p1merged)</span></code></pre></div>
+<pre><code>##   location      wage urban   tuit17   tuit18 expersq ave.wage
+## 1 northcen 15.294118     1 8.334936 8.334936       3 12.54078
+## 2 northcen 17.006804     1 8.334936 8.334936       0 12.54078
+## 3 northcen  3.755868     1 8.334936 8.334936       3 12.54078
+## 4 northcen  5.288462     1 6.742574 7.198132       2 12.54078
+## 5 northcen  9.072165     1 7.305873 7.356897       0 12.54078
+## 6 northcen  9.384164     1 8.334936 8.334936       3 12.54078</code></pre>
+</div>
+<div id="splitting-datasets" class="section level3 hasAnchor" number="6.3.8">
+<h3><span class="header-section-number">6.3.8</span> Splitting datasets<a href="data-management.html#splitting-datasets" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Say I want to save different datasets based on the <code>location</code> column.</p>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="data-management.html#cb57-1" tabindex="-1"></a>northcen_data<span class="ot">&lt;-</span>ch2_p1<span class="fl">.1</span> <span class="sc">%&gt;%</span> <span class="fu">filter</span>(location<span class="sc">==</span><span class="st">&quot;northcen&quot;</span>)</span></code></pre></div>
+<p>You can save it as a <code>.csv</code> file:</p>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="data-management.html#cb58-1" tabindex="-1"></a><span class="fu">write.csv</span>(northcen_data, <span class="st">&quot;northcentral.csv&quot;</span>, <span class="at">row.names =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
+<p>Can you do the others?</p>
+</div>
+<div id="dates" class="section level3 hasAnchor" number="6.3.9">
+<h3><span class="header-section-number">6.3.9</span> Dates<a href="data-management.html#dates" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>We are going to work on dates when we move to the next chapter but, here is something initial and necessary.</p>
+<pre><code>##   ID date_of_birth
+## 1  1    15-05-1990
+## 2  2    20-08-1985
+## 3  3    01-12-2000
+## 4  4    10-03-1995
+## 5  5    25-07-2010</code></pre>
+<pre><code>## &#39;data.frame&#39;:    5 obs. of  2 variables:
+##  $ ID           : int  1 2 3 4 5
+##  $ date_of_birth: chr  &quot;15-05-1990&quot; &quot;20-08-1985&quot; &quot;01-12-2000&quot; &quot;10-03-1995&quot; ...</code></pre>
+<p>To convert the <code>character</code> format to date format, we do this:</p>
+<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="data-management.html#cb61-1" tabindex="-1"></a>date_data<span class="sc">$</span>date_of_birth <span class="ot">&lt;-</span> <span class="fu">as.Date</span>(date_data<span class="sc">$</span>date_of_birth, <span class="at">format =</span> <span class="st">&quot;%d-%m-%Y&quot;</span>)</span>
+<span id="cb61-2"><a href="data-management.html#cb61-2" tabindex="-1"></a></span>
+<span id="cb61-3"><a href="data-management.html#cb61-3" tabindex="-1"></a><span class="fu">head</span>(date_data)</span></code></pre></div>
+<pre><code>##   ID date_of_birth
+## 1  1    1990-05-15
+## 2  2    1985-08-20
+## 3  3    2000-12-01
+## 4  4    1995-03-10
+## 5  5    2010-07-25</code></pre>
+<p>Say you want to calculate the age:</p>
+<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="data-management.html#cb63-1" tabindex="-1"></a>date_data<span class="sc">$</span>age <span class="ot">&lt;-</span><span class="fu">as.numeric</span>(<span class="fu">floor</span>((<span class="fu">Sys.Date</span>()<span class="sc">-</span>date_data<span class="sc">$</span>date_of_birth)<span class="sc">/</span><span class="fl">365.25</span>))</span>
+<span id="cb63-2"><a href="data-management.html#cb63-2" tabindex="-1"></a><span class="fu">head</span>(date_data)</span></code></pre></div>
+<pre><code>##   ID date_of_birth age
+## 1  1    1990-05-15  34
+## 2  2    1985-08-20  39
+## 3  3    2000-12-01  24
+## 4  4    1995-03-10  29
+## 5  5    2010-07-25  14</code></pre>
+<div id="custom-reference-date" class="section level4 hasAnchor" number="6.3.9.1">
+<h4><span class="header-section-number">6.3.9.1</span> Custom Reference Date:<a href="data-management.html#custom-reference-date" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="data-management.html#cb65-1" tabindex="-1"></a>ref_date<span class="ot">&lt;-</span><span class="fu">as.Date</span>(<span class="st">&quot;2020-01-01&quot;</span>)</span>
+<span id="cb65-2"><a href="data-management.html#cb65-2" tabindex="-1"></a>date_data<span class="sc">$</span>age2<span class="ot">&lt;-</span><span class="fu">as.numeric</span>(<span class="fu">floor</span>((ref_date<span class="sc">-</span>date_data<span class="sc">$</span>date_of_birth)<span class="sc">/</span><span class="fl">365.25</span>))</span>
+<span id="cb65-3"><a href="data-management.html#cb65-3" tabindex="-1"></a><span class="fu">head</span>(date_data)</span></code></pre></div>
+<pre><code>##   ID date_of_birth age age2
+## 1  1    1990-05-15  34   29
+## 2  2    1985-08-20  39   34
+## 3  3    2000-12-01  24   19
+## 4  4    1995-03-10  29   24
+## 5  5    2010-07-25  14    9</code></pre>
+</div>
+</div>
+</div>
+<div id="next-meeting" class="section level2 hasAnchor" number="6.4">
+<h2><span class="header-section-number">6.4</span> Next Meeting<a href="data-management.html#next-meeting" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="topics" class="section level3 hasAnchor" number="6.4.1">
+<h3><span class="header-section-number">6.4.1</span> Topics:<a href="data-management.html#topics" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ol style="list-style-type: decimal">
+<li><p>Feedback on the Practical</p></li>
+<li><p>Time-Series Data and Panel Data - Data Management</p>
+<p>a. Including transforming dataset from long to wide and v.v.</p></li>
+<li><p>Missing values</p></li>
+</ol>
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="basic-introduction-to-r.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="data-management-practical.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["LBOMETR_Course_Book.pdf", "LBOMETR_Course_Book.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "section",
+"depth": 4
+}
+});
+});
+</script>
+
+</body>
+
+</html>
