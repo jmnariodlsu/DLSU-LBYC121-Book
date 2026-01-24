@@ -103,4 +103,5 @@ a.-getting-tr-and-mr
 b.-prepare-the-data
 c.-plot-mc-ac-mr
 base-r-plotting-2
+interpretation-guide
 mini-exercise

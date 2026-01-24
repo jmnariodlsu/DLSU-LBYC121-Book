@@ -23,7 +23,7 @@
 <meta name="author" content="Jem Marie M. Nario" />
 
 
-<meta name="date" content="2026-01-23" />
+<meta name="date" content="2026-01-24" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -261,7 +261,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.4.4" data-path="review-of-single-variable-differentiation-rules-and-visualizing-functions.html"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#multiple-functions-in-one-plot-mr-mc-ac"><i class="fa fa-check"></i><b>6.4.4</b> 3. Multiple Functions in One Plot (MR, MC, AC)</a></li>
 <li class="chapter" data-level="6.4.5" data-path="review-of-single-variable-differentiation-rules-and-visualizing-functions.html"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#base-r-plotting-2"><i class="fa fa-check"></i><b>6.4.5</b> Base R Plotting</a></li>
 </ul></li>
-<li class="chapter" data-level="6.5" data-path="review-of-single-variable-differentiation-rules-and-visualizing-functions.html"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#mini-exercise"><i class="fa fa-check"></i><b>6.5</b> Mini-Exercise</a></li>
+<li class="chapter" data-level="6.5" data-path="review-of-single-variable-differentiation-rules-and-visualizing-functions.html"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#interpretation-guide"><i class="fa fa-check"></i><b>6.5</b> Interpretation Guide:</a></li>
+<li class="chapter" data-level="6.6" data-path="review-of-single-variable-differentiation-rules-and-visualizing-functions.html"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#mini-exercise"><i class="fa fa-check"></i><b>6.6</b> Mini-Exercise</a></li>
 </ul></li>
 </ul>
 
@@ -481,7 +482,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb81-6"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#cb81-6" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Plot of Total Cost Curve&quot;</span>, <span class="at">x =</span> <span class="st">&quot;Q&quot;</span>, <span class="at">y=</span> <span class="st">&quot;Cost&quot;</span>)<span class="sc">+</span></span>
 <span id="cb81-7"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#cb81-7" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
 <span id="cb81-8"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#cb81-8" tabindex="-1"></a><span class="fu">print</span>(p1)</span></code></pre></div>
-<p><img src="LBYC121_Course_Book_files/figure-html/unnamed-chunk-51-1.png" alt="" width="672" /></p>
+<p><img src="LBYC121_Course_Book_files/figure-html/unnamed-chunk-90-1.png" alt="" width="672" /></p>
 <p>i. <code>ggplot(df_tc, aes(x = Q, y = TC))</code></p>
 <ul>
 <li><p>This starts the plot using the <code>df_tc</code> we created as the data.</p></li>
@@ -511,7 +512,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb82-5"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#cb82-5" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">&quot;Q&quot;</span>,</span>
 <span id="cb82-6"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#cb82-6" tabindex="-1"></a>     <span class="at">ylab =</span> <span class="st">&quot;Cost&quot;</span></span>
 <span id="cb82-7"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#cb82-7" tabindex="-1"></a>)</span></code></pre></div>
-<p><img src="LBYC121_Course_Book_files/figure-html/unnamed-chunk-52-1.png" alt="" width="672" /></p>
+<p><img src="LBYC121_Course_Book_files/figure-html/unnamed-chunk-91-1.png" alt="" width="672" /></p>
 <div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb83-1"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#cb83-1" tabindex="-1"></a><span class="fu">print</span>(p1<span class="fl">.1</span>)</span></code></pre></div>
 <pre><code>## NULL</code></pre>
 <p>i. <code>options (scipen=999)</code> is added because unlike ggplot2, Base R tends to use scientific notation. It does not look that nice, so, to avoid that, add this.</p>
@@ -596,7 +597,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb86-9"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#cb86-9" tabindex="-1"></a>  <span class="fu">coord_cartesian</span>(<span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">100</span>)) <span class="sc">+</span></span>
 <span id="cb86-10"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#cb86-10" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
 <span id="cb86-11"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#cb86-11" tabindex="-1"></a><span class="fu">print</span>(p2)</span></code></pre></div>
-<p><img src="LBYC121_Course_Book_files/figure-html/unnamed-chunk-54-1.png" alt="" width="672" /></p>
+<p><img src="LBYC121_Course_Book_files/figure-html/unnamed-chunk-93-1.png" alt="" width="672" /></p>
 <p>i. <code>aes(color = Type, linetype = Type, size = Type</code></p>
 <ul>
 <li>automatically maps line style</li>
@@ -629,7 +630,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb87-14"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#cb87-14" tabindex="-1"></a>      <span class="at">col =</span> <span class="st">&quot;pink&quot;</span>, <span class="at">lwd =</span> <span class="dv">2</span>, <span class="at">lty =</span> <span class="dv">2</span>)</span>
 <span id="cb87-15"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#cb87-15" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">&quot;topright&quot;</span>, <span class="at">legend =</span> <span class="fu">c</span>(<span class="st">&quot;AC&quot;</span>, <span class="st">&quot;MC&quot;</span>),</span>
 <span id="cb87-16"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#cb87-16" tabindex="-1"></a>       <span class="at">col =</span> <span class="fu">c</span>(<span class="st">&quot;purple&quot;</span>, <span class="st">&quot;pink&quot;</span>), <span class="at">lwd =</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">2</span>), <span class="at">lty =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))</span></code></pre></div>
-<p><img src="LBYC121_Course_Book_files/figure-html/unnamed-chunk-55-1.png" alt="" width="672" /></p>
+<p><img src="LBYC121_Course_Book_files/figure-html/unnamed-chunk-94-1.png" alt="" width="672" /></p>
 <div class="sourceCode" id="cb88"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb88-1"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#cb88-1" tabindex="-1"></a><span class="fu">print</span>(p2<span class="fl">.1</span>)</span></code></pre></div>
 <pre><code>## NULL</code></pre>
 <p>i. <code>plot(dfc$Q, dfc$Value, type = "n"</code> creates the plot, much like the <code>aes</code></p>
@@ -670,7 +671,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb93-8"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#cb93-8" tabindex="-1"></a>  <span class="fu">coord_cartesian</span>(<span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">120</span>)) <span class="sc">+</span></span>
 <span id="cb93-9"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#cb93-9" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
 <span id="cb93-10"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#cb93-10" tabindex="-1"></a><span class="fu">print</span>(p3)</span></code></pre></div>
-<p><img src="LBYC121_Course_Book_files/figure-html/unnamed-chunk-59-1.png" alt="" width="672" /></p>
+<p><img src="LBYC121_Course_Book_files/figure-html/unnamed-chunk-98-1.png" alt="" width="672" /></p>
 </div>
 </div>
 <div id="base-r-plotting-2" class="section level3 hasAnchor" number="6.4.5">
@@ -698,7 +699,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb94-21"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#cb94-21" tabindex="-1"></a>       <span class="at">col =</span> <span class="fu">c</span>(<span class="st">&quot;purple&quot;</span>, <span class="st">&quot;pink&quot;</span>, <span class="st">&quot;skyblue&quot;</span>),</span>
 <span id="cb94-22"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#cb94-22" tabindex="-1"></a>       <span class="at">lwd =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">2</span>),</span>
 <span id="cb94-23"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#cb94-23" tabindex="-1"></a>       <span class="at">lty =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">4</span>))</span></code></pre></div>
-<p><img src="LBYC121_Course_Book_files/figure-html/unnamed-chunk-60-1.png" alt="" width="672" /></p>
+<p><img src="LBYC121_Course_Book_files/figure-html/unnamed-chunk-99-1.png" alt="" width="672" /></p>
 <div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb95-1"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#cb95-1" tabindex="-1"></a><span class="fu">print</span>(p3<span class="fl">.1</span>)</span></code></pre></div>
 <pre><code>## NULL</code></pre>
 <p>i. <code>y_max1</code> was created as a new object for our y-axis.</p>
@@ -709,20 +710,90 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p>MR usually starts equal to price at Q=0 and slopes downward faster than demand.</p></li>
 <li><p>MC and AC are cost curves</p></li>
 <li><p>Where MR=MC, the profit-maximizing quantity occurs</p>
+<h3 id="multiple-functions-in-one-plot-fc-price-mr-mc-ac" class="hasAnchor">4. Multiple Functions in one plot (FC, Price, MR, MC, AC)<a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#multiple-functions-in-one-plot-fc-price-mr-mc-ac" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>We have multiple functions now!</p>
+<p>Take note that Fixed Cost (FC) is constant; Break-Even is where Price=AC while Profit is:</p>
+<p><span class="math inline">\(\pi(Q) = TR - TC\)</span></p>
+<p><code>pi</code> is <code>\pi</code></p>
+<h5 id="a.-define-the-functions-1" class="hasAnchor">a. Define the functions<a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#a.-define-the-functions-1" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<div class="sourceCode" id="cb97"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb97-1"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#cb97-1" tabindex="-1"></a>FC<span class="ot">&lt;-</span> <span class="dv">20</span></span></code></pre></div>
+<p>FC is a constant, assuming it is 20. For Profit, we need to get the profit for any level of output Q, not <code>Q_vals</code> because we want the function to accept any Q.</p>
+<h5 id="b.-prepare-the-data-1" class="hasAnchor">b. Prepare the Data<a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#b.-prepare-the-data-1" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<div class="sourceCode" id="cb98"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb98-1"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#cb98-1" tabindex="-1"></a>df_all<span class="ot">&lt;-</span><span class="fu">data.frame</span>(</span>
+<span id="cb98-2"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#cb98-2" tabindex="-1"></a>  <span class="at">Q=</span><span class="fu">rep</span>(Q_vals,<span class="dv">5</span>),</span>
+<span id="cb98-3"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#cb98-3" tabindex="-1"></a>  <span class="at">Value=</span><span class="fu">c</span>(<span class="fu">MC</span>(Q_vals), <span class="fu">AC</span>(Q_vals), <span class="fu">MR</span>(Q_vals), <span class="fu">rep</span>(FC, <span class="fu">length</span>(Q_vals)), <span class="fu">P</span>(Q_vals)),</span>
+<span id="cb98-4"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#cb98-4" tabindex="-1"></a>  <span class="at">Type =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">&quot;MC&quot;</span>, <span class="st">&quot;AC&quot;</span>, <span class="st">&quot;MR&quot;</span>, <span class="st">&quot;FC&quot;</span>, <span class="st">&quot;Price&quot;</span>), <span class="at">each =</span> <span class="fu">length</span>(Q_vals))</span>
+<span id="cb98-5"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#cb98-5" tabindex="-1"></a>)</span>
+<span id="cb98-6"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#cb98-6" tabindex="-1"></a><span class="co">#Check using View(df_all)</span></span></code></pre></div>
+<p>In creating the data frame, the unique thing here is the <code>FC</code>, since it is constant and we want to see a long horizontal line, the value of FC carries over from 0 to 50 as 20.</p>
+<h5 id="c.-plot-all-functions" class="hasAnchor">c. Plot All Functions<a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#c.-plot-all-functions" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<div class="sourceCode" id="cb99"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb99-1"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#cb99-1" tabindex="-1"></a><span class="fu">ggplot</span>(df_all, <span class="fu">aes</span>(<span class="at">x =</span> Q, <span class="at">y =</span> Value, <span class="at">color =</span> Type, <span class="at">linetype =</span> Type, <span class="at">size =</span> Type)) <span class="sc">+</span></span>
+<span id="cb99-2"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#cb99-2" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb99-3"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#cb99-3" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;MC&quot;</span><span class="ot">=</span><span class="st">&quot;red&quot;</span>, <span class="st">&quot;AC&quot;</span><span class="ot">=</span><span class="st">&quot;purple&quot;</span>, <span class="st">&quot;MR&quot;</span><span class="ot">=</span><span class="st">&quot;blue&quot;</span>,</span>
+<span id="cb99-4"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#cb99-4" tabindex="-1"></a>                                <span class="st">&quot;FC&quot;</span><span class="ot">=</span><span class="st">&quot;orange&quot;</span>, <span class="st">&quot;Price&quot;</span><span class="ot">=</span><span class="st">&quot;black&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb99-5"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#cb99-5" tabindex="-1"></a>  <span class="fu">scale_linetype_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;MC&quot;</span><span class="ot">=</span><span class="st">&quot;dotdash&quot;</span>, <span class="st">&quot;AC&quot;</span><span class="ot">=</span><span class="st">&quot;dashed&quot;</span>, <span class="st">&quot;MR&quot;</span><span class="ot">=</span><span class="st">&quot;dotdash&quot;</span>,</span>
+<span id="cb99-6"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#cb99-6" tabindex="-1"></a>                                   <span class="st">&quot;FC&quot;</span><span class="ot">=</span><span class="st">&quot;solid&quot;</span>, <span class="st">&quot;Price&quot;</span><span class="ot">=</span><span class="st">&quot;solid&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb99-7"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#cb99-7" tabindex="-1"></a>  <span class="fu">scale_size_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;MC&quot;</span><span class="ot">=</span><span class="fl">1.5</span>, <span class="st">&quot;AC&quot;</span><span class="ot">=</span><span class="fl">1.2</span>, <span class="st">&quot;MR&quot;</span><span class="ot">=</span><span class="fl">1.5</span>,</span>
+<span id="cb99-8"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#cb99-8" tabindex="-1"></a>                               <span class="st">&quot;FC&quot;</span><span class="ot">=</span><span class="dv">1</span>, <span class="st">&quot;Price&quot;</span><span class="ot">=</span><span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb99-9"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#cb99-9" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;MC, AC, MR, FC, Price Curves&quot;</span>,</span>
+<span id="cb99-10"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#cb99-10" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Q&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Cost / Revenue&quot;</span>) <span class="sc">+</span></span>
+<span id="cb99-11"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#cb99-11" tabindex="-1"></a>  <span class="fu">coord_cartesian</span>(<span class="at">ylim=</span><span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">150</span>)) <span class="sc">+</span></span>
+<span id="cb99-12"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#cb99-12" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
+<p><img src="LBYC121_Course_Book_files/figure-html/unnamed-chunk-102-1.png" alt="" width="672" /></p>
+<h3 id="base-r-plotting-3" class="hasAnchor">Base R Plotting<a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#base-r-plotting-3" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb100-1"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#cb100-1" tabindex="-1"></a><span class="fu">plot</span>(Q_vals, <span class="fu">MC</span>(Q_vals), <span class="at">type=</span><span class="st">&quot;l&quot;</span>, <span class="at">col=</span><span class="st">&quot;red&quot;</span>, <span class="at">lty=</span><span class="dv">6</span>, <span class="at">lwd=</span><span class="dv">2</span>,</span>
+<span id="cb100-2"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#cb100-2" tabindex="-1"></a>     <span class="at">xlab=</span><span class="st">&quot;Q&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;Cost / Revenue&quot;</span>, <span class="at">ylim=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">150</span>),</span>
+<span id="cb100-3"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#cb100-3" tabindex="-1"></a>     <span class="at">main=</span><span class="st">&quot;MC, AC, MR, FC, Price Curves&quot;</span>)</span>
+<span id="cb100-4"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#cb100-4" tabindex="-1"></a></span>
+<span id="cb100-5"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#cb100-5" tabindex="-1"></a><span class="fu">lines</span>(Q_vals, <span class="fu">AC</span>(Q_vals), <span class="at">col=</span><span class="st">&quot;purple&quot;</span>, <span class="at">lty=</span><span class="dv">2</span>, <span class="at">lwd=</span><span class="dv">2</span>)       </span>
+<span id="cb100-6"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#cb100-6" tabindex="-1"></a><span class="fu">lines</span>(Q_vals, <span class="fu">MR</span>(Q_vals), <span class="at">col=</span><span class="st">&quot;blue&quot;</span>, <span class="at">lty=</span><span class="dv">6</span>, <span class="at">lwd=</span><span class="dv">2</span>)         </span>
+<span id="cb100-7"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#cb100-7" tabindex="-1"></a><span class="fu">lines</span>(Q_vals, <span class="fu">rep</span>(FC, <span class="fu">length</span>(Q_vals)), <span class="at">col=</span><span class="st">&quot;orange&quot;</span>, <span class="at">lty=</span><span class="dv">1</span>, <span class="at">lwd=</span><span class="dv">2</span>)  </span>
+<span id="cb100-8"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#cb100-8" tabindex="-1"></a><span class="fu">lines</span>(Q_vals, <span class="fu">P</span>(Q_vals), <span class="at">col=</span><span class="st">&quot;black&quot;</span>, <span class="at">lty=</span><span class="dv">1</span>, <span class="at">lwd=</span><span class="dv">2</span>)       </span>
+<span id="cb100-9"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#cb100-9" tabindex="-1"></a></span>
+<span id="cb100-10"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#cb100-10" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">&quot;topright&quot;</span>, <span class="at">legend=</span><span class="fu">c</span>(<span class="st">&quot;MC&quot;</span>,<span class="st">&quot;AC&quot;</span>,<span class="st">&quot;MR&quot;</span>,<span class="st">&quot;FC&quot;</span>,<span class="st">&quot;Price&quot;</span>),</span>
+<span id="cb100-11"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#cb100-11" tabindex="-1"></a>       <span class="at">col=</span><span class="fu">c</span>(<span class="st">&quot;red&quot;</span>,<span class="st">&quot;purple&quot;</span>,<span class="st">&quot;blue&quot;</span>,<span class="st">&quot;orange&quot;</span>,<span class="st">&quot;black&quot;</span>),</span>
+<span id="cb100-12"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#cb100-12" tabindex="-1"></a>       <span class="at">lty=</span><span class="fu">c</span>(<span class="dv">6</span>,<span class="dv">2</span>,<span class="dv">6</span>,<span class="dv">1</span>,<span class="dv">1</span>),</span>
+<span id="cb100-13"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#cb100-13" tabindex="-1"></a>       <span class="at">lwd=</span><span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">2</span>))</span></code></pre></div>
+<p><img src="LBYC121_Course_Book_files/figure-html/unnamed-chunk-103-1.png" alt="" width="672" /></p>
 <h2 id="saving-the-plots-for-copy-paste-in-wordgoogle-docs" class="hasAnchor">Saving the Plots for Copy-Paste in Word/Google Docs<a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#saving-the-plots-for-copy-paste-in-wordgoogle-docs" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb97"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb97-1"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#cb97-1" tabindex="-1"></a><span class="fu">ggsave</span>(</span>
-<span id="cb97-2"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#cb97-2" tabindex="-1"></a>  <span class="at">filename =</span> <span class="st">&quot;TC_plot.png&quot;</span>,</span>
-<span id="cb97-3"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#cb97-3" tabindex="-1"></a>  <span class="at">plot =</span> p1,</span>
-<span id="cb97-4"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#cb97-4" tabindex="-1"></a>  <span class="at">width =</span> <span class="dv">7</span>, </span>
-<span id="cb97-5"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#cb97-5" tabindex="-1"></a>  <span class="at">height =</span> <span class="dv">5</span>,</span>
-<span id="cb97-6"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#cb97-6" tabindex="-1"></a>  <span class="at">dpi =</span> <span class="dv">300</span></span>
-<span id="cb97-7"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#cb97-7" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb101"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb101-1"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#cb101-1" tabindex="-1"></a><span class="fu">ggsave</span>(</span>
+<span id="cb101-2"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#cb101-2" tabindex="-1"></a>  <span class="at">filename =</span> <span class="st">&quot;TC_plot.png&quot;</span>,</span>
+<span id="cb101-3"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#cb101-3" tabindex="-1"></a>  <span class="at">plot =</span> p1,</span>
+<span id="cb101-4"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#cb101-4" tabindex="-1"></a>  <span class="at">width =</span> <span class="dv">7</span>, </span>
+<span id="cb101-5"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#cb101-5" tabindex="-1"></a>  <span class="at">height =</span> <span class="dv">5</span>,</span>
+<span id="cb101-6"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#cb101-6" tabindex="-1"></a>  <span class="at">dpi =</span> <span class="dv">300</span></span>
+<span id="cb101-7"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#cb101-7" tabindex="-1"></a>)</span></code></pre></div>
 <p>We use <code>ggsave</code> to save our plot, <code>filename</code> is the name of the file, <code>plot</code> is the plot we want to save, <code>width, height</code> size in inches, <code>dpi=300</code> is the print-quality resolution (keep this as is!)</p></li>
 </ul>
 </div>
 </div>
-<div id="mini-exercise" class="section level2 hasAnchor" number="6.5">
-<h2><span class="header-section-number">6.5</span> Mini-Exercise<a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#mini-exercise" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="interpretation-guide" class="section level2 hasAnchor" number="6.5">
+<h2><span class="header-section-number">6.5</span> Interpretation Guide:<a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#interpretation-guide" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ol style="list-style-type: decimal">
+<li><strong>MC = MR</strong>
+<ul>
+<li>This is the profit-maximizing quantity.</li>
+</ul></li>
+<li><strong>Price &gt; AC</strong>
+<ul>
+<li>Firm is making a profit</li>
+</ul></li>
+<li><strong>Price &lt; AC</strong>
+<ul>
+<li>Firm incurs a loss</li>
+</ul></li>
+<li><strong>Intersection of AC and Price</strong>
+<ul>
+<li>This is the <strong>break-even</strong> point</li>
+</ul></li>
+<li><strong>AC above Price</strong>
+<ul>
+<li>Helps identify economies of scale; meaning, check if firm has to increase production to reduce AC.</li>
+</ul></li>
+</ol>
+</div>
+<div id="mini-exercise" class="section level2 hasAnchor" number="6.6">
+<h2><span class="header-section-number">6.6</span> Mini-Exercise<a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#mini-exercise" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ol style="list-style-type: decimal">
 <li><p>Differentiate the following:</p>
 <p>a. <span class="math inline">\(h(x) = 2x^{1/8} + 10\)</span></p>
