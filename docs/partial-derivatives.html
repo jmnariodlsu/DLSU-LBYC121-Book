@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>7 Partial Derivatives | LBYC121 Course Book</title>
+  <meta name="description" content="An introduction to the LBYC121 Course Book." />
+  <meta name="generator" content="bookdown 0.46 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="7 Partial Derivatives | LBYC121 Course Book" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="An introduction to the LBYC121 Course Book." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="7 Partial Derivatives | LBYC121 Course Book" />
+  
+  <meta name="twitter:description" content="An introduction to the LBYC121 Course Book." />
+  
+
+<meta name="author" content="Jem Marie M. Nario" />
+
+
+<meta name="date" content="2026-01-24" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html"/>
+
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<h1>LBYC121 Course Book</h1>
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#about-me"><i class="fa fa-check"></i><b>1.1</b> About Me</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="syllabus.html"><a href="syllabus.html"><i class="fa fa-check"></i><b>2</b> Syllabus</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="syllabus.html"><a href="syllabus.html#course-description"><i class="fa fa-check"></i><b>2.1</b> Course Description</a></li>
+<li class="chapter" data-level="2.2" data-path="syllabus.html"><a href="syllabus.html#final-course-outputs"><i class="fa fa-check"></i><b>2.2</b> Final Course Outputs</a></li>
+<li class="chapter" data-level="2.3" data-path="syllabus.html"><a href="syllabus.html#generative-ai-use-policy"><i class="fa fa-check"></i><b>2.3</b> Generative AI-Use Policy</a></li>
+<li class="chapter" data-level="2.4" data-path="syllabus.html"><a href="syllabus.html#classroom-policies"><i class="fa fa-check"></i><b>2.4</b> Classroom Policies</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="syllabus.html"><a href="syllabus.html#excused-absences-policy"><i class="fa fa-check"></i><b>2.4.1</b> <strong>EXCUSED ABSENCES POLICY:</strong></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="assessments.html"><a href="assessments.html"><i class="fa fa-check"></i><b>3</b> Assessments</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="assessments.html"><a href="assessments.html#in-weekly-exercises"><i class="fa fa-check"></i><b>3.1</b> In-Weekly Exercises</a></li>
+<li class="chapter" data-level="3.2" data-path="assessments.html"><a href="assessments.html#problem-sets-1-and-2"><i class="fa fa-check"></i><b>3.2</b> Problem Sets 1 and 2</a></li>
+<li class="chapter" data-level="3.3" data-path="assessments.html"><a href="assessments.html#grading-system"><i class="fa fa-check"></i><b>3.3</b> Grading System</a></li>
+<li class="chapter" data-level="3.4" data-path="assessments.html"><a href="assessments.html#grading-scale"><i class="fa fa-check"></i><b>3.4</b> Grading Scale</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html"><i class="fa fa-check"></i><b>4</b> Basic Introduction to R</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#session-information"><i class="fa fa-check"></i><b>4.1</b> Session Information</a></li>
+<li class="chapter" data-level="4.2" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#preliminaries"><i class="fa fa-check"></i><b>4.2</b> Preliminaries</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#understanding-the-rstudio-screen"><i class="fa fa-check"></i><b>4.2.1</b> Understanding the RStudio Screen</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#packages"><i class="fa fa-check"></i><b>4.3</b> Packages</a></li>
+<li class="chapter" data-level="4.4" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#setting-up-the-working-directory"><i class="fa fa-check"></i><b>4.4</b> Setting up the Working Directory</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#what-is-a-working-directory"><i class="fa fa-check"></i><b>4.4.1</b> What is a Working Directory?</a></li>
+<li class="chapter" data-level="4.4.2" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#required-folder-structure"><i class="fa fa-check"></i><b>4.4.2</b> Required Folder Structure</a></li>
+<li class="chapter" data-level="4.4.3" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#setting-the-working-directory-in-rstudio"><i class="fa fa-check"></i><b>4.4.3</b> Setting the Working Directory in RStudio</a></li>
+<li class="chapter" data-level="4.4.4" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#setting-the-working-directory-using-code"><i class="fa fa-check"></i><b>4.4.4</b> Setting the Working Directory Using Code</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#cleaning-the-environment-do-this-regularly"><i class="fa fa-check"></i><b>4.5</b> Cleaning the Environment (Do This Regularly)</a></li>
+<li class="chapter" data-level="4.6" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#quarto-markdown"><i class="fa fa-check"></i><b>4.6</b> Quarto Markdown</a>
+<ul>
+<li class="chapter" data-level="4.6.1" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#installing-quarto-in-r"><i class="fa fa-check"></i><b>4.6.1</b> Installing Quarto in R</a></li>
+<li class="chapter" data-level="4.6.2" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#starting-a-quarto-document"><i class="fa fa-check"></i><b>4.6.2</b> Starting a Quarto Document</a></li>
+<li class="chapter" data-level="4.6.3" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#yaml-header-use"><i class="fa fa-check"></i><b>4.6.3</b> YAML Header Use</a></li>
+<li class="chapter" data-level="4.6.4" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#quarto-key-features"><i class="fa fa-check"></i><b>4.6.4</b> Quarto Key Features</a></li>
+<li class="chapter" data-level="4.6.5" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#quarto-markdown-shortcuts"><i class="fa fa-check"></i><b>4.6.5</b> Quarto Markdown Shortcuts</a></li>
+<li class="chapter" data-level="4.6.6" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#rendering-a-quarto-document"><i class="fa fa-check"></i><b>4.6.6</b> Rendering a Quarto Document</a></li>
+</ul></li>
+<li class="chapter" data-level="4.7" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#working-directories-and-file-management"><i class="fa fa-check"></i><b>4.7</b> Working Directories and File Management</a>
+<ul>
+<li class="chapter" data-level="4.7.1" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#file-naming-convention-mandatory"><i class="fa fa-check"></i><b>4.7.1</b> File Naming Convention (Mandatory)</a></li>
+</ul></li>
+<li class="chapter" data-level="4.8" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#mini-exercise-first-quarto-render-mandatory-per-individual"><i class="fa fa-check"></i><b>4.8</b> Mini-Exercise: First Quarto Render (Mandatory per Individual)</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="differentiation-rules.html"><a href="differentiation-rules.html"><i class="fa fa-check"></i><b>5</b> Differentiation Rules</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="differentiation-rules.html"><a href="differentiation-rules.html#introduction-1"><i class="fa fa-check"></i><b>5.1</b> Introduction</a></li>
+<li class="chapter" data-level="5.2" data-path="differentiation-rules.html"><a href="differentiation-rules.html#structure-of-differentiation"><i class="fa fa-check"></i><b>5.2</b> Structure of Differentiation</a></li>
+<li class="chapter" data-level="5.3" data-path="differentiation-rules.html"><a href="differentiation-rules.html#constant-rule"><i class="fa fa-check"></i><b>5.3</b> Constant Rule</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="differentiation-rules.html"><a href="differentiation-rules.html#example"><i class="fa fa-check"></i><b>5.3.1</b> Example</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="differentiation-rules.html"><a href="differentiation-rules.html#power-rule"><i class="fa fa-check"></i><b>5.4</b> Power Rule</a>
+<ul>
+<li class="chapter" data-level="5.4.1" data-path="differentiation-rules.html"><a href="differentiation-rules.html#example-1"><i class="fa fa-check"></i><b>5.4.1</b> Example</a></li>
+<li class="chapter" data-level="5.4.2" data-path="differentiation-rules.html"><a href="differentiation-rules.html#example-2"><i class="fa fa-check"></i><b>5.4.2</b> Example</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="differentiation-rules.html"><a href="differentiation-rules.html#constant-multiple-rule"><i class="fa fa-check"></i><b>5.5</b> Constant Multiple Rule</a>
+<ul>
+<li class="chapter" data-level="5.5.1" data-path="differentiation-rules.html"><a href="differentiation-rules.html#example-3"><i class="fa fa-check"></i><b>5.5.1</b> Example</a></li>
+</ul></li>
+<li class="chapter" data-level="5.6" data-path="differentiation-rules.html"><a href="differentiation-rules.html#sum-and-difference-rule"><i class="fa fa-check"></i><b>5.6</b> Sum and Difference Rule</a>
+<ul>
+<li class="chapter" data-level="5.6.1" data-path="differentiation-rules.html"><a href="differentiation-rules.html#example-4"><i class="fa fa-check"></i><b>5.6.1</b> Example</a></li>
+</ul></li>
+<li class="chapter" data-level="5.7" data-path="differentiation-rules.html"><a href="differentiation-rules.html#polynomial-functions-combined-rules"><i class="fa fa-check"></i><b>5.7</b> Polynomial Functions (Combined Rules)</a>
+<ul>
+<li class="chapter" data-level="5.7.1" data-path="differentiation-rules.html"><a href="differentiation-rules.html#example-5"><i class="fa fa-check"></i><b>5.7.1</b> Example</a></li>
+</ul></li>
+<li class="chapter" data-level="5.8" data-path="differentiation-rules.html"><a href="differentiation-rules.html#exponential-functions"><i class="fa fa-check"></i><b>5.8</b> Exponential Functions</a>
+<ul>
+<li class="chapter" data-level="5.8.1" data-path="differentiation-rules.html"><a href="differentiation-rules.html#example-6"><i class="fa fa-check"></i><b>5.8.1</b> Example</a></li>
+<li class="chapter" data-level="5.8.2" data-path="differentiation-rules.html"><a href="differentiation-rules.html#example-7"><i class="fa fa-check"></i><b>5.8.2</b> Example</a></li>
+</ul></li>
+<li class="chapter" data-level="5.9" data-path="differentiation-rules.html"><a href="differentiation-rules.html#logarithmic-functions"><i class="fa fa-check"></i><b>5.9</b> Logarithmic Functions</a>
+<ul>
+<li class="chapter" data-level="5.9.1" data-path="differentiation-rules.html"><a href="differentiation-rules.html#example-8"><i class="fa fa-check"></i><b>5.9.1</b> Example</a></li>
+<li class="chapter" data-level="5.9.2" data-path="differentiation-rules.html"><a href="differentiation-rules.html#example-9"><i class="fa fa-check"></i><b>5.9.2</b> Example</a></li>
+</ul></li>
+<li class="chapter" data-level="5.10" data-path="differentiation-rules.html"><a href="differentiation-rules.html#product-rule"><i class="fa fa-check"></i><b>5.10</b> Product Rule</a>
+<ul>
+<li class="chapter" data-level="5.10.1" data-path="differentiation-rules.html"><a href="differentiation-rules.html#example-10"><i class="fa fa-check"></i><b>5.10.1</b> Example</a></li>
+</ul></li>
+<li class="chapter" data-level="5.11" data-path="differentiation-rules.html"><a href="differentiation-rules.html#quotient-rule"><i class="fa fa-check"></i><b>5.11</b> Quotient Rule</a>
+<ul>
+<li class="chapter" data-level="5.11.1" data-path="differentiation-rules.html"><a href="differentiation-rules.html#example-11"><i class="fa fa-check"></i><b>5.11.1</b> Example</a></li>
+<li class="chapter" data-level="5.11.2" data-path="differentiation-rules.html"><a href="differentiation-rules.html#example-12"><i class="fa fa-check"></i><b>5.11.2</b> Example</a></li>
+</ul></li>
+<li class="chapter" data-level="5.12" data-path="differentiation-rules.html"><a href="differentiation-rules.html#chain-rule"><i class="fa fa-check"></i><b>5.12</b> Chain Rule</a>
+<ul>
+<li class="chapter" data-level="5.12.1" data-path="differentiation-rules.html"><a href="differentiation-rules.html#example-13"><i class="fa fa-check"></i><b>5.12.1</b> Example</a></li>
+</ul></li>
+<li class="chapter" data-level="5.13" data-path="differentiation-rules.html"><a href="differentiation-rules.html#things-to-note"><i class="fa fa-check"></i><b>5.13</b> Things to Note:</a></li>
+<li class="chapter" data-level="5.14" data-path="differentiation-rules.html"><a href="differentiation-rules.html#exercises"><i class="fa fa-check"></i><b>5.14</b> Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="review-of-single-variable-differentiation-rules-and-visualizing-functions.html"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html"><i class="fa fa-check"></i><b>6</b> Review of Single-Variable Differentiation Rules and Visualizing Functions</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="review-of-single-variable-differentiation-rules-and-visualizing-functions.html"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#economic-example"><i class="fa fa-check"></i><b>6.1</b> Economic Example</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="review-of-single-variable-differentiation-rules-and-visualizing-functions.html"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#total-cost-function-definition"><i class="fa fa-check"></i><b>6.1.1</b> Total Cost Function Definition</a></li>
+<li class="chapter" data-level="6.1.2" data-path="review-of-single-variable-differentiation-rules-and-visualizing-functions.html"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#average-cost-function-definition"><i class="fa fa-check"></i><b>6.1.2</b> Average Cost Function Definition</a></li>
+<li class="chapter" data-level="6.1.3" data-path="review-of-single-variable-differentiation-rules-and-visualizing-functions.html"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#marginal-cost-using-deriv"><i class="fa fa-check"></i><b>6.1.3</b> Marginal Cost using <code>Deriv</code></a></li>
+<li class="chapter" data-level="6.1.4" data-path="review-of-single-variable-differentiation-rules-and-visualizing-functions.html"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#evaluating-at-a-specific-quantity"><i class="fa fa-check"></i><b>6.1.4</b> Evaluating at a specific quantity</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="review-of-single-variable-differentiation-rules-and-visualizing-functions.html"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#writing-greek-letters"><i class="fa fa-check"></i><b>6.2</b> Writing Greek Letters</a></li>
+<li class="chapter" data-level="6.3" data-path="review-of-single-variable-differentiation-rules-and-visualizing-functions.html"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#square-roots-and-powers"><i class="fa fa-check"></i><b>6.3</b> Square Roots and Powers</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="partial-derivatives.html"><a href="partial-derivatives.html"><i class="fa fa-check"></i><b>7</b> Partial Derivatives</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="partial-derivatives.html"><a href="partial-derivatives.html#cobb-douglas-production-function"><i class="fa fa-check"></i><b>7.1</b> Cobb-Douglas Production Function</a></li>
+<li class="chapter" data-level="7.2" data-path="partial-derivatives.html"><a href="partial-derivatives.html#utility-function"><i class="fa fa-check"></i><b>7.2</b> Utility Function</a></li>
+<li class="chapter" data-level="7.3" data-path="partial-derivatives.html"><a href="partial-derivatives.html#visualizing-functions-with-ggplot2"><i class="fa fa-check"></i><b>7.3</b> Visualizing Functions with ggplot2</a>
+<ul>
+<li class="chapter" data-level="7.3.1" data-path="partial-derivatives.html"><a href="partial-derivatives.html#pre-plotting-check"><i class="fa fa-check"></i><b>7.3.1</b> Pre-plotting Check</a></li>
+<li class="chapter" data-level="7.3.2" data-path="partial-derivatives.html"><a href="partial-derivatives.html#plotting-a-single-function"><i class="fa fa-check"></i><b>7.3.2</b> 1. Plotting a Single Function</a></li>
+<li class="chapter" data-level="7.3.3" data-path="partial-derivatives.html"><a href="partial-derivatives.html#multiple-functions-in-one-plot-mc-and-ac"><i class="fa fa-check"></i><b>7.3.3</b> 2. Multiple Functions in One Plot (MC and AC)</a></li>
+<li class="chapter" data-level="7.3.4" data-path="partial-derivatives.html"><a href="partial-derivatives.html#multiple-functions-in-one-plot-mr-mc-ac"><i class="fa fa-check"></i><b>7.3.4</b> 3. Multiple Functions in One Plot (MR, MC, AC)</a></li>
+<li class="chapter" data-level="7.3.5" data-path="partial-derivatives.html"><a href="partial-derivatives.html#base-r-plotting-2"><i class="fa fa-check"></i><b>7.3.5</b> Base R Plotting</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="partial-derivatives.html"><a href="partial-derivatives.html#interpretation-guide"><i class="fa fa-check"></i><b>7.4</b> Interpretation Guide:</a></li>
+<li class="chapter" data-level="7.5" data-path="partial-derivatives.html"><a href="partial-derivatives.html#mini-exercise"><i class="fa fa-check"></i><b>7.5</b> Mini-Exercise</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">LBYC121 Course Book</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="partial-derivatives" class="section level1 hasAnchor" number="7">
+<h1><span class="header-section-number">7</span> Partial Derivatives<a href="partial-derivatives.html#partial-derivatives" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="cobb-douglas-production-function" class="section level2 hasAnchor" number="7.1">
+<h2><span class="header-section-number">7.1</span> Cobb-Douglas Production Function<a href="partial-derivatives.html#cobb-douglas-production-function" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><span class="math inline">\(Q(L,K) = L^\alpha * K^\beta\)</span></p>
+<p>Q(L,K) = L^\alpha * K^\beta</p>
+<p>We have to specify that the coefficients, <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span> be treated as constants to get the right differential.</p>
+<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb79-1"><a href="partial-derivatives.html#cb79-1" tabindex="-1"></a>cd_pf<span class="ot">&lt;-</span> \(L, K, alpha, beta) L<span class="sc">^</span>alpha <span class="sc">*</span> K<span class="sc">^</span>beta</span></code></pre></div>
+<p>We define our production function</p>
+<div id="partial-derivatives-marginal-products" class="section level4 hasAnchor" number="7.1.0.1">
+<h4><span class="header-section-number">7.1.0.1</span> Partial Derivatives: Marginal Products<a href="partial-derivatives.html#partial-derivatives-marginal-products" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ul>
+<li>Marginal Product of Labor is the additional output produced by one more unit of labor, holding capital constant.</li>
+</ul>
+<div class="sourceCode" id="cb80"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb80-1"><a href="partial-derivatives.html#cb80-1" tabindex="-1"></a>mpl<span class="ot">&lt;-</span><span class="fu">Deriv</span>(cd_pf, <span class="st">&quot;L&quot;</span>) </span>
+<span id="cb80-2"><a href="partial-derivatives.html#cb80-2" tabindex="-1"></a>mpl</span></code></pre></div>
+<pre><code>## function (L, K, alpha, beta) 
+## alpha * K^beta * L^(alpha - 1)</code></pre>
+<ul>
+<li>Marginal Product of Capital is the additional output produced by one more unit of capital, holding labor constant</li>
+</ul>
+<div class="sourceCode" id="cb82"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb82-1"><a href="partial-derivatives.html#cb82-1" tabindex="-1"></a>mpk<span class="ot">&lt;-</span><span class="fu">Deriv</span>(cd_pf, <span class="st">&quot;K&quot;</span>) </span>
+<span id="cb82-2"><a href="partial-derivatives.html#cb82-2" tabindex="-1"></a>mpk</span></code></pre></div>
+<pre><code>## function (L, K, alpha, beta) 
+## beta * K^(beta - 1) * L^alpha</code></pre>
+</div>
+</div>
+<div id="utility-function" class="section level2 hasAnchor" number="7.2">
+<h2><span class="header-section-number">7.2</span> Utility Function<a href="partial-derivatives.html#utility-function" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Say we have the following utility function:</p>
+<p><span class="math inline">\(U(x,y) = x^{\gamma}y^{\delta}\)</span></p>
+<p>U(x,y) = x^{\gamma}y^{\delta}</p>
+<p>where gamma is <code>0.35</code> and delta is <code>0.65</code></p>
+<div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb84-1"><a href="partial-derivatives.html#cb84-1" tabindex="-1"></a>gamma<span class="ot">&lt;-</span><span class="fl">0.35</span></span>
+<span id="cb84-2"><a href="partial-derivatives.html#cb84-2" tabindex="-1"></a>delta<span class="ot">&lt;-</span><span class="fl">0.65</span></span>
+<span id="cb84-3"><a href="partial-derivatives.html#cb84-3" tabindex="-1"></a>Uxy<span class="ot">&lt;-</span><span class="cf">function</span>(x, y) x<span class="sc">^</span>gamma<span class="sc">*</span>y<span class="sc">^</span>delta</span></code></pre></div>
+<div id="partial-derivatives-marginal-utilities" class="section level4 hasAnchor" number="7.2.0.1">
+<h4><span class="header-section-number">7.2.0.1</span> Partial Derivatives: Marginal Utilities<a href="partial-derivatives.html#partial-derivatives-marginal-utilities" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb85-1"><a href="partial-derivatives.html#cb85-1" tabindex="-1"></a>MUx<span class="ot">&lt;-</span><span class="fu">Deriv</span>(Uxy, <span class="st">&quot;x&quot;</span>)</span>
+<span id="cb85-2"><a href="partial-derivatives.html#cb85-2" tabindex="-1"></a>MUx</span></code></pre></div>
+<pre><code>## function (x, y) 
+## gamma * x^(gamma - 1) * y^delta</code></pre>
+<div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb87-1"><a href="partial-derivatives.html#cb87-1" tabindex="-1"></a>MUy<span class="ot">&lt;-</span><span class="fu">Deriv</span>(Uxy, <span class="st">&quot;y&quot;</span>)</span>
+<span id="cb87-2"><a href="partial-derivatives.html#cb87-2" tabindex="-1"></a>MUy</span></code></pre></div>
+<pre><code>## function (x, y) 
+## delta * x^gamma * y^(delta - 1)</code></pre>
+<p>Let us say <code>x=5</code> and <code>y=2</code></p>
+<div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb89-1"><a href="partial-derivatives.html#cb89-1" tabindex="-1"></a>x<span class="ot">&lt;-</span><span class="dv">5</span></span>
+<span id="cb89-2"><a href="partial-derivatives.html#cb89-2" tabindex="-1"></a>y<span class="ot">&lt;-</span><span class="dv">2</span></span>
+<span id="cb89-3"><a href="partial-derivatives.html#cb89-3" tabindex="-1"></a><span class="fu">MUx</span>(x,y)</span></code></pre></div>
+<pre><code>## [1] 0.1929332</code></pre>
+<div class="sourceCode" id="cb91"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb91-1"><a href="partial-derivatives.html#cb91-1" tabindex="-1"></a><span class="fu">MUy</span>(x,y)</span></code></pre></div>
+<pre><code>## [1] 0.8957614</code></pre>
+<p>What do the Marginal Utilities tell you?</p>
+</div>
+</div>
+<div id="visualizing-functions-with-ggplot2" class="section level2 hasAnchor" number="7.3">
+<h2><span class="header-section-number">7.3</span> Visualizing Functions with ggplot2<a href="partial-derivatives.html#visualizing-functions-with-ggplot2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="pre-plotting-check" class="section level3 hasAnchor" number="7.3.1">
+<h3><span class="header-section-number">7.3.1</span> Pre-plotting Check<a href="partial-derivatives.html#pre-plotting-check" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>In some cases, <code>ggplot2</code> does not run. This can be brought by package mismatch, so, we need to double-check that everything is working properly.</p>
+<div class="sourceCode" id="cb93"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb93-1"><a href="partial-derivatives.html#cb93-1" tabindex="-1"></a>user <span class="ot">&lt;-</span> <span class="fu">file.path</span>(<span class="fu">Sys.getenv</span>(<span class="st">&quot;USERPROFILE&quot;</span>), <span class="st">&quot;R&quot;</span>, <span class="st">&quot;win-library&quot;</span>, <span class="st">&quot;4.5&quot;</span>)</span>
+<span id="cb93-2"><a href="partial-derivatives.html#cb93-2" tabindex="-1"></a><span class="fu">dir.create</span>(user, <span class="at">recursive =</span> <span class="cn">TRUE</span>, <span class="at">showWarnings =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb93-3"><a href="partial-derivatives.html#cb93-3" tabindex="-1"></a><span class="fu">.libPaths</span>(<span class="fu">c</span>(user, <span class="fu">.libPaths</span>()))</span>
+<span id="cb93-4"><a href="partial-derivatives.html#cb93-4" tabindex="-1"></a></span>
+<span id="cb93-5"><a href="partial-derivatives.html#cb93-5" tabindex="-1"></a>ok <span class="ot">&lt;-</span> <span class="fu">tryCatch</span>({</span>
+<span id="cb93-6"><a href="partial-derivatives.html#cb93-6" tabindex="-1"></a>  <span class="fu">library</span>(ggplot2)</span>
+<span id="cb93-7"><a href="partial-derivatives.html#cb93-7" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">data.frame</span>(<span class="at">x=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="at">y=</span><span class="fu">rnorm</span>(<span class="dv">5</span>)), <span class="fu">aes</span>(x,y)) <span class="sc">+</span> <span class="fu">geom_point</span>()</span>
+<span id="cb93-8"><a href="partial-derivatives.html#cb93-8" tabindex="-1"></a>  <span class="cn">TRUE</span></span>
+<span id="cb93-9"><a href="partial-derivatives.html#cb93-9" tabindex="-1"></a>}, <span class="at">error =</span> <span class="cf">function</span>(e) <span class="cn">FALSE</span>)</span>
+<span id="cb93-10"><a href="partial-derivatives.html#cb93-10" tabindex="-1"></a></span>
+<span id="cb93-11"><a href="partial-derivatives.html#cb93-11" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span>ok) {</span>
+<span id="cb93-12"><a href="partial-derivatives.html#cb93-12" tabindex="-1"></a>  <span class="fu">install.packages</span>(<span class="st">&quot;rlang&quot;</span>, <span class="at">lib =</span> user_lib)</span>
+<span id="cb93-13"><a href="partial-derivatives.html#cb93-13" tabindex="-1"></a>  ok <span class="ot">&lt;-</span> <span class="fu">tryCatch</span>({</span>
+<span id="cb93-14"><a href="partial-derivatives.html#cb93-14" tabindex="-1"></a>    <span class="fu">library</span>(ggplot2)</span>
+<span id="cb93-15"><a href="partial-derivatives.html#cb93-15" tabindex="-1"></a>      <span class="fu">ggplot</span>(<span class="fu">data.frame</span>(<span class="at">x=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="at">y=</span><span class="fu">rnorm</span>(<span class="dv">5</span>)), <span class="fu">aes</span>(x,y)) <span class="sc">+</span> <span class="fu">geom_point</span>()</span>
+<span id="cb93-16"><a href="partial-derivatives.html#cb93-16" tabindex="-1"></a>    <span class="cn">TRUE</span></span>
+<span id="cb93-17"><a href="partial-derivatives.html#cb93-17" tabindex="-1"></a>  }, <span class="at">error =</span> <span class="cf">function</span>(e) <span class="cn">FALSE</span>)</span>
+<span id="cb93-18"><a href="partial-derivatives.html#cb93-18" tabindex="-1"></a>}</span>
+<span id="cb93-19"><a href="partial-derivatives.html#cb93-19" tabindex="-1"></a></span>
+<span id="cb93-20"><a href="partial-derivatives.html#cb93-20" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span>ok) <span class="fu">plot</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="fu">rnorm</span>(<span class="dv">5</span>))</span></code></pre></div>
+<p>If it is not working, we will use Base R, so go to Base R.</p>
+</div>
+<div id="plotting-a-single-function" class="section level3 hasAnchor" number="7.3.2">
+<h3><span class="header-section-number">7.3.2</span> 1. Plotting a Single Function<a href="partial-derivatives.html#plotting-a-single-function" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>We load the <code>ggplot2</code> package to make plots.</p>
+<div id="a.-load-ggplot2-package" class="section level5 hasAnchor" number="7.3.2.0.1">
+<h5><span class="header-section-number">7.3.2.0.1</span> a. Load <code>ggplot2</code> package<a href="partial-derivatives.html#a.-load-ggplot2-package" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<div class="sourceCode" id="cb94"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb94-1"><a href="partial-derivatives.html#cb94-1" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span></code></pre></div>
+</div>
+<div id="b.-create-values-for-q" class="section level5 hasAnchor" number="7.3.2.0.2">
+<h5><span class="header-section-number">7.3.2.0.2</span> b. Create values for Q<a href="partial-derivatives.html#b.-create-values-for-q" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb95-1"><a href="partial-derivatives.html#cb95-1" tabindex="-1"></a>Q_vals<span class="ot">&lt;-</span><span class="fu">seq</span>(<span class="dv">0</span>,<span class="dv">50</span>, <span class="at">length.out =</span> <span class="dv">100</span>)</span></code></pre></div>
+<p>We create a sequence of numbers using <code>seq()</code>, <code>0, 50</code> the start and end of the sequence while <code>length.out=100</code> creates 100 numbers evenly spaced between 0 and 50. If you have more points with the <code>length.out</code> the curve will be smoother when we do the plotting.</p>
+</div>
+<div id="c.-create-data-frame-for-plotting" class="section level5 hasAnchor" number="7.3.2.0.3">
+<h5><span class="header-section-number">7.3.2.0.3</span> c. Create data frame for plotting<a href="partial-derivatives.html#c.-create-data-frame-for-plotting" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb96-1"><a href="partial-derivatives.html#cb96-1" tabindex="-1"></a>df_tc<span class="ot">&lt;-</span><span class="fu">data.frame</span>(<span class="at">Q =</span> Q_vals, <span class="at">TC =</span> <span class="fu">TC</span>(Q_vals))</span></code></pre></div>
+<p><code>data.frame()</code> creates the table of data</p>
+<p><code>Q=Q_vals</code> is the column that is created. We store all the quantities (from 0 to 50)</p>
+<p><code>TC = TC(Q_vals)</code> is the column for <code>TC</code> storing the total cost for each <code>Q</code>.</p>
+</div>
+<div id="d.-plotting-the-curve" class="section level5 hasAnchor" number="7.3.2.0.4">
+<h5><span class="header-section-number">7.3.2.0.4</span> d. Plotting the curve<a href="partial-derivatives.html#d.-plotting-the-curve" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>You might get worried because there are warnings that will appear, however, those are not really worrisome. If you do not want to be stressed, you can remove the warnings. You can do that by adding in the code chunk where you can see <code>{r}</code>, <code>{r, warning=FALSE}</code>.</p>
+<div class="sourceCode" id="cb97"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb97-1"><a href="partial-derivatives.html#cb97-1" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb97-2"><a href="partial-derivatives.html#cb97-2" tabindex="-1"></a>p1<span class="ot">&lt;-</span><span class="fu">ggplot</span>(df_tc,</span>
+<span id="cb97-3"><a href="partial-derivatives.html#cb97-3" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> Q,</span>
+<span id="cb97-4"><a href="partial-derivatives.html#cb97-4" tabindex="-1"></a>           <span class="at">y =</span> TC)) <span class="sc">+</span></span>
+<span id="cb97-5"><a href="partial-derivatives.html#cb97-5" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">size =</span> <span class="fl">1.2</span>, <span class="at">color =</span> <span class="st">&quot;darkgreen&quot;</span>)<span class="sc">+</span></span>
+<span id="cb97-6"><a href="partial-derivatives.html#cb97-6" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Plot of Total Cost Curve&quot;</span>, <span class="at">x =</span> <span class="st">&quot;Q&quot;</span>, <span class="at">y=</span> <span class="st">&quot;Cost&quot;</span>)<span class="sc">+</span></span>
+<span id="cb97-7"><a href="partial-derivatives.html#cb97-7" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb97-8"><a href="partial-derivatives.html#cb97-8" tabindex="-1"></a><span class="fu">print</span>(p1)</span></code></pre></div>
+<p><img src="LBYC121_Course_Book_files/figure-html/unnamed-chunk-139-1.png" alt="" width="672" /></p>
+<p>i. <code>ggplot(df_tc, aes(x = Q, y = TC))</code></p>
+<ul>
+<li><p>This starts the plot using the <code>df_tc</code> we created as the data.</p></li>
+<li><p><code>aes(x = Q, y = TC)</code> tells R that you are putting <code>Q</code> on the x-axis and <code>TC</code> on the y-axis</p></li>
+</ul>
+<p>ii. <code>geom_line(size = 1.2, color = "darkgreen")</code></p>
+<ul>
+<li><p>This draws our line connecting all points (Q, TC)</p></li>
+<li><p><code>size = 1.2</code> means thicker line than the default of 1.</p></li>
+<li><p><code>color = "darkgreen"</code> is the line color. You can experiment. So, if the color you want will not appear, ggplot does not have it.</p></li>
+</ul>
+<p>iii. <code>labs(title = "Plot of TC", x = "Q", y = "Cost")</code></p>
+<ul>
+<li>This adds labels like the title and axis names</li>
+</ul>
+<p>iv. <code>theme_minimal()</code></p>
+<ul>
+<li>Makes the plot cleaner and simpler, with less clutter.</li>
+</ul>
+</div>
+<div id="base-r-plotting" class="section level4 hasAnchor" number="7.3.2.1">
+<h4><span class="header-section-number">7.3.2.1</span> Base R Plotting<a href="partial-derivatives.html#base-r-plotting" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb98"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb98-1"><a href="partial-derivatives.html#cb98-1" tabindex="-1"></a><span class="fu">options</span>(<span class="at">scipen =</span> <span class="dv">999</span>)</span>
+<span id="cb98-2"><a href="partial-derivatives.html#cb98-2" tabindex="-1"></a></span>
+<span id="cb98-3"><a href="partial-derivatives.html#cb98-3" tabindex="-1"></a>p1<span class="fl">.1</span><span class="ot">&lt;-</span><span class="fu">plot</span>(df_tc<span class="sc">$</span>Q, df_tc<span class="sc">$</span>TC, <span class="at">type =</span> <span class="st">&quot;l&quot;</span>, <span class="at">col =</span> <span class="st">&quot;darkgreen&quot;</span>, <span class="at">lwd =</span> <span class="dv">2</span>,</span>
+<span id="cb98-4"><a href="partial-derivatives.html#cb98-4" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">&quot;Plot of Total Cost Curve&quot;</span>,</span>
+<span id="cb98-5"><a href="partial-derivatives.html#cb98-5" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">&quot;Q&quot;</span>,</span>
+<span id="cb98-6"><a href="partial-derivatives.html#cb98-6" tabindex="-1"></a>     <span class="at">ylab =</span> <span class="st">&quot;Cost&quot;</span></span>
+<span id="cb98-7"><a href="partial-derivatives.html#cb98-7" tabindex="-1"></a>)</span></code></pre></div>
+<p><img src="LBYC121_Course_Book_files/figure-html/unnamed-chunk-140-1.png" alt="" width="672" /></p>
+<div class="sourceCode" id="cb99"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb99-1"><a href="partial-derivatives.html#cb99-1" tabindex="-1"></a><span class="fu">print</span>(p1<span class="fl">.1</span>)</span></code></pre></div>
+<pre><code>## NULL</code></pre>
+<p>i. <code>options (scipen=999)</code> is added because unlike ggplot2, Base R tends to use scientific notation. It does not look that nice, so, to avoid that, add this.</p>
+<p>ii. <code>plot(df_tc$Q, df_tc$TC)</code> portion is the <code>aes</code> portion in <code>ggplot2</code>.</p>
+<ul>
+<li><p><code>type = "l", col = "darkgreen", lwd = 2</code> so this makes the plot a line graph, color is dark green and the line width is thicker,</p></li>
+<li><p>The other parts are the labels.</p></li>
+</ul>
+</div>
+</div>
+<div id="multiple-functions-in-one-plot-mc-and-ac" class="section level3 hasAnchor" number="7.3.3">
+<h3><span class="header-section-number">7.3.3</span> 2. Multiple Functions in One Plot (MC and AC)<a href="partial-derivatives.html#multiple-functions-in-one-plot-mc-and-ac" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>We already have our <code>MC</code> and <code>AC</code> functions. We also have <code>Q_vals</code> too.</p>
+<div id="a.-define-the-functions" class="section level5 hasAnchor" number="7.3.3.0.1">
+<h5><span class="header-section-number">7.3.3.0.1</span> a. Define the functions<a href="partial-derivatives.html#a.-define-the-functions" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+</div>
+<div id="b.-prepare-the-data-in-long-format-for-ggplot" class="section level5 hasAnchor" number="7.3.3.0.2">
+<h5><span class="header-section-number">7.3.3.0.2</span> b. Prepare the data in long format for ggplot<a href="partial-derivatives.html#b.-prepare-the-data-in-long-format-for-ggplot" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p><code>ggplot2</code> prefers long format which looks like this:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Q</th>
+<th>Value</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>10</td>
+<td>MC</td>
+</tr>
+<tr class="even">
+<td>0.1</td>
+<td>12</td>
+<td>MC</td>
+</tr>
+<tr class="odd">
+<td>…</td>
+<td>…</td>
+<td>MC</td>
+</tr>
+<tr class="even">
+<td>0</td>
+<td>15</td>
+<td>AC</td>
+</tr>
+<tr class="odd">
+<td>0.1</td>
+<td>14</td>
+<td>AC</td>
+</tr>
+<tr class="even">
+<td>…</td>
+<td>…</td>
+<td>AC</td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode" id="cb101"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb101-1"><a href="partial-derivatives.html#cb101-1" tabindex="-1"></a>dfc<span class="ot">&lt;-</span><span class="fu">data.frame</span>(</span>
+<span id="cb101-2"><a href="partial-derivatives.html#cb101-2" tabindex="-1"></a>  <span class="at">Q =</span> <span class="fu">rep</span>(Q_vals, <span class="dv">2</span>),</span>
+<span id="cb101-3"><a href="partial-derivatives.html#cb101-3" tabindex="-1"></a>  <span class="at">Value =</span> <span class="fu">c</span>(<span class="fu">MC</span>(Q_vals), <span class="fu">AC</span>(Q_vals)),</span>
+<span id="cb101-4"><a href="partial-derivatives.html#cb101-4" tabindex="-1"></a>  <span class="at">Type =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">&quot;MC&quot;</span>, <span class="st">&quot;AC&quot;</span>), <span class="at">each =</span> <span class="fu">length</span>(Q_vals))</span>
+<span id="cb101-5"><a href="partial-derivatives.html#cb101-5" tabindex="-1"></a>)</span></code></pre></div>
+<ul>
+<li><p><code>rep(Q_vals, 2)</code> repeat Q for both curves</p></li>
+<li><p><code>Value</code> is so that MC and AC values are stacked</p></li>
+<li><p><code>Type</code> tells <code>ggplot</code> which line is which</p></li>
+</ul>
+</div>
+<div id="c.-plotting-ac-and-mc" class="section level5 hasAnchor" number="7.3.3.0.3">
+<h5><span class="header-section-number">7.3.3.0.3</span> c. Plotting AC and MC<a href="partial-derivatives.html#c.-plotting-ac-and-mc" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb102-1"><a href="partial-derivatives.html#cb102-1" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb102-2"><a href="partial-derivatives.html#cb102-2" tabindex="-1"></a></span>
+<span id="cb102-3"><a href="partial-derivatives.html#cb102-3" tabindex="-1"></a>p2<span class="ot">&lt;-</span><span class="fu">ggplot</span>(dfc, <span class="fu">aes</span>(<span class="at">x =</span> Q, <span class="at">y =</span> Value, <span class="at">color =</span> Type, <span class="at">linetype =</span> Type, <span class="at">size =</span> Type)) <span class="sc">+</span></span>
+<span id="cb102-4"><a href="partial-derivatives.html#cb102-4" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb102-5"><a href="partial-derivatives.html#cb102-5" tabindex="-1"></a>  <span class="fu">scale_linetype_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;MC&quot;</span> <span class="ot">=</span> <span class="st">&quot;dashed&quot;</span>, <span class="st">&quot;AC&quot;</span> <span class="ot">=</span> <span class="st">&quot;solid&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb102-6"><a href="partial-derivatives.html#cb102-6" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;MC&quot;</span> <span class="ot">=</span> <span class="st">&quot;pink&quot;</span>, <span class="st">&quot;AC&quot;</span> <span class="ot">=</span> <span class="st">&quot;purple&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb102-7"><a href="partial-derivatives.html#cb102-7" tabindex="-1"></a>  <span class="fu">scale_size_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;MC&quot;</span> <span class="ot">=</span> <span class="dv">1</span>, <span class="st">&quot;AC&quot;</span> <span class="ot">=</span> <span class="fl">1.5</span>)) <span class="sc">+</span></span>
+<span id="cb102-8"><a href="partial-derivatives.html#cb102-8" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;MC and AC Curves&quot;</span>, <span class="at">x =</span> <span class="st">&quot;Q&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Cost&quot;</span>) <span class="sc">+</span></span>
+<span id="cb102-9"><a href="partial-derivatives.html#cb102-9" tabindex="-1"></a>  <span class="fu">coord_cartesian</span>(<span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">100</span>)) <span class="sc">+</span></span>
+<span id="cb102-10"><a href="partial-derivatives.html#cb102-10" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb102-11"><a href="partial-derivatives.html#cb102-11" tabindex="-1"></a><span class="fu">print</span>(p2)</span></code></pre></div>
+<p><img src="LBYC121_Course_Book_files/figure-html/unnamed-chunk-142-1.png" alt="" width="672" /></p>
+<p>i. <code>aes(color = Type, linetype = Type, size = Type</code></p>
+<ul>
+<li>automatically maps line style</li>
+</ul>
+<p>ii. <code>coord_cartesian(ylim = c(0,100))</code></p>
+<ul>
+<li>This zooms the y-axis without cutting the data.</li>
+</ul>
+<p>iii. Specifying the line style using <code>scale_linetype_manual</code> instead of letting R do the lines. So, AC is set as the solid line and MC is set as the dashed line. <code>scale_color_manual</code> specifying the color per line. <code>scale_size_manual</code> specifies the thickness of the lines.</p>
+<ul>
+<li>Inside the parenthesis for all, you have to add <code>c()</code> because you have a “collection” of curves.</li>
+</ul>
+<p>iv. <code>labs</code> for the labels and <code>theme_minimal()</code> for a clean look.</p>
+</div>
+<div id="base-r-plotting-1" class="section level4 hasAnchor" number="7.3.3.1">
+<h4><span class="header-section-number">7.3.3.1</span> Base R Plotting<a href="partial-derivatives.html#base-r-plotting-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb103"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb103-1"><a href="partial-derivatives.html#cb103-1" tabindex="-1"></a><span class="fu">options</span>(<span class="at">scipen =</span> <span class="dv">999</span>)</span>
+<span id="cb103-2"><a href="partial-derivatives.html#cb103-2" tabindex="-1"></a></span>
+<span id="cb103-3"><a href="partial-derivatives.html#cb103-3" tabindex="-1"></a></span>
+<span id="cb103-4"><a href="partial-derivatives.html#cb103-4" tabindex="-1"></a>y_min <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb103-5"><a href="partial-derivatives.html#cb103-5" tabindex="-1"></a>y_max <span class="ot">&lt;-</span> <span class="dv">100</span></span>
+<span id="cb103-6"><a href="partial-derivatives.html#cb103-6" tabindex="-1"></a></span>
+<span id="cb103-7"><a href="partial-derivatives.html#cb103-7" tabindex="-1"></a>p2<span class="fl">.1</span><span class="ot">&lt;-</span><span class="fu">plot</span>(dfc<span class="sc">$</span>Q, dfc<span class="sc">$</span>Value, <span class="at">type =</span> <span class="st">&quot;n&quot;</span>,</span>
+<span id="cb103-8"><a href="partial-derivatives.html#cb103-8" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">&quot;Q&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Cost&quot;</span>,</span>
+<span id="cb103-9"><a href="partial-derivatives.html#cb103-9" tabindex="-1"></a>     <span class="at">ylim =</span> <span class="fu">c</span>(y_min, y_max),</span>
+<span id="cb103-10"><a href="partial-derivatives.html#cb103-10" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">&quot;MC and AC Curves&quot;</span>)</span>
+<span id="cb103-11"><a href="partial-derivatives.html#cb103-11" tabindex="-1"></a><span class="fu">lines</span>(dfc<span class="sc">$</span>Q[dfc<span class="sc">$</span>Type <span class="sc">==</span> <span class="st">&quot;AC&quot;</span>], dfc<span class="sc">$</span>Value[dfc<span class="sc">$</span>Type <span class="sc">==</span> <span class="st">&quot;AC&quot;</span>], </span>
+<span id="cb103-12"><a href="partial-derivatives.html#cb103-12" tabindex="-1"></a>      <span class="at">col =</span> <span class="st">&quot;purple&quot;</span>, <span class="at">lwd =</span> <span class="dv">2</span>, <span class="at">lty =</span> <span class="dv">1</span>)</span>
+<span id="cb103-13"><a href="partial-derivatives.html#cb103-13" tabindex="-1"></a><span class="fu">lines</span>(dfc<span class="sc">$</span>Q[dfc<span class="sc">$</span>Type <span class="sc">==</span> <span class="st">&quot;MC&quot;</span>], dfc<span class="sc">$</span>Value[dfc<span class="sc">$</span>Type <span class="sc">==</span> <span class="st">&quot;MC&quot;</span>], </span>
+<span id="cb103-14"><a href="partial-derivatives.html#cb103-14" tabindex="-1"></a>      <span class="at">col =</span> <span class="st">&quot;pink&quot;</span>, <span class="at">lwd =</span> <span class="dv">2</span>, <span class="at">lty =</span> <span class="dv">2</span>)</span>
+<span id="cb103-15"><a href="partial-derivatives.html#cb103-15" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">&quot;topright&quot;</span>, <span class="at">legend =</span> <span class="fu">c</span>(<span class="st">&quot;AC&quot;</span>, <span class="st">&quot;MC&quot;</span>),</span>
+<span id="cb103-16"><a href="partial-derivatives.html#cb103-16" tabindex="-1"></a>       <span class="at">col =</span> <span class="fu">c</span>(<span class="st">&quot;purple&quot;</span>, <span class="st">&quot;pink&quot;</span>), <span class="at">lwd =</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">2</span>), <span class="at">lty =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))</span></code></pre></div>
+<p><img src="LBYC121_Course_Book_files/figure-html/unnamed-chunk-143-1.png" alt="" width="672" /></p>
+<div class="sourceCode" id="cb104"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb104-1"><a href="partial-derivatives.html#cb104-1" tabindex="-1"></a><span class="fu">print</span>(p2<span class="fl">.1</span>)</span></code></pre></div>
+<pre><code>## NULL</code></pre>
+<p>i. <code>plot(dfc$Q, dfc$Value, type = "n"</code> creates the plot, much like the <code>aes</code></p>
+<p>ii. the labels are then added, alongside the <code>ylim</code> which is the equivalent of <code>coord_cartesian</code> in <code>ggplot2</code></p>
+<p>iii. <code>lines(...)</code> draws each curve individually, the <code>lty</code> is the line type, (1 for solid, 2 for dashed), <code>lwd</code> is line thickness, <code>col</code> is color, the <code>legend</code> adds legend to match colors and line types manually.</p>
+</div>
+</div>
+<div id="multiple-functions-in-one-plot-mr-mc-ac" class="section level3 hasAnchor" number="7.3.4">
+<h3><span class="header-section-number">7.3.4</span> 3. Multiple Functions in One Plot (MR, MC, AC)<a href="partial-derivatives.html#multiple-functions-in-one-plot-mr-mc-ac" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="a.-getting-tr-and-mr" class="section level5 hasAnchor" number="7.3.4.0.1">
+<h5><span class="header-section-number">7.3.4.0.1</span> a. Getting TR and MR<a href="partial-derivatives.html#a.-getting-tr-and-mr" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>Let us define the price as a function of Q:</p>
+<div class="sourceCode" id="cb106"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb106-1"><a href="partial-derivatives.html#cb106-1" tabindex="-1"></a>P<span class="ot">&lt;-</span>\(Q) <span class="dv">100-2</span><span class="sc">*</span>Q</span>
+<span id="cb106-2"><a href="partial-derivatives.html#cb106-2" tabindex="-1"></a></span>
+<span id="cb106-3"><a href="partial-derivatives.html#cb106-3" tabindex="-1"></a>TR<span class="ot">&lt;-</span> \(Q) <span class="fu">P</span>(Q)<span class="sc">*</span>Q</span></code></pre></div>
+<p>We get the Marginal Revenue that is the derivative of TR</p>
+<div class="sourceCode" id="cb107"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb107-1"><a href="partial-derivatives.html#cb107-1" tabindex="-1"></a><span class="fu">library</span>(Deriv)</span>
+<span id="cb107-2"><a href="partial-derivatives.html#cb107-2" tabindex="-1"></a>MR<span class="ot">&lt;-</span> <span class="fu">Deriv</span>(TR, <span class="st">&quot;Q&quot;</span>)</span></code></pre></div>
+</div>
+<div id="b.-prepare-the-data" class="section level5 hasAnchor" number="7.3.4.0.2">
+<h5><span class="header-section-number">7.3.4.0.2</span> b. Prepare the data<a href="partial-derivatives.html#b.-prepare-the-data" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<div class="sourceCode" id="cb108"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb108-1"><a href="partial-derivatives.html#cb108-1" tabindex="-1"></a>df3<span class="ot">&lt;-</span><span class="fu">data.frame</span>(</span>
+<span id="cb108-2"><a href="partial-derivatives.html#cb108-2" tabindex="-1"></a>  <span class="at">Q=</span><span class="fu">rep</span>(Q_vals,<span class="dv">3</span>),</span>
+<span id="cb108-3"><a href="partial-derivatives.html#cb108-3" tabindex="-1"></a>  <span class="at">Value=</span><span class="fu">c</span>(<span class="fu">MC</span>(Q_vals), <span class="fu">AC</span>(Q_vals), <span class="fu">MR</span>(Q_vals)),</span>
+<span id="cb108-4"><a href="partial-derivatives.html#cb108-4" tabindex="-1"></a>  <span class="at">Type =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">&quot;MC&quot;</span>, <span class="st">&quot;AC&quot;</span>, <span class="st">&quot;MR&quot;</span>), <span class="at">each =</span> <span class="fu">length</span>(Q_vals))</span>
+<span id="cb108-5"><a href="partial-derivatives.html#cb108-5" tabindex="-1"></a>)</span></code></pre></div>
+<p>The only difference is that we now have three curves: MC, AC, and MR.</p>
+</div>
+<div id="c.-plot-mc-ac-mr" class="section level5 hasAnchor" number="7.3.4.0.3">
+<h5><span class="header-section-number">7.3.4.0.3</span> c. Plot MC, AC, MR<a href="partial-derivatives.html#c.-plot-mc-ac-mr" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<div class="sourceCode" id="cb109"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb109-1"><a href="partial-derivatives.html#cb109-1" tabindex="-1"></a>p3<span class="ot">&lt;-</span><span class="fu">ggplot</span>(df3, </span>
+<span id="cb109-2"><a href="partial-derivatives.html#cb109-2" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> Q, <span class="at">y =</span> Value, <span class="at">color =</span> Type, <span class="at">linetype =</span> Type, <span class="at">size =</span> Type)) <span class="sc">+</span></span>
+<span id="cb109-3"><a href="partial-derivatives.html#cb109-3" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb109-4"><a href="partial-derivatives.html#cb109-4" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;MC&quot;</span> <span class="ot">=</span> <span class="st">&quot;pink&quot;</span>, <span class="st">&quot;AC&quot;</span> <span class="ot">=</span> <span class="st">&quot;purple&quot;</span>, <span class="at">MR =</span> <span class="st">&quot;skyblue&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb109-5"><a href="partial-derivatives.html#cb109-5" tabindex="-1"></a>  <span class="fu">scale_linetype_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;MC&quot;</span> <span class="ot">=</span> <span class="st">&quot;dashed&quot;</span>, <span class="st">&quot;AC&quot;</span> <span class="ot">=</span> <span class="st">&quot;solid&quot;</span>, <span class="st">&quot;MR&quot;</span> <span class="ot">=</span> <span class="st">&quot;dotdash&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb109-6"><a href="partial-derivatives.html#cb109-6" tabindex="-1"></a>  <span class="fu">scale_size_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;MC&quot;</span> <span class="ot">=</span> <span class="dv">1</span>, <span class="st">&quot;AC&quot;</span> <span class="ot">=</span> <span class="fl">1.5</span>, <span class="st">&quot;MR&quot;</span> <span class="ot">=</span> <span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb109-7"><a href="partial-derivatives.html#cb109-7" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;MC, AC, and MR Curves&quot;</span>, <span class="at">x =</span> <span class="st">&quot;Q&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Cost / Revenue&quot;</span>) <span class="sc">+</span></span>
+<span id="cb109-8"><a href="partial-derivatives.html#cb109-8" tabindex="-1"></a>  <span class="fu">coord_cartesian</span>(<span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">120</span>)) <span class="sc">+</span></span>
+<span id="cb109-9"><a href="partial-derivatives.html#cb109-9" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb109-10"><a href="partial-derivatives.html#cb109-10" tabindex="-1"></a><span class="fu">print</span>(p3)</span></code></pre></div>
+<p><img src="LBYC121_Course_Book_files/figure-html/unnamed-chunk-147-1.png" alt="" width="672" /></p>
+</div>
+</div>
+<div id="base-r-plotting-2" class="section level3 hasAnchor" number="7.3.5">
+<h3><span class="header-section-number">7.3.5</span> Base R Plotting<a href="partial-derivatives.html#base-r-plotting-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb110"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb110-1"><a href="partial-derivatives.html#cb110-1" tabindex="-1"></a><span class="fu">options</span>(<span class="at">scipen =</span> <span class="dv">999</span>)</span>
+<span id="cb110-2"><a href="partial-derivatives.html#cb110-2" tabindex="-1"></a></span>
+<span id="cb110-3"><a href="partial-derivatives.html#cb110-3" tabindex="-1"></a>y_max1 <span class="ot">&lt;-</span> <span class="dv">120</span></span>
+<span id="cb110-4"><a href="partial-derivatives.html#cb110-4" tabindex="-1"></a></span>
+<span id="cb110-5"><a href="partial-derivatives.html#cb110-5" tabindex="-1"></a>p3<span class="fl">.1</span><span class="ot">&lt;-</span><span class="fu">plot</span>(df3<span class="sc">$</span>Q, df3<span class="sc">$</span>Value, <span class="at">type =</span> <span class="st">&quot;n&quot;</span>,</span>
+<span id="cb110-6"><a href="partial-derivatives.html#cb110-6" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">&quot;Q&quot;</span>,</span>
+<span id="cb110-7"><a href="partial-derivatives.html#cb110-7" tabindex="-1"></a>     <span class="at">ylab =</span> <span class="st">&quot;Cost / Revenue&quot;</span>,</span>
+<span id="cb110-8"><a href="partial-derivatives.html#cb110-8" tabindex="-1"></a>     <span class="at">ylim =</span> <span class="fu">c</span>(y_min, y_max1),</span>
+<span id="cb110-9"><a href="partial-derivatives.html#cb110-9" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">&quot;MC, AC, and MR Curves&quot;</span>)</span>
+<span id="cb110-10"><a href="partial-derivatives.html#cb110-10" tabindex="-1"></a><span class="fu">lines</span>(df3<span class="sc">$</span>Q[df3<span class="sc">$</span>Type <span class="sc">==</span> <span class="st">&quot;AC&quot;</span>],</span>
+<span id="cb110-11"><a href="partial-derivatives.html#cb110-11" tabindex="-1"></a>      df3<span class="sc">$</span>Value[df3<span class="sc">$</span>Type <span class="sc">==</span> <span class="st">&quot;AC&quot;</span>],</span>
+<span id="cb110-12"><a href="partial-derivatives.html#cb110-12" tabindex="-1"></a>      <span class="at">col =</span> <span class="st">&quot;purple&quot;</span>, <span class="at">lwd =</span> <span class="dv">2</span>, <span class="at">lty =</span> <span class="dv">1</span>)</span>
+<span id="cb110-13"><a href="partial-derivatives.html#cb110-13" tabindex="-1"></a><span class="fu">lines</span>(df3<span class="sc">$</span>Q[df3<span class="sc">$</span>Type <span class="sc">==</span> <span class="st">&quot;MC&quot;</span>],</span>
+<span id="cb110-14"><a href="partial-derivatives.html#cb110-14" tabindex="-1"></a>      df3<span class="sc">$</span>Value[df3<span class="sc">$</span>Type <span class="sc">==</span> <span class="st">&quot;MC&quot;</span>],</span>
+<span id="cb110-15"><a href="partial-derivatives.html#cb110-15" tabindex="-1"></a>      <span class="at">col =</span> <span class="st">&quot;pink&quot;</span>, <span class="at">lwd =</span> <span class="dv">2</span>, <span class="at">lty =</span> <span class="dv">2</span>)</span>
+<span id="cb110-16"><a href="partial-derivatives.html#cb110-16" tabindex="-1"></a><span class="fu">lines</span>(df3<span class="sc">$</span>Q[df3<span class="sc">$</span>Type <span class="sc">==</span> <span class="st">&quot;MR&quot;</span>],</span>
+<span id="cb110-17"><a href="partial-derivatives.html#cb110-17" tabindex="-1"></a>      df3<span class="sc">$</span>Value[df3<span class="sc">$</span>Type <span class="sc">==</span> <span class="st">&quot;MR&quot;</span>],</span>
+<span id="cb110-18"><a href="partial-derivatives.html#cb110-18" tabindex="-1"></a>      <span class="at">col =</span> <span class="st">&quot;skyblue&quot;</span>, <span class="at">lwd =</span> <span class="dv">2</span>, <span class="at">lty =</span> <span class="dv">4</span>)</span>
+<span id="cb110-19"><a href="partial-derivatives.html#cb110-19" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">&quot;topright&quot;</span>,</span>
+<span id="cb110-20"><a href="partial-derivatives.html#cb110-20" tabindex="-1"></a>       <span class="at">legend =</span> <span class="fu">c</span>(<span class="st">&quot;AC&quot;</span>, <span class="st">&quot;MC&quot;</span>, <span class="st">&quot;MR&quot;</span>),</span>
+<span id="cb110-21"><a href="partial-derivatives.html#cb110-21" tabindex="-1"></a>       <span class="at">col =</span> <span class="fu">c</span>(<span class="st">&quot;purple&quot;</span>, <span class="st">&quot;pink&quot;</span>, <span class="st">&quot;skyblue&quot;</span>),</span>
+<span id="cb110-22"><a href="partial-derivatives.html#cb110-22" tabindex="-1"></a>       <span class="at">lwd =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">2</span>),</span>
+<span id="cb110-23"><a href="partial-derivatives.html#cb110-23" tabindex="-1"></a>       <span class="at">lty =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">4</span>))</span></code></pre></div>
+<p><img src="LBYC121_Course_Book_files/figure-html/unnamed-chunk-148-1.png" alt="" width="672" /></p>
+<div class="sourceCode" id="cb111"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb111-1"><a href="partial-derivatives.html#cb111-1" tabindex="-1"></a><span class="fu">print</span>(p3<span class="fl">.1</span>)</span></code></pre></div>
+<pre><code>## NULL</code></pre>
+<p>i. <code>y_max1</code> was created as a new object for our y-axis.</p>
+<p>ii. Similar to the plot before, we create an empty plot with Q set for our x-axis and Value set for our y-axis.</p>
+<p>iii. We have similar <code>lines(...)</code> except for the MR which has <code>lty=4</code> for a DotDash line.</p>
+<p>iv. Again, we manually add the legend unlike <code>ggplot2</code></p>
+<ul>
+<li><p>MR usually starts equal to price at Q=0 and slopes downward faster than demand.</p></li>
+<li><p>MC and AC are cost curves</p></li>
+<li><p>Where MR=MC, the profit-maximizing quantity occurs</p>
+<h3 id="multiple-functions-in-one-plot-fc-price-mr-mc-ac" class="hasAnchor">4. Multiple Functions in one plot (FC, Price, MR, MC, AC)<a href="partial-derivatives.html#multiple-functions-in-one-plot-fc-price-mr-mc-ac" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>We have multiple functions now!</p>
+<p>Take note that Fixed Cost (FC) is constant; Break-Even is where Price=AC while Profit is:</p>
+<p><span class="math inline">\(\pi(Q) = TR - TC\)</span></p>
+<p><code>pi</code> is <code>\pi</code></p>
+<h5 id="a.-define-the-functions-1" class="hasAnchor">a. Define the functions<a href="partial-derivatives.html#a.-define-the-functions-1" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<div class="sourceCode" id="cb113"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb113-1"><a href="partial-derivatives.html#cb113-1" tabindex="-1"></a>FC<span class="ot">&lt;-</span> <span class="dv">20</span></span></code></pre></div>
+<p>FC is a constant, assuming it is 20. For Profit, we need to get the profit for any level of output Q, not <code>Q_vals</code> because we want the function to accept any Q.</p>
+<h5 id="b.-prepare-the-data-1" class="hasAnchor">b. Prepare the Data<a href="partial-derivatives.html#b.-prepare-the-data-1" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<div class="sourceCode" id="cb114"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb114-1"><a href="partial-derivatives.html#cb114-1" tabindex="-1"></a>df_all<span class="ot">&lt;-</span><span class="fu">data.frame</span>(</span>
+<span id="cb114-2"><a href="partial-derivatives.html#cb114-2" tabindex="-1"></a>  <span class="at">Q=</span><span class="fu">rep</span>(Q_vals,<span class="dv">5</span>),</span>
+<span id="cb114-3"><a href="partial-derivatives.html#cb114-3" tabindex="-1"></a>  <span class="at">Value=</span><span class="fu">c</span>(<span class="fu">MC</span>(Q_vals), <span class="fu">AC</span>(Q_vals), <span class="fu">MR</span>(Q_vals), <span class="fu">rep</span>(FC, <span class="fu">length</span>(Q_vals)), <span class="fu">P</span>(Q_vals)),</span>
+<span id="cb114-4"><a href="partial-derivatives.html#cb114-4" tabindex="-1"></a>  <span class="at">Type =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">&quot;MC&quot;</span>, <span class="st">&quot;AC&quot;</span>, <span class="st">&quot;MR&quot;</span>, <span class="st">&quot;FC&quot;</span>, <span class="st">&quot;Price&quot;</span>), <span class="at">each =</span> <span class="fu">length</span>(Q_vals))</span>
+<span id="cb114-5"><a href="partial-derivatives.html#cb114-5" tabindex="-1"></a>)</span>
+<span id="cb114-6"><a href="partial-derivatives.html#cb114-6" tabindex="-1"></a><span class="co">#Check using View(df_all)</span></span></code></pre></div>
+<p>In creating the data frame, the unique thing here is the <code>FC</code>, since it is constant and we want to see a long horizontal line, the value of FC carries over from 0 to 50 as 20.</p>
+<h5 id="c.-plot-all-functions" class="hasAnchor">c. Plot All Functions<a href="partial-derivatives.html#c.-plot-all-functions" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<div class="sourceCode" id="cb115"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb115-1"><a href="partial-derivatives.html#cb115-1" tabindex="-1"></a><span class="fu">ggplot</span>(df_all, <span class="fu">aes</span>(<span class="at">x =</span> Q, <span class="at">y =</span> Value, <span class="at">color =</span> Type, <span class="at">linetype =</span> Type, <span class="at">size =</span> Type)) <span class="sc">+</span></span>
+<span id="cb115-2"><a href="partial-derivatives.html#cb115-2" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb115-3"><a href="partial-derivatives.html#cb115-3" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;MC&quot;</span><span class="ot">=</span><span class="st">&quot;red&quot;</span>, <span class="st">&quot;AC&quot;</span><span class="ot">=</span><span class="st">&quot;purple&quot;</span>, <span class="st">&quot;MR&quot;</span><span class="ot">=</span><span class="st">&quot;blue&quot;</span>,</span>
+<span id="cb115-4"><a href="partial-derivatives.html#cb115-4" tabindex="-1"></a>                                <span class="st">&quot;FC&quot;</span><span class="ot">=</span><span class="st">&quot;orange&quot;</span>, <span class="st">&quot;Price&quot;</span><span class="ot">=</span><span class="st">&quot;black&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb115-5"><a href="partial-derivatives.html#cb115-5" tabindex="-1"></a>  <span class="fu">scale_linetype_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;MC&quot;</span><span class="ot">=</span><span class="st">&quot;dotdash&quot;</span>, <span class="st">&quot;AC&quot;</span><span class="ot">=</span><span class="st">&quot;dashed&quot;</span>, <span class="st">&quot;MR&quot;</span><span class="ot">=</span><span class="st">&quot;dotdash&quot;</span>,</span>
+<span id="cb115-6"><a href="partial-derivatives.html#cb115-6" tabindex="-1"></a>                                   <span class="st">&quot;FC&quot;</span><span class="ot">=</span><span class="st">&quot;solid&quot;</span>, <span class="st">&quot;Price&quot;</span><span class="ot">=</span><span class="st">&quot;solid&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb115-7"><a href="partial-derivatives.html#cb115-7" tabindex="-1"></a>  <span class="fu">scale_size_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;MC&quot;</span><span class="ot">=</span><span class="fl">1.5</span>, <span class="st">&quot;AC&quot;</span><span class="ot">=</span><span class="fl">1.2</span>, <span class="st">&quot;MR&quot;</span><span class="ot">=</span><span class="fl">1.5</span>,</span>
+<span id="cb115-8"><a href="partial-derivatives.html#cb115-8" tabindex="-1"></a>                               <span class="st">&quot;FC&quot;</span><span class="ot">=</span><span class="dv">1</span>, <span class="st">&quot;Price&quot;</span><span class="ot">=</span><span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb115-9"><a href="partial-derivatives.html#cb115-9" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;MC, AC, MR, FC, Price Curves&quot;</span>,</span>
+<span id="cb115-10"><a href="partial-derivatives.html#cb115-10" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Q&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Cost / Revenue&quot;</span>) <span class="sc">+</span></span>
+<span id="cb115-11"><a href="partial-derivatives.html#cb115-11" tabindex="-1"></a>  <span class="fu">coord_cartesian</span>(<span class="at">ylim=</span><span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">150</span>)) <span class="sc">+</span></span>
+<span id="cb115-12"><a href="partial-derivatives.html#cb115-12" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
+<p><img src="LBYC121_Course_Book_files/figure-html/unnamed-chunk-151-1.png" alt="" width="672" /></p>
+<h3 id="base-r-plotting-3" class="hasAnchor">Base R Plotting<a href="partial-derivatives.html#base-r-plotting-3" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb116"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb116-1"><a href="partial-derivatives.html#cb116-1" tabindex="-1"></a><span class="fu">plot</span>(Q_vals, <span class="fu">MC</span>(Q_vals), <span class="at">type=</span><span class="st">&quot;l&quot;</span>, <span class="at">col=</span><span class="st">&quot;red&quot;</span>, <span class="at">lty=</span><span class="dv">6</span>, <span class="at">lwd=</span><span class="dv">2</span>,</span>
+<span id="cb116-2"><a href="partial-derivatives.html#cb116-2" tabindex="-1"></a>     <span class="at">xlab=</span><span class="st">&quot;Q&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;Cost / Revenue&quot;</span>, <span class="at">ylim=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">150</span>),</span>
+<span id="cb116-3"><a href="partial-derivatives.html#cb116-3" tabindex="-1"></a>     <span class="at">main=</span><span class="st">&quot;MC, AC, MR, FC, Price Curves&quot;</span>)</span>
+<span id="cb116-4"><a href="partial-derivatives.html#cb116-4" tabindex="-1"></a></span>
+<span id="cb116-5"><a href="partial-derivatives.html#cb116-5" tabindex="-1"></a><span class="fu">lines</span>(Q_vals, <span class="fu">AC</span>(Q_vals), <span class="at">col=</span><span class="st">&quot;purple&quot;</span>, <span class="at">lty=</span><span class="dv">2</span>, <span class="at">lwd=</span><span class="dv">2</span>)       </span>
+<span id="cb116-6"><a href="partial-derivatives.html#cb116-6" tabindex="-1"></a><span class="fu">lines</span>(Q_vals, <span class="fu">MR</span>(Q_vals), <span class="at">col=</span><span class="st">&quot;blue&quot;</span>, <span class="at">lty=</span><span class="dv">6</span>, <span class="at">lwd=</span><span class="dv">2</span>)         </span>
+<span id="cb116-7"><a href="partial-derivatives.html#cb116-7" tabindex="-1"></a><span class="fu">lines</span>(Q_vals, <span class="fu">rep</span>(FC, <span class="fu">length</span>(Q_vals)), <span class="at">col=</span><span class="st">&quot;orange&quot;</span>, <span class="at">lty=</span><span class="dv">1</span>, <span class="at">lwd=</span><span class="dv">2</span>)  </span>
+<span id="cb116-8"><a href="partial-derivatives.html#cb116-8" tabindex="-1"></a><span class="fu">lines</span>(Q_vals, <span class="fu">P</span>(Q_vals), <span class="at">col=</span><span class="st">&quot;black&quot;</span>, <span class="at">lty=</span><span class="dv">1</span>, <span class="at">lwd=</span><span class="dv">2</span>)       </span>
+<span id="cb116-9"><a href="partial-derivatives.html#cb116-9" tabindex="-1"></a></span>
+<span id="cb116-10"><a href="partial-derivatives.html#cb116-10" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">&quot;topright&quot;</span>, <span class="at">legend=</span><span class="fu">c</span>(<span class="st">&quot;MC&quot;</span>,<span class="st">&quot;AC&quot;</span>,<span class="st">&quot;MR&quot;</span>,<span class="st">&quot;FC&quot;</span>,<span class="st">&quot;Price&quot;</span>),</span>
+<span id="cb116-11"><a href="partial-derivatives.html#cb116-11" tabindex="-1"></a>       <span class="at">col=</span><span class="fu">c</span>(<span class="st">&quot;red&quot;</span>,<span class="st">&quot;purple&quot;</span>,<span class="st">&quot;blue&quot;</span>,<span class="st">&quot;orange&quot;</span>,<span class="st">&quot;black&quot;</span>),</span>
+<span id="cb116-12"><a href="partial-derivatives.html#cb116-12" tabindex="-1"></a>       <span class="at">lty=</span><span class="fu">c</span>(<span class="dv">6</span>,<span class="dv">2</span>,<span class="dv">6</span>,<span class="dv">1</span>,<span class="dv">1</span>),</span>
+<span id="cb116-13"><a href="partial-derivatives.html#cb116-13" tabindex="-1"></a>       <span class="at">lwd=</span><span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">2</span>))</span></code></pre></div>
+<p><img src="LBYC121_Course_Book_files/figure-html/unnamed-chunk-152-1.png" alt="" width="672" /></p>
+<h2 id="saving-the-plots-for-copy-paste-in-wordgoogle-docs" class="hasAnchor">Saving the Plots for Copy-Paste in Word/Google Docs<a href="partial-derivatives.html#saving-the-plots-for-copy-paste-in-wordgoogle-docs" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb117"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb117-1"><a href="partial-derivatives.html#cb117-1" tabindex="-1"></a><span class="fu">ggsave</span>(</span>
+<span id="cb117-2"><a href="partial-derivatives.html#cb117-2" tabindex="-1"></a>  <span class="at">filename =</span> <span class="st">&quot;TC_plot.png&quot;</span>,</span>
+<span id="cb117-3"><a href="partial-derivatives.html#cb117-3" tabindex="-1"></a>  <span class="at">plot =</span> p1,</span>
+<span id="cb117-4"><a href="partial-derivatives.html#cb117-4" tabindex="-1"></a>  <span class="at">width =</span> <span class="dv">7</span>, </span>
+<span id="cb117-5"><a href="partial-derivatives.html#cb117-5" tabindex="-1"></a>  <span class="at">height =</span> <span class="dv">5</span>,</span>
+<span id="cb117-6"><a href="partial-derivatives.html#cb117-6" tabindex="-1"></a>  <span class="at">dpi =</span> <span class="dv">300</span></span>
+<span id="cb117-7"><a href="partial-derivatives.html#cb117-7" tabindex="-1"></a>)</span></code></pre></div>
+<p>We use <code>ggsave</code> to save our plot, <code>filename</code> is the name of the file, <code>plot</code> is the plot we want to save, <code>width, height</code> size in inches, <code>dpi=300</code> is the print-quality resolution (keep this as is!)</p></li>
+</ul>
+</div>
+</div>
+<div id="interpretation-guide" class="section level2 hasAnchor" number="7.4">
+<h2><span class="header-section-number">7.4</span> Interpretation Guide:<a href="partial-derivatives.html#interpretation-guide" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ol style="list-style-type: decimal">
+<li><strong>MC = MR</strong>
+<ul>
+<li>This is the profit-maximizing quantity.</li>
+</ul></li>
+<li><strong>Price &gt; AC</strong>
+<ul>
+<li>Firm is making a profit</li>
+</ul></li>
+<li><strong>Price &lt; AC</strong>
+<ul>
+<li>Firm incurs a loss</li>
+</ul></li>
+<li><strong>Intersection of AC and Price</strong>
+<ul>
+<li>This is the <strong>break-even</strong> point</li>
+</ul></li>
+<li><strong>AC above Price</strong>
+<ul>
+<li>Helps identify economies of scale; meaning, check if firm has to increase production to reduce AC.</li>
+</ul></li>
+</ol>
+</div>
+<div id="mini-exercise" class="section level2 hasAnchor" number="7.5">
+<h2><span class="header-section-number">7.5</span> Mini-Exercise<a href="partial-derivatives.html#mini-exercise" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ol style="list-style-type: decimal">
+<li><p>Differentiate the following:</p>
+<p>a. <span class="math inline">\(h(x) = 2x^{1/8} + 10\)</span></p>
+<p>b. <span class="math inline">\(C(\gamma) = \gamma^{1+ln(\gamma)}+ln(\gamma)\)</span></p>
+<p>c. <span class="math inline">\(f(\theta) = \sqrt{\sqrt{\sqrt{\sqrt{\theta+1}}}}\)</span></p>
+<p>d. <span class="math inline">\(f(x)=8x^7+7x^6+6x^5+5x^4+4x^3+3x^2+2x+1\)</span> (Until 5th order)</p></li>
+<li><p>A firm faces the total revenue <span class="math inline">\(TR = 135Q - Q^2\)</span></p>
+<p>a. Find MR in terms of Q</p>
+<p>b. What are TR and MR if Q is 45?</p>
+<p>c. If <span class="math inline">\(TC = 0.5Q^2 + 5Q + 550\)</span></p>
+<p>What is MC and AC?</p>
+<p>d. What are TC, MC, and AC if Q is 45?</p></li>
+<li><p>From MR in B.2. and MC in C.2., what can you say about the firm’s profit? Should they produce more?</p></li>
+<li><p>Using TR and TC from the previous numbers, Visualize the MR, MC, and AC curves in one plot;</p>
+<p>a. Q_vals should be until 60</p>
+<p>b. MC should be <strong>Dashed</strong> and the favorite color of Partner A.</p>
+<p>c. MR should be <strong>DotDashed</strong> and color should be the favorite color of Partner B.</p>
+<p>d. AC should be <strong>Solid Thick</strong> line and color is Partner A + Partner B combined.</p>
+<p>d. Label the axes; y-axis as Cost/Revenue; x-axis as Quantity (Q)</p>
+<p>e. Label the plot as “MC, AC, and MR Curves”</p></li>
+<li><p>At what point do you see is the profit-maximizing quantity?</p></li>
+</ol>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": null,
+    "text": null
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": ["LBYC121_Course_Book.pdf", "LBYC121_Course_Book.epub"],
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "section",
+    "depth": 4
+  }
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
