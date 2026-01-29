@@ -85,11 +85,6 @@ writing-greek-letters
 square-roots-and-powers
 first-derivative
 higher-order-nth-derivatives
-partial-derivatives
-cobb-douglas-production-function
-partial-derivatives-marginal-products
-utility-function
-partial-derivatives-marginal-utilities
 visualizing-functions-with-ggplot2
 pre-plotting-check
 plotting-a-single-function
@@ -109,7 +104,13 @@ b.-prepare-the-data
 c.-plot-mc-ac-mr
 base-r-plotting-2
 interpretation-guide
-mini-exercise
+mini-exercise-2.1
+partial-derivatives
+cobb-douglas-production-function
+partial-derivatives-marginal-products
+utility-function
+partial-derivatives-marginal-utilities
+exercise-3
 answer-key
 introduction-2
 weekly-exercise-1
