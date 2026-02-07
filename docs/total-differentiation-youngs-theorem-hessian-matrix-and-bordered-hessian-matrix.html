@@ -1,0 +1,1141 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>11 Total Differentiation, Young’s Theorem, Hessian Matrix and Bordered Hessian Matrix | LBYC121 Course Book</title>
+  <meta name="description" content="An introduction to the LBYC121 Course Book." />
+  <meta name="generator" content="bookdown 0.46 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="11 Total Differentiation, Young’s Theorem, Hessian Matrix and Bordered Hessian Matrix | LBYC121 Course Book" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="An introduction to the LBYC121 Course Book." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="11 Total Differentiation, Young’s Theorem, Hessian Matrix and Bordered Hessian Matrix | LBYC121 Course Book" />
+  
+  <meta name="twitter:description" content="An introduction to the LBYC121 Course Book." />
+  
+
+<meta name="author" content="Jem Marie M. Nario" />
+
+
+<meta name="date" content="2026-02-07" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="review-of-derivatives-and-visualizations.html"/>
+
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<h1>LBYC121 Course Book</h1>
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#about-me"><i class="fa fa-check"></i><b>1.1</b> About Me</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="syllabus.html"><a href="syllabus.html"><i class="fa fa-check"></i><b>2</b> Syllabus</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="syllabus.html"><a href="syllabus.html#course-description"><i class="fa fa-check"></i><b>2.1</b> Course Description</a></li>
+<li class="chapter" data-level="2.2" data-path="syllabus.html"><a href="syllabus.html#final-course-outputs"><i class="fa fa-check"></i><b>2.2</b> Final Course Outputs</a></li>
+<li class="chapter" data-level="2.3" data-path="syllabus.html"><a href="syllabus.html#generative-ai-use-policy"><i class="fa fa-check"></i><b>2.3</b> Generative AI-Use Policy</a></li>
+<li class="chapter" data-level="2.4" data-path="syllabus.html"><a href="syllabus.html#classroom-policies"><i class="fa fa-check"></i><b>2.4</b> Classroom Policies</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="syllabus.html"><a href="syllabus.html#excused-absences-policy"><i class="fa fa-check"></i><b>2.4.1</b> <strong>EXCUSED ABSENCES POLICY:</strong></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="assessments.html"><a href="assessments.html"><i class="fa fa-check"></i><b>3</b> Assessments</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="assessments.html"><a href="assessments.html#in-weekly-exercises"><i class="fa fa-check"></i><b>3.1</b> In-Weekly Exercises</a></li>
+<li class="chapter" data-level="3.2" data-path="assessments.html"><a href="assessments.html#problem-sets-1-and-2"><i class="fa fa-check"></i><b>3.2</b> Problem Sets 1 and 2</a></li>
+<li class="chapter" data-level="3.3" data-path="assessments.html"><a href="assessments.html#grading-system"><i class="fa fa-check"></i><b>3.3</b> Grading System</a></li>
+<li class="chapter" data-level="3.4" data-path="assessments.html"><a href="assessments.html#grading-scale"><i class="fa fa-check"></i><b>3.4</b> Grading Scale</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html"><i class="fa fa-check"></i><b>4</b> Basic Introduction to R</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#session-information"><i class="fa fa-check"></i><b>4.1</b> Session Information</a></li>
+<li class="chapter" data-level="4.2" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#preliminaries"><i class="fa fa-check"></i><b>4.2</b> Preliminaries</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#understanding-the-rstudio-screen"><i class="fa fa-check"></i><b>4.2.1</b> Understanding the RStudio Screen</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#packages"><i class="fa fa-check"></i><b>4.3</b> Packages</a></li>
+<li class="chapter" data-level="4.4" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#setting-up-the-working-directory"><i class="fa fa-check"></i><b>4.4</b> Setting up the Working Directory</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#what-is-a-working-directory"><i class="fa fa-check"></i><b>4.4.1</b> What is a Working Directory?</a></li>
+<li class="chapter" data-level="4.4.2" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#required-folder-structure"><i class="fa fa-check"></i><b>4.4.2</b> Required Folder Structure</a></li>
+<li class="chapter" data-level="4.4.3" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#setting-the-working-directory-in-rstudio"><i class="fa fa-check"></i><b>4.4.3</b> Setting the Working Directory in RStudio</a></li>
+<li class="chapter" data-level="4.4.4" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#setting-the-working-directory-using-code"><i class="fa fa-check"></i><b>4.4.4</b> Setting the Working Directory Using Code</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#cleaning-the-environment-do-this-regularly"><i class="fa fa-check"></i><b>4.5</b> Cleaning the Environment (Do This Regularly)</a></li>
+<li class="chapter" data-level="4.6" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#quarto-markdown"><i class="fa fa-check"></i><b>4.6</b> Quarto Markdown</a>
+<ul>
+<li class="chapter" data-level="4.6.1" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#installing-quarto-in-r"><i class="fa fa-check"></i><b>4.6.1</b> Installing Quarto in R</a></li>
+<li class="chapter" data-level="4.6.2" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#starting-a-quarto-document"><i class="fa fa-check"></i><b>4.6.2</b> Starting a Quarto Document</a></li>
+<li class="chapter" data-level="4.6.3" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#yaml-header-use"><i class="fa fa-check"></i><b>4.6.3</b> YAML Header Use</a></li>
+<li class="chapter" data-level="4.6.4" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#quarto-key-features"><i class="fa fa-check"></i><b>4.6.4</b> Quarto Key Features</a></li>
+<li class="chapter" data-level="4.6.5" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#quarto-markdown-shortcuts"><i class="fa fa-check"></i><b>4.6.5</b> Quarto Markdown Shortcuts</a></li>
+<li class="chapter" data-level="4.6.6" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#rendering-a-quarto-document"><i class="fa fa-check"></i><b>4.6.6</b> Rendering a Quarto Document</a></li>
+</ul></li>
+<li class="chapter" data-level="4.7" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#working-directories-and-file-management"><i class="fa fa-check"></i><b>4.7</b> Working Directories and File Management</a>
+<ul>
+<li class="chapter" data-level="4.7.1" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#file-naming-convention-mandatory"><i class="fa fa-check"></i><b>4.7.1</b> File Naming Convention (Mandatory)</a></li>
+</ul></li>
+<li class="chapter" data-level="4.8" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#mini-exercise-first-quarto-render-mandatory-per-individual"><i class="fa fa-check"></i><b>4.8</b> Mini-Exercise: First Quarto Render (Mandatory per Individual)</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="differentiation-rules.html"><a href="differentiation-rules.html"><i class="fa fa-check"></i><b>5</b> Differentiation Rules</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="differentiation-rules.html"><a href="differentiation-rules.html#introduction-1"><i class="fa fa-check"></i><b>5.1</b> Introduction</a></li>
+<li class="chapter" data-level="5.2" data-path="differentiation-rules.html"><a href="differentiation-rules.html#structure-of-differentiation"><i class="fa fa-check"></i><b>5.2</b> Structure of Differentiation</a></li>
+<li class="chapter" data-level="5.3" data-path="differentiation-rules.html"><a href="differentiation-rules.html#constant-rule"><i class="fa fa-check"></i><b>5.3</b> Constant Rule</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="differentiation-rules.html"><a href="differentiation-rules.html#example"><i class="fa fa-check"></i><b>5.3.1</b> Example</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="differentiation-rules.html"><a href="differentiation-rules.html#power-rule"><i class="fa fa-check"></i><b>5.4</b> Power Rule</a>
+<ul>
+<li class="chapter" data-level="5.4.1" data-path="differentiation-rules.html"><a href="differentiation-rules.html#example-1"><i class="fa fa-check"></i><b>5.4.1</b> Example</a></li>
+<li class="chapter" data-level="5.4.2" data-path="differentiation-rules.html"><a href="differentiation-rules.html#example-2"><i class="fa fa-check"></i><b>5.4.2</b> Example</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="differentiation-rules.html"><a href="differentiation-rules.html#constant-multiple-rule"><i class="fa fa-check"></i><b>5.5</b> Constant Multiple Rule</a>
+<ul>
+<li class="chapter" data-level="5.5.1" data-path="differentiation-rules.html"><a href="differentiation-rules.html#example-3"><i class="fa fa-check"></i><b>5.5.1</b> Example</a></li>
+</ul></li>
+<li class="chapter" data-level="5.6" data-path="differentiation-rules.html"><a href="differentiation-rules.html#sum-and-difference-rule"><i class="fa fa-check"></i><b>5.6</b> Sum and Difference Rule</a>
+<ul>
+<li class="chapter" data-level="5.6.1" data-path="differentiation-rules.html"><a href="differentiation-rules.html#example-4"><i class="fa fa-check"></i><b>5.6.1</b> Example</a></li>
+</ul></li>
+<li class="chapter" data-level="5.7" data-path="differentiation-rules.html"><a href="differentiation-rules.html#polynomial-functions-combined-rules"><i class="fa fa-check"></i><b>5.7</b> Polynomial Functions (Combined Rules)</a>
+<ul>
+<li class="chapter" data-level="5.7.1" data-path="differentiation-rules.html"><a href="differentiation-rules.html#example-5"><i class="fa fa-check"></i><b>5.7.1</b> Example</a></li>
+</ul></li>
+<li class="chapter" data-level="5.8" data-path="differentiation-rules.html"><a href="differentiation-rules.html#exponential-functions"><i class="fa fa-check"></i><b>5.8</b> Exponential Functions</a>
+<ul>
+<li class="chapter" data-level="5.8.1" data-path="differentiation-rules.html"><a href="differentiation-rules.html#example-6"><i class="fa fa-check"></i><b>5.8.1</b> Example</a></li>
+<li class="chapter" data-level="5.8.2" data-path="differentiation-rules.html"><a href="differentiation-rules.html#example-7"><i class="fa fa-check"></i><b>5.8.2</b> Example</a></li>
+</ul></li>
+<li class="chapter" data-level="5.9" data-path="differentiation-rules.html"><a href="differentiation-rules.html#logarithmic-functions"><i class="fa fa-check"></i><b>5.9</b> Logarithmic Functions</a>
+<ul>
+<li class="chapter" data-level="5.9.1" data-path="differentiation-rules.html"><a href="differentiation-rules.html#example-8"><i class="fa fa-check"></i><b>5.9.1</b> Example</a></li>
+<li class="chapter" data-level="5.9.2" data-path="differentiation-rules.html"><a href="differentiation-rules.html#example-9"><i class="fa fa-check"></i><b>5.9.2</b> Example</a></li>
+</ul></li>
+<li class="chapter" data-level="5.10" data-path="differentiation-rules.html"><a href="differentiation-rules.html#product-rule"><i class="fa fa-check"></i><b>5.10</b> Product Rule</a>
+<ul>
+<li class="chapter" data-level="5.10.1" data-path="differentiation-rules.html"><a href="differentiation-rules.html#example-10"><i class="fa fa-check"></i><b>5.10.1</b> Example</a></li>
+</ul></li>
+<li class="chapter" data-level="5.11" data-path="differentiation-rules.html"><a href="differentiation-rules.html#quotient-rule"><i class="fa fa-check"></i><b>5.11</b> Quotient Rule</a>
+<ul>
+<li class="chapter" data-level="5.11.1" data-path="differentiation-rules.html"><a href="differentiation-rules.html#example-11"><i class="fa fa-check"></i><b>5.11.1</b> Example</a></li>
+<li class="chapter" data-level="5.11.2" data-path="differentiation-rules.html"><a href="differentiation-rules.html#example-12"><i class="fa fa-check"></i><b>5.11.2</b> Example</a></li>
+</ul></li>
+<li class="chapter" data-level="5.12" data-path="differentiation-rules.html"><a href="differentiation-rules.html#chain-rule"><i class="fa fa-check"></i><b>5.12</b> Chain Rule</a>
+<ul>
+<li class="chapter" data-level="5.12.1" data-path="differentiation-rules.html"><a href="differentiation-rules.html#example-13"><i class="fa fa-check"></i><b>5.12.1</b> Example</a></li>
+</ul></li>
+<li class="chapter" data-level="5.13" data-path="differentiation-rules.html"><a href="differentiation-rules.html#things-to-note"><i class="fa fa-check"></i><b>5.13</b> Things to Note:</a></li>
+<li class="chapter" data-level="5.14" data-path="differentiation-rules.html"><a href="differentiation-rules.html#exercises"><i class="fa fa-check"></i><b>5.14</b> Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="review-of-single-variable-differentiation-rules-and-visualizing-functions.html"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html"><i class="fa fa-check"></i><b>6</b> Review of Single-Variable Differentiation Rules and Visualizing Functions</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="review-of-single-variable-differentiation-rules-and-visualizing-functions.html"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#economic-example"><i class="fa fa-check"></i><b>6.1</b> Economic Example</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="review-of-single-variable-differentiation-rules-and-visualizing-functions.html"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#total-cost-function-definition"><i class="fa fa-check"></i><b>6.1.1</b> Total Cost Function Definition</a></li>
+<li class="chapter" data-level="6.1.2" data-path="review-of-single-variable-differentiation-rules-and-visualizing-functions.html"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#average-cost-function-definition"><i class="fa fa-check"></i><b>6.1.2</b> Average Cost Function Definition</a></li>
+<li class="chapter" data-level="6.1.3" data-path="review-of-single-variable-differentiation-rules-and-visualizing-functions.html"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#marginal-cost-using-deriv"><i class="fa fa-check"></i><b>6.1.3</b> Marginal Cost using <code>Deriv</code></a></li>
+<li class="chapter" data-level="6.1.4" data-path="review-of-single-variable-differentiation-rules-and-visualizing-functions.html"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#evaluating-at-a-specific-quantity"><i class="fa fa-check"></i><b>6.1.4</b> Evaluating at a specific quantity</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="review-of-single-variable-differentiation-rules-and-visualizing-functions.html"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#writing-greek-letters"><i class="fa fa-check"></i><b>6.2</b> Writing Greek Letters</a></li>
+<li class="chapter" data-level="6.3" data-path="review-of-single-variable-differentiation-rules-and-visualizing-functions.html"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#square-roots-and-powers"><i class="fa fa-check"></i><b>6.3</b> Square Roots and Powers</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="visualizing-functions-with-ggplot2.html"><a href="visualizing-functions-with-ggplot2.html"><i class="fa fa-check"></i><b>7</b> Visualizing Functions with ggplot2</a>
+<ul>
+<li class="chapter" data-level="7.0.1" data-path="visualizing-functions-with-ggplot2.html"><a href="visualizing-functions-with-ggplot2.html#pre-plotting-check"><i class="fa fa-check"></i><b>7.0.1</b> Pre-plotting Check</a></li>
+<li class="chapter" data-level="7.0.2" data-path="visualizing-functions-with-ggplot2.html"><a href="visualizing-functions-with-ggplot2.html#plotting-a-single-function"><i class="fa fa-check"></i><b>7.0.2</b> 1. Plotting a Single Function</a></li>
+<li class="chapter" data-level="7.0.3" data-path="visualizing-functions-with-ggplot2.html"><a href="visualizing-functions-with-ggplot2.html#multiple-functions-in-one-plot-mc-and-ac"><i class="fa fa-check"></i><b>7.0.3</b> 2. Multiple Functions in One Plot (MC and AC)</a></li>
+<li class="chapter" data-level="7.0.4" data-path="visualizing-functions-with-ggplot2.html"><a href="visualizing-functions-with-ggplot2.html#multiple-functions-in-one-plot-mr-mc-ac"><i class="fa fa-check"></i><b>7.0.4</b> 3. Multiple Functions in One Plot (MR, MC, AC)</a></li>
+<li class="chapter" data-level="7.1" data-path="visualizing-functions-with-ggplot2.html"><a href="visualizing-functions-with-ggplot2.html#interpretation-guide"><i class="fa fa-check"></i><b>7.1</b> Interpretation Guide:</a></li>
+<li class="chapter" data-level="7.2" data-path="visualizing-functions-with-ggplot2.html"><a href="visualizing-functions-with-ggplot2.html#mini-exercise-2.1"><i class="fa fa-check"></i><b>7.2</b> Mini-Exercise 2.1</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="partial-derivatives.html"><a href="partial-derivatives.html"><i class="fa fa-check"></i><b>8</b> Partial Derivatives</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="partial-derivatives.html"><a href="partial-derivatives.html#cobb-douglas-production-function"><i class="fa fa-check"></i><b>8.1</b> Cobb-Douglas Production Function</a></li>
+<li class="chapter" data-level="8.2" data-path="partial-derivatives.html"><a href="partial-derivatives.html#utility-function"><i class="fa fa-check"></i><b>8.2</b> Utility Function</a></li>
+<li class="chapter" data-level="8.3" data-path="partial-derivatives.html"><a href="partial-derivatives.html#exercise-3"><i class="fa fa-check"></i><b>8.3</b> Exercise 3</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="answer-key.html"><a href="answer-key.html"><i class="fa fa-check"></i><b>9</b> Answer Key</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="answer-key.html"><a href="answer-key.html#introduction-2"><i class="fa fa-check"></i><b>9.1</b> Introduction</a></li>
+<li class="chapter" data-level="9.2" data-path="answer-key.html"><a href="answer-key.html#weekly-exercise-1"><i class="fa fa-check"></i><b>9.2</b> Weekly Exercise 1</a>
+<ul>
+<li class="chapter" data-level="9.2.1" data-path="answer-key.html"><a href="answer-key.html#final-answers"><i class="fa fa-check"></i><b>9.2.1</b> Final Answers</a></li>
+<li class="chapter" data-level="9.2.2" data-path="answer-key.html"><a href="answer-key.html#r-codes"><i class="fa fa-check"></i><b>9.2.2</b> R Codes</a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="answer-key.html"><a href="answer-key.html#weekly-exercise-2"><i class="fa fa-check"></i><b>9.3</b> Weekly Exercise 2</a>
+<ul>
+<li class="chapter" data-level="9.3.1" data-path="answer-key.html"><a href="answer-key.html#final-answers-1"><i class="fa fa-check"></i><b>9.3.1</b> Final Answers</a></li>
+<li class="chapter" data-level="9.3.2" data-path="answer-key.html"><a href="answer-key.html#r-codes-1"><i class="fa fa-check"></i><b>9.3.2</b> R Codes</a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="answer-key.html"><a href="answer-key.html#weekly-exercise-2.1"><i class="fa fa-check"></i><b>9.4</b> Weekly Exercise 2.1</a>
+<ul>
+<li class="chapter" data-level="9.4.1" data-path="answer-key.html"><a href="answer-key.html#final-answers-2"><i class="fa fa-check"></i><b>9.4.1</b> Final Answers</a></li>
+<li class="chapter" data-level="9.4.2" data-path="answer-key.html"><a href="answer-key.html#r-codes-2"><i class="fa fa-check"></i><b>9.4.2</b> R Codes</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="review-of-derivatives-and-visualizations.html"><a href="review-of-derivatives-and-visualizations.html"><i class="fa fa-check"></i><b>10</b> Review of Derivatives and Visualizations</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="review-of-derivatives-and-visualizations.html"><a href="review-of-derivatives-and-visualizations.html#review-of-visualizing-functions"><i class="fa fa-check"></i><b>10.1</b> Review of Visualizing Functions</a>
+<ul>
+<li class="chapter" data-level="10.1.1" data-path="review-of-derivatives-and-visualizations.html"><a href="review-of-derivatives-and-visualizations.html#linear-function"><i class="fa fa-check"></i><b>10.1.1</b> Linear Function</a></li>
+<li class="chapter" data-level="10.1.2" data-path="review-of-derivatives-and-visualizations.html"><a href="review-of-derivatives-and-visualizations.html#quadratic-function"><i class="fa fa-check"></i><b>10.1.2</b> Quadratic Function</a></li>
+<li class="chapter" data-level="10.1.3" data-path="review-of-derivatives-and-visualizations.html"><a href="review-of-derivatives-and-visualizations.html#exponential-function"><i class="fa fa-check"></i><b>10.1.3</b> Exponential Function</a></li>
+</ul></li>
+<li class="chapter" data-level="10.2" data-path="review-of-derivatives-and-visualizations.html"><a href="review-of-derivatives-and-visualizations.html#review-of-partial-derivatives"><i class="fa fa-check"></i><b>10.2</b> Review of Partial Derivatives</a>
+<ul>
+<li class="chapter" data-level="10.2.1" data-path="review-of-derivatives-and-visualizations.html"><a href="review-of-derivatives-and-visualizations.html#production-function"><i class="fa fa-check"></i><b>10.2.1</b> Production Function</a></li>
+<li class="chapter" data-level="10.2.2" data-path="review-of-derivatives-and-visualizations.html"><a href="review-of-derivatives-and-visualizations.html#utility-function-1"><i class="fa fa-check"></i><b>10.2.2</b> Utility Function</a></li>
+<li class="chapter" data-level="10.2.3" data-path="review-of-derivatives-and-visualizations.html"><a href="review-of-derivatives-and-visualizations.html#profit-function"><i class="fa fa-check"></i><b>10.2.3</b> Profit Function</a></li>
+<li class="chapter" data-level="10.2.4" data-path="review-of-derivatives-and-visualizations.html"><a href="review-of-derivatives-and-visualizations.html#revenue-function"><i class="fa fa-check"></i><b>10.2.4</b> Revenue Function</a></li>
+<li class="chapter" data-level="10.2.5" data-path="review-of-derivatives-and-visualizations.html"><a href="review-of-derivatives-and-visualizations.html#cost-function"><i class="fa fa-check"></i><b>10.2.5</b> Cost Function</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html"><i class="fa fa-check"></i><b>11</b> Total Differentiation, Young’s Theorem, Hessian Matrix and Bordered Hessian Matrix</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#total-differentiation"><i class="fa fa-check"></i><b>11.1</b> Total Differentiation</a>
+<ul>
+<li class="chapter" data-level="11.1.1" data-path="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cobb-douglas-production-function-1"><i class="fa fa-check"></i><b>11.1.1</b> Cobb-Douglas Production Function</a></li>
+<li class="chapter" data-level="11.1.2" data-path="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#profit-function-1"><i class="fa fa-check"></i><b>11.1.2</b> Profit Function</a></li>
+</ul></li>
+<li class="chapter" data-level="11.2" data-path="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#youngs-theorem"><i class="fa fa-check"></i><b>11.2</b> Young’s Theorem</a>
+<ul>
+<li class="chapter" data-level="11.2.1" data-path="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#utility-function-2"><i class="fa fa-check"></i><b>11.2.1</b> Utility Function</a></li>
+<li class="chapter" data-level="11.2.2" data-path="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#production-function-1"><i class="fa fa-check"></i><b>11.2.2</b> Production Function</a></li>
+<li class="chapter" data-level="11.2.3" data-path="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#profit-interaction"><i class="fa fa-check"></i><b>11.2.3</b> Profit Interaction</a></li>
+<li class="chapter" data-level="11.2.4" data-path="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cost-interaction"><i class="fa fa-check"></i><b>11.2.4</b> Cost Interaction</a></li>
+</ul></li>
+<li class="chapter" data-level="11.3" data-path="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#hessian-matrix"><i class="fa fa-check"></i><b>11.3</b> Hessian Matrix</a>
+<ul>
+<li class="chapter" data-level="11.3.1" data-path="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#decision-rule-2-variables"><i class="fa fa-check"></i><b>11.3.1</b> Decision Rule (2 variables)</a></li>
+<li class="chapter" data-level="11.3.2" data-path="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#local-minimum"><i class="fa fa-check"></i><b>11.3.2</b> Local Minimum</a></li>
+<li class="chapter" data-level="11.3.3" data-path="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#function-2"><i class="fa fa-check"></i><b>11.3.3</b> Function 2</a></li>
+<li class="chapter" data-level="11.3.4" data-path="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#function-3"><i class="fa fa-check"></i><b>11.3.4</b> Function 3</a></li>
+<li class="chapter" data-level="11.3.5" data-path="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#function-4"><i class="fa fa-check"></i><b>11.3.5</b> Function 4</a></li>
+</ul></li>
+<li class="chapter" data-level="11.4" data-path="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#bordered-hessian"><i class="fa fa-check"></i><b>11.4</b> Bordered Hessian</a>
+<ul>
+<li class="chapter" data-level="11.4.1" data-path="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#setup-example"><i class="fa fa-check"></i><b>11.4.1</b> Setup Example:</a></li>
+</ul></li>
+<li class="chapter" data-level="11.5" data-path="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#example-1-1"><i class="fa fa-check"></i><b>11.5</b> Example 1</a>
+<ul>
+<li class="chapter" data-level="11.5.1" data-path="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#example-2-1"><i class="fa fa-check"></i><b>11.5.1</b> Example 2</a></li>
+</ul></li>
+<li class="chapter" data-level="11.6" data-path="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#interpretations"><i class="fa fa-check"></i><b>11.6</b> Interpretations:</a></li>
+<li class="chapter" data-level="11.7" data-path="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#exercise"><i class="fa fa-check"></i><b>11.7</b> Exercise:</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">LBYC121 Course Book</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix" class="section level1 hasAnchor" number="11">
+<h1><span class="header-section-number">11</span> Total Differentiation, Young’s Theorem, Hessian Matrix and Bordered Hessian Matrix<a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="total-differentiation" class="section level2 hasAnchor" number="11.1">
+<h2><span class="header-section-number">11.1</span> Total Differentiation<a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#total-differentiation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Total differentiation gives total change when all inputs change:</p>
+<p><span class="math inline">\(dQ = MPL*dL+MPK*dK\)</span></p>
+<div id="cobb-douglas-production-function-1" class="section level3 hasAnchor" number="11.1.1">
+<h3><span class="header-section-number">11.1.1</span> Cobb-Douglas Production Function<a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cobb-douglas-production-function-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb307"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb307-1"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb307-1" tabindex="-1"></a>L<span class="ot">&lt;-</span><span class="dv">4</span>;</span>
+<span id="cb307-2"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb307-2" tabindex="-1"></a>K<span class="ot">&lt;-</span><span class="dv">9</span>;</span>
+<span id="cb307-3"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb307-3" tabindex="-1"></a>dL<span class="ot">&lt;-</span><span class="dv">1</span>;</span>
+<span id="cb307-4"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb307-4" tabindex="-1"></a>dK<span class="ot">&lt;-</span><span class="dv">2</span></span>
+<span id="cb307-5"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb307-5" tabindex="-1"></a>dq<span class="ot">&lt;-</span><span class="fu">mpl</span>(L,K)<span class="sc">*</span>dL<span class="sc">+</span><span class="fu">mpk</span>(L,K)<span class="sc">*</span>dK</span>
+<span id="cb307-6"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb307-6" tabindex="-1"></a>dq</span></code></pre></div>
+<pre><code>## [1] 1.416667</code></pre>
+<p>We used the <code>mpl</code> and <code>mpk</code> calculated before. The result is the total output change from both labor and capital changes.</p>
+</div>
+<div id="profit-function-1" class="section level3 hasAnchor" number="11.1.2">
+<h3><span class="header-section-number">11.1.2</span> Profit Function<a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#profit-function-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb309"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb309-1"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb309-1" tabindex="-1"></a>dQ1<span class="ot">&lt;-</span><span class="dv">2</span>;</span>
+<span id="cb309-2"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb309-2" tabindex="-1"></a>dQ2<span class="ot">&lt;-</span><span class="dv">1</span></span>
+<span id="cb309-3"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb309-3" tabindex="-1"></a>dpi<span class="ot">&lt;-</span> <span class="fu">dpi_dq1</span>(<span class="dv">5</span>,<span class="dv">4</span>)<span class="sc">*</span>dQ1<span class="sc">+</span><span class="fu">dpi_dq2</span>(<span class="dv">5</span>,<span class="dv">4</span>)<span class="sc">*</span>dQ2</span>
+<span id="cb309-4"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb309-4" tabindex="-1"></a>dpi</span></code></pre></div>
+<pre><code>## [1] 144</code></pre>
+<p>Shows total profit change from increasing both products</p>
+</div>
+</div>
+<div id="youngs-theorem" class="section level2 hasAnchor" number="11.2">
+<h2><span class="header-section-number">11.2</span> Young’s Theorem<a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#youngs-theorem" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Suppose we have a function with two variables:</p>
+<p><span class="math inline">\(f(x,y)\)</span></p>
+<p>We can take derivatives in different orders:</p>
+<p>Differentiate by <span class="math inline">\(x\)</span>, then <span class="math inline">\(y\)</span></p>
+<p><span class="math inline">\(\frac{\partial^2f}{\partial y \partial x}\)</span></p>
+<p>OR</p>
+<p>Differentiate by <span class="math inline">\(y\)</span>, then <span class="math inline">\(x\)</span></p>
+<p><span class="math inline">\(\frac{\partial^2f}{\partial x \partial y}\)</span></p>
+<p>Young’s Theorem says that if the function is smooth (continuous derivatives),</p>
+<p><span class="math inline">\(f_{xy} = f_{yx}\)</span></p>
+<p>Then the order of differentiation does not matter.</p>
+<p>In economics, cross partial derivative measures how one variable affects the marginal effect of another.</p>
+<p>Example, utility, the cross derivative tells you how consuming more <span class="math inline">\(y\)</span> changes marginal utility of <span class="math inline">\(x\)</span>.</p>
+<div id="utility-function-2" class="section level3 hasAnchor" number="11.2.1">
+<h3><span class="header-section-number">11.2.1</span> Utility Function<a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#utility-function-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><span class="math inline">\(U(x,y) = x^{0.5} y^{0.5}\)</span></p>
+<div class="sourceCode" id="cb311"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb311-1"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb311-1" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list=</span><span class="fu">ls</span>())</span></code></pre></div>
+<div id="define-the-function-8" class="section level5 hasAnchor" number="11.2.1.0.1">
+<h5><span class="header-section-number">11.2.1.0.1</span> Define the function<a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#define-the-function-8" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<div class="sourceCode" id="cb312"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb312-1"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb312-1" tabindex="-1"></a>U<span class="ot">&lt;-</span> \(x,y) x<span class="sc">^</span><span class="fl">0.5</span><span class="sc">*</span>y<span class="sc">^</span><span class="fl">0.5</span></span></code></pre></div>
+</div>
+<div id="first-partial-derivative-with-respect-to-x" class="section level5 hasAnchor" number="11.2.1.0.2">
+<h5><span class="header-section-number">11.2.1.0.2</span> First partial derivative with respect to X<a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#first-partial-derivative-with-respect-to-x" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<div class="sourceCode" id="cb313"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb313-1"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb313-1" tabindex="-1"></a>ux<span class="ot">&lt;-</span><span class="fu">Deriv</span>(U,<span class="st">&quot;x&quot;</span>)</span></code></pre></div>
+<p>We computed here the derivative wrt x</p>
+</div>
+<div id="cross-partial-derivative-x-then-y" class="section level5 hasAnchor" number="11.2.1.0.3">
+<h5><span class="header-section-number">11.2.1.0.3</span> Cross partial derivative (x then y)<a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cross-partial-derivative-x-then-y" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<div class="sourceCode" id="cb314"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb314-1"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb314-1" tabindex="-1"></a>uxy<span class="ot">&lt;-</span><span class="fu">Deriv</span>(ux,<span class="st">&quot;y&quot;</span>)</span></code></pre></div>
+<p>Takes derivative again, now wrt y</p>
+</div>
+<div id="first-partial-derivative-with-respect-to-y" class="section level5 hasAnchor" number="11.2.1.0.4">
+<h5><span class="header-section-number">11.2.1.0.4</span> First partial derivative with respect to Y<a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#first-partial-derivative-with-respect-to-y" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<div class="sourceCode" id="cb315"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb315-1"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb315-1" tabindex="-1"></a>uy<span class="ot">&lt;-</span><span class="fu">Deriv</span>(U,<span class="st">&quot;y&quot;</span>)</span></code></pre></div>
+<p>We did the same, this time wrt y</p>
+</div>
+<div id="cross-partial-derivative-y-then-x" class="section level5 hasAnchor" number="11.2.1.0.5">
+<h5><span class="header-section-number">11.2.1.0.5</span> Cross partial derivative (y then x)<a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cross-partial-derivative-y-then-x" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<div class="sourceCode" id="cb316"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb316-1"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb316-1" tabindex="-1"></a>uyx<span class="ot">&lt;-</span><span class="fu">Deriv</span>(uy,<span class="st">&quot;x&quot;</span>)</span></code></pre></div>
+<p>Take derivative again wrt to x</p>
+</div>
+<div id="check-if-identical" class="section level5 hasAnchor" number="11.2.1.0.6">
+<h5><span class="header-section-number">11.2.1.0.6</span> Check if identical<a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#check-if-identical" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<div class="sourceCode" id="cb317"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb317-1"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb317-1" tabindex="-1"></a><span class="fu">identical</span>(uxy, uyx)</span></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<p>We compare the expression. IF TRUE, Young’s theorem holds. If FALSE, Young’s theorem doesn’t.</p>
+</div>
+</div>
+<div id="production-function-1" class="section level3 hasAnchor" number="11.2.2">
+<h3><span class="header-section-number">11.2.2</span> Production Function<a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#production-function-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><span class="math inline">\(Q(L,K) = L^{0.6}K^{0.4}\)</span></p>
+<p>The cross derivative shows how adding more capital affects marginal productivity of labor.</p>
+<div id="define-the-function-9" class="section level5 hasAnchor" number="11.2.2.0.1">
+<h5><span class="header-section-number">11.2.2.0.1</span> Define the function<a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#define-the-function-9" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<div class="sourceCode" id="cb319"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb319-1"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb319-1" tabindex="-1"></a>Q<span class="ot">&lt;-</span> \(L,K) L<span class="sc">^</span><span class="fl">0.6</span><span class="sc">*</span>K<span class="sc">^</span><span class="fl">0.4</span></span></code></pre></div>
+</div>
+<div id="next-steps-7" class="section level5 hasAnchor" number="11.2.2.0.2">
+<h5><span class="header-section-number">11.2.2.0.2</span> Next Steps:<a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#next-steps-7" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>Unlike before where we did each step separately, the next code chunk shows how we combine the steps.</p>
+<div class="sourceCode" id="cb320"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb320-1"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb320-1" tabindex="-1"></a>qlk<span class="ot">&lt;-</span><span class="fu">Deriv</span>(<span class="fu">Deriv</span>(Q,<span class="st">&quot;L&quot;</span>), <span class="st">&quot;K&quot;</span>)</span>
+<span id="cb320-2"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb320-2" tabindex="-1"></a>qkl<span class="ot">&lt;-</span><span class="fu">Deriv</span>(<span class="fu">Deriv</span>(Q, <span class="st">&quot;K&quot;</span>), <span class="st">&quot;L&quot;</span>)</span>
+<span id="cb320-3"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb320-3" tabindex="-1"></a></span>
+<span id="cb320-4"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb320-4" tabindex="-1"></a><span class="fu">identical</span>(qlk, qkl)</span></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<p>What happens in the code is that the code inside the parenthesis will be conducted first, followed by the one outside. So, <code>Deriv(Deriv(1), 2)</code></p>
+</div>
+</div>
+<div id="profit-interaction" class="section level3 hasAnchor" number="11.2.3">
+<h3><span class="header-section-number">11.2.3</span> Profit Interaction<a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#profit-interaction" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><span class="math inline">\(\pi(Q_1,Q_2) = 50Q_1+80Q_2-Q_1^2-2Q_2^2+3Q_1Q_2\)</span></p>
+<p>The interaction term, <span class="math inline">\(3Q_1Q_2\)</span> looks at how producing one good affects marginal profit of another.</p>
+<div id="define-the-function-10" class="section level5 hasAnchor" number="11.2.3.0.1">
+<h5><span class="header-section-number">11.2.3.0.1</span> Define the function<a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#define-the-function-10" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<div class="sourceCode" id="cb322"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb322-1"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb322-1" tabindex="-1"></a>pi<span class="ot">&lt;-</span>\(q1,q2) <span class="dv">50</span><span class="sc">*</span>q1<span class="sc">+</span><span class="dv">80</span><span class="sc">*</span>q2<span class="sc">-</span>q1<span class="sc">^</span><span class="dv">2-22</span><span class="sc">*</span>q2<span class="sc">^</span><span class="dv">2</span><span class="sc">+</span><span class="dv">3</span><span class="sc">*</span>q1<span class="sc">*</span>q2</span></code></pre></div>
+</div>
+<div id="next-steps-8" class="section level5 hasAnchor" number="11.2.3.0.2">
+<h5><span class="header-section-number">11.2.3.0.2</span> Next Steps<a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#next-steps-8" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<div class="sourceCode" id="cb323"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb323-1"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb323-1" tabindex="-1"></a>p_q1q2<span class="ot">&lt;-</span><span class="fu">Deriv</span>(<span class="fu">Deriv</span>(pi,<span class="st">&quot;q1&quot;</span>), <span class="st">&quot;q2&quot;</span>)</span>
+<span id="cb323-2"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb323-2" tabindex="-1"></a>p_q2q1<span class="ot">&lt;-</span><span class="fu">Deriv</span>(<span class="fu">Deriv</span>(pi, <span class="st">&quot;q2&quot;</span>), <span class="st">&quot;q1&quot;</span>)</span>
+<span id="cb323-3"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb323-3" tabindex="-1"></a></span>
+<span id="cb323-4"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb323-4" tabindex="-1"></a><span class="fu">identical</span>(p_q1q2, p_q2q1)</span></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+</div>
+</div>
+<div id="cost-interaction" class="section level3 hasAnchor" number="11.2.4">
+<h3><span class="header-section-number">11.2.4</span> Cost Interaction<a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cost-interaction" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><span class="math inline">\(C(x,y) = 4x^2+3y^2+xy\)</span></p>
+<div id="define-the-function-11" class="section level5 hasAnchor" number="11.2.4.0.1">
+<h5><span class="header-section-number">11.2.4.0.1</span> Define the Function<a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#define-the-function-11" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<div class="sourceCode" id="cb325"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb325-1"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb325-1" tabindex="-1"></a>C<span class="ot">&lt;-</span>\(x,y) <span class="dv">4</span><span class="sc">*</span>x<span class="sc">^</span><span class="dv">2</span><span class="sc">+</span><span class="dv">3</span><span class="sc">*</span>y<span class="sc">^</span><span class="dv">2</span><span class="sc">+</span>x<span class="sc">*</span>y</span></code></pre></div>
+</div>
+<div id="next-steps-9" class="section level5 hasAnchor" number="11.2.4.0.2">
+<h5><span class="header-section-number">11.2.4.0.2</span> Next Steps:<a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#next-steps-9" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>Unlike before, we now combine the codes as one so that the output is simply whether Young’s Theorem holds or not:</p>
+<div class="sourceCode" id="cb326"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb326-1"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb326-1" tabindex="-1"></a><span class="fu">identical</span>(<span class="fu">Deriv</span>(<span class="fu">Deriv</span>(C,<span class="st">&quot;x&quot;</span>),<span class="st">&quot;y&quot;</span>),</span>
+<span id="cb326-2"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb326-2" tabindex="-1"></a>          <span class="fu">Deriv</span>(<span class="fu">Deriv</span>(C,<span class="st">&quot;y&quot;</span>),<span class="st">&quot;x&quot;</span>))</span></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+</div>
+</div>
+</div>
+<div id="hessian-matrix" class="section level2 hasAnchor" number="11.3">
+<h2><span class="header-section-number">11.3</span> Hessian Matrix<a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#hessian-matrix" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The Hessian is the matrix of second partial derivatives.</p>
+<p>For:</p>
+<p><span class="math inline">\(f(x,y)\)</span></p>
+<div id="structure-of-hessian" class="section level4 hasAnchor" number="11.3.0.1">
+<h4><span class="header-section-number">11.3.0.1</span> Structure of Hessian<a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#structure-of-hessian" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>To write inline, put what is in the code chunk below.</p>
+<div class="sourceCode" id="cb328"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb328-1"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb328-1" tabindex="-1"></a>H <span class="ot">=</span> \begin{bmatrix}</span>
+<span id="cb328-2"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb328-2" tabindex="-1"></a>f_{xx} <span class="sc">&amp;</span> f_{xy} \\ <span class="co">#\\ for new row</span></span>
+<span id="cb328-3"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb328-3" tabindex="-1"></a>f_{yx} <span class="sc">&amp;</span> f_{yy}</span>
+<span id="cb328-4"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb328-4" tabindex="-1"></a>\end{bmatrix}</span></code></pre></div>
+<p><span class="math inline">\(H = \begin{bmatrix}
+f_{xx} &amp; f_{xy} \\
+f_{yx} &amp; f_{yy}
+\end{bmatrix}\)</span></p>
+<p>Economically, the Hessian tells the maximum, minimum and saddle point.</p>
+<p>Let’s look at the meaning of each part of the matrix:</p>
+<ul>
+<li><p><span class="math inline">\(f_{xx}\)</span> = curvature in <span class="math inline">\(x\)</span> direction</p></li>
+<li><p><span class="math inline">\(f_{yy}\)</span> = curvature in <span class="math inline">\(y\)</span> direction</p></li>
+<li><p><span class="math inline">\(f_{xy}, f_{yx}\)</span> = cross effects (interaction curvature)</p></li>
+</ul>
+<blockquote>
+<p>Young’s Theorem is important here because the Hessian becomes symmetric with Young’s Theorem.</p>
+</blockquote>
+</div>
+<div id="decision-rule-2-variables" class="section level3 hasAnchor" number="11.3.1">
+<h3><span class="header-section-number">11.3.1</span> Decision Rule (2 variables)<a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#decision-rule-2-variables" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Compute:</p>
+<p><span class="math inline">\(D=f_{xx}f_{yy}-(f_{xy})^2\)</span></p>
+<ul>
+<li><p>If <span class="math inline">\(D&gt;0\)</span> and <span class="math inline">\(f_{xx}&gt;0\)</span>, <strong>local minimum</strong></p>
+<ul>
+<li>This is showing cost minimization</li>
+</ul></li>
+</ul>
+<!-- -->
+<ul>
+<li><p>If <span class="math inline">\(D&gt;0\)</span> and <span class="math inline">\(f_{xx}&lt;0\)</span>, <strong>local maximum</strong></p>
+<ul>
+<li>This is showing profit or utility maximization</li>
+</ul></li>
+<li><p>If <span class="math inline">\(D&lt;0\)</span>, <strong>saddle point</strong></p>
+<ul>
+<li>shows unstable equilibrium</li>
+</ul></li>
+</ul>
+</div>
+<div id="local-minimum" class="section level3 hasAnchor" number="11.3.2">
+<h3><span class="header-section-number">11.3.2</span> Local Minimum<a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#local-minimum" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><span class="math inline">\(f(x,y) = x^2+y^2\)</span></p>
+<div id="define-the-function-12" class="section level5 hasAnchor" number="11.3.2.0.1">
+<h5><span class="header-section-number">11.3.2.0.1</span> Define the function<a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#define-the-function-12" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<div class="sourceCode" id="cb329"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb329-1"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb329-1" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list=</span><span class="fu">ls</span>())</span></code></pre></div>
+<div class="sourceCode" id="cb330"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb330-1"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb330-1" tabindex="-1"></a>f<span class="ot">&lt;-</span>\(x,y) x<span class="sc">^</span><span class="dv">2</span><span class="sc">+</span>y<span class="sc">^</span><span class="dv">2</span></span></code></pre></div>
+</div>
+<div id="first-derivatives" class="section level5 hasAnchor" number="11.3.2.0.2">
+<h5><span class="header-section-number">11.3.2.0.2</span> First derivatives<a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#first-derivatives" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<div class="sourceCode" id="cb331"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb331-1"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb331-1" tabindex="-1"></a>fx<span class="ot">&lt;-</span><span class="fu">Deriv</span>(f,<span class="st">&quot;x&quot;</span>)</span>
+<span id="cb331-2"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb331-2" tabindex="-1"></a>fy<span class="ot">&lt;-</span><span class="fu">Deriv</span>(f,<span class="st">&quot;y&quot;</span>)</span></code></pre></div>
+<p>Marginal effects</p>
+</div>
+<div id="second-derivatives" class="section level5 hasAnchor" number="11.3.2.0.3">
+<h5><span class="header-section-number">11.3.2.0.3</span> Second derivatives<a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#second-derivatives" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<div class="sourceCode" id="cb332"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb332-1"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb332-1" tabindex="-1"></a>fxx<span class="ot">&lt;-</span><span class="fu">Deriv</span>(fx,<span class="st">&quot;x&quot;</span>)</span>
+<span id="cb332-2"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb332-2" tabindex="-1"></a>fyy<span class="ot">&lt;-</span><span class="fu">Deriv</span>(fy, <span class="st">&quot;y&quot;</span>)</span>
+<span id="cb332-3"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb332-3" tabindex="-1"></a>fxy<span class="ot">&lt;-</span><span class="fu">Deriv</span>(fx, <span class="st">&quot;y&quot;</span>) <span class="co">#fxy=fyx through Young&#39;s Theorem</span></span></code></pre></div>
+<p>Creates curvature measures</p>
+</div>
+<div id="evaluate-at-critical-point-00" class="section level5 hasAnchor" number="11.3.2.0.4">
+<h5><span class="header-section-number">11.3.2.0.4</span> Evaluate at critical point (0,0)<a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#evaluate-at-critical-point-00" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<div class="sourceCode" id="cb333"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb333-1"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb333-1" tabindex="-1"></a>fxx_0<span class="ot">&lt;-</span><span class="fu">fxx</span>(<span class="dv">0</span>,<span class="dv">0</span>)</span>
+<span id="cb333-2"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb333-2" tabindex="-1"></a>fyy_0<span class="ot">&lt;-</span><span class="fu">fyy</span>(<span class="dv">0</span>,<span class="dv">0</span>)</span>
+<span id="cb333-3"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb333-3" tabindex="-1"></a>fxy_0<span class="ot">&lt;-</span><span class="fu">fxy</span>(<span class="dv">0</span>,<span class="dv">0</span>)</span></code></pre></div>
+</div>
+<div id="construct-hessian" class="section level5 hasAnchor" number="11.3.2.0.5">
+<h5><span class="header-section-number">11.3.2.0.5</span> Construct Hessian<a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#construct-hessian" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<div class="sourceCode" id="cb334"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb334-1"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb334-1" tabindex="-1"></a>H<span class="ot">&lt;-</span><span class="fu">matrix</span>(<span class="fu">c</span>(</span>
+<span id="cb334-2"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb334-2" tabindex="-1"></a>  fxx_0, fxy_0,</span>
+<span id="cb334-3"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb334-3" tabindex="-1"></a>  fxy_0, fyy_0</span>
+<span id="cb334-4"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb334-4" tabindex="-1"></a>), <span class="at">nrow =</span> <span class="dv">2</span>)</span>
+<span id="cb334-5"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb334-5" tabindex="-1"></a>H</span></code></pre></div>
+<pre><code>##      [,1] [,2]
+## [1,]    2    0
+## [2,]    0    2</code></pre>
+</div>
+<div id="making-the-matrix" class="section level5 hasAnchor" number="11.3.2.0.6">
+<h5><span class="header-section-number">11.3.2.0.6</span> Making the Matrix<a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#making-the-matrix" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<div class="sourceCode" id="cb336"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb336-1"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb336-1" tabindex="-1"></a>H <span class="ot">=</span> \begin{bmatrix}<span class="dv">2</span> <span class="sc">&amp;</span> <span class="dv">0</span> \\<span class="dv">0</span> <span class="sc">&amp;</span> <span class="dv">2</span>\end{bmatrix}</span></code></pre></div>
+<p><span class="math inline">\(H=\begin{bmatrix}2&amp;0\\0&amp;2\end{bmatrix}\)</span></p>
+<ul>
+<li><p><code>matrix()</code> arranges the values we calculated to a matrix</p></li>
+<li><p><code>c()</code> to include <strong>collectively</strong> what are inside the parenthesis</p></li>
+<li><p><code>nrow=2</code> provides the number of rows in the matrix</p></li>
+</ul>
+</div>
+<div id="compute-determinant" class="section level5 hasAnchor" number="11.3.2.0.7">
+<h5><span class="header-section-number">11.3.2.0.7</span> Compute determinant<a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#compute-determinant" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<div class="sourceCode" id="cb337"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb337-1"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb337-1" tabindex="-1"></a>det_H<span class="ot">&lt;-</span><span class="fu">det</span>(H)</span>
+<span id="cb337-2"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb337-2" tabindex="-1"></a>det_H</span></code></pre></div>
+<pre><code>## [1] 4</code></pre>
+</div>
+<div id="interpretation" class="section level5 hasAnchor" number="11.3.2.0.8">
+<h5><span class="header-section-number">11.3.2.0.8</span> Interpretation<a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#interpretation" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>You can include this, or you can simply look at <code>det_H</code> and <code>fxx_0</code>.</p>
+<div class="sourceCode" id="cb339"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb339-1"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb339-1" tabindex="-1"></a>ch<span class="ot">&lt;-</span><span class="cf">function</span>(det_H, fxx_0){</span>
+<span id="cb339-2"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb339-2" tabindex="-1"></a></span>
+<span id="cb339-3"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb339-3" tabindex="-1"></a><span class="cf">if</span>(det_H <span class="sc">&gt;</span> <span class="dv">0</span> <span class="sc">&amp;</span> fxx_0 <span class="sc">&gt;</span> <span class="dv">0</span>){</span>
+<span id="cb339-4"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb339-4" tabindex="-1"></a>  <span class="fu">return</span>(<span class="st">&quot;Local Minimum&quot;</span>)</span>
+<span id="cb339-5"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb339-5" tabindex="-1"></a>} <span class="cf">else</span> <span class="cf">if</span> (det_H <span class="sc">&gt;</span> <span class="dv">0</span> <span class="sc">&amp;</span> fxx_0 <span class="sc">&lt;</span> <span class="dv">0</span>){</span>
+<span id="cb339-6"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb339-6" tabindex="-1"></a>    <span class="fu">return</span>(<span class="st">&quot;Local Maximum&quot;</span>)</span>
+<span id="cb339-7"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb339-7" tabindex="-1"></a>} <span class="cf">else</span> <span class="cf">if</span> (det_H <span class="sc">&lt;</span> <span class="dv">0</span>){</span>
+<span id="cb339-8"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb339-8" tabindex="-1"></a>  <span class="fu">return</span>(<span class="st">&quot;Saddle Point&quot;</span>)</span>
+<span id="cb339-9"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb339-9" tabindex="-1"></a>} <span class="cf">else</span> {<span class="fu">return</span>(<span class="st">&quot;Inconclusive&quot;</span>)}</span>
+<span id="cb339-10"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb339-10" tabindex="-1"></a>}</span></code></pre></div>
+<ul>
+<li><code>function(){}</code> creates a reusable function. It checks what is inside the parenthesis then looks at the conditions you set.</li>
+</ul>
+<!-- -->
+<ul>
+<li><p><code>if(condition){}</code> tells R whether condition is TRUE</p></li>
+<li><p><code>det_H&gt;0</code> condition checking</p></li>
+<li><p><code>&amp;</code> is to check if both conditions are TRUE</p></li>
+<li><p><code>else if</code> if first condition fails, check next condition</p></li>
+<li><p><code>else</code> if all conditions fail</p></li>
+<li><p><code>return</code> reveals what the answer is</p></li>
+</ul>
+<div class="sourceCode" id="cb340"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb340-1"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb340-1" tabindex="-1"></a><span class="fu">ch</span>(det_H, fxx_0)</span></code></pre></div>
+<pre><code>## [1] &quot;Local Minimum&quot;</code></pre>
+</div>
+</div>
+<div id="function-2" class="section level3 hasAnchor" number="11.3.3">
+<h3><span class="header-section-number">11.3.3</span> Function 2<a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#function-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><span class="math inline">\(C(Q_1,Q_2) = Q_1^2+Q_2^2\)</span></p>
+<div id="next-steps-try-in-class" class="section level5 hasAnchor" number="11.3.3.0.1">
+<h5><span class="header-section-number">11.3.3.0.1</span> Next Steps: Try in class<a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#next-steps-try-in-class" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>You might be wondering where the <code>0,0</code> comes from. This is when we want to evaluate the curvature at a specific point. In this case, it is <code>0,0</code> - the critical point.</p>
+<p>If you want to know the curvature near production bundle (5 for Q1, 3 for Q2), simply change (0,0)</p>
+</div>
+</div>
+<div id="function-3" class="section level3 hasAnchor" number="11.3.4">
+<h3><span class="header-section-number">11.3.4</span> Function 3<a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#function-3" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><span class="math inline">\(\pi(x,y) = -x^2-y^2\)</span></p>
+<div id="next-steps-try-in-class-1" class="section level5 hasAnchor" number="11.3.4.0.1">
+<h5><span class="header-section-number">11.3.4.0.1</span> Next Steps: Try in class<a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#next-steps-try-in-class-1" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+</div>
+</div>
+<div id="function-4" class="section level3 hasAnchor" number="11.3.5">
+<h3><span class="header-section-number">11.3.5</span> Function 4<a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#function-4" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><span class="math inline">\(C=x^2+y^2+xy\)</span></p>
+<div id="next-steps-try-in-class-2" class="section level5 hasAnchor" number="11.3.5.0.1">
+<h5><span class="header-section-number">11.3.5.0.1</span> Next Steps: Try in class<a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#next-steps-try-in-class-2" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+</div>
+</div>
+</div>
+<div id="bordered-hessian" class="section level2 hasAnchor" number="11.4">
+<h2><span class="header-section-number">11.4</span> Bordered Hessian<a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#bordered-hessian" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The Bordered Hessian is a matrix used to test whether a constrained optimization problem gives maximum, minimum, or saddle point. It is used when you optimize WITH a constraint.</p>
+<blockquote>
+<p>Without constraint: Hessian</p>
+<p>With constraint: bordered Hessian</p>
+</blockquote>
+<p>The constraint changes the curvature analysis and we must include how Lagrange multiplier interacts with variables</p>
+<div id="setup" class="section level4 hasAnchor" number="11.4.0.1">
+<h4><span class="header-section-number">11.4.0.1</span> Setup:<a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#setup" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Suppose</p>
+<p>Objective function is</p>
+<p><span class="math inline">\(f(x,y)\)</span></p>
+<p>Constraint is:</p>
+<p><span class="math inline">\(g(x,y)=0\)</span></p>
+<p><strong>Lagrangian</strong></p>
+<p><span class="math inline">\(\mathcal{L} = f(x,y)+ \lambda g(x,y)\)</span></p>
+<p>\mathcal{L} = f(x,y)+ \lambda g(x,y)</p>
+</div>
+<div id="structure-of-bordered-hessian" class="section level4 hasAnchor" number="11.4.0.2">
+<h4><span class="header-section-number">11.4.0.2</span> Structure of Bordered Hessian<a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#structure-of-bordered-hessian" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Two variables:</p>
+<p>In the code chunk, you place this in your inline Math</p>
+<div class="sourceCode" id="cb342"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb342-1"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb342-1" tabindex="-1"></a>BH <span class="ot">=</span> \begin{bmatrix} </span>
+<span id="cb342-2"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb342-2" tabindex="-1"></a>   <span class="dv">0</span> <span class="sc">&amp;</span> g_x <span class="sc">&amp;</span> g_y \\ </span>
+<span id="cb342-3"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb342-3" tabindex="-1"></a>   g_x <span class="sc">&amp;</span> \mathcal{L}_{xx} <span class="sc">&amp;</span> \mathcal{L}_{xy} \\ </span>
+<span id="cb342-4"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb342-4" tabindex="-1"></a>   g_y <span class="sc">&amp;</span> \mathcal{L}_{yx} <span class="sc">&amp;</span> \mathcal{L}_{yy} </span>
+<span id="cb342-5"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb342-5" tabindex="-1"></a>   \end{bmatrix}</span></code></pre></div>
+<p><br />
+<span class="math inline">\(BH = \begin{bmatrix}    0 &amp; g_x &amp; g_y \\    g_x &amp; \mathcal{L}_{xx} &amp; \mathcal{L}_{xy} \\    g_y &amp; \mathcal{L}_{yx} &amp; \mathcal{L}_{yy}    \end{bmatrix}\)</span></p>
+<ul>
+<li><p>Top-left is always zero</p></li>
+<li><p>First row/column are the gradient of constraint;</p>
+<ul>
+<li>how constraint changes when variables change</li>
+</ul></li>
+<li><p>Lower right block is the second derivatives of Lagrangian</p></li>
+</ul>
+</div>
+<div id="setup-example" class="section level3 hasAnchor" number="11.4.1">
+<h3><span class="header-section-number">11.4.1</span> Setup Example:<a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#setup-example" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><span class="math inline">\(f(x,y)=\sqrt{x}\sqrt{y}\)</span></p>
+<p>Constraint:</p>
+<p><span class="math inline">\(100-10x-20y=0\)</span></p>
+<p><strong>Lagrangian</strong></p>
+<p><span class="math inline">\(\mathcal{L}=\sqrt{x}\sqrt{y} + \lambda(100-10x-20y)\)</span></p>
+<div id="install-and-load-packages" class="section level5 hasAnchor" number="11.4.1.0.1">
+<h5><span class="header-section-number">11.4.1.0.1</span> Install and Load Packages<a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#install-and-load-packages" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<div class="sourceCode" id="cb343"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb343-1"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb343-1" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(nleqslv)) <span class="fu">install.packages</span>(<span class="st">&quot;nleqslv&quot;</span>)</span>
+<span id="cb343-2"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb343-2" tabindex="-1"></a></span>
+<span id="cb343-3"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb343-3" tabindex="-1"></a><span class="fu">library</span>(nleqslv)</span></code></pre></div>
+</div>
+<div id="define-functions" class="section level5 hasAnchor" number="11.4.1.0.2">
+<h5><span class="header-section-number">11.4.1.0.2</span> Define functions<a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#define-functions" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<div class="sourceCode" id="cb344"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb344-1"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb344-1" tabindex="-1"></a>fxy<span class="ot">&lt;-</span>\(x,y) x<span class="sc">^</span>(<span class="fl">0.5</span>)<span class="sc">*</span>y<span class="sc">^</span>(<span class="fl">0.5</span>)</span>
+<span id="cb344-2"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb344-2" tabindex="-1"></a>cons<span class="ot">&lt;-</span> \(x,y) <span class="dv">100-10</span><span class="sc">*</span>x<span class="dv">-20</span><span class="sc">*</span>y</span></code></pre></div>
+</div>
+<div id="set-up-lagrangian" class="section level5 hasAnchor" number="11.4.1.0.3">
+<h5><span class="header-section-number">11.4.1.0.3</span> Set up Lagrangian<a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#set-up-lagrangian" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<div class="sourceCode" id="cb345"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb345-1"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb345-1" tabindex="-1"></a>Lg<span class="ot">&lt;-</span> \(x,y,lambda) <span class="fu">fxy</span>(x,y)<span class="sc">+</span>lambda<span class="sc">*</span><span class="fu">cons</span>(x,y)</span></code></pre></div>
+</div>
+<div id="first-order-conditions" class="section level5 hasAnchor" number="11.4.1.0.4">
+<h5><span class="header-section-number">11.4.1.0.4</span> First Order Conditions<a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#first-order-conditions" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<div class="sourceCode" id="cb346"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb346-1"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb346-1" tabindex="-1"></a>Lx<span class="ot">&lt;-</span><span class="fu">Deriv</span>(Lg,<span class="st">&quot;x&quot;</span>)</span>
+<span id="cb346-2"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb346-2" tabindex="-1"></a>Ly<span class="ot">&lt;-</span><span class="fu">Deriv</span>(Lg,<span class="st">&quot;y&quot;</span>)</span>
+<span id="cb346-3"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb346-3" tabindex="-1"></a>Llambda<span class="ot">&lt;-</span><span class="fu">Deriv</span>(Lg,<span class="st">&quot;lambda&quot;</span>)</span>
+<span id="cb346-4"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb346-4" tabindex="-1"></a></span>
+<span id="cb346-5"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb346-5" tabindex="-1"></a><span class="co">#View for later</span></span>
+<span id="cb346-6"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb346-6" tabindex="-1"></a>Lx</span></code></pre></div>
+<pre><code>## function (x, y, lambda) 
+## 0.5 * (sqrt(y)/sqrt(x)) - 10 * lambda</code></pre>
+<div class="sourceCode" id="cb348"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb348-1"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb348-1" tabindex="-1"></a>Ly</span></code></pre></div>
+<pre><code>## function (x, y, lambda) 
+## 0.5 * (sqrt(x)/sqrt(y)) - 20 * lambda</code></pre>
+<div class="sourceCode" id="cb350"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb350-1"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb350-1" tabindex="-1"></a>Llambda</span></code></pre></div>
+<pre><code>## function (x, y, lambda) 
+## cons(x, y)</code></pre>
+<p>These give optimality conditions</p>
+</div>
+<div id="solve-for-optimal-bundle" class="section level5 hasAnchor" number="11.4.1.0.5">
+<h5><span class="header-section-number">11.4.1.0.5</span> Solve for optimal bundle<a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#solve-for-optimal-bundle" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<div class="sourceCode" id="cb352"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb352-1"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb352-1" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>(v){</span>
+<span id="cb352-2"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb352-2" tabindex="-1"></a> x <span class="ot">&lt;-</span> v[<span class="dv">1</span>]</span>
+<span id="cb352-3"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb352-3" tabindex="-1"></a> y <span class="ot">&lt;-</span> v[<span class="dv">2</span>]</span>
+<span id="cb352-4"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb352-4" tabindex="-1"></a> lambda <span class="ot">&lt;-</span> v[<span class="dv">3</span>]</span>
+<span id="cb352-5"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb352-5" tabindex="-1"></a> <span class="fu">c</span>(</span>
+<span id="cb352-6"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb352-6" tabindex="-1"></a>   <span class="fl">0.5</span><span class="sc">*</span><span class="fu">sqrt</span>(y)<span class="sc">/</span><span class="fu">sqrt</span>(x) <span class="sc">-</span> <span class="dv">10</span><span class="sc">*</span>lambda,</span>
+<span id="cb352-7"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb352-7" tabindex="-1"></a>   <span class="fl">0.5</span><span class="sc">*</span><span class="fu">sqrt</span>(x)<span class="sc">/</span><span class="fu">sqrt</span>(y) <span class="sc">-</span> <span class="dv">20</span><span class="sc">*</span>lambda,</span>
+<span id="cb352-8"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb352-8" tabindex="-1"></a>   <span class="dv">10</span><span class="sc">*</span>x <span class="sc">+</span> <span class="dv">20</span><span class="sc">*</span>y <span class="sc">-</span> <span class="dv">100</span></span>
+<span id="cb352-9"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb352-9" tabindex="-1"></a> )</span>
+<span id="cb352-10"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb352-10" tabindex="-1"></a>}</span>
+<span id="cb352-11"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb352-11" tabindex="-1"></a></span>
+<span id="cb352-12"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb352-12" tabindex="-1"></a><span class="fu">nleqslv</span>(<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="fl">0.1</span>), f)</span></code></pre></div>
+<pre><code>## $x
+## [1] 5.00000000 2.50000000 0.03535534
+## 
+## $fvec
+## [1]  0.000000000009564793 -0.000000000013307022  0.000000000000000000
+## 
+## $termcd
+## [1] 1
+## 
+## $message
+## [1] &quot;Function criterion near zero&quot;
+## 
+## $scalex
+## [1] 1 1 1
+## 
+## $nfcnt
+## [1] 8
+## 
+## $njcnt
+## [1] 1
+## 
+## $iter
+## [1] 6</code></pre>
+<ul>
+<li><p><code>f&lt;-function(v){...}</code> creates a function with</p>
+<ul>
+<li><p>Input: <code>v</code> vector of unknowns <code>[x,y,lambda]</code></p></li>
+<li><p>Output: a vector of three equations that equals zero.</p></li>
+</ul></li>
+<li><p><code>x&lt;-v[1]; y&lt;-[2]; lambda&lt;-v[3]</code></p>
+<ul>
+<li>Assigns elements of vector <code>v</code> to our variables.</li>
+</ul></li>
+<li><p><code>c(...)</code> combines our three equations into a vector:</p>
+<ul>
+<li><p><code>Lx</code> followed by <code>Ly</code> then <code>Llambda</code></p></li>
+<li><p>It will solve these three to find <code>x,y, lambda</code></p></li>
+</ul></li>
+<li><p><code>nleqslv(start,f)</code></p>
+<ul>
+<li><code>start=c(1,1,0.1)</code> is the initial guess for our variables. You can use different values but always pick positive numbers near expected magnitude. The simplest and safest is simply this combination.</li>
+</ul></li>
+</ul>
+<p>The results we are interested in is the first:</p>
+<ul>
+<li><p>$x is the solution that will give us the optimal bundle.</p></li>
+<li><p>The numbers under <code>$x</code> :</p>
+<ul>
+<li><p><span class="math inline">\(x^*\)</span>=optimal quantity of good X</p></li>
+<li><p><span class="math inline">\(y^*\)</span>=optimal quantity of good Y</p></li>
+<li><p><span class="math inline">\(\lambda^*\)</span> = shadow price of budget</p></li>
+</ul></li>
+</ul>
+</div>
+<div id="second-derivatives-1" class="section level5 hasAnchor" number="11.4.1.0.6">
+<h5><span class="header-section-number">11.4.1.0.6</span> Second Derivatives<a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#second-derivatives-1" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<div class="sourceCode" id="cb354"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb354-1"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb354-1" tabindex="-1"></a>Lxx<span class="ot">&lt;-</span><span class="fu">Deriv</span>(Lx,<span class="st">&quot;x&quot;</span>)</span>
+<span id="cb354-2"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb354-2" tabindex="-1"></a>Lyy<span class="ot">&lt;-</span><span class="fu">Deriv</span>(Ly,<span class="st">&quot;y&quot;</span>)</span>
+<span id="cb354-3"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb354-3" tabindex="-1"></a>Lxy<span class="ot">&lt;-</span><span class="fu">Deriv</span>(Lx, <span class="st">&quot;y&quot;</span>)</span></code></pre></div>
+<p>These measure curvature</p>
+</div>
+<div id="constraint-derivatives" class="section level5 hasAnchor" number="11.4.1.0.7">
+<h5><span class="header-section-number">11.4.1.0.7</span> Constraint derivatives<a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#constraint-derivatives" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<div class="sourceCode" id="cb355"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb355-1"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb355-1" tabindex="-1"></a>gx<span class="ot">&lt;-</span><span class="fu">Deriv</span>(cons,<span class="st">&quot;x&quot;</span>)</span>
+<span id="cb355-2"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb355-2" tabindex="-1"></a>gy<span class="ot">&lt;-</span><span class="fu">Deriv</span>(cons,<span class="st">&quot;y&quot;</span>)</span></code></pre></div>
+<p>Needed for border rows.</p>
+</div>
+<div id="build-bordered-hessian" class="section level5 hasAnchor" number="11.4.1.0.8">
+<h5><span class="header-section-number">11.4.1.0.8</span> Build Bordered Hessian<a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#build-bordered-hessian" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<div class="sourceCode" id="cb356"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb356-1"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb356-1" tabindex="-1"></a>x0<span class="ot">&lt;-</span><span class="dv">5</span></span>
+<span id="cb356-2"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb356-2" tabindex="-1"></a>y0<span class="ot">&lt;-</span><span class="fl">2.5</span></span>
+<span id="cb356-3"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb356-3" tabindex="-1"></a>lambda0<span class="ot">&lt;-</span><span class="fl">0.04</span></span></code></pre></div>
+<div class="sourceCode" id="cb357"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb357-1"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb357-1" tabindex="-1"></a>BH <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(</span>
+<span id="cb357-2"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb357-2" tabindex="-1"></a>  <span class="dv">0</span>,</span>
+<span id="cb357-3"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb357-3" tabindex="-1"></a>  <span class="fu">gx</span>(x0,y0),</span>
+<span id="cb357-4"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb357-4" tabindex="-1"></a>  <span class="fu">gy</span>(x0,y0),</span>
+<span id="cb357-5"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb357-5" tabindex="-1"></a></span>
+<span id="cb357-6"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb357-6" tabindex="-1"></a>  <span class="fu">gx</span>(x0,y0),</span>
+<span id="cb357-7"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb357-7" tabindex="-1"></a>  <span class="fu">Lxx</span>(x0,y0,lambda0),</span>
+<span id="cb357-8"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb357-8" tabindex="-1"></a>  <span class="fu">Lxy</span>(x0,y0,lambda0),</span>
+<span id="cb357-9"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb357-9" tabindex="-1"></a></span>
+<span id="cb357-10"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb357-10" tabindex="-1"></a>  <span class="fu">gy</span>(x0,y0),</span>
+<span id="cb357-11"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb357-11" tabindex="-1"></a>  <span class="fu">Lxy</span>(x0,y0,lambda0),</span>
+<span id="cb357-12"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb357-12" tabindex="-1"></a>  <span class="fu">Lyy</span>(x0,y0,lambda0)</span>
+<span id="cb357-13"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb357-13" tabindex="-1"></a></span>
+<span id="cb357-14"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb357-14" tabindex="-1"></a>), <span class="at">nrow=</span><span class="dv">3</span>, <span class="at">byrow=</span><span class="cn">TRUE</span>)</span>
+<span id="cb357-15"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb357-15" tabindex="-1"></a></span>
+<span id="cb357-16"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb357-16" tabindex="-1"></a>BH</span></code></pre></div>
+<pre><code>##      [,1]         [,2]         [,3]
+## [1,]    0 -10.00000000 -20.00000000
+## [2,]  -10  -0.03535534   0.07071068
+## [3,]  -20   0.07071068  -0.14142136</code></pre>
+</div>
+<div id="get-determinant" class="section level5 hasAnchor" number="11.4.1.0.9">
+<h5><span class="header-section-number">11.4.1.0.9</span> Get Determinant<a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#get-determinant" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>The rule of thumb is:</p>
+<ul>
+<li><p><span class="math inline">\(D&lt;0\)</span> maximum (utility maximization)</p></li>
+<li><p><span class="math inline">\(D&gt;0\)</span> minimum (cost minimization)</p></li>
+</ul>
+<div class="sourceCode" id="cb359"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb359-1"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb359-1" tabindex="-1"></a><span class="fu">det</span>(BH)</span></code></pre></div>
+<pre><code>## [1] 56.56854</code></pre>
+</div>
+<div id="making-the-bordered-hessian" class="section level5 hasAnchor" number="11.4.1.0.10">
+<h5><span class="header-section-number">11.4.1.0.10</span> Making the Bordered Hessian<a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#making-the-bordered-hessian" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<div class="sourceCode" id="cb361"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb361-1"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb361-1" tabindex="-1"></a>BH <span class="ot">=</span> \begin{bmatrix} </span>
+<span id="cb361-2"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb361-2" tabindex="-1"></a>   <span class="dv">0</span> <span class="sc">&amp;</span> <span class="sc">-</span><span class="dv">10</span> <span class="sc">&amp;</span> <span class="sc">-</span><span class="dv">20</span> \\ </span>
+<span id="cb361-3"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb361-3" tabindex="-1"></a>   <span class="sc">-</span><span class="dv">10</span> <span class="sc">&amp;</span> <span class="sc">-</span><span class="fl">0.04</span> <span class="sc">&amp;</span> <span class="fl">0.07</span> \\ </span>
+<span id="cb361-4"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb361-4" tabindex="-1"></a>   <span class="sc">-</span><span class="dv">20</span> <span class="sc">&amp;</span> <span class="fl">0.07</span> <span class="sc">&amp;</span> <span class="sc">-</span><span class="fl">0.14</span> </span>
+<span id="cb361-5"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb361-5" tabindex="-1"></a>   \end{bmatrix}</span></code></pre></div>
+<p><span class="math inline">\(BH = \begin{bmatrix}    0 &amp; -10 &amp; -20 \\    -10 &amp; -0.04 &amp; 0.07 \\    -20 &amp; 0.07 &amp; -0.14    \end{bmatrix}\)</span></p>
+</div>
+</div>
+</div>
+<div id="example-1-1" class="section level2 hasAnchor" number="11.5">
+<h2><span class="header-section-number">11.5</span> Example 1<a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#example-1-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Objective Function:</p>
+<p><span class="math inline">\(\pi(L,K)=50L^{0.5}K^{0.5}-10L-20K\)</span></p>
+<p>Constraint:</p>
+<p><span class="math inline">\(Q(L,K)=L^{0.5}K^{0.5}=25\)</span></p>
+<p><strong>Lagrangian:</strong></p>
+<p><span class="math inline">\(\mathcal{L}=50L^{0.5}K^{0.5}-10L-20K+\lambda(-25+L^{0.5}K^{0.5})\)</span></p>
+<div id="define-function" class="section level5 hasAnchor" number="11.5.0.0.1">
+<h5><span class="header-section-number">11.5.0.0.1</span> Define function:<a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#define-function" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<div class="sourceCode" id="cb362"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb362-1"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb362-1" tabindex="-1"></a>profit<span class="ot">&lt;-</span>\(L,K) <span class="dv">50</span><span class="sc">*</span>L<span class="sc">^</span><span class="fl">0.5</span><span class="sc">*</span>K<span class="sc">^</span><span class="fl">0.5</span><span class="dv">-10</span><span class="sc">*</span>L<span class="dv">-20</span><span class="sc">*</span>K</span>
+<span id="cb362-2"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb362-2" tabindex="-1"></a>constraint<span class="ot">&lt;-</span> \(L,K) <span class="sc">-</span><span class="dv">25</span><span class="sc">+</span>L<span class="sc">^</span><span class="fl">0.5</span><span class="sc">*</span>K<span class="sc">^</span><span class="fl">0.5</span></span></code></pre></div>
+</div>
+<div id="set-up-the-lagrangian" class="section level5 hasAnchor" number="11.5.0.0.2">
+<h5><span class="header-section-number">11.5.0.0.2</span> Set up the Lagrangian<a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#set-up-the-lagrangian" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<div class="sourceCode" id="cb363"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb363-1"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb363-1" tabindex="-1"></a>L1<span class="ot">&lt;-</span>\(L,K, lambda) <span class="fu">profit</span>(L,K)<span class="sc">+</span>lambda<span class="sc">*</span><span class="fu">constraint</span>(L,K)</span></code></pre></div>
+</div>
+<div id="first-order-derivatives" class="section level5 hasAnchor" number="11.5.0.0.3">
+<h5><span class="header-section-number">11.5.0.0.3</span> First Order Derivatives<a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#first-order-derivatives" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<div class="sourceCode" id="cb364"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb364-1"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb364-1" tabindex="-1"></a>ll<span class="ot">&lt;-</span><span class="fu">Deriv</span>(L1,<span class="st">&quot;L&quot;</span>)</span>
+<span id="cb364-2"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb364-2" tabindex="-1"></a>lk<span class="ot">&lt;-</span><span class="fu">Deriv</span>(L1, <span class="st">&quot;K&quot;</span>)</span>
+<span id="cb364-3"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb364-3" tabindex="-1"></a>ll2<span class="ot">&lt;-</span><span class="fu">Deriv</span>(L1, <span class="st">&quot;lambda&quot;</span>)</span>
+<span id="cb364-4"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb364-4" tabindex="-1"></a></span>
+<span id="cb364-5"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb364-5" tabindex="-1"></a>ll</span></code></pre></div>
+<pre><code>## function (L, K, lambda) 
+## (0.5 * lambda + 25) * sqrt(K)/sqrt(L) - 10</code></pre>
+<div class="sourceCode" id="cb366"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb366-1"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb366-1" tabindex="-1"></a>lk</span></code></pre></div>
+<pre><code>## function (L, K, lambda) 
+## (0.5 * lambda + 25) * sqrt(L)/sqrt(K) - 20</code></pre>
+<div class="sourceCode" id="cb368"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb368-1"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb368-1" tabindex="-1"></a>ll2</span></code></pre></div>
+<pre><code>## function (L, K, lambda) 
+## constraint(L, K)</code></pre>
+</div>
+<div id="solve-focs" class="section level5 hasAnchor" number="11.5.0.0.4">
+<h5><span class="header-section-number">11.5.0.0.4</span> Solve FOCs<a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#solve-focs" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<div class="sourceCode" id="cb370"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb370-1"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb370-1" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>(v){</span>
+<span id="cb370-2"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb370-2" tabindex="-1"></a>  L <span class="ot">&lt;-</span> v[<span class="dv">1</span>]</span>
+<span id="cb370-3"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb370-3" tabindex="-1"></a>  K <span class="ot">&lt;-</span> v[<span class="dv">2</span>]</span>
+<span id="cb370-4"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb370-4" tabindex="-1"></a>  lambda <span class="ot">&lt;-</span> v[<span class="dv">3</span>]</span>
+<span id="cb370-5"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb370-5" tabindex="-1"></a>  </span>
+<span id="cb370-6"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb370-6" tabindex="-1"></a>  <span class="fu">c</span>(</span>
+<span id="cb370-7"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb370-7" tabindex="-1"></a>    ((<span class="fl">0.5</span> <span class="sc">*</span> lambda <span class="sc">+</span> <span class="dv">25</span>) <span class="sc">*</span> <span class="fu">sqrt</span>(K)<span class="sc">/</span><span class="fu">sqrt</span>(L)) <span class="sc">-</span> <span class="dv">10</span>,</span>
+<span id="cb370-8"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb370-8" tabindex="-1"></a>    ((<span class="fl">0.5</span> <span class="sc">*</span> lambda <span class="sc">+</span> <span class="dv">25</span>) <span class="sc">*</span> <span class="fu">sqrt</span>(L)<span class="sc">/</span><span class="fu">sqrt</span>(K)) <span class="sc">-</span> <span class="dv">20</span>,</span>
+<span id="cb370-9"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb370-9" tabindex="-1"></a>    <span class="sc">-</span><span class="dv">25</span><span class="sc">+</span>L<span class="sc">^</span><span class="fl">0.5</span> <span class="sc">*</span> K<span class="sc">^</span><span class="fl">0.5</span></span>
+<span id="cb370-10"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb370-10" tabindex="-1"></a>  )</span>
+<span id="cb370-11"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb370-11" tabindex="-1"></a>}</span>
+<span id="cb370-12"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb370-12" tabindex="-1"></a></span>
+<span id="cb370-13"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb370-13" tabindex="-1"></a>sols <span class="ot">&lt;-</span> <span class="fu">nleqslv</span>(<span class="fu">c</span>(<span class="dv">10</span>,<span class="dv">10</span>,<span class="dv">1</span>), f)</span>
+<span id="cb370-14"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb370-14" tabindex="-1"></a>sols<span class="sc">$</span>x</span></code></pre></div>
+<pre><code>## [1]  35.35534  17.67767 -21.71573</code></pre>
+</div>
+<div id="second-derivatives-2" class="section level5 hasAnchor" number="11.5.0.0.5">
+<h5><span class="header-section-number">11.5.0.0.5</span> Second Derivatives<a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#second-derivatives-2" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<div class="sourceCode" id="cb372"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb372-1"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb372-1" tabindex="-1"></a>lll<span class="ot">&lt;-</span><span class="fu">Deriv</span>(ll,<span class="st">&quot;L&quot;</span>)</span>
+<span id="cb372-2"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb372-2" tabindex="-1"></a>lkk<span class="ot">&lt;-</span><span class="fu">Deriv</span>(lk, <span class="st">&quot;K&quot;</span>)</span>
+<span id="cb372-3"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb372-3" tabindex="-1"></a>llk<span class="ot">&lt;-</span><span class="fu">Deriv</span>(ll, <span class="st">&quot;K&quot;</span>)</span></code></pre></div>
+</div>
+<div id="constraint-derivatives-1" class="section level5 hasAnchor" number="11.5.0.0.6">
+<h5><span class="header-section-number">11.5.0.0.6</span> Constraint Derivatives<a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#constraint-derivatives-1" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<div class="sourceCode" id="cb373"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb373-1"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb373-1" tabindex="-1"></a>gl<span class="ot">&lt;-</span><span class="fu">Deriv</span>(constraint,<span class="st">&quot;L&quot;</span>)</span>
+<span id="cb373-2"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb373-2" tabindex="-1"></a>gk<span class="ot">&lt;-</span><span class="fu">Deriv</span>(constraint, <span class="st">&quot;K&quot;</span>)</span></code></pre></div>
+</div>
+<div id="build-bordered-hessian-1" class="section level5 hasAnchor" number="11.5.0.0.7">
+<h5><span class="header-section-number">11.5.0.0.7</span> Build Bordered Hessian<a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#build-bordered-hessian-1" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<div class="sourceCode" id="cb374"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb374-1"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb374-1" tabindex="-1"></a>L0<span class="ot">&lt;-</span>sols<span class="sc">$</span>x[<span class="dv">1</span>]</span>
+<span id="cb374-2"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb374-2" tabindex="-1"></a>K0<span class="ot">&lt;-</span>sols<span class="sc">$</span>x[<span class="dv">2</span>]</span>
+<span id="cb374-3"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb374-3" tabindex="-1"></a>lambda0<span class="ot">&lt;-</span>sols<span class="sc">$</span>x[<span class="dv">3</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb375"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb375-1"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb375-1" tabindex="-1"></a>BH <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(</span>
+<span id="cb375-2"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb375-2" tabindex="-1"></a>  <span class="dv">0</span>,</span>
+<span id="cb375-3"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb375-3" tabindex="-1"></a>  <span class="fu">gl</span>(L0,K0),</span>
+<span id="cb375-4"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb375-4" tabindex="-1"></a>  <span class="fu">gk</span>(L0,K0),</span>
+<span id="cb375-5"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb375-5" tabindex="-1"></a>  </span>
+<span id="cb375-6"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb375-6" tabindex="-1"></a>  <span class="fu">gl</span>(L0,K0),</span>
+<span id="cb375-7"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb375-7" tabindex="-1"></a>  <span class="fu">lll</span>(L0,K0,lambda0),</span>
+<span id="cb375-8"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb375-8" tabindex="-1"></a>  <span class="fu">llk</span>(L0,K0,lambda0),</span>
+<span id="cb375-9"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb375-9" tabindex="-1"></a>  </span>
+<span id="cb375-10"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb375-10" tabindex="-1"></a>  <span class="fu">gk</span>(L0,K0),</span>
+<span id="cb375-11"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb375-11" tabindex="-1"></a>  <span class="fu">llk</span>(L0,K0,lambda0),</span>
+<span id="cb375-12"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb375-12" tabindex="-1"></a>  <span class="fu">lkk</span>(L0,K0,lambda0)</span>
+<span id="cb375-13"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb375-13" tabindex="-1"></a>), <span class="at">nrow=</span><span class="dv">3</span>, <span class="at">byrow=</span><span class="cn">TRUE</span>)</span>
+<span id="cb375-14"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb375-14" tabindex="-1"></a>BH</span></code></pre></div>
+<pre><code>##           [,1]       [,2]       [,3]
+## [1,] 0.0000000  0.3535534  0.7071068
+## [2,] 0.3535534 -0.1414214  0.2828427
+## [3,] 0.7071068  0.2828427 -0.5656854</code></pre>
+</div>
+<div id="get-determinant-1" class="section level5 hasAnchor" number="11.5.0.0.8">
+<h5><span class="header-section-number">11.5.0.0.8</span> Get Determinant<a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#get-determinant-1" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<div class="sourceCode" id="cb377"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb377-1"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cb377-1" tabindex="-1"></a><span class="fu">det</span>(BH)</span></code></pre></div>
+<pre><code>## [1] 0.2828427</code></pre>
+</div>
+<div id="example-2-1" class="section level3 hasAnchor" number="11.5.1">
+<h3><span class="header-section-number">11.5.1</span> Example 2<a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#example-2-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><span class="math inline">\(U=xy\)</span></p>
+<p>Constraint: <span class="math inline">\(10-x+y=0\)</span></p>
+<div id="next-steps-try-in-class-3" class="section level5 hasAnchor" number="11.5.1.0.1">
+<h5><span class="header-section-number">11.5.1.0.1</span> Next steps: Try in class<a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#next-steps-try-in-class-3" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+</div>
+</div>
+</div>
+<div id="interpretations" class="section level2 hasAnchor" number="11.6">
+<h2><span class="header-section-number">11.6</span> Interpretations:<a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#interpretations" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<table>
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Objective Function</th>
+<th>Interpretation of <span class="math inline">\(x^*, y^*\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Profit function</td>
+<td>combination of inputs or outputs that maximizes profit given the constraint</td>
+</tr>
+<tr class="even">
+<td>Utility function</td>
+<td>optimal consumption bundle that maximizes utility subject to budget</td>
+</tr>
+<tr class="odd">
+<td>Cost function</td>
+<td>least-costly combination of inputs to produce an output</td>
+</tr>
+<tr class="even">
+<td>Revenue function</td>
+<td>combination of prices/quantities that maximizes revenue subject to constraint</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="exercise" class="section level2 hasAnchor" number="11.7">
+<h2><span class="header-section-number">11.7</span> Exercise:<a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#exercise" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ol style="list-style-type: decimal">
+<li>You encounter this function:</li>
+</ol>
+<p><span class="math inline">\(\pi(L,K)=-L^2-K^2+4L+6K\)</span></p>
+<ul>
+<li><p>Provide the first order derivatives, second order derivatives, cross-partial derivatives</p></li>
+<li><p>Use Young’s theorem to confirm symmetry</p></li>
+<li><p>Evaluate at critical points (0,0)</p></li>
+<li><p>Construct the Hessian matrix</p></li>
+<li><p>Compute the determinant to check if maximum, minimum, saddle point</p></li>
+<li><p>Your final answers should be giving the first order derivatives, second order derivatives, cross-partial derivatives, Young’s theorem, Hessian matrix, determinant and determination(max, min, or saddle)</p></li>
+</ul>
+<ol start="2" style="list-style-type: decimal">
+<li>For number 2:</li>
+</ol>
+<ul>
+<li><p>Provide the first order derivatives, second order derivatives, cross-partial derivatives</p></li>
+<li><p>Use Young’s theorem to confirm symmetry</p></li>
+<li><p>Evaluate at critical points (0,0)</p></li>
+<li><p>Construct the Hessian matrix</p></li>
+<li><p>Compute the determinant to check if maximum, minimum, saddle point</p></li>
+<li><p>Your final answers should be giving the first order derivatives, second order derivatives, cross-partial derivatives, Young’s theorem, Hessian matrix, determinant and determination(max, min, or saddle)</p></li>
+</ul>
+<p>The question depends on your middle initials (A=1, B=2…Z=26).</p>
+<ul>
+<li><p>Before answering, show the sum of your middle initials (i.e. Partner A M.I.=B, Partner B M.I.=E so 5)</p>
+<p>The function you need to answer would depend on it:</p></li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th>Sum of Initials</th>
+<th>Assigned Function</th>
+<th>Evaluate at critical points</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>2-15</td>
+<td>Function 2</td>
+<td>(7,9)</td>
+</tr>
+<tr class="even">
+<td>16-30</td>
+<td>Function 3</td>
+<td>(3,4)</td>
+</tr>
+<tr class="odd">
+<td>31-52</td>
+<td>Function 4</td>
+<td>(5,1)</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p>Additionally, evaluate at critical points assigned</p></li>
+<li><p>Construct new Hessian matrix</p></li>
+<li><p>Compute the determinant to check if maximum, minimum, saddle point</p></li>
+<li><p>Your final answers should be giving the first order derivatives, second order derivatives, cross-partial derivatives, Young’s theorem, Hessian matrix, determinant and determination(max, min, or saddle)</p></li>
+</ul>
+<ol start="3" style="list-style-type: decimal">
+<li><p>You have this information:</p>
+<p><span class="math inline">\(\mathcal{L}=\sqrt{x}\sqrt{y}+\lambda(100-10x-20y)\)</span></p></li>
+</ol>
+<ul>
+<li><p>Get first order conditions</p></li>
+<li><p>Solve for the optimal bundle</p></li>
+<li><p>Get Second Derivatives</p></li>
+<li><p>Get Constraint Derivatives</p></li>
+<li><p>Build Bordered Hessian</p></li>
+<li><p>Get Determinants and Determination</p></li>
+<li><p>Your final answers should be giving the first order derivatives, second order derivatives, constraint derivatives, optimal bundle, Bordered Hessian matrix, determinant and determination(max, min, or inconclusive)</p></li>
+</ul>
+<ol start="4" style="list-style-type: decimal">
+<li>Provide the first order derivatives, second order derivatives, constraint derivatives, optimal bundle, Bordered Hessian matrix, determinant and determination(max, min, or inconclusive) for <strong>Example 2</strong> of Bordered Hessian examples.</li>
+</ol>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="review-of-derivatives-and-visualizations.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": null,
+    "text": null
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": ["LBYC121_Course_Book.pdf", "LBYC121_Course_Book.epub"],
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "section",
+    "depth": 4
+  }
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

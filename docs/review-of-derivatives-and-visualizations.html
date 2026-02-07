@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>6 Review of Single-Variable Differentiation Rules and Visualizing Functions | LBYC121 Course Book</title>
+  <title>10 Review of Derivatives and Visualizations | LBYC121 Course Book</title>
   <meta name="description" content="An introduction to the LBYC121 Course Book." />
   <meta name="generator" content="bookdown 0.46 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="6 Review of Single-Variable Differentiation Rules and Visualizing Functions | LBYC121 Course Book" />
+  <meta property="og:title" content="10 Review of Derivatives and Visualizations | LBYC121 Course Book" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="An introduction to the LBYC121 Course Book." />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="6 Review of Single-Variable Differentiation Rules and Visualizing Functions | LBYC121 Course Book" />
+  <meta name="twitter:title" content="10 Review of Derivatives and Visualizations | LBYC121 Course Book" />
   
   <meta name="twitter:description" content="An introduction to the LBYC121 Course Book." />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="differentiation-rules.html"/>
-<link rel="next" href="visualizing-functions-with-ggplot2.html"/>
+<link rel="prev" href="answer-key.html"/>
+<link rel="next" href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -355,153 +355,171 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="review-of-single-variable-differentiation-rules-and-visualizing-functions" class="section level1 hasAnchor" number="6">
-<h1><span class="header-section-number">6</span> Review of Single-Variable Differentiation Rules and Visualizing Functions<a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#review-of-single-variable-differentiation-rules-and-visualizing-functions" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#cb52-1" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list=</span><span class="fu">ls</span>())</span>
-<span id="cb52-2"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#cb52-2" tabindex="-1"></a><span class="fu">gc</span>()</span></code></pre></div>
-<pre><code>##           used (Mb) gc trigger  (Mb) max used  (Mb)
-## Ncells 1840629 98.4    3242938 173.2  3242938 173.2
-## Vcells 4147721 31.7   10146329  77.5 10146329  77.5</code></pre>
-<div id="economic-example" class="section level2 hasAnchor" number="6.1">
-<h2><span class="header-section-number">6.1</span> Economic Example<a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#economic-example" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>We already discussed how to get Marginal Cost, etc. from the last chapter; here, we review how to get Marginal Cost, Average Cost.</p>
-<div id="total-cost-function-definition" class="section level3 hasAnchor" number="6.1.1">
-<h3><span class="header-section-number">6.1.1</span> Total Cost Function Definition<a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#total-cost-function-definition" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Say you are given a Total Cost function:</p>
-<p><span class="math inline">\(TC(Q) = Q^3 - 12Q^2 + 60Q\)</span></p>
-<p>We can create a function of the Total Cost. This will help when we want to evaluate the model at a certain quantity.</p>
-<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#cb54-1" tabindex="-1"></a>TC<span class="ot">&lt;-</span> <span class="cf">function</span>(Q) Q<span class="sc">^</span><span class="dv">3</span> <span class="sc">-</span> <span class="dv">12</span><span class="sc">*</span>Q<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> <span class="dv">60</span><span class="sc">*</span>Q</span></code></pre></div>
-<p>What you are doing here is that you are creating a new object, <code>TC</code>. Then, <code>function(Q)</code> is defining the mathematical function (you are defining the Total Cost function). <code>Q</code> is the quantity.</p>
+<div id="review-of-derivatives-and-visualizations" class="section level1 hasAnchor" number="10">
+<h1><span class="header-section-number">10</span> Review of Derivatives and Visualizations<a href="review-of-derivatives-and-visualizations.html#review-of-derivatives-and-visualizations" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="review-of-visualizing-functions" class="section level2 hasAnchor" number="10.1">
+<h2><span class="header-section-number">10.1</span> Review of Visualizing Functions<a href="review-of-derivatives-and-visualizations.html#review-of-visualizing-functions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="linear-function" class="section level3 hasAnchor" number="10.1.1">
+<h3><span class="header-section-number">10.1.1</span> Linear Function<a href="review-of-derivatives-and-visualizations.html#linear-function" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>A linear function increases or decreases at a constant rate.</p>
+<p>Example: Price-demand relationship (linear demand)</p>
+<p><span class="math inline">\(P(Q) = 100-2Q\)</span></p>
+<p>Price decreases by 2 units for every unit of quantity</p>
+<div id="define-the-function" class="section level5 hasAnchor" number="10.1.1.0.1">
+<h5><span class="header-section-number">10.1.1.0.1</span> Define the function<a href="review-of-derivatives-and-visualizations.html#define-the-function" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<div class="sourceCode" id="cb273"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb273-1"><a href="review-of-derivatives-and-visualizations.html#cb273-1" tabindex="-1"></a>P<span class="ot">&lt;-</span> \(Q) <span class="dv">100-2</span><span class="sc">*</span>Q</span></code></pre></div>
 </div>
-<div id="average-cost-function-definition" class="section level3 hasAnchor" number="6.1.2">
-<h3><span class="header-section-number">6.1.2</span> Average Cost Function Definition<a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#average-cost-function-definition" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Then, you are now going to define the Average Cost function given as:</p>
-<p><span class="math inline">\(AC(Q) = \frac{TC(Q)}{Q}\)</span></p>
-<p>We create the Average Cost function in R which will help us evaluate later on:</p>
-<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#cb55-1" tabindex="-1"></a>AC<span class="ot">&lt;-</span><span class="cf">function</span>(Q) <span class="fu">TC</span>(Q)<span class="sc">/</span>Q</span></code></pre></div>
-<p>Once again, we are creating a new object, <code>AC</code>, then defining the average cost function <code>function(Q)</code>.</p>
-</div>
-<div id="marginal-cost-using-deriv" class="section level3 hasAnchor" number="6.1.3">
-<h3><span class="header-section-number">6.1.3</span> Marginal Cost using <code>Deriv</code><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#marginal-cost-using-deriv" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Unlike before where we used <code>D(expression, name)</code> , we will use the <code>Deriv</code> package. Therefore, install and load the <code>Deriv</code> package.</p>
-<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#cb56-1" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span>(<span class="st">&quot;Deriv&quot;</span> <span class="sc">%in%</span> <span class="fu">installed.packages</span>()[,<span class="st">&quot;Package&quot;</span>]))</span>
-<span id="cb56-2"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#cb56-2" tabindex="-1"></a>  <span class="fu">install.packages</span>(<span class="st">&quot;Deriv&quot;</span>)</span></code></pre></div>
-<p>We know that the Marginal Cost function is:</p>
-<p><span class="math inline">\(MC(Q) = \frac{dTC}{dQ}\)</span></p>
-<p>So, we use the Deriv package to get the <strong>first derivative</strong> of <code>TC</code> with respect to <code>Q</code>.</p>
-<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#cb57-1" tabindex="-1"></a><span class="fu">library</span>(Deriv)</span>
-<span id="cb57-2"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#cb57-2" tabindex="-1"></a>MC<span class="ot">&lt;-</span><span class="fu">Deriv</span>(TC, <span class="st">&quot;Q&quot;</span>)</span></code></pre></div>
-</div>
-<div id="evaluating-at-a-specific-quantity" class="section level3 hasAnchor" number="6.1.4">
-<h3><span class="header-section-number">6.1.4</span> Evaluating at a specific quantity<a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#evaluating-at-a-specific-quantity" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>We defined our functions, TC, AC, and MC. If you are given a specific quantity, what is the TC, AC, and MC? We can simply do this in R:</p>
-<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#cb58-1" tabindex="-1"></a><span class="fu">TC</span>(<span class="dv">20</span>)</span></code></pre></div>
-<pre><code>## [1] 4400</code></pre>
-<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#cb60-1" tabindex="-1"></a><span class="fu">AC</span>(<span class="dv">20</span>)</span></code></pre></div>
-<pre><code>## [1] 220</code></pre>
-<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#cb62-1" tabindex="-1"></a><span class="fu">MC</span>(<span class="dv">20</span>)</span></code></pre></div>
-<pre><code>## [1] 780</code></pre>
-<p>You can double-check in the console by computing manually if the answers are correct. So, what we did is simply evaluate the functions at <code>(Q=20)</code></p>
+<div id="next-steps" class="section level5 hasAnchor" number="10.1.1.0.2">
+<h5><span class="header-section-number">10.1.1.0.2</span> Next Steps:<a href="review-of-derivatives-and-visualizations.html#next-steps" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>We already did this before:</p>
+<div class="sourceCode" id="cb274"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb274-1"><a href="review-of-derivatives-and-visualizations.html#cb274-1" tabindex="-1"></a>Q_vals<span class="ot">&lt;-</span><span class="fu">seq</span>(<span class="dv">0</span>,<span class="dv">50</span>, <span class="at">length.out=</span><span class="dv">100</span>)</span>
+<span id="cb274-2"><a href="review-of-derivatives-and-visualizations.html#cb274-2" tabindex="-1"></a>df<span class="ot">&lt;-</span><span class="fu">data.frame</span>(<span class="at">Q=</span>Q_vals, <span class="at">P=</span><span class="fu">P</span>(Q_vals))</span></code></pre></div>
+<p>For now, we plot using Base R:</p>
+<div class="sourceCode" id="cb275"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb275-1"><a href="review-of-derivatives-and-visualizations.html#cb275-1" tabindex="-1"></a><span class="fu">plot</span>(df<span class="sc">$</span>Q, df<span class="sc">$</span>P, <span class="at">type=</span><span class="st">&quot;l&quot;</span>, <span class="at">col=</span><span class="st">&quot;darkgreen&quot;</span>, <span class="at">lwd=</span><span class="dv">2</span>, <span class="at">main=</span><span class="st">&quot;Linear Demand Curve&quot;</span>, <span class="at">xlab=</span><span class="st">&quot;Quantity&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;Price&quot;</span>)</span></code></pre></div>
+<p><img src="LBYC121_Course_Book_files/figure-html/unnamed-chunk-146-1.png" alt="" width="672" /></p>
+<p>We use line graph and a thicker line with labels. We see that price drops as quantity increases.</p>
 </div>
 </div>
-<div id="writing-greek-letters" class="section level2 hasAnchor" number="6.2">
-<h2><span class="header-section-number">6.2</span> Writing Greek Letters<a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#writing-greek-letters" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>In code, it is better to write the name of the Greek letter, however, when writing it in the final answer, that is the time you put it as the Greek Letter.</p>
-<p>So, let’s say you are differentiating <span class="math display">\[f(\gamma)=5\gamma^2\]</span>, this is how it should be done:</p>
-<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#cb64-1" tabindex="-1"></a><span class="fu">D</span>(<span class="fu">expression</span>(<span class="dv">5</span><span class="sc">*</span>gamma<span class="sc">^</span><span class="dv">2</span>), <span class="st">&quot;gamma&quot;</span>)</span></code></pre></div>
-<pre><code>## 5 * (2 * gamma)</code></pre>
-<p>Some usual Greek Letters:</p>
-<table>
-<colgroup>
-<col width="18%" />
-<col width="51%" />
-<col width="29%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Greek Letter</th>
-<th>R code in inline Math (Final Answer)</th>
-<th>R code in code chunk</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>⍺</td>
-<td>$\alpha$</td>
-<td>alpha</td>
-</tr>
-<tr class="even">
-<td>𝛽</td>
-<td>$\beta$</td>
-<td>beta</td>
-</tr>
-<tr class="odd">
-<td>𝛾</td>
-<td>$\gamma$</td>
-<td>gamma</td>
-</tr>
-<tr class="even">
-<td>𝛳</td>
-<td>$\theta$</td>
-<td>theta</td>
-</tr>
-</tbody>
-</table>
-<p>Example expression:</p>
-<p><span class="math inline">\(f(\gamma)=ln(\theta)+e^2+e^{ln(\gamma)}\)</span></p>
-<p>For reference:</p>
-<p>f(\gamma)=ln(\theta)+e<sup>2+e</sup>{ln(\gamma)}</p>
-<p>In a code chunk, when you are defining:</p>
-<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#cb66-1" tabindex="-1"></a>f<span class="ot">&lt;-</span><span class="cf">function</span>(gamma, theta) <span class="fu">log</span>(theta) <span class="sc">+</span> <span class="fu">exp</span>(<span class="dv">2</span>) <span class="sc">+</span> <span class="fu">exp</span>(<span class="fu">log</span>(gamma))</span></code></pre></div>
-<p><code>log()</code> = natural logarithm</p>
-<p><code>exp()</code> = exponential function</p>
+<div id="quadratic-function" class="section level3 hasAnchor" number="10.1.2">
+<h3><span class="header-section-number">10.1.2</span> Quadratic Function<a href="review-of-derivatives-and-visualizations.html#quadratic-function" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Quadratic function has a curve and the slope changes.</p>
+<p>Example: Total Cost</p>
+<p><span class="math inline">\(TC(Q) = Q^2 - 10Q + 50\)</span></p>
+<div id="define-the-function-1" class="section level5 hasAnchor" number="10.1.2.0.1">
+<h5><span class="header-section-number">10.1.2.0.1</span> Define the function<a href="review-of-derivatives-and-visualizations.html#define-the-function-1" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<div class="sourceCode" id="cb276"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb276-1"><a href="review-of-derivatives-and-visualizations.html#cb276-1" tabindex="-1"></a>TC<span class="ot">&lt;-</span> \(Q) Q<span class="sc">^</span><span class="dv">2-10</span><span class="sc">*</span>Q<span class="sc">+</span><span class="dv">50</span></span></code></pre></div>
 </div>
-<div id="square-roots-and-powers" class="section level2 hasAnchor" number="6.3">
-<h2><span class="header-section-number">6.3</span> Square Roots and Powers<a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#square-roots-and-powers" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Say you have repeated square root:</p>
-<p><span class="math inline">\(\sqrt{\sqrt{\sqrt{\theta+1}}}\)</span></p>
-<p>To write this in inline Math, it is this:</p>
-<p>\sqrt{\sqrt{\sqrt{\theta+1}}}</p>
-<p>Now, let us create a function. Given that the nested square roots would be complicated, we can simplify to have decimals as exponents:</p>
-<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#cb67-1" tabindex="-1"></a><span class="fu">Reduce</span>(<span class="st">`</span><span class="at">*</span><span class="st">`</span>, <span class="fu">rep</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>, <span class="dv">3</span>))</span></code></pre></div>
-<pre><code>## [1] 0.125</code></pre>
-<p>We use <code>Reduce</code> to help us find out the equivalent exponent of nested square roots. Square root is simply <span class="math inline">\(expression^{1/2}\)</span>, then we simply say how many square roots are present. It’s 3 in this case. We can now write the function:</p>
-<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#cb69-1" tabindex="-1"></a>t<span class="ot">&lt;-</span><span class="cf">function</span>(theta) (theta<span class="sc">+</span><span class="dv">1</span>)<span class="sc">^</span><span class="fl">0.125</span></span></code></pre></div>
-<div id="first-derivative" class="section level4 hasAnchor" number="6.3.0.1">
-<h4><span class="header-section-number">6.3.0.1</span> First Derivative<a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#first-derivative" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#cb70-1" tabindex="-1"></a><span class="fu">library</span>(Deriv)</span>
-<span id="cb70-2"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#cb70-2" tabindex="-1"></a>Dt<span class="ot">&lt;-</span> <span class="fu">Deriv</span>(t, <span class="st">&quot;theta&quot;</span>)</span>
-<span id="cb70-3"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#cb70-3" tabindex="-1"></a>Dt</span></code></pre></div>
-<pre><code>## function (theta) 
-## 0.125/(1 + theta)^0.875</code></pre>
-<p>Now, if you want to change decimals to fractions, use the <code>MASS</code> package.</p>
-<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#cb72-1" tabindex="-1"></a>MASS<span class="sc">::</span><span class="fu">fractions</span>(<span class="fl">0.875</span>) <span class="co">#:: because we are specifying that we are using fractions code in the MASS package. There are fractions that are from other packages so we need to specify</span></span></code></pre></div>
-<pre><code>## [1] 7/8</code></pre>
-<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb74-1"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#cb74-1" tabindex="-1"></a>MASS<span class="sc">::</span><span class="fu">fractions</span>(<span class="fl">0.125</span>) </span></code></pre></div>
-<pre><code>## [1] 1/8</code></pre>
-<p>Therefore, when writing the final answer:</p>
-<p><span class="math inline">\(f&#39;(\theta)=\frac{1/8}{(1+\theta)^{7/8}}\)</span></p>
-<p>f’(\theta)=\frac{1/8}{(1+\theta)^{7/8}}</p>
+<div id="next-steps-1" class="section level5 hasAnchor" number="10.1.2.0.2">
+<h5><span class="header-section-number">10.1.2.0.2</span> Next steps:<a href="review-of-derivatives-and-visualizations.html#next-steps-1" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<div class="sourceCode" id="cb277"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb277-1"><a href="review-of-derivatives-and-visualizations.html#cb277-1" tabindex="-1"></a>df2<span class="ot">&lt;-</span><span class="fu">data.frame</span>(<span class="at">Q=</span>Q_vals, <span class="at">TC=</span><span class="fu">TC</span>(Q_vals))</span>
+<span id="cb277-2"><a href="review-of-derivatives-and-visualizations.html#cb277-2" tabindex="-1"></a></span>
+<span id="cb277-3"><a href="review-of-derivatives-and-visualizations.html#cb277-3" tabindex="-1"></a><span class="fu">plot</span>(df2<span class="sc">$</span>Q, df2<span class="sc">$</span>TC, <span class="at">type=</span><span class="st">&quot;l&quot;</span>,</span>
+<span id="cb277-4"><a href="review-of-derivatives-and-visualizations.html#cb277-4" tabindex="-1"></a>     <span class="at">col=</span><span class="st">&quot;darkgreen&quot;</span>, <span class="at">lwd=</span><span class="dv">2</span>,</span>
+<span id="cb277-5"><a href="review-of-derivatives-and-visualizations.html#cb277-5" tabindex="-1"></a>     <span class="at">main=</span><span class="st">&quot;Total Cost Curve&quot;</span>, <span class="at">xlab=</span><span class="st">&quot;Quantity&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;Cost&quot;</span>)</span></code></pre></div>
+<p><img src="LBYC121_Course_Book_files/figure-html/unnamed-chunk-148-1.png" alt="" width="672" /></p>
 </div>
-<div id="higher-order-nth-derivatives" class="section level4 hasAnchor" number="6.3.0.2">
-<h4><span class="header-section-number">6.3.0.2</span> Higher-Order (nth) Derivatives<a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#higher-order-nth-derivatives" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>So, our example would be:</p>
-<p><span class="math inline">\(f(x) = x^5 + x^4 + x^3 +x^2 + x +1\)</span></p>
-<p>We define the function:</p>
-<blockquote>
-<p>If you have R GUI that is 4.1.0 and later, we can change the word function to backslash as a shorter way. It works the same. ONLY do this if you have 4.1.0 and later.</p>
-</blockquote>
-<div class="sourceCode" id="cb76"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb76-1"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#cb76-1" tabindex="-1"></a>fx<span class="ot">&lt;-</span>\(x) x<span class="sc">^</span><span class="dv">5</span> <span class="sc">+</span> x<span class="sc">^</span><span class="dv">4</span> <span class="sc">+</span> x<span class="sc">^</span><span class="dv">3</span> <span class="sc">+</span>x<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> x <span class="sc">+</span><span class="dv">1</span></span></code></pre></div>
-<p>We use the <code>Deriv</code> package:</p>
-<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb77-1"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#cb77-1" tabindex="-1"></a><span class="fu">library</span>(Deriv)</span>
-<span id="cb77-2"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#cb77-2" tabindex="-1"></a>D4fx<span class="ot">&lt;-</span><span class="fu">Deriv</span>(fx, <span class="st">&quot;x&quot;</span>, <span class="at">nderiv =</span> <span class="dv">4</span>)</span>
-<span id="cb77-3"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#cb77-3" tabindex="-1"></a>D4fx</span></code></pre></div>
-<pre><code>## function (x) 
-## 120 * x + 24</code></pre>
-<p>The <code>nderiv</code> is added and this is where you put whether you are getting the 4th derivative, 3rd, and so on.</p>
-<blockquote>
-<p>Some answers have things like <code>.e1&lt;-</code> this is like a placeholder, you can substitute <code>.e1</code> with what comes after the arrow in your equations.</p>
-</blockquote>
+</div>
+<div id="exponential-function" class="section level3 hasAnchor" number="10.1.3">
+<h3><span class="header-section-number">10.1.3</span> Exponential Function<a href="review-of-derivatives-and-visualizations.html#exponential-function" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Exponential grows/shrinks rapidly;</p>
+<p>Example: Compound growth of revenue</p>
+<p><span class="math inline">\(R(Q) = 50 * e^{0.05Q}\)</span></p>
+<div id="define-the-function-2" class="section level5 hasAnchor" number="10.1.3.0.1">
+<h5><span class="header-section-number">10.1.3.0.1</span> Define the function<a href="review-of-derivatives-and-visualizations.html#define-the-function-2" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<div class="sourceCode" id="cb278"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb278-1"><a href="review-of-derivatives-and-visualizations.html#cb278-1" tabindex="-1"></a>R<span class="ot">&lt;-</span> \(Q) <span class="dv">50</span><span class="sc">*</span><span class="fu">exp</span>(<span class="fl">0.05</span><span class="sc">*</span>Q)</span></code></pre></div>
+<p>No need to do <code>^</code> since it is exponential.</p>
+</div>
+<div id="next-steps-2" class="section level5 hasAnchor" number="10.1.3.0.2">
+<h5><span class="header-section-number">10.1.3.0.2</span> Next Steps:<a href="review-of-derivatives-and-visualizations.html#next-steps-2" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<div class="sourceCode" id="cb279"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb279-1"><a href="review-of-derivatives-and-visualizations.html#cb279-1" tabindex="-1"></a>df3<span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Q=</span>Q_vals, <span class="at">R=</span><span class="fu">R</span>(Q_vals))</span>
+<span id="cb279-2"><a href="review-of-derivatives-and-visualizations.html#cb279-2" tabindex="-1"></a></span>
+<span id="cb279-3"><a href="review-of-derivatives-and-visualizations.html#cb279-3" tabindex="-1"></a><span class="fu">plot</span>(df3<span class="sc">$</span>Q, df3<span class="sc">$</span>R, <span class="at">type=</span><span class="st">&quot;l&quot;</span>, <span class="at">col=</span><span class="st">&quot;tomato&quot;</span>, <span class="at">lwd=</span><span class="dv">2</span>,</span>
+<span id="cb279-4"><a href="review-of-derivatives-and-visualizations.html#cb279-4" tabindex="-1"></a>     <span class="at">main=</span><span class="st">&quot;Exponential Revenue Growth&quot;</span>, <span class="at">xlab=</span><span class="st">&quot;Quantity&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;Revenue&quot;</span>)</span></code></pre></div>
+<p><img src="LBYC121_Course_Book_files/figure-html/unnamed-chunk-150-1.png" alt="" width="672" /></p>
+<p>Revenue grows faster with more quantity due to compounding effect or price increase per unit sold.</p>
+</div>
+</div>
+</div>
+<div id="review-of-partial-derivatives" class="section level2 hasAnchor" number="10.2">
+<h2><span class="header-section-number">10.2</span> Review of Partial Derivatives<a href="review-of-derivatives-and-visualizations.html#review-of-partial-derivatives" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Partial derivatives show how a function changes if we change one variable while keeping others fixed.</p>
+<div class="sourceCode" id="cb280"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb280-1"><a href="review-of-derivatives-and-visualizations.html#cb280-1" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list=</span><span class="fu">ls</span>())</span></code></pre></div>
+<div id="production-function" class="section level3 hasAnchor" number="10.2.1">
+<h3><span class="header-section-number">10.2.1</span> Production Function<a href="review-of-derivatives-and-visualizations.html#production-function" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><span class="math inline">\(Q(L,K) = L^{0.5} K^{0.5}\)</span></p>
+<div id="define-the-function-3" class="section level5 hasAnchor" number="10.2.1.0.1">
+<h5><span class="header-section-number">10.2.1.0.1</span> Define the function<a href="review-of-derivatives-and-visualizations.html#define-the-function-3" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<div class="sourceCode" id="cb281"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb281-1"><a href="review-of-derivatives-and-visualizations.html#cb281-1" tabindex="-1"></a>pf<span class="ot">&lt;-</span> \(L,K) L<span class="sc">^</span><span class="fl">0.5</span><span class="sc">*</span>K<span class="sc">^</span><span class="fl">0.5</span></span></code></pre></div>
+</div>
+<div id="partial-derivatives-1" class="section level5 hasAnchor" number="10.2.1.0.2">
+<h5><span class="header-section-number">10.2.1.0.2</span> Partial Derivatives<a href="review-of-derivatives-and-visualizations.html#partial-derivatives-1" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<div class="sourceCode" id="cb282"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb282-1"><a href="review-of-derivatives-and-visualizations.html#cb282-1" tabindex="-1"></a><span class="fu">library</span>(Deriv)</span>
+<span id="cb282-2"><a href="review-of-derivatives-and-visualizations.html#cb282-2" tabindex="-1"></a>mpl<span class="ot">&lt;-</span><span class="fu">Deriv</span>(pf,<span class="st">&quot;L&quot;</span>)</span>
+<span id="cb282-3"><a href="review-of-derivatives-and-visualizations.html#cb282-3" tabindex="-1"></a>mpk<span class="ot">&lt;-</span><span class="fu">Deriv</span>(pf, <span class="st">&quot;K&quot;</span>)</span></code></pre></div>
+</div>
+<div id="evaluate" class="section level5 hasAnchor" number="10.2.1.0.3">
+<h5><span class="header-section-number">10.2.1.0.3</span> Evaluate<a href="review-of-derivatives-and-visualizations.html#evaluate" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>at L=7, K=11</p>
+<div class="sourceCode" id="cb283"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb283-1"><a href="review-of-derivatives-and-visualizations.html#cb283-1" tabindex="-1"></a>L<span class="ot">&lt;-</span><span class="dv">7</span></span>
+<span id="cb283-2"><a href="review-of-derivatives-and-visualizations.html#cb283-2" tabindex="-1"></a>K<span class="ot">&lt;-</span><span class="dv">11</span></span>
+<span id="cb283-3"><a href="review-of-derivatives-and-visualizations.html#cb283-3" tabindex="-1"></a><span class="fu">mpl</span>(L,K)</span></code></pre></div>
+<pre><code>## [1] 0.6267832</code></pre>
+<div class="sourceCode" id="cb285"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb285-1"><a href="review-of-derivatives-and-visualizations.html#cb285-1" tabindex="-1"></a><span class="fu">mpk</span>(L,K)</span></code></pre></div>
+<pre><code>## [1] 0.398862</code></pre>
+<p>Marginal Product of Labor is the extra output per extra unit of labor while Marginal Product of Capital is the extra output per extra unit of capital.</p>
+<p>If you want to get actual output change, multiply by <code>dL</code></p>
+</div>
+</div>
+<div id="utility-function-1" class="section level3 hasAnchor" number="10.2.2">
+<h3><span class="header-section-number">10.2.2</span> Utility Function<a href="review-of-derivatives-and-visualizations.html#utility-function-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><span class="math inline">\(U = x^{0.3}*y^{0.7}\)</span></p>
+<div id="define-the-function-4" class="section level5 hasAnchor" number="10.2.2.0.1">
+<h5><span class="header-section-number">10.2.2.0.1</span> Define the function<a href="review-of-derivatives-and-visualizations.html#define-the-function-4" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<div class="sourceCode" id="cb287"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb287-1"><a href="review-of-derivatives-and-visualizations.html#cb287-1" tabindex="-1"></a>U<span class="ot">&lt;-</span> \(x,y) x<span class="sc">^</span><span class="fl">0.3</span><span class="sc">*</span>y<span class="sc">^</span><span class="fl">0.7</span></span></code></pre></div>
+</div>
+<div id="next-steps-3" class="section level5 hasAnchor" number="10.2.2.0.2">
+<h5><span class="header-section-number">10.2.2.0.2</span> Next Steps:<a href="review-of-derivatives-and-visualizations.html#next-steps-3" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<div class="sourceCode" id="cb288"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb288-1"><a href="review-of-derivatives-and-visualizations.html#cb288-1" tabindex="-1"></a>mux<span class="ot">&lt;-</span><span class="fu">Deriv</span>(U, <span class="st">&quot;x&quot;</span>)</span>
+<span id="cb288-2"><a href="review-of-derivatives-and-visualizations.html#cb288-2" tabindex="-1"></a>muy<span class="ot">&lt;-</span><span class="fu">Deriv</span>(U, <span class="st">&quot;y&quot;</span>)</span>
+<span id="cb288-3"><a href="review-of-derivatives-and-visualizations.html#cb288-3" tabindex="-1"></a></span>
+<span id="cb288-4"><a href="review-of-derivatives-and-visualizations.html#cb288-4" tabindex="-1"></a><span class="co">#Evaluate at x=5, y=3</span></span>
+<span id="cb288-5"><a href="review-of-derivatives-and-visualizations.html#cb288-5" tabindex="-1"></a><span class="fu">mux</span>(<span class="dv">5</span>,<span class="dv">3</span>)</span></code></pre></div>
+<pre><code>## [1] 0.2098105</code></pre>
+<div class="sourceCode" id="cb290"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb290-1"><a href="review-of-derivatives-and-visualizations.html#cb290-1" tabindex="-1"></a><span class="fu">muy</span>(<span class="dv">5</span>,<span class="dv">3</span>)</span></code></pre></div>
+<pre><code>## [1] 0.8159296</code></pre>
+<p>MUx is the extra satisfaction from 1 more unit of x while MUy is the extra satisfaction from 1 more unit of y</p>
+</div>
+</div>
+<div id="profit-function" class="section level3 hasAnchor" number="10.2.3">
+<h3><span class="header-section-number">10.2.3</span> Profit Function<a href="review-of-derivatives-and-visualizations.html#profit-function" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><span class="math inline">\(\pi(Q_1, Q_2) = 50Q_1+80Q_2-Q_1^2-2Q_2^2\)</span></p>
+<p>write: \pi(Q_1, Q_2) = 50Q_1+80Q_2-Q_1^2-2Q_2^2</p>
+<div id="define-the-function-5" class="section level5 hasAnchor" number="10.2.3.0.1">
+<h5><span class="header-section-number">10.2.3.0.1</span> Define the function<a href="review-of-derivatives-and-visualizations.html#define-the-function-5" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<div class="sourceCode" id="cb292"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb292-1"><a href="review-of-derivatives-and-visualizations.html#cb292-1" tabindex="-1"></a>pi<span class="ot">&lt;-</span> \(Q1,Q2) <span class="dv">50</span><span class="sc">*</span>Q1<span class="sc">+</span><span class="dv">80</span><span class="sc">*</span>Q2<span class="sc">-</span>Q1<span class="sc">^</span><span class="dv">2-2</span><span class="sc">*</span>Q2<span class="sc">^</span><span class="dv">2</span></span></code></pre></div>
+</div>
+<div id="next-steps-4" class="section level5 hasAnchor" number="10.2.3.0.2">
+<h5><span class="header-section-number">10.2.3.0.2</span> Next Steps:<a href="review-of-derivatives-and-visualizations.html#next-steps-4" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<div class="sourceCode" id="cb293"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb293-1"><a href="review-of-derivatives-and-visualizations.html#cb293-1" tabindex="-1"></a>dpi_dq1<span class="ot">&lt;-</span><span class="fu">Deriv</span>(pi, <span class="st">&quot;Q1&quot;</span>)</span>
+<span id="cb293-2"><a href="review-of-derivatives-and-visualizations.html#cb293-2" tabindex="-1"></a>dpi_dq2<span class="ot">&lt;-</span><span class="fu">Deriv</span>(pi, <span class="st">&quot;Q2&quot;</span>)</span>
+<span id="cb293-3"><a href="review-of-derivatives-and-visualizations.html#cb293-3" tabindex="-1"></a><span class="co">#Evaluate at Q1=5, Q2=4</span></span>
+<span id="cb293-4"><a href="review-of-derivatives-and-visualizations.html#cb293-4" tabindex="-1"></a><span class="fu">dpi_dq1</span>(<span class="dv">5</span>,<span class="dv">4</span>)</span></code></pre></div>
+<pre><code>## [1] 40</code></pre>
+<div class="sourceCode" id="cb295"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb295-1"><a href="review-of-derivatives-and-visualizations.html#cb295-1" tabindex="-1"></a><span class="fu">dpi_dq2</span>(<span class="dv">5</span>,<span class="dv">4</span>)</span></code></pre></div>
+<pre><code>## [1] 64</code></pre>
+<p>Change in profit if producing one more unit of Q1 or Q2</p>
+</div>
+</div>
+<div id="revenue-function" class="section level3 hasAnchor" number="10.2.4">
+<h3><span class="header-section-number">10.2.4</span> Revenue Function<a href="review-of-derivatives-and-visualizations.html#revenue-function" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><span class="math inline">\(R(Q_1,Q_2) = 20Q_1+30Q_2\)</span></p>
+<div id="define-the-function-6" class="section level5 hasAnchor" number="10.2.4.0.1">
+<h5><span class="header-section-number">10.2.4.0.1</span> Define the function<a href="review-of-derivatives-and-visualizations.html#define-the-function-6" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<div class="sourceCode" id="cb297"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb297-1"><a href="review-of-derivatives-and-visualizations.html#cb297-1" tabindex="-1"></a>rf<span class="ot">&lt;-</span> \(Q1,Q2) <span class="dv">20</span><span class="sc">*</span>Q1<span class="sc">+</span><span class="dv">30</span><span class="sc">*</span>Q2</span></code></pre></div>
+</div>
+<div id="next-steps-5" class="section level5 hasAnchor" number="10.2.4.0.2">
+<h5><span class="header-section-number">10.2.4.0.2</span> Next Steps:<a href="review-of-derivatives-and-visualizations.html#next-steps-5" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<div class="sourceCode" id="cb298"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb298-1"><a href="review-of-derivatives-and-visualizations.html#cb298-1" tabindex="-1"></a><span class="co">#We combine the partial derivatives and evaluation</span></span>
+<span id="cb298-2"><a href="review-of-derivatives-and-visualizations.html#cb298-2" tabindex="-1"></a><span class="fu">Deriv</span>(rf,<span class="st">&quot;Q1&quot;</span>)(<span class="dv">10</span>,<span class="dv">5</span>)</span></code></pre></div>
+<pre><code>## [1] 20</code></pre>
+<div class="sourceCode" id="cb300"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb300-1"><a href="review-of-derivatives-and-visualizations.html#cb300-1" tabindex="-1"></a><span class="fu">Deriv</span>(rf, <span class="st">&quot;Q2&quot;</span>)(<span class="dv">10</span>,<span class="dv">5</span>)</span></code></pre></div>
+<pre><code>## [1] 30</code></pre>
+</div>
+</div>
+<div id="cost-function" class="section level3 hasAnchor" number="10.2.5">
+<h3><span class="header-section-number">10.2.5</span> Cost Function<a href="review-of-derivatives-and-visualizations.html#cost-function" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><span class="math inline">\(C(Q_1, Q_2) = 5Q_1^2+3Q_2^2+10\)</span></p>
+<div id="define-the-function-7" class="section level5 hasAnchor" number="10.2.5.0.1">
+<h5><span class="header-section-number">10.2.5.0.1</span> Define the function<a href="review-of-derivatives-and-visualizations.html#define-the-function-7" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<div class="sourceCode" id="cb302"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb302-1"><a href="review-of-derivatives-and-visualizations.html#cb302-1" tabindex="-1"></a>cf<span class="ot">&lt;-</span> \(Q1,Q2) <span class="dv">5</span><span class="sc">*</span>Q1<span class="sc">^</span><span class="dv">2</span><span class="sc">+</span><span class="dv">30</span><span class="sc">*</span>Q2</span></code></pre></div>
+</div>
+<div id="next-steps-6" class="section level5 hasAnchor" number="10.2.5.0.2">
+<h5><span class="header-section-number">10.2.5.0.2</span> Next Steps<a href="review-of-derivatives-and-visualizations.html#next-steps-6" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<div class="sourceCode" id="cb303"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb303-1"><a href="review-of-derivatives-and-visualizations.html#cb303-1" tabindex="-1"></a><span class="fu">Deriv</span>(cf, <span class="st">&quot;Q1&quot;</span>)(<span class="dv">7</span>,<span class="dv">8</span>)</span></code></pre></div>
+<pre><code>## [1] 70</code></pre>
+<div class="sourceCode" id="cb305"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb305-1"><a href="review-of-derivatives-and-visualizations.html#cb305-1" tabindex="-1"></a><span class="fu">Deriv</span>(cf, <span class="st">&quot;Q2&quot;</span>)(<span class="dv">7</span>,<span class="dv">8</span>)</span></code></pre></div>
+<pre><code>## [1] 30</code></pre>
+</div>
 </div>
 </div>
 </div>
@@ -510,8 +528,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="differentiation-rules.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="visualizing-functions-with-ggplot2.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="answer-key.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
