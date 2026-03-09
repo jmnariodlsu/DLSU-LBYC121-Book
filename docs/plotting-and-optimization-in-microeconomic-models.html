@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>13 Plotting and Optimization in Microeconomic Models | LBYC121 Course Book</title>
+  <meta name="description" content="An introduction to the LBYC121 Course Book." />
+  <meta name="generator" content="bookdown 0.46 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="13 Plotting and Optimization in Microeconomic Models | LBYC121 Course Book" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="An introduction to the LBYC121 Course Book." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="13 Plotting and Optimization in Microeconomic Models | LBYC121 Course Book" />
+  
+  <meta name="twitter:description" content="An introduction to the LBYC121 Course Book." />
+  
+
+<meta name="author" content="Jem Marie M. Nario" />
+
+
+<meta name="date" content="2026-03-09" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="review-hessian-matrix-and-bordered-hessian.html"/>
+<link rel="next" href="returns-to-scale.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<h1>LBYC121 Course Book</h1>
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#about-me"><i class="fa fa-check"></i><b>1.1</b> About Me</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="syllabus.html"><a href="syllabus.html"><i class="fa fa-check"></i><b>2</b> Syllabus</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="syllabus.html"><a href="syllabus.html#course-description"><i class="fa fa-check"></i><b>2.1</b> Course Description</a></li>
+<li class="chapter" data-level="2.2" data-path="syllabus.html"><a href="syllabus.html#final-course-outputs"><i class="fa fa-check"></i><b>2.2</b> Final Course Outputs</a></li>
+<li class="chapter" data-level="2.3" data-path="syllabus.html"><a href="syllabus.html#generative-ai-use-policy"><i class="fa fa-check"></i><b>2.3</b> Generative AI-Use Policy</a></li>
+<li class="chapter" data-level="2.4" data-path="syllabus.html"><a href="syllabus.html#classroom-policies"><i class="fa fa-check"></i><b>2.4</b> Classroom Policies</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="syllabus.html"><a href="syllabus.html#excused-absences-policy"><i class="fa fa-check"></i><b>2.4.1</b> <strong>EXCUSED ABSENCES POLICY:</strong></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="assessments.html"><a href="assessments.html"><i class="fa fa-check"></i><b>3</b> Assessments</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="assessments.html"><a href="assessments.html#in-weekly-exercises"><i class="fa fa-check"></i><b>3.1</b> In-Weekly Exercises</a></li>
+<li class="chapter" data-level="3.2" data-path="assessments.html"><a href="assessments.html#problem-sets-1-and-2"><i class="fa fa-check"></i><b>3.2</b> Problem Sets 1 and 2</a></li>
+<li class="chapter" data-level="3.3" data-path="assessments.html"><a href="assessments.html#grading-system"><i class="fa fa-check"></i><b>3.3</b> Grading System</a></li>
+<li class="chapter" data-level="3.4" data-path="assessments.html"><a href="assessments.html#grading-scale"><i class="fa fa-check"></i><b>3.4</b> Grading Scale</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html"><i class="fa fa-check"></i><b>4</b> Basic Introduction to R</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#session-information"><i class="fa fa-check"></i><b>4.1</b> Session Information</a></li>
+<li class="chapter" data-level="4.2" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#preliminaries"><i class="fa fa-check"></i><b>4.2</b> Preliminaries</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#understanding-the-rstudio-screen"><i class="fa fa-check"></i><b>4.2.1</b> Understanding the RStudio Screen</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#packages"><i class="fa fa-check"></i><b>4.3</b> Packages</a></li>
+<li class="chapter" data-level="4.4" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#setting-up-the-working-directory"><i class="fa fa-check"></i><b>4.4</b> Setting up the Working Directory</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#what-is-a-working-directory"><i class="fa fa-check"></i><b>4.4.1</b> What is a Working Directory?</a></li>
+<li class="chapter" data-level="4.4.2" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#required-folder-structure"><i class="fa fa-check"></i><b>4.4.2</b> Required Folder Structure</a></li>
+<li class="chapter" data-level="4.4.3" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#setting-the-working-directory-in-rstudio"><i class="fa fa-check"></i><b>4.4.3</b> Setting the Working Directory in RStudio</a></li>
+<li class="chapter" data-level="4.4.4" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#setting-the-working-directory-using-code"><i class="fa fa-check"></i><b>4.4.4</b> Setting the Working Directory Using Code</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#cleaning-the-environment-do-this-regularly"><i class="fa fa-check"></i><b>4.5</b> Cleaning the Environment (Do This Regularly)</a></li>
+<li class="chapter" data-level="4.6" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#quarto-markdown"><i class="fa fa-check"></i><b>4.6</b> Quarto Markdown</a>
+<ul>
+<li class="chapter" data-level="4.6.1" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#installing-quarto-in-r"><i class="fa fa-check"></i><b>4.6.1</b> Installing Quarto in R</a></li>
+<li class="chapter" data-level="4.6.2" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#starting-a-quarto-document"><i class="fa fa-check"></i><b>4.6.2</b> Starting a Quarto Document</a></li>
+<li class="chapter" data-level="4.6.3" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#yaml-header-use"><i class="fa fa-check"></i><b>4.6.3</b> YAML Header Use</a></li>
+<li class="chapter" data-level="4.6.4" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#quarto-key-features"><i class="fa fa-check"></i><b>4.6.4</b> Quarto Key Features</a></li>
+<li class="chapter" data-level="4.6.5" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#quarto-markdown-shortcuts"><i class="fa fa-check"></i><b>4.6.5</b> Quarto Markdown Shortcuts</a></li>
+<li class="chapter" data-level="4.6.6" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#rendering-a-quarto-document"><i class="fa fa-check"></i><b>4.6.6</b> Rendering a Quarto Document</a></li>
+</ul></li>
+<li class="chapter" data-level="4.7" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#working-directories-and-file-management"><i class="fa fa-check"></i><b>4.7</b> Working Directories and File Management</a>
+<ul>
+<li class="chapter" data-level="4.7.1" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#file-naming-convention-mandatory"><i class="fa fa-check"></i><b>4.7.1</b> File Naming Convention (Mandatory)</a></li>
+</ul></li>
+<li class="chapter" data-level="4.8" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#mini-exercise-first-quarto-render-mandatory-per-individual"><i class="fa fa-check"></i><b>4.8</b> Mini-Exercise: First Quarto Render (Mandatory per Individual)</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="differentiation-rules.html"><a href="differentiation-rules.html"><i class="fa fa-check"></i><b>5</b> Differentiation Rules</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="differentiation-rules.html"><a href="differentiation-rules.html#introduction-1"><i class="fa fa-check"></i><b>5.1</b> Introduction</a></li>
+<li class="chapter" data-level="5.2" data-path="differentiation-rules.html"><a href="differentiation-rules.html#structure-of-differentiation"><i class="fa fa-check"></i><b>5.2</b> Structure of Differentiation</a></li>
+<li class="chapter" data-level="5.3" data-path="differentiation-rules.html"><a href="differentiation-rules.html#constant-rule"><i class="fa fa-check"></i><b>5.3</b> Constant Rule</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="differentiation-rules.html"><a href="differentiation-rules.html#example"><i class="fa fa-check"></i><b>5.3.1</b> Example</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="differentiation-rules.html"><a href="differentiation-rules.html#power-rule"><i class="fa fa-check"></i><b>5.4</b> Power Rule</a>
+<ul>
+<li class="chapter" data-level="5.4.1" data-path="differentiation-rules.html"><a href="differentiation-rules.html#example-1"><i class="fa fa-check"></i><b>5.4.1</b> Example</a></li>
+<li class="chapter" data-level="5.4.2" data-path="differentiation-rules.html"><a href="differentiation-rules.html#example-2"><i class="fa fa-check"></i><b>5.4.2</b> Example</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="differentiation-rules.html"><a href="differentiation-rules.html#constant-multiple-rule"><i class="fa fa-check"></i><b>5.5</b> Constant Multiple Rule</a>
+<ul>
+<li class="chapter" data-level="5.5.1" data-path="differentiation-rules.html"><a href="differentiation-rules.html#example-3"><i class="fa fa-check"></i><b>5.5.1</b> Example</a></li>
+</ul></li>
+<li class="chapter" data-level="5.6" data-path="differentiation-rules.html"><a href="differentiation-rules.html#sum-and-difference-rule"><i class="fa fa-check"></i><b>5.6</b> Sum and Difference Rule</a>
+<ul>
+<li class="chapter" data-level="5.6.1" data-path="differentiation-rules.html"><a href="differentiation-rules.html#example-4"><i class="fa fa-check"></i><b>5.6.1</b> Example</a></li>
+</ul></li>
+<li class="chapter" data-level="5.7" data-path="differentiation-rules.html"><a href="differentiation-rules.html#polynomial-functions-combined-rules"><i class="fa fa-check"></i><b>5.7</b> Polynomial Functions (Combined Rules)</a>
+<ul>
+<li class="chapter" data-level="5.7.1" data-path="differentiation-rules.html"><a href="differentiation-rules.html#example-5"><i class="fa fa-check"></i><b>5.7.1</b> Example</a></li>
+</ul></li>
+<li class="chapter" data-level="5.8" data-path="differentiation-rules.html"><a href="differentiation-rules.html#exponential-functions"><i class="fa fa-check"></i><b>5.8</b> Exponential Functions</a>
+<ul>
+<li class="chapter" data-level="5.8.1" data-path="differentiation-rules.html"><a href="differentiation-rules.html#example-6"><i class="fa fa-check"></i><b>5.8.1</b> Example</a></li>
+<li class="chapter" data-level="5.8.2" data-path="differentiation-rules.html"><a href="differentiation-rules.html#example-7"><i class="fa fa-check"></i><b>5.8.2</b> Example</a></li>
+</ul></li>
+<li class="chapter" data-level="5.9" data-path="differentiation-rules.html"><a href="differentiation-rules.html#logarithmic-functions"><i class="fa fa-check"></i><b>5.9</b> Logarithmic Functions</a>
+<ul>
+<li class="chapter" data-level="5.9.1" data-path="differentiation-rules.html"><a href="differentiation-rules.html#example-8"><i class="fa fa-check"></i><b>5.9.1</b> Example</a></li>
+<li class="chapter" data-level="5.9.2" data-path="differentiation-rules.html"><a href="differentiation-rules.html#example-9"><i class="fa fa-check"></i><b>5.9.2</b> Example</a></li>
+</ul></li>
+<li class="chapter" data-level="5.10" data-path="differentiation-rules.html"><a href="differentiation-rules.html#product-rule"><i class="fa fa-check"></i><b>5.10</b> Product Rule</a>
+<ul>
+<li class="chapter" data-level="5.10.1" data-path="differentiation-rules.html"><a href="differentiation-rules.html#example-10"><i class="fa fa-check"></i><b>5.10.1</b> Example</a></li>
+</ul></li>
+<li class="chapter" data-level="5.11" data-path="differentiation-rules.html"><a href="differentiation-rules.html#quotient-rule"><i class="fa fa-check"></i><b>5.11</b> Quotient Rule</a>
+<ul>
+<li class="chapter" data-level="5.11.1" data-path="differentiation-rules.html"><a href="differentiation-rules.html#example-11"><i class="fa fa-check"></i><b>5.11.1</b> Example</a></li>
+<li class="chapter" data-level="5.11.2" data-path="differentiation-rules.html"><a href="differentiation-rules.html#example-12"><i class="fa fa-check"></i><b>5.11.2</b> Example</a></li>
+</ul></li>
+<li class="chapter" data-level="5.12" data-path="differentiation-rules.html"><a href="differentiation-rules.html#chain-rule"><i class="fa fa-check"></i><b>5.12</b> Chain Rule</a>
+<ul>
+<li class="chapter" data-level="5.12.1" data-path="differentiation-rules.html"><a href="differentiation-rules.html#example-13"><i class="fa fa-check"></i><b>5.12.1</b> Example</a></li>
+</ul></li>
+<li class="chapter" data-level="5.13" data-path="differentiation-rules.html"><a href="differentiation-rules.html#things-to-note"><i class="fa fa-check"></i><b>5.13</b> Things to Note:</a></li>
+<li class="chapter" data-level="5.14" data-path="differentiation-rules.html"><a href="differentiation-rules.html#exercises"><i class="fa fa-check"></i><b>5.14</b> Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="review-of-single-variable-differentiation-rules-and-visualizing-functions.html"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html"><i class="fa fa-check"></i><b>6</b> Review of Single-Variable Differentiation Rules and Visualizing Functions</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="review-of-single-variable-differentiation-rules-and-visualizing-functions.html"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#economic-example"><i class="fa fa-check"></i><b>6.1</b> Economic Example</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="review-of-single-variable-differentiation-rules-and-visualizing-functions.html"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#total-cost-function-definition"><i class="fa fa-check"></i><b>6.1.1</b> Total Cost Function Definition</a></li>
+<li class="chapter" data-level="6.1.2" data-path="review-of-single-variable-differentiation-rules-and-visualizing-functions.html"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#average-cost-function-definition"><i class="fa fa-check"></i><b>6.1.2</b> Average Cost Function Definition</a></li>
+<li class="chapter" data-level="6.1.3" data-path="review-of-single-variable-differentiation-rules-and-visualizing-functions.html"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#marginal-cost-using-deriv"><i class="fa fa-check"></i><b>6.1.3</b> Marginal Cost using <code>Deriv</code></a></li>
+<li class="chapter" data-level="6.1.4" data-path="review-of-single-variable-differentiation-rules-and-visualizing-functions.html"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#evaluating-at-a-specific-quantity"><i class="fa fa-check"></i><b>6.1.4</b> Evaluating at a specific quantity</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="review-of-single-variable-differentiation-rules-and-visualizing-functions.html"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#writing-greek-letters"><i class="fa fa-check"></i><b>6.2</b> Writing Greek Letters</a></li>
+<li class="chapter" data-level="6.3" data-path="review-of-single-variable-differentiation-rules-and-visualizing-functions.html"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#square-roots-and-powers"><i class="fa fa-check"></i><b>6.3</b> Square Roots and Powers</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="visualizing-functions-with-ggplot2.html"><a href="visualizing-functions-with-ggplot2.html"><i class="fa fa-check"></i><b>7</b> Visualizing Functions with ggplot2</a>
+<ul>
+<li class="chapter" data-level="7.0.1" data-path="visualizing-functions-with-ggplot2.html"><a href="visualizing-functions-with-ggplot2.html#pre-plotting-check"><i class="fa fa-check"></i><b>7.0.1</b> Pre-plotting Check</a></li>
+<li class="chapter" data-level="7.0.2" data-path="visualizing-functions-with-ggplot2.html"><a href="visualizing-functions-with-ggplot2.html#plotting-a-single-function"><i class="fa fa-check"></i><b>7.0.2</b> 1. Plotting a Single Function</a></li>
+<li class="chapter" data-level="7.0.3" data-path="visualizing-functions-with-ggplot2.html"><a href="visualizing-functions-with-ggplot2.html#multiple-functions-in-one-plot-mc-and-ac"><i class="fa fa-check"></i><b>7.0.3</b> 2. Multiple Functions in One Plot (MC and AC)</a></li>
+<li class="chapter" data-level="7.0.4" data-path="visualizing-functions-with-ggplot2.html"><a href="visualizing-functions-with-ggplot2.html#multiple-functions-in-one-plot-mr-mc-ac"><i class="fa fa-check"></i><b>7.0.4</b> 3. Multiple Functions in One Plot (MR, MC, AC)</a></li>
+<li class="chapter" data-level="7.1" data-path="visualizing-functions-with-ggplot2.html"><a href="visualizing-functions-with-ggplot2.html#interpretation-guide"><i class="fa fa-check"></i><b>7.1</b> Interpretation Guide:</a></li>
+<li class="chapter" data-level="7.2" data-path="visualizing-functions-with-ggplot2.html"><a href="visualizing-functions-with-ggplot2.html#mini-exercise-2.1"><i class="fa fa-check"></i><b>7.2</b> Mini-Exercise 2.1</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="partial-derivatives.html"><a href="partial-derivatives.html"><i class="fa fa-check"></i><b>8</b> Partial Derivatives</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="partial-derivatives.html"><a href="partial-derivatives.html#cobb-douglas-production-function"><i class="fa fa-check"></i><b>8.1</b> Cobb-Douglas Production Function</a></li>
+<li class="chapter" data-level="8.2" data-path="partial-derivatives.html"><a href="partial-derivatives.html#utility-function"><i class="fa fa-check"></i><b>8.2</b> Utility Function</a></li>
+<li class="chapter" data-level="8.3" data-path="partial-derivatives.html"><a href="partial-derivatives.html#exercise-3"><i class="fa fa-check"></i><b>8.3</b> Exercise 3</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="answer-key.html"><a href="answer-key.html"><i class="fa fa-check"></i><b>9</b> Answer Key</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="answer-key.html"><a href="answer-key.html#introduction-2"><i class="fa fa-check"></i><b>9.1</b> Introduction</a></li>
+<li class="chapter" data-level="9.2" data-path="answer-key.html"><a href="answer-key.html#weekly-exercise-1"><i class="fa fa-check"></i><b>9.2</b> Weekly Exercise 1</a>
+<ul>
+<li class="chapter" data-level="9.2.1" data-path="answer-key.html"><a href="answer-key.html#final-answers"><i class="fa fa-check"></i><b>9.2.1</b> Final Answers</a></li>
+<li class="chapter" data-level="9.2.2" data-path="answer-key.html"><a href="answer-key.html#r-codes"><i class="fa fa-check"></i><b>9.2.2</b> R Codes</a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="answer-key.html"><a href="answer-key.html#weekly-exercise-2"><i class="fa fa-check"></i><b>9.3</b> Weekly Exercise 2</a>
+<ul>
+<li class="chapter" data-level="9.3.1" data-path="answer-key.html"><a href="answer-key.html#final-answers-1"><i class="fa fa-check"></i><b>9.3.1</b> Final Answers</a></li>
+<li class="chapter" data-level="9.3.2" data-path="answer-key.html"><a href="answer-key.html#r-codes-1"><i class="fa fa-check"></i><b>9.3.2</b> R Codes</a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="answer-key.html"><a href="answer-key.html#weekly-exercise-2.1"><i class="fa fa-check"></i><b>9.4</b> Weekly Exercise 2.1</a>
+<ul>
+<li class="chapter" data-level="9.4.1" data-path="answer-key.html"><a href="answer-key.html#final-answers-2"><i class="fa fa-check"></i><b>9.4.1</b> Final Answers</a></li>
+<li class="chapter" data-level="9.4.2" data-path="answer-key.html"><a href="answer-key.html#r-codes-2"><i class="fa fa-check"></i><b>9.4.2</b> R Codes</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="review-of-derivatives-and-visualizations.html"><a href="review-of-derivatives-and-visualizations.html"><i class="fa fa-check"></i><b>10</b> Review of Derivatives and Visualizations</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="review-of-derivatives-and-visualizations.html"><a href="review-of-derivatives-and-visualizations.html#review-of-visualizing-functions"><i class="fa fa-check"></i><b>10.1</b> Review of Visualizing Functions</a>
+<ul>
+<li class="chapter" data-level="10.1.1" data-path="review-of-derivatives-and-visualizations.html"><a href="review-of-derivatives-and-visualizations.html#linear-function"><i class="fa fa-check"></i><b>10.1.1</b> Linear Function</a></li>
+<li class="chapter" data-level="10.1.2" data-path="review-of-derivatives-and-visualizations.html"><a href="review-of-derivatives-and-visualizations.html#quadratic-function"><i class="fa fa-check"></i><b>10.1.2</b> Quadratic Function</a></li>
+<li class="chapter" data-level="10.1.3" data-path="review-of-derivatives-and-visualizations.html"><a href="review-of-derivatives-and-visualizations.html#exponential-function"><i class="fa fa-check"></i><b>10.1.3</b> Exponential Function</a></li>
+</ul></li>
+<li class="chapter" data-level="10.2" data-path="review-of-derivatives-and-visualizations.html"><a href="review-of-derivatives-and-visualizations.html#review-of-partial-derivatives"><i class="fa fa-check"></i><b>10.2</b> Review of Partial Derivatives</a>
+<ul>
+<li class="chapter" data-level="10.2.1" data-path="review-of-derivatives-and-visualizations.html"><a href="review-of-derivatives-and-visualizations.html#production-function"><i class="fa fa-check"></i><b>10.2.1</b> Production Function</a></li>
+<li class="chapter" data-level="10.2.2" data-path="review-of-derivatives-and-visualizations.html"><a href="review-of-derivatives-and-visualizations.html#utility-function-1"><i class="fa fa-check"></i><b>10.2.2</b> Utility Function</a></li>
+<li class="chapter" data-level="10.2.3" data-path="review-of-derivatives-and-visualizations.html"><a href="review-of-derivatives-and-visualizations.html#profit-function"><i class="fa fa-check"></i><b>10.2.3</b> Profit Function</a></li>
+<li class="chapter" data-level="10.2.4" data-path="review-of-derivatives-and-visualizations.html"><a href="review-of-derivatives-and-visualizations.html#revenue-function"><i class="fa fa-check"></i><b>10.2.4</b> Revenue Function</a></li>
+<li class="chapter" data-level="10.2.5" data-path="review-of-derivatives-and-visualizations.html"><a href="review-of-derivatives-and-visualizations.html#cost-function"><i class="fa fa-check"></i><b>10.2.5</b> Cost Function</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html"><i class="fa fa-check"></i><b>11</b> Total Differentiation, Young’s Theorem, Hessian Matrix and Bordered Hessian Matrix</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#total-differentiation"><i class="fa fa-check"></i><b>11.1</b> Total Differentiation</a>
+<ul>
+<li class="chapter" data-level="11.1.1" data-path="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cobb-douglas-production-function-1"><i class="fa fa-check"></i><b>11.1.1</b> Cobb-Douglas Production Function</a></li>
+<li class="chapter" data-level="11.1.2" data-path="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#profit-function-1"><i class="fa fa-check"></i><b>11.1.2</b> Profit Function</a></li>
+</ul></li>
+<li class="chapter" data-level="11.2" data-path="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#youngs-theorem"><i class="fa fa-check"></i><b>11.2</b> Young’s Theorem</a>
+<ul>
+<li class="chapter" data-level="11.2.1" data-path="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#utility-function-2"><i class="fa fa-check"></i><b>11.2.1</b> Utility Function</a></li>
+<li class="chapter" data-level="11.2.2" data-path="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#production-function-1"><i class="fa fa-check"></i><b>11.2.2</b> Production Function</a></li>
+<li class="chapter" data-level="11.2.3" data-path="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#profit-interaction"><i class="fa fa-check"></i><b>11.2.3</b> Profit Interaction</a></li>
+<li class="chapter" data-level="11.2.4" data-path="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cost-interaction"><i class="fa fa-check"></i><b>11.2.4</b> Cost Interaction</a></li>
+</ul></li>
+<li class="chapter" data-level="11.3" data-path="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#hessian-matrix"><i class="fa fa-check"></i><b>11.3</b> Hessian Matrix</a>
+<ul>
+<li class="chapter" data-level="11.3.1" data-path="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#decision-rule-2-variables"><i class="fa fa-check"></i><b>11.3.1</b> Decision Rule (2 variables)</a></li>
+<li class="chapter" data-level="11.3.2" data-path="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#local-minimum"><i class="fa fa-check"></i><b>11.3.2</b> Local Minimum</a></li>
+<li class="chapter" data-level="11.3.3" data-path="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#function-2"><i class="fa fa-check"></i><b>11.3.3</b> Function 2</a></li>
+<li class="chapter" data-level="11.3.4" data-path="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#function-3"><i class="fa fa-check"></i><b>11.3.4</b> Function 3</a></li>
+<li class="chapter" data-level="11.3.5" data-path="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#function-4"><i class="fa fa-check"></i><b>11.3.5</b> Function 4</a></li>
+</ul></li>
+<li class="chapter" data-level="11.4" data-path="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#bordered-hessian"><i class="fa fa-check"></i><b>11.4</b> Bordered Hessian</a>
+<ul>
+<li class="chapter" data-level="11.4.1" data-path="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#setup-example"><i class="fa fa-check"></i><b>11.4.1</b> Setup Example:</a></li>
+</ul></li>
+<li class="chapter" data-level="11.5" data-path="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#example-1-1"><i class="fa fa-check"></i><b>11.5</b> Example 1</a>
+<ul>
+<li class="chapter" data-level="11.5.1" data-path="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#example-2-1"><i class="fa fa-check"></i><b>11.5.1</b> Example 2</a></li>
+</ul></li>
+<li class="chapter" data-level="11.6" data-path="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#interpretations"><i class="fa fa-check"></i><b>11.6</b> Interpretations:</a></li>
+<li class="chapter" data-level="11.7" data-path="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#exercise"><i class="fa fa-check"></i><b>11.7</b> Exercise:</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="review-hessian-matrix-and-bordered-hessian.html"><a href="review-hessian-matrix-and-bordered-hessian.html"><i class="fa fa-check"></i><b>12</b> Review: Hessian Matrix and Bordered Hessian</a>
+<ul>
+<li class="chapter" data-level="12.0.1" data-path="review-hessian-matrix-and-bordered-hessian.html"><a href="review-hessian-matrix-and-bordered-hessian.html#structure-of-hessian-1"><i class="fa fa-check"></i><b>12.0.1</b> Structure of Hessian</a></li>
+<li class="chapter" data-level="12.1" data-path="review-hessian-matrix-and-bordered-hessian.html"><a href="review-hessian-matrix-and-bordered-hessian.html#example-in-class"><i class="fa fa-check"></i><b>12.1</b> Example in Class</a>
+<ul>
+<li class="chapter" data-level="12.1.1" data-path="review-hessian-matrix-and-bordered-hessian.html"><a href="review-hessian-matrix-and-bordered-hessian.html#general-hessian-template"><i class="fa fa-check"></i><b>12.1.1</b> General Hessian Template</a></li>
+</ul></li>
+<li class="chapter" data-level="12.2" data-path="review-hessian-matrix-and-bordered-hessian.html"><a href="review-hessian-matrix-and-bordered-hessian.html#bordered-hessian-1"><i class="fa fa-check"></i><b>12.2</b> Bordered Hessian</a></li>
+<li class="chapter" data-level="12.3" data-path="review-hessian-matrix-and-bordered-hessian.html"><a href="review-hessian-matrix-and-bordered-hessian.html#example-in-class-1"><i class="fa fa-check"></i><b>12.3</b> Example in Class:</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="plotting-and-optimization-in-microeconomic-models.html"><a href="plotting-and-optimization-in-microeconomic-models.html"><i class="fa fa-check"></i><b>13</b> Plotting and Optimization in Microeconomic Models</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="plotting-and-optimization-in-microeconomic-models.html"><a href="plotting-and-optimization-in-microeconomic-models.html#basic-contour-plot"><i class="fa fa-check"></i><b>13.1</b> Basic Contour Plot</a></li>
+<li class="chapter" data-level="13.2" data-path="plotting-and-optimization-in-microeconomic-models.html"><a href="plotting-and-optimization-in-microeconomic-models.html#economic-example-production-isoquants-and-isocosts"><i class="fa fa-check"></i><b>13.2</b> Economic Example: Production Isoquants and Isocosts</a></li>
+<li class="chapter" data-level="13.3" data-path="plotting-and-optimization-in-microeconomic-models.html"><a href="plotting-and-optimization-in-microeconomic-models.html#utility-contour-and-gradient-vectors"><i class="fa fa-check"></i><b>13.3</b> Utility Contour and Gradient Vectors</a>
+<ul>
+<li class="chapter" data-level="13.3.1" data-path="plotting-and-optimization-in-microeconomic-models.html"><a href="plotting-and-optimization-in-microeconomic-models.html#lets-add-budget-line"><i class="fa fa-check"></i><b>13.3.1</b> Let’s Add Budget Line</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="returns-to-scale.html"><a href="returns-to-scale.html"><i class="fa fa-check"></i><b>14</b> Returns to Scale</a>
+<ul>
+<li class="chapter" data-level="14.1" data-path="returns-to-scale.html"><a href="returns-to-scale.html#production-function-2"><i class="fa fa-check"></i><b>14.1</b> Production Function</a>
+<ul>
+<li class="chapter" data-level="14.1.1" data-path="returns-to-scale.html"><a href="returns-to-scale.html#plotting-the-comparison"><i class="fa fa-check"></i><b>14.1.1</b> Plotting the comparison</a></li>
+</ul></li>
+<li class="chapter" data-level="14.2" data-path="returns-to-scale.html"><a href="returns-to-scale.html#exercise-march-10"><i class="fa fa-check"></i><b>14.2</b> Exercise March 10:</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">LBYC121 Course Book</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="plotting-and-optimization-in-microeconomic-models" class="section level1 hasAnchor" number="13">
+<h1><span class="header-section-number">13</span> Plotting and Optimization in Microeconomic Models<a href="plotting-and-optimization-in-microeconomic-models.html#plotting-and-optimization-in-microeconomic-models" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Plotting helps us visualize economic relationships before solving optimization problems.</p>
+<p>In economics, plots allow us to see:</p>
+<ul>
+<li><p>how functions behave</p></li>
+<li><p>where optimum points occur</p></li>
+<li><p>the geometry of optimization (tangencies and curvature)</p></li>
+</ul>
+<p>Many economic models involve two variables, so contour plot are useful.</p>
+<div id="basic-contour-plot" class="section level2 hasAnchor" number="13.1">
+<h2><span class="header-section-number">13.1</span> Basic Contour Plot<a href="plotting-and-optimization-in-microeconomic-models.html#basic-contour-plot" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><span class="math inline">\(f(x,y) = x^2+y^2\)</span></p>
+<p>Each contour line represents</p>
+<p><span class="math inline">\(f(x,y)=c\)</span></p>
+<p>which are circles around the origin.</p>
+<div id="define-the-function-13" class="section level4 hasAnchor" number="13.1.0.1">
+<h4><span class="header-section-number">13.1.0.1</span> Define the function<a href="plotting-and-optimization-in-microeconomic-models.html#define-the-function-13" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb380"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb380-1"><a href="plotting-and-optimization-in-microeconomic-models.html#cb380-1" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list=</span><span class="fu">ls</span>())</span>
+<span id="cb380-2"><a href="plotting-and-optimization-in-microeconomic-models.html#cb380-2" tabindex="-1"></a>f<span class="ot">&lt;-</span>\(x,y) x<span class="sc">^</span><span class="dv">2</span><span class="sc">+</span>y<span class="sc">^</span><span class="dv">2</span></span></code></pre></div>
+<p>R can now evaluate the function for different values of <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span></p>
+</div>
+<div id="create-values-for-axes" class="section level4 hasAnchor" number="13.1.0.2">
+<h4><span class="header-section-number">13.1.0.2</span> Create values for axes<a href="plotting-and-optimization-in-microeconomic-models.html#create-values-for-axes" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb381"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb381-1"><a href="plotting-and-optimization-in-microeconomic-models.html#cb381-1" tabindex="-1"></a>x_vals<span class="ot">&lt;-</span><span class="fu">seq</span>(<span class="sc">-</span><span class="dv">5</span>,<span class="dv">5</span>, <span class="at">length.out=</span><span class="dv">100</span>)</span>
+<span id="cb381-2"><a href="plotting-and-optimization-in-microeconomic-models.html#cb381-2" tabindex="-1"></a>y_vals<span class="ot">&lt;-</span><span class="fu">seq</span>(<span class="sc">-</span><span class="dv">5</span>,<span class="dv">5</span>, <span class="at">length.out=</span><span class="dv">100</span>)</span></code></pre></div>
+<p><code>seq()</code> generates values for x and y axes</p>
+</div>
+<div id="evaluate-the-function-on-a-grid" class="section level4 hasAnchor" number="13.1.0.3">
+<h4><span class="header-section-number">13.1.0.3</span> Evaluate the function on a grid<a href="plotting-and-optimization-in-microeconomic-models.html#evaluate-the-function-on-a-grid" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb382"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb382-1"><a href="plotting-and-optimization-in-microeconomic-models.html#cb382-1" tabindex="-1"></a>Z <span class="ot">&lt;-</span> <span class="fu">outer</span>(x_vals, y_vals, <span class="fu">Vectorize</span>(f))</span></code></pre></div>
+<p><code>outer()</code> computes the function value for every combination of <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span></p>
+<p>The result is a matrix of values required for contour plots.</p>
+</div>
+<div id="plot-contour-lines" class="section level4 hasAnchor" number="13.1.0.4">
+<h4><span class="header-section-number">13.1.0.4</span> Plot contour lines<a href="plotting-and-optimization-in-microeconomic-models.html#plot-contour-lines" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb383"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb383-1"><a href="plotting-and-optimization-in-microeconomic-models.html#cb383-1" tabindex="-1"></a><span class="fu">contour</span>(x_vals, y_vals, Z,</span>
+<span id="cb383-2"><a href="plotting-and-optimization-in-microeconomic-models.html#cb383-2" tabindex="-1"></a>        <span class="at">col=</span><span class="st">&quot;blue&quot;</span>,</span>
+<span id="cb383-3"><a href="plotting-and-optimization-in-microeconomic-models.html#cb383-3" tabindex="-1"></a>        <span class="at">lwd=</span><span class="dv">2</span>,</span>
+<span id="cb383-4"><a href="plotting-and-optimization-in-microeconomic-models.html#cb383-4" tabindex="-1"></a>        <span class="at">xlab=</span><span class="st">&quot;x&quot;</span>,</span>
+<span id="cb383-5"><a href="plotting-and-optimization-in-microeconomic-models.html#cb383-5" tabindex="-1"></a>        <span class="at">ylab=</span><span class="st">&quot;y&quot;</span>,</span>
+<span id="cb383-6"><a href="plotting-and-optimization-in-microeconomic-models.html#cb383-6" tabindex="-1"></a>        <span class="at">main=</span><span class="st">&quot;Contour Plot of f(x,y)&quot;</span>)</span></code></pre></div>
+<p><img src="LBYC121_Course_Book_files/figure-html/unnamed-chunk-303-1.png" alt="" width="672" /></p>
+<p>Each curve represents a level set</p>
+<p><span class="math inline">\(f(x,y) = constant\)</span></p>
+<p>Contour plots are useful for economic models with two decision variables.</p>
+</div>
+</div>
+<div id="economic-example-production-isoquants-and-isocosts" class="section level2 hasAnchor" number="13.2">
+<h2><span class="header-section-number">13.2</span> Economic Example: Production Isoquants and Isocosts<a href="plotting-and-optimization-in-microeconomic-models.html#economic-example-production-isoquants-and-isocosts" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><strong>Production Function</strong></p>
+<p><span class="math inline">\(Q(K,L) = K^{0.5}L^{0.5}\)</span></p>
+<p>where K=capital and L=labor</p>
+<p>An isoquant represents combinations of inputs producing the same output</p>
+<p>An isocost line shows all combinations of capital and labor that have the same total cost</p>
+<p><span class="math inline">\(C=rK+wL\)</span></p>
+<p>where K=capital, L=labor, r=rental rate of capital, w=wage rate</p>
+<p>The firm minimizes cost by choosing the input bundle where:</p>
+<p><span class="math inline">\(\frac{MP_L}{MP_K} = \frac{w}{r}\)</span></p>
+<p>This occurs where the isoquant is tangent to the isocost line</p>
+<div id="define-the-function-14" class="section level4 hasAnchor" number="13.2.0.1">
+<h4><span class="header-section-number">13.2.0.1</span> Define the function<a href="plotting-and-optimization-in-microeconomic-models.html#define-the-function-14" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb384"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb384-1"><a href="plotting-and-optimization-in-microeconomic-models.html#cb384-1" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list=</span><span class="fu">ls</span>())</span>
+<span id="cb384-2"><a href="plotting-and-optimization-in-microeconomic-models.html#cb384-2" tabindex="-1"></a>Q <span class="ot">&lt;-</span> \(K,L) K<span class="sc">^</span><span class="fl">0.5</span> <span class="sc">*</span> L<span class="sc">^</span><span class="fl">0.5</span></span></code></pre></div>
+<p>This function computes output for any combination of capital and labor. We need this because isoquants represent combinations that yield the same value of Q.</p>
+</div>
+<div id="create-input-grids" class="section level4 hasAnchor" number="13.2.0.2">
+<h4><span class="header-section-number">13.2.0.2</span> Create input grids<a href="plotting-and-optimization-in-microeconomic-models.html#create-input-grids" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb385"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb385-1"><a href="plotting-and-optimization-in-microeconomic-models.html#cb385-1" tabindex="-1"></a>K_vals <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">1</span>,<span class="dv">20</span>,<span class="at">length.out=</span><span class="dv">100</span>)</span>
+<span id="cb385-2"><a href="plotting-and-optimization-in-microeconomic-models.html#cb385-2" tabindex="-1"></a>L_vals <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">1</span>,<span class="dv">20</span>,<span class="at">length.out=</span><span class="dv">100</span>)</span></code></pre></div>
+<p>These represent possible capital and labor combinations</p>
+</div>
+<div id="compute-output-levels" class="section level4 hasAnchor" number="13.2.0.3">
+<h4><span class="header-section-number">13.2.0.3</span> Compute output levels<a href="plotting-and-optimization-in-microeconomic-models.html#compute-output-levels" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb386"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb386-1"><a href="plotting-and-optimization-in-microeconomic-models.html#cb386-1" tabindex="-1"></a>Z <span class="ot">&lt;-</span> <span class="fu">outer</span>(K_vals, L_vals, <span class="fu">Vectorize</span>(Q))</span></code></pre></div>
+<p>Each element of <code>Z</code> represents <span class="math inline">\(Q(K,L)\)</span> for a specific combination of inputs</p>
+</div>
+<div id="choose-input-prices-and-cost" class="section level4 hasAnchor" number="13.2.0.4">
+<h4><span class="header-section-number">13.2.0.4</span> Choose input prices and cost<a href="plotting-and-optimization-in-microeconomic-models.html#choose-input-prices-and-cost" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Suppose: <span class="math inline">\(r=2\)</span> <span class="math inline">\(w=4\)</span> <span class="math inline">\(C=40\)</span></p>
+<div class="sourceCode" id="cb387"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb387-1"><a href="plotting-and-optimization-in-microeconomic-models.html#cb387-1" tabindex="-1"></a>r <span class="ot">&lt;-</span> <span class="dv">2</span></span>
+<span id="cb387-2"><a href="plotting-and-optimization-in-microeconomic-models.html#cb387-2" tabindex="-1"></a>w <span class="ot">&lt;-</span> <span class="dv">4</span></span>
+<span id="cb387-3"><a href="plotting-and-optimization-in-microeconomic-models.html#cb387-3" tabindex="-1"></a>C <span class="ot">&lt;-</span> <span class="dv">40</span></span></code></pre></div>
+<p>These represent the prices of inputs and firm’s budget for inputs.</p>
+</div>
+<div id="derive-the-isocost-line" class="section level4 hasAnchor" number="13.2.0.5">
+<h4><span class="header-section-number">13.2.0.5</span> Derive the Isocost Line<a href="plotting-and-optimization-in-microeconomic-models.html#derive-the-isocost-line" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>From <span class="math inline">\(C=rK+wL\)</span></p>
+<p>solve for <span class="math inline">\(L\)</span></p>
+<p><span class="math inline">\(L=\frac{C-rK}{w}\)</span></p>
+<div class="sourceCode" id="cb388"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb388-1"><a href="plotting-and-optimization-in-microeconomic-models.html#cb388-1" tabindex="-1"></a>isocost <span class="ot">&lt;-</span> (C <span class="sc">-</span> r<span class="sc">*</span>K_vals)<span class="sc">/</span>w</span></code></pre></div>
+<p>For each value of capital, we compute the labor level that keeps cost constant. This generates the isocost line.</p>
+</div>
+<div id="compute-the-optimal-input-bundle" class="section level4 hasAnchor" number="13.2.0.6">
+<h4><span class="header-section-number">13.2.0.6</span> Compute the Optimal Input Bundle<a href="plotting-and-optimization-in-microeconomic-models.html#compute-the-optimal-input-bundle" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p><span class="math inline">\(Q=K^{0.5}L^{0.5}\)</span></p>
+<p>The tangency condition gives</p>
+<p><span class="math inline">\(\frac{L}{K} = \frac{r}{w}\)</span></p>
+<div class="sourceCode" id="cb389"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb389-1"><a href="plotting-and-optimization-in-microeconomic-models.html#cb389-1" tabindex="-1"></a><span class="fu">library</span>(nleqslv)</span>
+<span id="cb389-2"><a href="plotting-and-optimization-in-microeconomic-models.html#cb389-2" tabindex="-1"></a></span>
+<span id="cb389-3"><a href="plotting-and-optimization-in-microeconomic-models.html#cb389-3" tabindex="-1"></a></span>
+<span id="cb389-4"><a href="plotting-and-optimization-in-microeconomic-models.html#cb389-4" tabindex="-1"></a>foc_system <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb389-5"><a href="plotting-and-optimization-in-microeconomic-models.html#cb389-5" tabindex="-1"></a>  K <span class="ot">&lt;-</span> x[<span class="dv">1</span>]</span>
+<span id="cb389-6"><a href="plotting-and-optimization-in-microeconomic-models.html#cb389-6" tabindex="-1"></a>  L <span class="ot">&lt;-</span> x[<span class="dv">2</span>]</span>
+<span id="cb389-7"><a href="plotting-and-optimization-in-microeconomic-models.html#cb389-7" tabindex="-1"></a>  </span>
+<span id="cb389-8"><a href="plotting-and-optimization-in-microeconomic-models.html#cb389-8" tabindex="-1"></a>  <span class="fu">c</span>(</span>
+<span id="cb389-9"><a href="plotting-and-optimization-in-microeconomic-models.html#cb389-9" tabindex="-1"></a>    L <span class="sc">/</span> K <span class="sc">-</span> r <span class="sc">/</span> w,</span>
+<span id="cb389-10"><a href="plotting-and-optimization-in-microeconomic-models.html#cb389-10" tabindex="-1"></a>    r <span class="sc">*</span> K <span class="sc">+</span> w <span class="sc">*</span> L <span class="sc">-</span> C</span>
+<span id="cb389-11"><a href="plotting-and-optimization-in-microeconomic-models.html#cb389-11" tabindex="-1"></a>  )</span>
+<span id="cb389-12"><a href="plotting-and-optimization-in-microeconomic-models.html#cb389-12" tabindex="-1"></a>}</span>
+<span id="cb389-13"><a href="plotting-and-optimization-in-microeconomic-models.html#cb389-13" tabindex="-1"></a></span>
+<span id="cb389-14"><a href="plotting-and-optimization-in-microeconomic-models.html#cb389-14" tabindex="-1"></a>sol <span class="ot">&lt;-</span> <span class="fu">nleqslv</span>(<span class="fu">c</span>(<span class="dv">8</span>, <span class="dv">6</span>), foc_system)</span>
+<span id="cb389-15"><a href="plotting-and-optimization-in-microeconomic-models.html#cb389-15" tabindex="-1"></a></span>
+<span id="cb389-16"><a href="plotting-and-optimization-in-microeconomic-models.html#cb389-16" tabindex="-1"></a>K_star <span class="ot">&lt;-</span> sol<span class="sc">$</span>x[<span class="dv">1</span>]</span>
+<span id="cb389-17"><a href="plotting-and-optimization-in-microeconomic-models.html#cb389-17" tabindex="-1"></a>L_star <span class="ot">&lt;-</span> sol<span class="sc">$</span>x[<span class="dv">2</span>]</span>
+<span id="cb389-18"><a href="plotting-and-optimization-in-microeconomic-models.html#cb389-18" tabindex="-1"></a></span>
+<span id="cb389-19"><a href="plotting-and-optimization-in-microeconomic-models.html#cb389-19" tabindex="-1"></a>K_star</span></code></pre></div>
+<pre><code>## [1] 10</code></pre>
+<div class="sourceCode" id="cb391"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb391-1"><a href="plotting-and-optimization-in-microeconomic-models.html#cb391-1" tabindex="-1"></a>L_star</span></code></pre></div>
+<pre><code>## [1] 5</code></pre>
+<p><code>foc_system()</code> defines the two equations we want to solve simultaneously.</p>
+<p>The first equation is the tangency condition.</p>
+<p>the second equation is the isocost constraint.</p>
+<p><code>nleqslv(c(8,6), foc_system)</code> starts from an initial guess (8,6) and solves for K and L.</p>
+<p>Using <code>nleqslv</code> is helpful because you will see that the optimum comes from solving a system of economic conditions, not from plugging numbers into a shortcut.</p>
+<p>It is especially useful when:</p>
+<p>the production function is more complicated,</p>
+<p>the tangency condition is not easy to solve by hand,</p>
+<p>or you want a consistent numerical method across topics.</p>
+</div>
+<div id="plotting" class="section level4 hasAnchor" number="13.2.0.7">
+<h4><span class="header-section-number">13.2.0.7</span> Plotting<a href="plotting-and-optimization-in-microeconomic-models.html#plotting" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb393"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb393-1"><a href="plotting-and-optimization-in-microeconomic-models.html#cb393-1" tabindex="-1"></a><span class="fu">contour</span>(K_vals, L_vals, Z,</span>
+<span id="cb393-2"><a href="plotting-and-optimization-in-microeconomic-models.html#cb393-2" tabindex="-1"></a>        <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">8</span>, <span class="dv">10</span>),</span>
+<span id="cb393-3"><a href="plotting-and-optimization-in-microeconomic-models.html#cb393-3" tabindex="-1"></a>        <span class="at">col =</span> <span class="fu">c</span>(<span class="st">&quot;blue&quot;</span>, <span class="st">&quot;darkgreen&quot;</span>, <span class="st">&quot;purple&quot;</span>),</span>
+<span id="cb393-4"><a href="plotting-and-optimization-in-microeconomic-models.html#cb393-4" tabindex="-1"></a>        <span class="at">lwd =</span> <span class="dv">2</span>,</span>
+<span id="cb393-5"><a href="plotting-and-optimization-in-microeconomic-models.html#cb393-5" tabindex="-1"></a>        <span class="at">xlab =</span> <span class="st">&quot;Capital (K)&quot;</span>,</span>
+<span id="cb393-6"><a href="plotting-and-optimization-in-microeconomic-models.html#cb393-6" tabindex="-1"></a>        <span class="at">ylab =</span> <span class="st">&quot;Labor (L)&quot;</span>,</span>
+<span id="cb393-7"><a href="plotting-and-optimization-in-microeconomic-models.html#cb393-7" tabindex="-1"></a>        <span class="at">main =</span> <span class="st">&quot;Isoquant and Isocost&quot;</span>)</span>
+<span id="cb393-8"><a href="plotting-and-optimization-in-microeconomic-models.html#cb393-8" tabindex="-1"></a></span>
+<span id="cb393-9"><a href="plotting-and-optimization-in-microeconomic-models.html#cb393-9" tabindex="-1"></a><span class="fu">lines</span>(K_vals, isocost, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>, <span class="at">lwd =</span> <span class="dv">2</span>)</span>
+<span id="cb393-10"><a href="plotting-and-optimization-in-microeconomic-models.html#cb393-10" tabindex="-1"></a></span>
+<span id="cb393-11"><a href="plotting-and-optimization-in-microeconomic-models.html#cb393-11" tabindex="-1"></a><span class="fu">points</span>(K_star, L_star, <span class="at">pch =</span> <span class="dv">19</span>, <span class="at">col =</span> <span class="st">&quot;black&quot;</span>, <span class="at">cex =</span> <span class="fl">1.3</span>)</span>
+<span id="cb393-12"><a href="plotting-and-optimization-in-microeconomic-models.html#cb393-12" tabindex="-1"></a><span class="fu">text</span>(K_star <span class="sc">+</span> <span class="fl">0.5</span>, L_star, <span class="st">&quot;Optimum&quot;</span>, <span class="at">col =</span> <span class="st">&quot;black&quot;</span>)</span></code></pre></div>
+<p><img src="LBYC121_Course_Book_files/figure-html/unnamed-chunk-310-1.png" alt="" width="672" /></p>
+<p>One more improvement: if you want the graph to show the actual tangency isoquant, set the contour level equal to the output at the optimum:</p>
+<div class="sourceCode" id="cb394"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb394-1"><a href="plotting-and-optimization-in-microeconomic-models.html#cb394-1" tabindex="-1"></a>Q_star <span class="ot">&lt;-</span> <span class="fu">Q</span>(K_star, L_star)</span>
+<span id="cb394-2"><a href="plotting-and-optimization-in-microeconomic-models.html#cb394-2" tabindex="-1"></a></span>
+<span id="cb394-3"><a href="plotting-and-optimization-in-microeconomic-models.html#cb394-3" tabindex="-1"></a><span class="fu">contour</span>(K_vals, L_vals, Z,</span>
+<span id="cb394-4"><a href="plotting-and-optimization-in-microeconomic-models.html#cb394-4" tabindex="-1"></a>        <span class="at">levels =</span> <span class="fu">c</span>(Q_star),</span>
+<span id="cb394-5"><a href="plotting-and-optimization-in-microeconomic-models.html#cb394-5" tabindex="-1"></a>        <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>,</span>
+<span id="cb394-6"><a href="plotting-and-optimization-in-microeconomic-models.html#cb394-6" tabindex="-1"></a>        <span class="at">lwd =</span> <span class="dv">2</span>,</span>
+<span id="cb394-7"><a href="plotting-and-optimization-in-microeconomic-models.html#cb394-7" tabindex="-1"></a>        <span class="at">xlab =</span> <span class="st">&quot;Capital (K)&quot;</span>,</span>
+<span id="cb394-8"><a href="plotting-and-optimization-in-microeconomic-models.html#cb394-8" tabindex="-1"></a>        <span class="at">ylab =</span> <span class="st">&quot;Labor (L)&quot;</span>,</span>
+<span id="cb394-9"><a href="plotting-and-optimization-in-microeconomic-models.html#cb394-9" tabindex="-1"></a>        <span class="at">main =</span> <span class="st">&quot;Isoquant and Isocost with Optimum&quot;</span>)</span>
+<span id="cb394-10"><a href="plotting-and-optimization-in-microeconomic-models.html#cb394-10" tabindex="-1"></a></span>
+<span id="cb394-11"><a href="plotting-and-optimization-in-microeconomic-models.html#cb394-11" tabindex="-1"></a><span class="fu">lines</span>(K_vals, isocost, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>, <span class="at">lwd =</span> <span class="dv">2</span>)</span>
+<span id="cb394-12"><a href="plotting-and-optimization-in-microeconomic-models.html#cb394-12" tabindex="-1"></a><span class="fu">points</span>(K_star, L_star, <span class="at">pch =</span> <span class="dv">19</span>, <span class="at">col =</span> <span class="st">&quot;black&quot;</span>, <span class="at">cex =</span> <span class="fl">1.3</span>)</span>
+<span id="cb394-13"><a href="plotting-and-optimization-in-microeconomic-models.html#cb394-13" tabindex="-1"></a><span class="fu">text</span>(K_star <span class="sc">+</span> <span class="fl">0.5</span>, L_star, <span class="st">&quot;Optimum&quot;</span>, <span class="at">col =</span> <span class="st">&quot;black&quot;</span>)</span></code></pre></div>
+<p><img src="LBYC121_Course_Book_files/figure-html/unnamed-chunk-311-1.png" alt="" width="672" /></p>
+<p>The blue curve is the isoquant, every point on that curve produces the same output level. The curve slopes downward because inputs can substitute for each other.</p>
+<p>The red line is the isocost. It shows all combinations of capital and labor that cost the same amount. The slope is the price ratio of inputs. So, along the red line, the firm spends the same total cost.</p>
+<p>The black point labeled Optimumis where the isoquant and isocost touch each other (tangency). This is the cost-minimizing input bundle.</p>
+<p>The numbers, <span class="math inline">\(K^*=10;  L^*=5\)</span> is the combination that produces the output at the lowest possible cost given input prices.</p>
+</div>
+<div id="why-the-tangency-matters" class="section level4 hasAnchor" number="13.2.0.8">
+<h4><span class="header-section-number">13.2.0.8</span> Why the Tangency Matters<a href="plotting-and-optimization-in-microeconomic-models.html#why-the-tangency-matters" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>If the firm moved:</p>
+<ul>
+<li><p>Above the isocost</p>
+<ul>
+<li>Production is possible but cost is higher</li>
+</ul></li>
+<li><p>Inside the isoquant</p>
+<ul>
+<li>Cost is lower but output is insufficient</li>
+</ul></li>
+</ul>
+<p>The tangency point is the only bundle that produces the required output at minimum cost.</p>
+<div id="graph-looks-strange" class="section level5 hasAnchor" number="13.2.0.8.1">
+<h5><span class="header-section-number">13.2.0.8.1</span> Graph looks strange<a href="plotting-and-optimization-in-microeconomic-models.html#graph-looks-strange" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>Since the Capital range goes to 20 and labor goes to 15, let’s make the tangency clearer.</p>
+<div class="sourceCode" id="cb395"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb395-1"><a href="plotting-and-optimization-in-microeconomic-models.html#cb395-1" tabindex="-1"></a>valid<span class="ot">&lt;-</span>isocost<span class="sc">&gt;=</span><span class="dv">0</span></span></code></pre></div>
+<div class="sourceCode" id="cb396"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb396-1"><a href="plotting-and-optimization-in-microeconomic-models.html#cb396-1" tabindex="-1"></a><span class="co"># Output level at optimum</span></span>
+<span id="cb396-2"><a href="plotting-and-optimization-in-microeconomic-models.html#cb396-2" tabindex="-1"></a>Q_star <span class="ot">&lt;-</span> <span class="fu">Q</span>(K_star,L_star)</span>
+<span id="cb396-3"><a href="plotting-and-optimization-in-microeconomic-models.html#cb396-3" tabindex="-1"></a></span>
+<span id="cb396-4"><a href="plotting-and-optimization-in-microeconomic-models.html#cb396-4" tabindex="-1"></a><span class="co"># Plot isoquant</span></span>
+<span id="cb396-5"><a href="plotting-and-optimization-in-microeconomic-models.html#cb396-5" tabindex="-1"></a><span class="fu">contour</span>(K_vals, L_vals, Z,</span>
+<span id="cb396-6"><a href="plotting-and-optimization-in-microeconomic-models.html#cb396-6" tabindex="-1"></a>        <span class="at">levels=</span><span class="fu">c</span>(Q_star),</span>
+<span id="cb396-7"><a href="plotting-and-optimization-in-microeconomic-models.html#cb396-7" tabindex="-1"></a>        <span class="at">col=</span><span class="st">&quot;blue&quot;</span>,</span>
+<span id="cb396-8"><a href="plotting-and-optimization-in-microeconomic-models.html#cb396-8" tabindex="-1"></a>        <span class="at">lwd=</span><span class="dv">3</span>,</span>
+<span id="cb396-9"><a href="plotting-and-optimization-in-microeconomic-models.html#cb396-9" tabindex="-1"></a>        <span class="at">xlab=</span><span class="st">&quot;Capital (K)&quot;</span>,</span>
+<span id="cb396-10"><a href="plotting-and-optimization-in-microeconomic-models.html#cb396-10" tabindex="-1"></a>        <span class="at">ylab=</span><span class="st">&quot;Labor (L)&quot;</span>,</span>
+<span id="cb396-11"><a href="plotting-and-optimization-in-microeconomic-models.html#cb396-11" tabindex="-1"></a>        <span class="at">xlim=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">15</span>),</span>
+<span id="cb396-12"><a href="plotting-and-optimization-in-microeconomic-models.html#cb396-12" tabindex="-1"></a>        <span class="at">ylim=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">10</span>),</span>
+<span id="cb396-13"><a href="plotting-and-optimization-in-microeconomic-models.html#cb396-13" tabindex="-1"></a>        <span class="at">main=</span><span class="st">&quot;Isoquant and Isocost with Optimum&quot;</span>)</span>
+<span id="cb396-14"><a href="plotting-and-optimization-in-microeconomic-models.html#cb396-14" tabindex="-1"></a></span>
+<span id="cb396-15"><a href="plotting-and-optimization-in-microeconomic-models.html#cb396-15" tabindex="-1"></a><span class="co"># Add isocost</span></span>
+<span id="cb396-16"><a href="plotting-and-optimization-in-microeconomic-models.html#cb396-16" tabindex="-1"></a><span class="fu">lines</span>(K_vals[valid], isocost[valid],</span>
+<span id="cb396-17"><a href="plotting-and-optimization-in-microeconomic-models.html#cb396-17" tabindex="-1"></a>      <span class="at">col=</span><span class="st">&quot;red&quot;</span>,</span>
+<span id="cb396-18"><a href="plotting-and-optimization-in-microeconomic-models.html#cb396-18" tabindex="-1"></a>      <span class="at">lwd=</span><span class="dv">2</span>)</span>
+<span id="cb396-19"><a href="plotting-and-optimization-in-microeconomic-models.html#cb396-19" tabindex="-1"></a></span>
+<span id="cb396-20"><a href="plotting-and-optimization-in-microeconomic-models.html#cb396-20" tabindex="-1"></a><span class="co"># Add optimum point</span></span>
+<span id="cb396-21"><a href="plotting-and-optimization-in-microeconomic-models.html#cb396-21" tabindex="-1"></a><span class="fu">points</span>(K_star, L_star,</span>
+<span id="cb396-22"><a href="plotting-and-optimization-in-microeconomic-models.html#cb396-22" tabindex="-1"></a>       <span class="at">pch=</span><span class="dv">19</span>,</span>
+<span id="cb396-23"><a href="plotting-and-optimization-in-microeconomic-models.html#cb396-23" tabindex="-1"></a>       <span class="at">col=</span><span class="st">&quot;black&quot;</span>,</span>
+<span id="cb396-24"><a href="plotting-and-optimization-in-microeconomic-models.html#cb396-24" tabindex="-1"></a>       <span class="at">cex=</span><span class="fl">1.4</span>)</span>
+<span id="cb396-25"><a href="plotting-and-optimization-in-microeconomic-models.html#cb396-25" tabindex="-1"></a></span>
+<span id="cb396-26"><a href="plotting-and-optimization-in-microeconomic-models.html#cb396-26" tabindex="-1"></a><span class="co"># Arrow to optimum</span></span>
+<span id="cb396-27"><a href="plotting-and-optimization-in-microeconomic-models.html#cb396-27" tabindex="-1"></a><span class="fu">arrows</span>(K_star<span class="fl">+1.5</span>, L_star<span class="sc">+</span><span class="dv">1</span>,</span>
+<span id="cb396-28"><a href="plotting-and-optimization-in-microeconomic-models.html#cb396-28" tabindex="-1"></a>       K_star, L_star,</span>
+<span id="cb396-29"><a href="plotting-and-optimization-in-microeconomic-models.html#cb396-29" tabindex="-1"></a>       <span class="at">length=</span><span class="fl">0.1</span>)</span>
+<span id="cb396-30"><a href="plotting-and-optimization-in-microeconomic-models.html#cb396-30" tabindex="-1"></a></span>
+<span id="cb396-31"><a href="plotting-and-optimization-in-microeconomic-models.html#cb396-31" tabindex="-1"></a><span class="co"># Label optimum</span></span>
+<span id="cb396-32"><a href="plotting-and-optimization-in-microeconomic-models.html#cb396-32" tabindex="-1"></a><span class="fu">text</span>(K_star<span class="fl">+1.7</span>, L_star<span class="sc">+</span><span class="dv">1</span>,</span>
+<span id="cb396-33"><a href="plotting-and-optimization-in-microeconomic-models.html#cb396-33" tabindex="-1"></a>     <span class="fu">paste0</span>(<span class="st">&quot;Optimum (&quot;</span>, <span class="fu">round</span>(K_star,<span class="dv">1</span>), <span class="st">&quot;, &quot;</span>, <span class="fu">round</span>(L_star,<span class="dv">1</span>), <span class="st">&quot;)&quot;</span>),</span>
+<span id="cb396-34"><a href="plotting-and-optimization-in-microeconomic-models.html#cb396-34" tabindex="-1"></a>     <span class="at">col=</span><span class="st">&quot;black&quot;</span>)</span></code></pre></div>
+<p><img src="LBYC121_Course_Book_files/figure-html/unnamed-chunk-313-1.png" alt="" width="672" /></p>
+</div>
+</div>
+</div>
+<div id="utility-contour-and-gradient-vectors" class="section level2 hasAnchor" number="13.3">
+<h2><span class="header-section-number">13.3</span> Utility Contour and Gradient Vectors<a href="plotting-and-optimization-in-microeconomic-models.html#utility-contour-and-gradient-vectors" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>This helps visualize consumer preferences before solving the optimization problem.</p>
+<p>We will:</p>
+<ul>
+<li><p>Define a utility function</p></li>
+<li><p>Plot indifference curves (contours)</p></li>
+<li><p>Compute gradient vectors (marginal utilities)</p></li>
+<li><p>Overlay both on the same graph</p></li>
+</ul>
+<div id="define-the-function-15" class="section level4 hasAnchor" number="13.3.0.1">
+<h4><span class="header-section-number">13.3.0.1</span> Define the function<a href="plotting-and-optimization-in-microeconomic-models.html#define-the-function-15" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p><span class="math inline">\(U(x,y) = Ax^{\alpha}+By^{\beta}\)</span></p>
+<p>where A and B are importance weights for goods x and y, <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span> are curvature parameters that determine how utility changes as consumption increases.</p>
+<div class="sourceCode" id="cb397"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb397-1"><a href="plotting-and-optimization-in-microeconomic-models.html#cb397-1" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list=</span><span class="fu">ls</span>())</span>
+<span id="cb397-2"><a href="plotting-and-optimization-in-microeconomic-models.html#cb397-2" tabindex="-1"></a>A<span class="ot">&lt;-</span><span class="dv">6</span></span>
+<span id="cb397-3"><a href="plotting-and-optimization-in-microeconomic-models.html#cb397-3" tabindex="-1"></a>B<span class="ot">&lt;-</span><span class="dv">4</span></span>
+<span id="cb397-4"><a href="plotting-and-optimization-in-microeconomic-models.html#cb397-4" tabindex="-1"></a>alpha<span class="ot">&lt;-</span><span class="fl">0.8</span></span>
+<span id="cb397-5"><a href="plotting-and-optimization-in-microeconomic-models.html#cb397-5" tabindex="-1"></a>beta<span class="ot">&lt;-</span><span class="fl">1.2</span></span></code></pre></div>
+<div class="sourceCode" id="cb398"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb398-1"><a href="plotting-and-optimization-in-microeconomic-models.html#cb398-1" tabindex="-1"></a>U<span class="ot">&lt;-</span>\(x,y){A<span class="sc">*</span>x<span class="sc">^</span>alpha<span class="sc">+</span>B<span class="sc">*</span>y<span class="sc">^</span>beta}</span></code></pre></div>
+</div>
+<div id="create-gird-of-consumption-bundles" class="section level4 hasAnchor" number="13.3.0.2">
+<h4><span class="header-section-number">13.3.0.2</span> Create gird of consumption bundles<a href="plotting-and-optimization-in-microeconomic-models.html#create-gird-of-consumption-bundles" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb399"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb399-1"><a href="plotting-and-optimization-in-microeconomic-models.html#cb399-1" tabindex="-1"></a>x_vals <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">1</span>, <span class="dv">10</span>, <span class="at">length.out =</span> <span class="dv">100</span>)</span>
+<span id="cb399-2"><a href="plotting-and-optimization-in-microeconomic-models.html#cb399-2" tabindex="-1"></a>y_vals <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">1</span>, <span class="dv">10</span>, <span class="at">length.out =</span> <span class="dv">100</span>)</span></code></pre></div>
+</div>
+<div id="evaluate-utility-for-all-bundles" class="section level4 hasAnchor" number="13.3.0.3">
+<h4><span class="header-section-number">13.3.0.3</span> Evaluate utility for all bundles<a href="plotting-and-optimization-in-microeconomic-models.html#evaluate-utility-for-all-bundles" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb400"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb400-1"><a href="plotting-and-optimization-in-microeconomic-models.html#cb400-1" tabindex="-1"></a>Z <span class="ot">&lt;-</span> <span class="fu">outer</span>(x_vals, y_vals, <span class="fu">Vectorize</span>(U))</span></code></pre></div>
+<p>This creates a matrix for creating a contour plot of the combinations of x and y.</p>
+</div>
+<div id="gradient-marginal-utilities" class="section level4 hasAnchor" number="13.3.0.4">
+<h4><span class="header-section-number">13.3.0.4</span> Gradient (Marginal Utilities)<a href="plotting-and-optimization-in-microeconomic-models.html#gradient-marginal-utilities" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>The gradient shows how utility changes when consumption increases.</p>
+<p>Mathematically:</p>
+<p><span class="math inline">\(\nabla U(x,y) = (\frac{\partial U}{\partial x}, \frac{\partial U}{\partial y})\)</span></p>
+<p>These are marginal utilities.</p>
+</div>
+<div id="compute-gradient-values-on-a-grid" class="section level4 hasAnchor" number="13.3.0.5">
+<h4><span class="header-section-number">13.3.0.5</span> Compute Gradient Values on a Grid<a href="plotting-and-optimization-in-microeconomic-models.html#compute-gradient-values-on-a-grid" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb401"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb401-1"><a href="plotting-and-optimization-in-microeconomic-models.html#cb401-1" tabindex="-1"></a>xg <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">1</span>, <span class="dv">10</span>, <span class="at">by =</span> <span class="fl">1.5</span>)</span>
+<span id="cb401-2"><a href="plotting-and-optimization-in-microeconomic-models.html#cb401-2" tabindex="-1"></a>yg <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">1</span>, <span class="dv">10</span>, <span class="at">by =</span> <span class="fl">1.5</span>)</span>
+<span id="cb401-3"><a href="plotting-and-optimization-in-microeconomic-models.html#cb401-3" tabindex="-1"></a></span>
+<span id="cb401-4"><a href="plotting-and-optimization-in-microeconomic-models.html#cb401-4" tabindex="-1"></a>grid <span class="ot">&lt;-</span> <span class="fu">expand.grid</span>(<span class="at">x =</span> xg, <span class="at">y =</span> yg)</span>
+<span id="cb401-5"><a href="plotting-and-optimization-in-microeconomic-models.html#cb401-5" tabindex="-1"></a></span>
+<span id="cb401-6"><a href="plotting-and-optimization-in-microeconomic-models.html#cb401-6" tabindex="-1"></a>grad_x <span class="ot">&lt;-</span> A <span class="sc">*</span> alpha <span class="sc">*</span> grid<span class="sc">$</span>x<span class="sc">^</span>(alpha <span class="sc">-</span> <span class="dv">1</span>)</span>
+<span id="cb401-7"><a href="plotting-and-optimization-in-microeconomic-models.html#cb401-7" tabindex="-1"></a>grad_y <span class="ot">&lt;-</span> B <span class="sc">*</span> beta  <span class="sc">*</span> grid<span class="sc">$</span>y<span class="sc">^</span>(beta <span class="sc">-</span> <span class="dv">1</span>)</span></code></pre></div>
+<p>Why is there <code>alpha - 1</code> and <code>beta-1</code>?</p>
+<p>This comes from the power rule…when differentiating <span class="math inline">\(x^{\alpha}\)</span></p>
+<p><code>expand.grid()</code> creates coordinate pairs like</p>
+<div class="sourceCode" id="cb402"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb402-1"><a href="plotting-and-optimization-in-microeconomic-models.html#cb402-1" tabindex="-1"></a>(<span class="dv">1</span>,<span class="dv">1</span>)</span>
+<span id="cb402-2"><a href="plotting-and-optimization-in-microeconomic-models.html#cb402-2" tabindex="-1"></a>(<span class="dv">1</span>, <span class="fl">2.5</span>)</span>
+<span id="cb402-3"><a href="plotting-and-optimization-in-microeconomic-models.html#cb402-3" tabindex="-1"></a>....</span></code></pre></div>
+<p>These show the direction utility increases fastest.</p>
+</div>
+<div id="rescale-gradient-arrows" class="section level4 hasAnchor" number="13.3.0.6">
+<h4><span class="header-section-number">13.3.0.6</span> Rescale Gradient Arrows<a href="plotting-and-optimization-in-microeconomic-models.html#rescale-gradient-arrows" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Raw gradients can be very large or very small. To make the plot readable, we scale them.</p>
+<div class="sourceCode" id="cb403"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb403-1"><a href="plotting-and-optimization-in-microeconomic-models.html#cb403-1" tabindex="-1"></a>arrow_len <span class="ot">&lt;-</span> <span class="fl">0.4</span></span>
+<span id="cb403-2"><a href="plotting-and-optimization-in-microeconomic-models.html#cb403-2" tabindex="-1"></a></span>
+<span id="cb403-3"><a href="plotting-and-optimization-in-microeconomic-models.html#cb403-3" tabindex="-1"></a>norm <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(grad_x<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> grad_y<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb403-4"><a href="plotting-and-optimization-in-microeconomic-models.html#cb403-4" tabindex="-1"></a></span>
+<span id="cb403-5"><a href="plotting-and-optimization-in-microeconomic-models.html#cb403-5" tabindex="-1"></a>ux <span class="ot">&lt;-</span> arrow_len <span class="sc">*</span> grad_x <span class="sc">/</span> norm</span>
+<span id="cb403-6"><a href="plotting-and-optimization-in-microeconomic-models.html#cb403-6" tabindex="-1"></a>uy <span class="ot">&lt;-</span> arrow_len <span class="sc">*</span> grad_y <span class="sc">/</span> norm</span></code></pre></div>
+<p><code>arrow_len</code> sets the length we want the arrows to have on the plot.</p>
+<p>So every arrow will be scaled so its length is about 0.4 units.</p>
+<p>Why we do this?</p>
+<p>If we plotted raw gradients, arrows might be:</p>
+<ul>
+<li><p>extremely long near large values</p></li>
+<li><p>extremely short near small values</p></li>
+</ul>
+<p>This would make the graph messy or unreadable.</p>
+<p>So we control arrow length manually. You can use closer to 0 for shorter arrows and 1 and more for longer arrows. It affects the appearance of the arrows.</p>
+<p><code>norm &lt;- sqrt(grad_x^2 + grad_y^2)</code> This computed the length of each gradient vector since we want to normalize the arrows.</p>
+<p>Normalization means:</p>
+<ul>
+<li><p>keep the direction</p></li>
+<li><p>control the size</p></li>
+</ul>
+<p>To do that we must know the original vector length.</p>
+<p>Do we need the <code>^2</code>?</p>
+<p>Yes.</p>
+<p>The squares come from the Euclidean distance formula.</p>
+<p>Without squaring we would not get the correct vector length.</p>
+<p>Example:</p>
+<p>Vector = (3,4)</p>
+<p>True length:</p>
+<p><span class="math inline">\(\sqrt{3^2+4^2}=5\)</span></p>
+<p>If we did not square:</p>
+<p><span class="math inline">\(\sqrt{3+4}\)</span></p>
+<p>that would be wrong.</p>
+<p>So the squares are mathematically required.</p>
+<p><code>ux &lt;- arrow_len * grad_x / norm</code> creates the horizontal component of the scaled arrow. That makes the vector length equal to 1. This is called normalizing the vector. Now the vector shows only direction, not magnitude. Multiplying by <code>arrow_len</code> sets the final arrow size. So every arrow has the same length. The same is happening with <code>uy</code></p>
+</div>
+<div id="plot-contours-and-gradient-arrows" class="section level4 hasAnchor" number="13.3.0.7">
+<h4><span class="header-section-number">13.3.0.7</span> Plot Contours and Gradient Arrows<a href="plotting-and-optimization-in-microeconomic-models.html#plot-contours-and-gradient-arrows" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb404"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb404-1"><a href="plotting-and-optimization-in-microeconomic-models.html#cb404-1" tabindex="-1"></a><span class="fu">contour</span>(x_vals, y_vals, Z,</span>
+<span id="cb404-2"><a href="plotting-and-optimization-in-microeconomic-models.html#cb404-2" tabindex="-1"></a>        <span class="at">nlevels =</span> <span class="dv">8</span>,</span>
+<span id="cb404-3"><a href="plotting-and-optimization-in-microeconomic-models.html#cb404-3" tabindex="-1"></a>        <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>,</span>
+<span id="cb404-4"><a href="plotting-and-optimization-in-microeconomic-models.html#cb404-4" tabindex="-1"></a>        <span class="at">lwd =</span> <span class="dv">2</span>,</span>
+<span id="cb404-5"><a href="plotting-and-optimization-in-microeconomic-models.html#cb404-5" tabindex="-1"></a>        <span class="at">xlab =</span> <span class="st">&quot;Good x&quot;</span>,</span>
+<span id="cb404-6"><a href="plotting-and-optimization-in-microeconomic-models.html#cb404-6" tabindex="-1"></a>        <span class="at">ylab =</span> <span class="st">&quot;Good y&quot;</span>,</span>
+<span id="cb404-7"><a href="plotting-and-optimization-in-microeconomic-models.html#cb404-7" tabindex="-1"></a>        <span class="at">main =</span> <span class="st">&quot;Utility Contours and Gradient Vectors&quot;</span>)</span>
+<span id="cb404-8"><a href="plotting-and-optimization-in-microeconomic-models.html#cb404-8" tabindex="-1"></a></span>
+<span id="cb404-9"><a href="plotting-and-optimization-in-microeconomic-models.html#cb404-9" tabindex="-1"></a><span class="fu">arrows</span>(grid<span class="sc">$</span>x, grid<span class="sc">$</span>y,</span>
+<span id="cb404-10"><a href="plotting-and-optimization-in-microeconomic-models.html#cb404-10" tabindex="-1"></a>       grid<span class="sc">$</span>x <span class="sc">+</span> ux, grid<span class="sc">$</span>y <span class="sc">+</span> uy,</span>
+<span id="cb404-11"><a href="plotting-and-optimization-in-microeconomic-models.html#cb404-11" tabindex="-1"></a>       <span class="at">length =</span> <span class="fl">0.08</span>,</span>
+<span id="cb404-12"><a href="plotting-and-optimization-in-microeconomic-models.html#cb404-12" tabindex="-1"></a>       <span class="at">col =</span> <span class="st">&quot;red&quot;</span>)</span></code></pre></div>
+<p><img src="LBYC121_Course_Book_files/figure-html/unnamed-chunk-321-1.png" alt="" width="672" /></p>
+<p>Each contour represents an indifference curve. All points on that curve give the same level of satisfaction. The arrows represent the gradient of utility. They show the direction of steepest increase in utility.</p>
+<p>The arrows point up and to the right because it’s moving toward larger bundles, increasing satisfaction. Always remember:</p>
+<blockquote>
+<p>The gradient vector is always perpendicular to the contour line. That is why the arrows cross the blue curves at right angles.</p>
+</blockquote>
+<p>So what does it tell you?</p>
+<ol style="list-style-type: decimal">
+<li>Utility increases northeast, meaning higher satisfaction occurs with more goods.</li>
+<li>Preferences are smooth, meaning small changes in consumption change utility gradually.</li>
+<li>Arrows look similar everywhere because exponents are close to 1. If exponents were very different, the arrows would not look that similar.</li>
+</ol>
+</div>
+<div id="lets-add-budget-line" class="section level3 hasAnchor" number="13.3.1">
+<h3><span class="header-section-number">13.3.1</span> Let’s Add Budget Line<a href="plotting-and-optimization-in-microeconomic-models.html#lets-add-budget-line" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><span class="math inline">\(p_xx+p_yy = M\)</span></p>
+<p>where x and y are quantities of good x and y, <span class="math inline">\(p_x\)</span> and <span class="math inline">\(p_y\)</span> are prices of goods x and y <span class="math inline">\(M\)</span> is income. The consumer wants the highest possible utility without spending more than income.</p>
+<p><span class="math inline">\(p_x = 1; p_y = 1; M=10\)</span></p>
+<div class="sourceCode" id="cb405"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb405-1"><a href="plotting-and-optimization-in-microeconomic-models.html#cb405-1" tabindex="-1"></a>px <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb405-2"><a href="plotting-and-optimization-in-microeconomic-models.html#cb405-2" tabindex="-1"></a>py <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb405-3"><a href="plotting-and-optimization-in-microeconomic-models.html#cb405-3" tabindex="-1"></a>M  <span class="ot">&lt;-</span> <span class="dv">10</span></span>
+<span id="cb405-4"><a href="plotting-and-optimization-in-microeconomic-models.html#cb405-4" tabindex="-1"></a></span>
+<span id="cb405-5"><a href="plotting-and-optimization-in-microeconomic-models.html#cb405-5" tabindex="-1"></a>budget_y <span class="ot">&lt;-</span> (M <span class="sc">-</span> px <span class="sc">*</span> x_vals) <span class="sc">/</span> py</span>
+<span id="cb405-6"><a href="plotting-and-optimization-in-microeconomic-models.html#cb405-6" tabindex="-1"></a>valid_budget <span class="ot">&lt;-</span> budget_y <span class="sc">&gt;=</span> <span class="dv">0</span></span></code></pre></div>
+<p>This computes the budget line. For every value of <span class="math inline">\(x\)</span>, R calculates the corresponding value of y that exactly uses all income. We only keep the part of the line where y is nonnegative</p>
+<div id="plot" class="section level4 hasAnchor" number="13.3.1.1">
+<h4><span class="header-section-number">13.3.1.1</span> Plot<a href="plotting-and-optimization-in-microeconomic-models.html#plot" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb406"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb406-1"><a href="plotting-and-optimization-in-microeconomic-models.html#cb406-1" tabindex="-1"></a><span class="fu">contour</span>(x_vals, y_vals, Z,</span>
+<span id="cb406-2"><a href="plotting-and-optimization-in-microeconomic-models.html#cb406-2" tabindex="-1"></a>        <span class="at">nlevels =</span> <span class="dv">8</span>,</span>
+<span id="cb406-3"><a href="plotting-and-optimization-in-microeconomic-models.html#cb406-3" tabindex="-1"></a>        <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>,</span>
+<span id="cb406-4"><a href="plotting-and-optimization-in-microeconomic-models.html#cb406-4" tabindex="-1"></a>        <span class="at">lwd =</span> <span class="dv">2</span>,</span>
+<span id="cb406-5"><a href="plotting-and-optimization-in-microeconomic-models.html#cb406-5" tabindex="-1"></a>        <span class="at">xlab =</span> <span class="st">&quot;Good x&quot;</span>,</span>
+<span id="cb406-6"><a href="plotting-and-optimization-in-microeconomic-models.html#cb406-6" tabindex="-1"></a>        <span class="at">ylab =</span> <span class="st">&quot;Good y&quot;</span>,</span>
+<span id="cb406-7"><a href="plotting-and-optimization-in-microeconomic-models.html#cb406-7" tabindex="-1"></a>        <span class="at">main =</span> <span class="st">&quot;Utility Contours, Gradient Vectors, and Budget Line&quot;</span>)</span>
+<span id="cb406-8"><a href="plotting-and-optimization-in-microeconomic-models.html#cb406-8" tabindex="-1"></a></span>
+<span id="cb406-9"><a href="plotting-and-optimization-in-microeconomic-models.html#cb406-9" tabindex="-1"></a><span class="fu">arrows</span>(grid<span class="sc">$</span>x, grid<span class="sc">$</span>y,</span>
+<span id="cb406-10"><a href="plotting-and-optimization-in-microeconomic-models.html#cb406-10" tabindex="-1"></a>       grid<span class="sc">$</span>x <span class="sc">+</span> ux, grid<span class="sc">$</span>y <span class="sc">+</span> uy,</span>
+<span id="cb406-11"><a href="plotting-and-optimization-in-microeconomic-models.html#cb406-11" tabindex="-1"></a>       <span class="at">length =</span> <span class="fl">0.08</span>,</span>
+<span id="cb406-12"><a href="plotting-and-optimization-in-microeconomic-models.html#cb406-12" tabindex="-1"></a>       <span class="at">col =</span> <span class="st">&quot;red&quot;</span>)</span>
+<span id="cb406-13"><a href="plotting-and-optimization-in-microeconomic-models.html#cb406-13" tabindex="-1"></a></span>
+<span id="cb406-14"><a href="plotting-and-optimization-in-microeconomic-models.html#cb406-14" tabindex="-1"></a><span class="fu">lines</span>(x_vals[valid_budget], budget_y[valid_budget],</span>
+<span id="cb406-15"><a href="plotting-and-optimization-in-microeconomic-models.html#cb406-15" tabindex="-1"></a>      <span class="at">col =</span> <span class="st">&quot;darkgreen&quot;</span>,</span>
+<span id="cb406-16"><a href="plotting-and-optimization-in-microeconomic-models.html#cb406-16" tabindex="-1"></a>      <span class="at">lwd =</span> <span class="dv">2</span>)</span></code></pre></div>
+<p><img src="LBYC121_Course_Book_files/figure-html/unnamed-chunk-323-1.png" alt="" width="672" /></p>
+</div>
+<div id="solve-the-optimal-bundle" class="section level4 hasAnchor" number="13.3.1.2">
+<h4><span class="header-section-number">13.3.1.2</span> Solve the optimal bundle<a href="plotting-and-optimization-in-microeconomic-models.html#solve-the-optimal-bundle" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb407"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb407-1"><a href="plotting-and-optimization-in-microeconomic-models.html#cb407-1" tabindex="-1"></a><span class="fu">library</span>(nleqslv)</span>
+<span id="cb407-2"><a href="plotting-and-optimization-in-microeconomic-models.html#cb407-2" tabindex="-1"></a></span>
+<span id="cb407-3"><a href="plotting-and-optimization-in-microeconomic-models.html#cb407-3" tabindex="-1"></a>system_eq <span class="ot">&lt;-</span> <span class="cf">function</span>(z){</span>
+<span id="cb407-4"><a href="plotting-and-optimization-in-microeconomic-models.html#cb407-4" tabindex="-1"></a></span>
+<span id="cb407-5"><a href="plotting-and-optimization-in-microeconomic-models.html#cb407-5" tabindex="-1"></a>  x <span class="ot">&lt;-</span> z[<span class="dv">1</span>]</span>
+<span id="cb407-6"><a href="plotting-and-optimization-in-microeconomic-models.html#cb407-6" tabindex="-1"></a>  y <span class="ot">&lt;-</span> z[<span class="dv">2</span>]</span>
+<span id="cb407-7"><a href="plotting-and-optimization-in-microeconomic-models.html#cb407-7" tabindex="-1"></a></span>
+<span id="cb407-8"><a href="plotting-and-optimization-in-microeconomic-models.html#cb407-8" tabindex="-1"></a>  <span class="fu">c</span>(</span>
+<span id="cb407-9"><a href="plotting-and-optimization-in-microeconomic-models.html#cb407-9" tabindex="-1"></a>    (A<span class="sc">*</span>alpha<span class="sc">*</span>x<span class="sc">^</span>(alpha<span class="dv">-1</span>))<span class="sc">/</span>(B<span class="sc">*</span>beta<span class="sc">*</span>y<span class="sc">^</span>(beta<span class="dv">-1</span>)) <span class="sc">-</span> px<span class="sc">/</span>py,</span>
+<span id="cb407-10"><a href="plotting-and-optimization-in-microeconomic-models.html#cb407-10" tabindex="-1"></a>    px<span class="sc">*</span>x <span class="sc">+</span> py<span class="sc">*</span>y <span class="sc">-</span> M</span>
+<span id="cb407-11"><a href="plotting-and-optimization-in-microeconomic-models.html#cb407-11" tabindex="-1"></a>  )</span>
+<span id="cb407-12"><a href="plotting-and-optimization-in-microeconomic-models.html#cb407-12" tabindex="-1"></a>}</span>
+<span id="cb407-13"><a href="plotting-and-optimization-in-microeconomic-models.html#cb407-13" tabindex="-1"></a></span>
+<span id="cb407-14"><a href="plotting-and-optimization-in-microeconomic-models.html#cb407-14" tabindex="-1"></a>sol <span class="ot">&lt;-</span> <span class="fu">nleqslv</span>(<span class="fu">c</span>(<span class="dv">4</span>,<span class="dv">6</span>), system_eq)</span>
+<span id="cb407-15"><a href="plotting-and-optimization-in-microeconomic-models.html#cb407-15" tabindex="-1"></a></span>
+<span id="cb407-16"><a href="plotting-and-optimization-in-microeconomic-models.html#cb407-16" tabindex="-1"></a>x_star <span class="ot">&lt;-</span> sol<span class="sc">$</span>x[<span class="dv">1</span>]</span>
+<span id="cb407-17"><a href="plotting-and-optimization-in-microeconomic-models.html#cb407-17" tabindex="-1"></a>y_star <span class="ot">&lt;-</span> sol<span class="sc">$</span>x[<span class="dv">2</span>]</span>
+<span id="cb407-18"><a href="plotting-and-optimization-in-microeconomic-models.html#cb407-18" tabindex="-1"></a></span>
+<span id="cb407-19"><a href="plotting-and-optimization-in-microeconomic-models.html#cb407-19" tabindex="-1"></a>x_star</span></code></pre></div>
+<pre><code>## [1] 0.1010205</code></pre>
+<div class="sourceCode" id="cb409"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb409-1"><a href="plotting-and-optimization-in-microeconomic-models.html#cb409-1" tabindex="-1"></a>y_star</span></code></pre></div>
+<pre><code>## [1] 9.898979</code></pre>
+</div>
+<div id="add-the-optimum-to-the-plot" class="section level4 hasAnchor" number="13.3.1.3">
+<h4><span class="header-section-number">13.3.1.3</span> Add the optimum to the plot<a href="plotting-and-optimization-in-microeconomic-models.html#add-the-optimum-to-the-plot" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb411"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb411-1"><a href="plotting-and-optimization-in-microeconomic-models.html#cb411-1" tabindex="-1"></a><span class="fu">contour</span>(x_vals, y_vals, Z,</span>
+<span id="cb411-2"><a href="plotting-and-optimization-in-microeconomic-models.html#cb411-2" tabindex="-1"></a>        <span class="at">nlevels =</span> <span class="dv">8</span>,</span>
+<span id="cb411-3"><a href="plotting-and-optimization-in-microeconomic-models.html#cb411-3" tabindex="-1"></a>        <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>,</span>
+<span id="cb411-4"><a href="plotting-and-optimization-in-microeconomic-models.html#cb411-4" tabindex="-1"></a>        <span class="at">lwd =</span> <span class="dv">2</span>,</span>
+<span id="cb411-5"><a href="plotting-and-optimization-in-microeconomic-models.html#cb411-5" tabindex="-1"></a>        <span class="at">xlab =</span> <span class="st">&quot;Good x&quot;</span>,</span>
+<span id="cb411-6"><a href="plotting-and-optimization-in-microeconomic-models.html#cb411-6" tabindex="-1"></a>        <span class="at">ylab =</span> <span class="st">&quot;Good y&quot;</span>,</span>
+<span id="cb411-7"><a href="plotting-and-optimization-in-microeconomic-models.html#cb411-7" tabindex="-1"></a>        <span class="at">main =</span> <span class="st">&quot;Utility Contours, Gradient Vectors, and Budget Line&quot;</span>)</span>
+<span id="cb411-8"><a href="plotting-and-optimization-in-microeconomic-models.html#cb411-8" tabindex="-1"></a></span>
+<span id="cb411-9"><a href="plotting-and-optimization-in-microeconomic-models.html#cb411-9" tabindex="-1"></a><span class="fu">arrows</span>(grid<span class="sc">$</span>x, grid<span class="sc">$</span>y,</span>
+<span id="cb411-10"><a href="plotting-and-optimization-in-microeconomic-models.html#cb411-10" tabindex="-1"></a>       grid<span class="sc">$</span>x <span class="sc">+</span> ux, grid<span class="sc">$</span>y <span class="sc">+</span> uy,</span>
+<span id="cb411-11"><a href="plotting-and-optimization-in-microeconomic-models.html#cb411-11" tabindex="-1"></a>       <span class="at">length =</span> <span class="fl">0.08</span>,</span>
+<span id="cb411-12"><a href="plotting-and-optimization-in-microeconomic-models.html#cb411-12" tabindex="-1"></a>       <span class="at">col =</span> <span class="st">&quot;red&quot;</span>)</span>
+<span id="cb411-13"><a href="plotting-and-optimization-in-microeconomic-models.html#cb411-13" tabindex="-1"></a></span>
+<span id="cb411-14"><a href="plotting-and-optimization-in-microeconomic-models.html#cb411-14" tabindex="-1"></a><span class="fu">lines</span>(x_vals[valid_budget], budget_y[valid_budget],</span>
+<span id="cb411-15"><a href="plotting-and-optimization-in-microeconomic-models.html#cb411-15" tabindex="-1"></a>      <span class="at">col =</span> <span class="st">&quot;darkgreen&quot;</span>,</span>
+<span id="cb411-16"><a href="plotting-and-optimization-in-microeconomic-models.html#cb411-16" tabindex="-1"></a>      <span class="at">lwd =</span> <span class="dv">2</span>)</span>
+<span id="cb411-17"><a href="plotting-and-optimization-in-microeconomic-models.html#cb411-17" tabindex="-1"></a><span class="fu">points</span>(x_star, y_star,</span>
+<span id="cb411-18"><a href="plotting-and-optimization-in-microeconomic-models.html#cb411-18" tabindex="-1"></a>       <span class="at">pch =</span> <span class="dv">19</span>,</span>
+<span id="cb411-19"><a href="plotting-and-optimization-in-microeconomic-models.html#cb411-19" tabindex="-1"></a>       <span class="at">col =</span> <span class="st">&quot;black&quot;</span>,</span>
+<span id="cb411-20"><a href="plotting-and-optimization-in-microeconomic-models.html#cb411-20" tabindex="-1"></a>       <span class="at">cex =</span> <span class="fl">1.4</span>)</span>
+<span id="cb411-21"><a href="plotting-and-optimization-in-microeconomic-models.html#cb411-21" tabindex="-1"></a></span>
+<span id="cb411-22"><a href="plotting-and-optimization-in-microeconomic-models.html#cb411-22" tabindex="-1"></a><span class="fu">text</span>(x_star <span class="sc">+</span> <span class="fl">0.3</span>, y_star,</span>
+<span id="cb411-23"><a href="plotting-and-optimization-in-microeconomic-models.html#cb411-23" tabindex="-1"></a>     <span class="fu">paste0</span>(<span class="st">&quot;Optimum (&quot;</span>, <span class="fu">round</span>(x_star,<span class="dv">2</span>), <span class="st">&quot;, &quot;</span>, <span class="fu">round</span>(y_star,<span class="dv">2</span>), <span class="st">&quot;)&quot;</span>),</span>
+<span id="cb411-24"><a href="plotting-and-optimization-in-microeconomic-models.html#cb411-24" tabindex="-1"></a>     <span class="at">pos =</span> <span class="dv">4</span>)</span></code></pre></div>
+<p><img src="LBYC121_Course_Book_files/figure-html/unnamed-chunk-325-1.png" alt="" width="672" /></p>
+<p>What this shows is that the consumer buys mostly one good.</p>
+</div>
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="review-hessian-matrix-and-bordered-hessian.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="returns-to-scale.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": null,
+    "text": null
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": ["LBYC121_Course_Book.pdf", "LBYC121_Course_Book.epub"],
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "section",
+    "depth": 4
+  }
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

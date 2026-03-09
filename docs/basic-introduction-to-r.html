@@ -23,7 +23,7 @@
 <meta name="author" content="Jem Marie M. Nario" />
 
 
-<meta name="date" content="2026-02-07" />
+<meta name="date" content="2026-03-09" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -338,6 +338,33 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="11.6" data-path="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#interpretations"><i class="fa fa-check"></i><b>11.6</b> Interpretations:</a></li>
 <li class="chapter" data-level="11.7" data-path="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#exercise"><i class="fa fa-check"></i><b>11.7</b> Exercise:</a></li>
 </ul></li>
+<li class="chapter" data-level="12" data-path="review-hessian-matrix-and-bordered-hessian.html"><a href="review-hessian-matrix-and-bordered-hessian.html"><i class="fa fa-check"></i><b>12</b> Review: Hessian Matrix and Bordered Hessian</a>
+<ul>
+<li class="chapter" data-level="12.0.1" data-path="review-hessian-matrix-and-bordered-hessian.html"><a href="review-hessian-matrix-and-bordered-hessian.html#structure-of-hessian-1"><i class="fa fa-check"></i><b>12.0.1</b> Structure of Hessian</a></li>
+<li class="chapter" data-level="12.1" data-path="review-hessian-matrix-and-bordered-hessian.html"><a href="review-hessian-matrix-and-bordered-hessian.html#example-in-class"><i class="fa fa-check"></i><b>12.1</b> Example in Class</a>
+<ul>
+<li class="chapter" data-level="12.1.1" data-path="review-hessian-matrix-and-bordered-hessian.html"><a href="review-hessian-matrix-and-bordered-hessian.html#general-hessian-template"><i class="fa fa-check"></i><b>12.1.1</b> General Hessian Template</a></li>
+</ul></li>
+<li class="chapter" data-level="12.2" data-path="review-hessian-matrix-and-bordered-hessian.html"><a href="review-hessian-matrix-and-bordered-hessian.html#bordered-hessian-1"><i class="fa fa-check"></i><b>12.2</b> Bordered Hessian</a></li>
+<li class="chapter" data-level="12.3" data-path="review-hessian-matrix-and-bordered-hessian.html"><a href="review-hessian-matrix-and-bordered-hessian.html#example-in-class-1"><i class="fa fa-check"></i><b>12.3</b> Example in Class:</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="plotting-and-optimization-in-microeconomic-models.html"><a href="plotting-and-optimization-in-microeconomic-models.html"><i class="fa fa-check"></i><b>13</b> Plotting and Optimization in Microeconomic Models</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="plotting-and-optimization-in-microeconomic-models.html"><a href="plotting-and-optimization-in-microeconomic-models.html#basic-contour-plot"><i class="fa fa-check"></i><b>13.1</b> Basic Contour Plot</a></li>
+<li class="chapter" data-level="13.2" data-path="plotting-and-optimization-in-microeconomic-models.html"><a href="plotting-and-optimization-in-microeconomic-models.html#economic-example-production-isoquants-and-isocosts"><i class="fa fa-check"></i><b>13.2</b> Economic Example: Production Isoquants and Isocosts</a></li>
+<li class="chapter" data-level="13.3" data-path="plotting-and-optimization-in-microeconomic-models.html"><a href="plotting-and-optimization-in-microeconomic-models.html#utility-contour-and-gradient-vectors"><i class="fa fa-check"></i><b>13.3</b> Utility Contour and Gradient Vectors</a>
+<ul>
+<li class="chapter" data-level="13.3.1" data-path="plotting-and-optimization-in-microeconomic-models.html"><a href="plotting-and-optimization-in-microeconomic-models.html#lets-add-budget-line"><i class="fa fa-check"></i><b>13.3.1</b> Let’s Add Budget Line</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="returns-to-scale.html"><a href="returns-to-scale.html"><i class="fa fa-check"></i><b>14</b> Returns to Scale</a>
+<ul>
+<li class="chapter" data-level="14.1" data-path="returns-to-scale.html"><a href="returns-to-scale.html#production-function-2"><i class="fa fa-check"></i><b>14.1</b> Production Function</a>
+<ul>
+<li class="chapter" data-level="14.1.1" data-path="returns-to-scale.html"><a href="returns-to-scale.html#plotting-the-comparison"><i class="fa fa-check"></i><b>14.1.1</b> Plotting the comparison</a></li>
+</ul></li>
+<li class="chapter" data-level="14.2" data-path="returns-to-scale.html"><a href="returns-to-scale.html#exercise-march-10"><i class="fa fa-check"></i><b>14.2</b> Exercise March 10:</a></li>
+</ul></li>
 </ul>
 
       </nav>
@@ -370,23 +397,66 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##   LAPACK version 3.12.1
 ## 
 ## locale:
-## [1] LC_COLLATE=English_Netherlands.utf8  LC_CTYPE=English_Netherlands.utf8    LC_MONETARY=English_Netherlands.utf8
-## [4] LC_NUMERIC=C                         LC_TIME=English_Netherlands.utf8    
+## [1] LC_COLLATE=English_Netherlands.utf8 
+## [2] LC_CTYPE=English_Netherlands.utf8   
+## [3] LC_MONETARY=English_Netherlands.utf8
+## [4] LC_NUMERIC=C                        
+## [5] LC_TIME=English_Netherlands.utf8    
 ## 
 ## time zone: Asia/Manila
 ## tzcode source: internal
 ## 
 ## attached base packages:
-## [1] stats     graphics  grDevices utils     datasets  methods   base     
+## [1] stats     graphics  grDevices
+## [4] utils     datasets  methods  
+## [7] base     
 ## 
 ## other attached packages:
-## [1] nleqslv_3.3.5 Ryacas_1.1.6  Deriv_4.2.0  
+## [1] nleqslv_3.3.5 MASS_7.3-65  
+## [3] ggplot2_4.0.1 Deriv_4.2.0  
 ## 
 ## loaded via a namespace (and not attached):
-##  [1] digest_0.6.39     R6_2.6.1          bookdown_0.46     fastmap_1.2.0     xfun_0.55         magrittr_2.0.4    cachem_1.1.0     
-##  [8] knitr_1.51        htmltools_0.5.9   rmarkdown_2.30    lifecycle_1.0.4   cli_3.6.5         sass_0.4.10       grid_4.5.2       
-## [15] jquerylib_0.1.4   compiler_4.5.2    rstudioapi_0.17.1 tools_4.5.2       bslib_0.9.0       evaluate_1.0.5    Rcpp_1.1.0       
-## [22] yaml_2.3.12       jsonlite_2.0.0    rlang_1.1.6</code></pre>
+##  [1] vctrs_0.6.5       
+##  [2] cli_3.6.5         
+##  [3] knitr_1.51        
+##  [4] rlang_1.1.6       
+##  [5] xfun_0.55         
+##  [6] generics_0.1.4    
+##  [7] textshaping_1.0.4 
+##  [8] S7_0.2.1          
+##  [9] jsonlite_2.0.0    
+## [10] labeling_0.4.3    
+## [11] glue_1.8.0        
+## [12] htmltools_0.5.9   
+## [13] ragg_1.5.0        
+## [14] sass_0.4.10       
+## [15] scales_1.4.0      
+## [16] rmarkdown_2.30    
+## [17] grid_4.5.2        
+## [18] tibble_3.3.0      
+## [19] evaluate_1.0.5    
+## [20] jquerylib_0.1.4   
+## [21] fastmap_1.2.0     
+## [22] yaml_2.3.12       
+## [23] lifecycle_1.0.4   
+## [24] bookdown_0.46     
+## [25] compiler_4.5.2    
+## [26] dplyr_1.1.4       
+## [27] RColorBrewer_1.1-3
+## [28] pkgconfig_2.0.3   
+## [29] rstudioapi_0.17.1 
+## [30] systemfonts_1.3.1 
+## [31] farver_2.1.2      
+## [32] digest_0.6.39     
+## [33] R6_2.6.1          
+## [34] tidyselect_1.2.1  
+## [35] pillar_1.11.1     
+## [36] magrittr_2.0.4    
+## [37] bslib_0.9.0       
+## [38] withr_3.0.2       
+## [39] tools_4.5.2       
+## [40] gtable_0.3.6      
+## [41] cachem_1.1.0</code></pre>
 </div>
 <div id="preliminaries" class="section level2 hasAnchor" number="4.2">
 <h2><span class="header-section-number">4.2</span> Preliminaries<a href="basic-introduction-to-r.html#preliminaries" class="anchor-section" aria-label="Anchor link to header"></a></h2>

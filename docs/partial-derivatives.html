@@ -23,7 +23,7 @@
 <meta name="author" content="Jem Marie M. Nario" />
 
 
-<meta name="date" content="2026-02-07" />
+<meta name="date" content="2026-03-09" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -338,6 +338,33 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="11.6" data-path="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#interpretations"><i class="fa fa-check"></i><b>11.6</b> Interpretations:</a></li>
 <li class="chapter" data-level="11.7" data-path="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#exercise"><i class="fa fa-check"></i><b>11.7</b> Exercise:</a></li>
 </ul></li>
+<li class="chapter" data-level="12" data-path="review-hessian-matrix-and-bordered-hessian.html"><a href="review-hessian-matrix-and-bordered-hessian.html"><i class="fa fa-check"></i><b>12</b> Review: Hessian Matrix and Bordered Hessian</a>
+<ul>
+<li class="chapter" data-level="12.0.1" data-path="review-hessian-matrix-and-bordered-hessian.html"><a href="review-hessian-matrix-and-bordered-hessian.html#structure-of-hessian-1"><i class="fa fa-check"></i><b>12.0.1</b> Structure of Hessian</a></li>
+<li class="chapter" data-level="12.1" data-path="review-hessian-matrix-and-bordered-hessian.html"><a href="review-hessian-matrix-and-bordered-hessian.html#example-in-class"><i class="fa fa-check"></i><b>12.1</b> Example in Class</a>
+<ul>
+<li class="chapter" data-level="12.1.1" data-path="review-hessian-matrix-and-bordered-hessian.html"><a href="review-hessian-matrix-and-bordered-hessian.html#general-hessian-template"><i class="fa fa-check"></i><b>12.1.1</b> General Hessian Template</a></li>
+</ul></li>
+<li class="chapter" data-level="12.2" data-path="review-hessian-matrix-and-bordered-hessian.html"><a href="review-hessian-matrix-and-bordered-hessian.html#bordered-hessian-1"><i class="fa fa-check"></i><b>12.2</b> Bordered Hessian</a></li>
+<li class="chapter" data-level="12.3" data-path="review-hessian-matrix-and-bordered-hessian.html"><a href="review-hessian-matrix-and-bordered-hessian.html#example-in-class-1"><i class="fa fa-check"></i><b>12.3</b> Example in Class:</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="plotting-and-optimization-in-microeconomic-models.html"><a href="plotting-and-optimization-in-microeconomic-models.html"><i class="fa fa-check"></i><b>13</b> Plotting and Optimization in Microeconomic Models</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="plotting-and-optimization-in-microeconomic-models.html"><a href="plotting-and-optimization-in-microeconomic-models.html#basic-contour-plot"><i class="fa fa-check"></i><b>13.1</b> Basic Contour Plot</a></li>
+<li class="chapter" data-level="13.2" data-path="plotting-and-optimization-in-microeconomic-models.html"><a href="plotting-and-optimization-in-microeconomic-models.html#economic-example-production-isoquants-and-isocosts"><i class="fa fa-check"></i><b>13.2</b> Economic Example: Production Isoquants and Isocosts</a></li>
+<li class="chapter" data-level="13.3" data-path="plotting-and-optimization-in-microeconomic-models.html"><a href="plotting-and-optimization-in-microeconomic-models.html#utility-contour-and-gradient-vectors"><i class="fa fa-check"></i><b>13.3</b> Utility Contour and Gradient Vectors</a>
+<ul>
+<li class="chapter" data-level="13.3.1" data-path="plotting-and-optimization-in-microeconomic-models.html"><a href="plotting-and-optimization-in-microeconomic-models.html#lets-add-budget-line"><i class="fa fa-check"></i><b>13.3.1</b> Let’s Add Budget Line</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="returns-to-scale.html"><a href="returns-to-scale.html"><i class="fa fa-check"></i><b>14</b> Returns to Scale</a>
+<ul>
+<li class="chapter" data-level="14.1" data-path="returns-to-scale.html"><a href="returns-to-scale.html#production-function-2"><i class="fa fa-check"></i><b>14.1</b> Production Function</a>
+<ul>
+<li class="chapter" data-level="14.1.1" data-path="returns-to-scale.html"><a href="returns-to-scale.html#plotting-the-comparison"><i class="fa fa-check"></i><b>14.1.1</b> Plotting the comparison</a></li>
+</ul></li>
+<li class="chapter" data-level="14.2" data-path="returns-to-scale.html"><a href="returns-to-scale.html#exercise-march-10"><i class="fa fa-check"></i><b>14.2</b> Exercise March 10:</a></li>
+</ul></li>
 </ul>
 
       </nav>
@@ -359,9 +386,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">8</span> Partial Derivatives<a href="partial-derivatives.html#partial-derivatives" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <div class="sourceCode" id="cb104"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb104-1"><a href="partial-derivatives.html#cb104-1" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list=</span><span class="fu">ls</span>())</span>
 <span id="cb104-2"><a href="partial-derivatives.html#cb104-2" tabindex="-1"></a><span class="fu">gc</span>()</span></code></pre></div>
-<pre><code>##           used  (Mb) gc trigger  (Mb) max used  (Mb)
-## Ncells 2537735 135.6    4995202 266.8  3896772 208.2
-## Vcells 5334527  40.7   12255594  93.6 10146329  77.5</code></pre>
+<pre><code>##           used (Mb) gc trigger
+## Ncells 1803602 96.4    3255338
+## Vcells 3885790 29.7    8388608
+##         (Mb) max used  (Mb)
+## Ncells 173.9  3255338 173.9
+## Vcells  64.0  6246594  47.7</code></pre>
 <div id="cobb-douglas-production-function" class="section level2 hasAnchor" number="8.1">
 <h2><span class="header-section-number">8.1</span> Cobb-Douglas Production Function<a href="partial-derivatives.html#cobb-douglas-production-function" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><span class="math inline">\(Q(L,K) = L^\alpha * K^\beta\)</span></p>

@@ -23,7 +23,7 @@
 <meta name="author" content="Jem Marie M. Nario" />
 
 
-<meta name="date" content="2026-02-07" />
+<meta name="date" content="2026-03-09" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -338,6 +338,33 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="11.6" data-path="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#interpretations"><i class="fa fa-check"></i><b>11.6</b> Interpretations:</a></li>
 <li class="chapter" data-level="11.7" data-path="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#exercise"><i class="fa fa-check"></i><b>11.7</b> Exercise:</a></li>
 </ul></li>
+<li class="chapter" data-level="12" data-path="review-hessian-matrix-and-bordered-hessian.html"><a href="review-hessian-matrix-and-bordered-hessian.html"><i class="fa fa-check"></i><b>12</b> Review: Hessian Matrix and Bordered Hessian</a>
+<ul>
+<li class="chapter" data-level="12.0.1" data-path="review-hessian-matrix-and-bordered-hessian.html"><a href="review-hessian-matrix-and-bordered-hessian.html#structure-of-hessian-1"><i class="fa fa-check"></i><b>12.0.1</b> Structure of Hessian</a></li>
+<li class="chapter" data-level="12.1" data-path="review-hessian-matrix-and-bordered-hessian.html"><a href="review-hessian-matrix-and-bordered-hessian.html#example-in-class"><i class="fa fa-check"></i><b>12.1</b> Example in Class</a>
+<ul>
+<li class="chapter" data-level="12.1.1" data-path="review-hessian-matrix-and-bordered-hessian.html"><a href="review-hessian-matrix-and-bordered-hessian.html#general-hessian-template"><i class="fa fa-check"></i><b>12.1.1</b> General Hessian Template</a></li>
+</ul></li>
+<li class="chapter" data-level="12.2" data-path="review-hessian-matrix-and-bordered-hessian.html"><a href="review-hessian-matrix-and-bordered-hessian.html#bordered-hessian-1"><i class="fa fa-check"></i><b>12.2</b> Bordered Hessian</a></li>
+<li class="chapter" data-level="12.3" data-path="review-hessian-matrix-and-bordered-hessian.html"><a href="review-hessian-matrix-and-bordered-hessian.html#example-in-class-1"><i class="fa fa-check"></i><b>12.3</b> Example in Class:</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="plotting-and-optimization-in-microeconomic-models.html"><a href="plotting-and-optimization-in-microeconomic-models.html"><i class="fa fa-check"></i><b>13</b> Plotting and Optimization in Microeconomic Models</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="plotting-and-optimization-in-microeconomic-models.html"><a href="plotting-and-optimization-in-microeconomic-models.html#basic-contour-plot"><i class="fa fa-check"></i><b>13.1</b> Basic Contour Plot</a></li>
+<li class="chapter" data-level="13.2" data-path="plotting-and-optimization-in-microeconomic-models.html"><a href="plotting-and-optimization-in-microeconomic-models.html#economic-example-production-isoquants-and-isocosts"><i class="fa fa-check"></i><b>13.2</b> Economic Example: Production Isoquants and Isocosts</a></li>
+<li class="chapter" data-level="13.3" data-path="plotting-and-optimization-in-microeconomic-models.html"><a href="plotting-and-optimization-in-microeconomic-models.html#utility-contour-and-gradient-vectors"><i class="fa fa-check"></i><b>13.3</b> Utility Contour and Gradient Vectors</a>
+<ul>
+<li class="chapter" data-level="13.3.1" data-path="plotting-and-optimization-in-microeconomic-models.html"><a href="plotting-and-optimization-in-microeconomic-models.html#lets-add-budget-line"><i class="fa fa-check"></i><b>13.3.1</b> Let’s Add Budget Line</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="returns-to-scale.html"><a href="returns-to-scale.html"><i class="fa fa-check"></i><b>14</b> Returns to Scale</a>
+<ul>
+<li class="chapter" data-level="14.1" data-path="returns-to-scale.html"><a href="returns-to-scale.html#production-function-2"><i class="fa fa-check"></i><b>14.1</b> Production Function</a>
+<ul>
+<li class="chapter" data-level="14.1.1" data-path="returns-to-scale.html"><a href="returns-to-scale.html#plotting-the-comparison"><i class="fa fa-check"></i><b>14.1.1</b> Plotting the comparison</a></li>
+</ul></li>
+<li class="chapter" data-level="14.2" data-path="returns-to-scale.html"><a href="returns-to-scale.html#exercise-march-10"><i class="fa fa-check"></i><b>14.2</b> Exercise March 10:</a></li>
+</ul></li>
 </ul>
 
       </nav>
@@ -376,7 +403,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb274-2"><a href="review-of-derivatives-and-visualizations.html#cb274-2" tabindex="-1"></a>df<span class="ot">&lt;-</span><span class="fu">data.frame</span>(<span class="at">Q=</span>Q_vals, <span class="at">P=</span><span class="fu">P</span>(Q_vals))</span></code></pre></div>
 <p>For now, we plot using Base R:</p>
 <div class="sourceCode" id="cb275"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb275-1"><a href="review-of-derivatives-and-visualizations.html#cb275-1" tabindex="-1"></a><span class="fu">plot</span>(df<span class="sc">$</span>Q, df<span class="sc">$</span>P, <span class="at">type=</span><span class="st">&quot;l&quot;</span>, <span class="at">col=</span><span class="st">&quot;darkgreen&quot;</span>, <span class="at">lwd=</span><span class="dv">2</span>, <span class="at">main=</span><span class="st">&quot;Linear Demand Curve&quot;</span>, <span class="at">xlab=</span><span class="st">&quot;Quantity&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;Price&quot;</span>)</span></code></pre></div>
-<p><img src="LBYC121_Course_Book_files/figure-html/unnamed-chunk-146-1.png" alt="" width="672" /></p>
+<p><img src="LBYC121_Course_Book_files/figure-html/unnamed-chunk-233-1.png" alt="" width="672" /></p>
 <p>We use line graph and a thicker line with labels. We see that price drops as quantity increases.</p>
 </div>
 </div>
@@ -396,7 +423,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb277-3"><a href="review-of-derivatives-and-visualizations.html#cb277-3" tabindex="-1"></a><span class="fu">plot</span>(df2<span class="sc">$</span>Q, df2<span class="sc">$</span>TC, <span class="at">type=</span><span class="st">&quot;l&quot;</span>,</span>
 <span id="cb277-4"><a href="review-of-derivatives-and-visualizations.html#cb277-4" tabindex="-1"></a>     <span class="at">col=</span><span class="st">&quot;darkgreen&quot;</span>, <span class="at">lwd=</span><span class="dv">2</span>,</span>
 <span id="cb277-5"><a href="review-of-derivatives-and-visualizations.html#cb277-5" tabindex="-1"></a>     <span class="at">main=</span><span class="st">&quot;Total Cost Curve&quot;</span>, <span class="at">xlab=</span><span class="st">&quot;Quantity&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;Cost&quot;</span>)</span></code></pre></div>
-<p><img src="LBYC121_Course_Book_files/figure-html/unnamed-chunk-148-1.png" alt="" width="672" /></p>
+<p><img src="LBYC121_Course_Book_files/figure-html/unnamed-chunk-235-1.png" alt="" width="672" /></p>
 </div>
 </div>
 <div id="exponential-function" class="section level3 hasAnchor" number="10.1.3">
@@ -415,7 +442,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb279-2"><a href="review-of-derivatives-and-visualizations.html#cb279-2" tabindex="-1"></a></span>
 <span id="cb279-3"><a href="review-of-derivatives-and-visualizations.html#cb279-3" tabindex="-1"></a><span class="fu">plot</span>(df3<span class="sc">$</span>Q, df3<span class="sc">$</span>R, <span class="at">type=</span><span class="st">&quot;l&quot;</span>, <span class="at">col=</span><span class="st">&quot;tomato&quot;</span>, <span class="at">lwd=</span><span class="dv">2</span>,</span>
 <span id="cb279-4"><a href="review-of-derivatives-and-visualizations.html#cb279-4" tabindex="-1"></a>     <span class="at">main=</span><span class="st">&quot;Exponential Revenue Growth&quot;</span>, <span class="at">xlab=</span><span class="st">&quot;Quantity&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;Revenue&quot;</span>)</span></code></pre></div>
-<p><img src="LBYC121_Course_Book_files/figure-html/unnamed-chunk-150-1.png" alt="" width="672" /></p>
+<p><img src="LBYC121_Course_Book_files/figure-html/unnamed-chunk-237-1.png" alt="" width="672" /></p>
 <p>Revenue grows faster with more quantity due to compounding effect or price increase per unit sold.</p>
 </div>
 </div>
