@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>2 Syllabus | LBYC121 Course Book</title>
+  <title>19 Part V. Elasticity When Demand and Supply Schedules Are Given | LBYC121 Course Book</title>
   <meta name="description" content="An introduction to the LBYC121 Course Book." />
   <meta name="generator" content="bookdown 0.46 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="2 Syllabus | LBYC121 Course Book" />
+  <meta property="og:title" content="19 Part V. Elasticity When Demand and Supply Schedules Are Given | LBYC121 Course Book" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="An introduction to the LBYC121 Course Book." />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="2 Syllabus | LBYC121 Course Book" />
+  <meta name="twitter:title" content="19 Part V. Elasticity When Demand and Supply Schedules Are Given | LBYC121 Course Book" />
   
   <meta name="twitter:description" content="An introduction to the LBYC121 Course Book." />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="index.html"/>
-<link rel="next" href="assessments.html"/>
+<link rel="prev" href="part-iv.-integral-calculus-in-economics.html"/>
+
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -430,109 +430,288 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="syllabus" class="section level1 hasAnchor" number="2">
-<h1><span class="header-section-number">2</span> Syllabus<a href="syllabus.html#syllabus" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="course-description" class="section level2 hasAnchor" number="2.1">
-<h2><span class="header-section-number">2.1</span> Course Description<a href="syllabus.html#course-description" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>The course aims to discuss how to solve mathematical problems in economics using software packages. Students will be introduced to software packages that are convenient, powerful, and practical to mathematical economic analysis such as Mathematica, <strong>R</strong>, and Python. Moreover, the course will serve as a catalyst for mastery in basic mathematical economics and an introductory course to more advanced mathematical economic constructs. The course serves to complement lecture-based classes on mathematical economics through the application and use of such software packages.</p>
-</div>
-<div id="final-course-outputs" class="section level2 hasAnchor" number="2.2">
-<h2><span class="header-section-number">2.2</span> Final Course Outputs<a href="syllabus.html#final-course-outputs" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="part-v.-elasticity-when-demand-and-supply-schedules-are-given" class="section level1 hasAnchor" number="19">
+<h1><span class="header-section-number">19</span> Part V. Elasticity When Demand and Supply Schedules Are Given<a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#part-v.-elasticity-when-demand-and-supply-schedules-are-given" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Sometimes economists are not given an equation like <span class="math inline">\(Q = 100 - 5P\)</span> and are instead given a <strong>schedule</strong> — a table of prices and quantities.</p>
+<p>In that case, elasticity is calculated between two points in the schedule. The most common method is <strong>arc elasticity</strong>.</p>
+<div id="price-elasticity-from-a-demand-schedule" class="section level2 hasAnchor" number="19.1">
+<h2><span class="header-section-number">19.1</span> Price Elasticity from a Demand Schedule<a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#price-elasticity-from-a-demand-schedule" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="economic-idea" class="section level3 hasAnchor" number="19.1.1">
+<h3><span class="header-section-number">19.1.1</span> Economic Idea<a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#economic-idea" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Suppose we are given the following demand schedule:</p>
 <table>
 <thead>
 <tr class="header">
-<th>Course Learning Outcomes</th>
-<th>Output</th>
-<th>Due Date</th>
+<th align="center">Price</th>
+<th align="center">Quantity Demanded</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>CLO1-4</td>
-<td>In-Weekly Exercises</td>
-<td>Week 1-6,8,10-13</td>
+<td align="center">2</td>
+<td align="center">100</td>
 </tr>
 <tr class="even">
-<td>CLO1-4</td>
-<td>Problem Sets 1 and 2</td>
-<td>Week 6 and Week 12</td>
+<td align="center">3</td>
+<td align="center">80</td>
+</tr>
+<tr class="odd">
+<td align="center">4</td>
+<td align="center">65</td>
+</tr>
+<tr class="even">
+<td align="center">5</td>
+<td align="center">50</td>
+</tr>
+<tr class="odd">
+<td align="center">6</td>
+<td align="center">40</td>
 </tr>
 </tbody>
 </table>
+<p>We want to measure how responsive demand is as price changes from one row to the next.</p>
 </div>
-<div id="generative-ai-use-policy" class="section level2 hasAnchor" number="2.3">
-<h2><span class="header-section-number">2.3</span> Generative AI-Use Policy<a href="syllabus.html#generative-ai-use-policy" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p><strong>AI Usage by Grade Component</strong></p>
-<table style="width:100%;">
-<colgroup>
-<col width="14%" />
-<col width="11%" />
-<col width="73%" />
-</colgroup>
+<div id="arc-elasticity-formula" class="section level3 hasAnchor" number="19.1.2">
+<h3><span class="header-section-number">19.1.2</span> Arc Elasticity Formula<a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#arc-elasticity-formula" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><span class="math display">\[E_d = \frac{\Delta Q}{\Delta P} \cdot \frac{P_{avg}}{Q_{avg}}\]</span></p>
+<p>where:</p>
+<p><span class="math display">\[\Delta Q = Q_2 - Q_1, \quad \Delta P = P_2 - P_1, \quad P_{avg} = \frac{P_1 + P_2}{2}, \quad Q_{avg} = \frac{Q_1 + Q_2}{2}\]</span></p>
+<p>We use <strong>averages</strong> because the midpoint method is more balanced than using only the starting or ending value.</p>
+</div>
+<div id="manual-calculation-for-the-first-interval" class="section level3 hasAnchor" number="19.1.3">
+<h3><span class="header-section-number">19.1.3</span> Manual Calculation for the First Interval<a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#manual-calculation-for-the-first-interval" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Moving from Price = 2, Quantity = 100 to Price = 3, Quantity = 80:</p>
+<p><span class="math display">\[\Delta Q = 80 - 100 = -20, \quad \Delta P = 3 - 2 = 1, \quad P_{avg} = 2.5, \quad Q_{avg} = 90\]</span></p>
+<p><span class="math display">\[E_d = \frac{-20}{1} \cdot \frac{2.5}{90} = -0.556\]</span></p>
+<p><strong>Interpretation:</strong> The negative sign reflects the law of demand. Because the absolute value is less than 1, demand is <strong>inelastic</strong> over this interval.</p>
+</div>
+<div id="r-code-for-a-demand-schedule" class="section level3 hasAnchor" number="19.1.4">
+<h3><span class="header-section-number">19.1.4</span> R Code for a Demand Schedule<a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#r-code-for-a-demand-schedule" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb443"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb443-1"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb443-1" tabindex="-1"></a>price_d    <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>)</span>
+<span id="cb443-2"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb443-2" tabindex="-1"></a>quantity_d <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">100</span>, <span class="dv">80</span>, <span class="dv">65</span>, <span class="dv">50</span>, <span class="dv">40</span>)</span>
+<span id="cb443-3"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb443-3" tabindex="-1"></a></span>
+<span id="cb443-4"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb443-4" tabindex="-1"></a>elasticity_d <span class="ot">&lt;-</span> <span class="fu">numeric</span>(<span class="fu">length</span>(price_d) <span class="sc">-</span> <span class="dv">1</span>)</span>
+<span id="cb443-5"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb443-5" tabindex="-1"></a></span>
+<span id="cb443-6"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb443-6" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>(<span class="fu">length</span>(price_d) <span class="sc">-</span> <span class="dv">1</span>)) {</span>
+<span id="cb443-7"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb443-7" tabindex="-1"></a>  dQ   <span class="ot">&lt;-</span> quantity_d[i <span class="sc">+</span> <span class="dv">1</span>] <span class="sc">-</span> quantity_d[i]</span>
+<span id="cb443-8"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb443-8" tabindex="-1"></a>  dP   <span class="ot">&lt;-</span> price_d[i <span class="sc">+</span> <span class="dv">1</span>]    <span class="sc">-</span> price_d[i]</span>
+<span id="cb443-9"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb443-9" tabindex="-1"></a>  Qavg <span class="ot">&lt;-</span> (quantity_d[i <span class="sc">+</span> <span class="dv">1</span>] <span class="sc">+</span> quantity_d[i]) <span class="sc">/</span> <span class="dv">2</span></span>
+<span id="cb443-10"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb443-10" tabindex="-1"></a>  Pavg <span class="ot">&lt;-</span> (price_d[i <span class="sc">+</span> <span class="dv">1</span>]    <span class="sc">+</span> price_d[i])    <span class="sc">/</span> <span class="dv">2</span></span>
+<span id="cb443-11"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb443-11" tabindex="-1"></a>  elasticity_d[i] <span class="ot">&lt;-</span> (dQ <span class="sc">/</span> dP) <span class="sc">*</span> (Pavg <span class="sc">/</span> Qavg)</span>
+<span id="cb443-12"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb443-12" tabindex="-1"></a>}</span>
+<span id="cb443-13"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb443-13" tabindex="-1"></a></span>
+<span id="cb443-14"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb443-14" tabindex="-1"></a>price_mid_d <span class="ot">&lt;-</span> (price_d[<span class="sc">-</span><span class="dv">1</span>] <span class="sc">+</span> price_d[<span class="sc">-</span><span class="fu">length</span>(price_d)]) <span class="sc">/</span> <span class="dv">2</span></span>
+<span id="cb443-15"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb443-15" tabindex="-1"></a></span>
+<span id="cb443-16"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb443-16" tabindex="-1"></a>demand_results <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb443-17"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb443-17" tabindex="-1"></a>  <span class="at">price_midpoint    =</span> price_mid_d,</span>
+<span id="cb443-18"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb443-18" tabindex="-1"></a>  <span class="at">elasticity_demand =</span> <span class="fu">round</span>(elasticity_d, <span class="dv">3</span>)</span>
+<span id="cb443-19"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb443-19" tabindex="-1"></a>)</span>
+<span id="cb443-20"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb443-20" tabindex="-1"></a></span>
+<span id="cb443-21"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb443-21" tabindex="-1"></a><span class="fu">print</span>(demand_results)</span></code></pre></div>
+<pre><code>##   price_midpoint elasticity_demand
+## 1            2.5            -0.556
+## 2            3.5            -0.724
+## 3            4.5            -1.174
+## 4            5.5            -1.222</code></pre>
+<p><strong>Notes:</strong></p>
+<ul>
+<li><code>elasticity_d &lt;- numeric(length(price_d) - 1)</code> — creates storage for 4 elasticity values (5 rows → 4 intervals).</li>
+<li><code>for (i in 1:(length(price_d) - 1))</code> — loops through each interval: row 1→2, 2→3, 3→4, 4→5.</li>
+<li><code>dQ &lt;- quantity_d[i + 1] - quantity_d[i]</code> — change in quantity between adjacent rows.</li>
+<li><code>dP &lt;- price_d[i + 1] - price_d[i]</code> — change in price between adjacent rows.</li>
+<li><code>elasticity_d[i] &lt;- (dQ / dP) * (Pavg / Qavg)</code> — applies the arc elasticity formula; <code>[i]</code> places the result in the correct slot of the storage vector.</li>
+<li><code>price_d[-1]</code> means “all elements except the first”; <code>price_d[-length(price_d)]</code> means “all elements except the last” — combining them gives the midpoint of each interval.</li>
+</ul>
+</div>
+<div id="plot-1" class="section level3 hasAnchor" number="19.1.5">
+<h3><span class="header-section-number">19.1.5</span> Plot<a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#plot-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb445"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb445-1"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb445-1" tabindex="-1"></a><span class="fu">plot</span>(price_d, quantity_d,</span>
+<span id="cb445-2"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb445-2" tabindex="-1"></a>     <span class="at">type =</span> <span class="st">&quot;b&quot;</span>,</span>
+<span id="cb445-3"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb445-3" tabindex="-1"></a>     <span class="at">pch  =</span> <span class="dv">19</span>,</span>
+<span id="cb445-4"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb445-4" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">&quot;Price&quot;</span>,</span>
+<span id="cb445-5"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb445-5" tabindex="-1"></a>     <span class="at">ylab =</span> <span class="st">&quot;Quantity Demanded&quot;</span>,</span>
+<span id="cb445-6"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb445-6" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">&quot;Demand Schedule&quot;</span>)</span></code></pre></div>
+<p><img src="LBYC121_Course_Book_files/figure-html/demand-schedule-plots-1.png" alt="" width="672" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb446"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb446-1"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb446-1" tabindex="-1"></a><span class="fu">plot</span>(price_mid_d, elasticity_d,</span>
+<span id="cb446-2"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb446-2" tabindex="-1"></a>     <span class="at">type =</span> <span class="st">&quot;b&quot;</span>,</span>
+<span id="cb446-3"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb446-3" tabindex="-1"></a>     <span class="at">pch  =</span> <span class="dv">19</span>,</span>
+<span id="cb446-4"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb446-4" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">&quot;Price Midpoint&quot;</span>,</span>
+<span id="cb446-5"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb446-5" tabindex="-1"></a>     <span class="at">ylab =</span> <span class="st">&quot;Arc Elasticity of Demand&quot;</span>,</span>
+<span id="cb446-6"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb446-6" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">&quot;Elasticity from a Demand Schedule&quot;</span>)</span></code></pre></div>
+<p><img src="LBYC121_Course_Book_files/figure-html/demand-schedule-plots-2.png" alt="" width="672" style="display: block; margin: auto;" /></p>
+<p><strong>Economic interpretation:</strong> Elasticity may differ from interval to interval — demand can be more elastic in some price ranges and less elastic in others. Responsiveness is not automatically constant even in a simple table.</p>
+</div>
+</div>
+<div id="price-elasticity-from-a-supply-schedule" class="section level2 hasAnchor" number="19.2">
+<h2><span class="header-section-number">19.2</span> Price Elasticity from a Supply Schedule<a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#price-elasticity-from-a-supply-schedule" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="economic-idea-1" class="section level3 hasAnchor" number="19.2.1">
+<h3><span class="header-section-number">19.2.1</span> Economic Idea<a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#economic-idea-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Now suppose we are given a supply schedule:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center">Price</th>
+<th align="center">Quantity Supplied</th>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
-<td>Grade Component (Primary Assessments)</td>
-<td>Usage Policy Level</td>
-<td>Notes</td>
+<td align="center">2</td>
+<td align="center">20</td>
 </tr>
 <tr class="even">
-<td>In-class Weekly Exercises (R)</td>
-<td>Banned</td>
-<td>Students must write and execute R code independently (pairwork only). Generative AI use is not allowed during in-class exercises, including code generation, debugging, or interpretation of output.</td>
+<td align="center">3</td>
+<td align="center">35</td>
 </tr>
 <tr class="odd">
-<td>Problem Sets (R, team-based)</td>
-<td>Allowed in specific contexts</td>
-<td>Generative AI may be used only for:<br />
-• clarifying R syntax or function documentation<br />
-• explaining error messages conceptually<br />
-• reviewing code logic after students have written their own code<br />
-<br />
-Generative AI is not allowed for direct generation of full solutions, R scripts, or written interpretations of outputs.</td>
+<td align="center">4</td>
+<td align="center">50</td>
+</tr>
+<tr class="even">
+<td align="center">5</td>
+<td align="center">70</td>
+</tr>
+<tr class="odd">
+<td align="center">6</td>
+<td align="center">95</td>
 </tr>
 </tbody>
 </table>
-<p><strong>AI Usage Policy Statement</strong></p>
-<p>This course is a technical and skills-based economics course that emphasizes mathematical reasoning, programming in R, and the ability to interpret computational outputs. The primary learning objectives require students to develop hands-on proficiency in R, apply economic logic computationally, and build problem-solving resilience through practice.</p>
-<p>While generative AI tools can support learning by helping students understand R syntax, documentation, and common error messages, unrestricted use poses a risk to the course’s core objectives—particularly the development of independent coding ability and analytical judgment.</p>
-<p>Therefore, in this course, students are not allowed to use generative AI during in-class weekly exercises, as these activities are designed to directly assess individual and pair-based mastery of R programming and economic problem-solving in real time.</p>
-<p>For problem sets, generative AI is allowed only in specific contexts, such as clarifying syntax, understanding error messages, or reviewing code logic after students have produced their own solutions. The direct generation of R code, complete solutions, or interpretations of outputs using generative AI is strictly prohibited.</p>
-<p>Any use of generative AI beyond the permitted contexts will be treated as academic dishonesty, in accordance with university policy. Students are encouraged to consult the instructor if there is uncertainty about appropriate AI use for a specific task.</p>
+<p>The arc elasticity formula is the same, but now <span class="math inline">\(Q\)</span> means <strong>quantity supplied</strong>. Because supply usually slopes upward, elasticity is usually <strong>positive</strong>.</p>
 </div>
-<div id="classroom-policies" class="section level2 hasAnchor" number="2.4">
-<h2><span class="header-section-number">2.4</span> Classroom Policies<a href="syllabus.html#classroom-policies" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<ol style="list-style-type: decimal">
-<li><p><strong>Learning Etiquette:</strong> Practice proper learning etiquette at all times, whether during face-to-face or online sessions, and whether in the classroom or on the university’s official online learning platforms.</p></li>
-<li><p><strong>Academic Integrity:</strong> Academic dishonesty of any kind will not be tolerated. Cases will be forwarded to the Student Discipline and Formation Office (SDFO). Always cite sources when using others’ work. If in doubt, seek guidance from the instructor before submission.</p></li>
-<li><p><strong>Use of Class Materials:</strong> Improper use of LBYCALC121 materials posted on AnimoSpace (e.g., downloading, copying, sharing, or posting materials elsewhere) violates academic integrity and will be reported to the SDFO.</p></li>
-<li><p><strong>Non-Cooperative Pair Members:</strong> If one member of a pair is non-cooperative, the other member may continue with the original partner or work individually. The non-cooperative member <strong>must work individually</strong> on the required output and <strong>inform the instructor</strong>. Failure to submit independently will result in a failing mark. Pairs must notify the instructor <strong>no later than seven (7) calendar days before submission</strong> if such a situation arises.</p></li>
-<li><p><strong>Submission of Exercises and Problem Sets:</strong> The <strong>Assignment module in AnimoSpace</strong> is the sole submission platform for all exercises and problem sets. Submissions via email or other platforms will <strong>not</strong> be accepted.</p></li>
-<li><p><strong>Student Consultation:</strong> Students must request consultations at least 1–2 days in advance. The instructor responds to messages sent <strong>via DLSU email only</strong>, during <strong>weekdays 08:00–18:00</strong>. Messages sent on weekends will not receive a reply until the next weekday.</p></li>
-<li><p><strong>Extra Work:</strong> Requests for extra work will <strong>not</strong> be accommodated, especially after Week 14, except for absences officially certified by the Associate Dean.</p></li>
-<li><p><strong>Learning Barriers:</strong> Students should immediately inform the instructor of any issues that may affect learning so solutions and adjustments can be made. Correspondence will remain private unless intervention is required (including consultation with DLSU Counseling and Psychological Services).</p></li>
-</ol>
-<div id="excused-absences-policy" class="section level3 hasAnchor" number="2.4.1">
-<h3><span class="header-section-number">2.4.1</span> <strong>EXCUSED ABSENCES POLICY:</strong><a href="syllabus.html#excused-absences-policy" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Students must process requests for excused absences from their respective Associate Deans. For SOE students, the Associate Dean of the School of Economics will only process requests for excused absences due to medical and mental health reasons. Covid-related leave requests are no longer accepted as of August 30, 2023. Students must provide official documentation from the Office of Student Affairs (OSA) for absences related to official university functions. </p>
-<p><strong>Procedure:</strong></p>
-<ol style="list-style-type: decimal">
-<li><p><strong>Timing:</strong> Submit requests immediately upon returning to campus and no later than seven working days from the return date. </p></li>
-<li><p><strong>Request Letter:</strong> Write a letter to the Associate Dean including:</p>
-<ul>
-<li><p>Course details (course name, section, faculty names, and emails)</p></li>
-<li><p>Dates of absence(s)</p></li>
-<li><p>Reason for absence with relevant details</p></li>
-</ul></li>
-<li><p><strong>Supporting Documents:</strong> Attach validated documents from the appropriate university offices.</p></li>
-<li><p><strong>Submission:</strong> Combine the letter and supporting documents into a single PDF and upload via<a href="https://forms.gle/9oka9uDpDemH2LR5A">this form</a>.</p></li>
-</ol>
-<p>Approved absences will be communicated to you and your professors within three working days. Note that processing is done only during regular weekday office hours. </p>
-<p><strong>Important:</strong> Only complete requests will be processed. Falsifying records is a major offense as per the Student Handbook (Section 9, pp. 85-87).</p>
-<blockquote>
-<p>Note: The syllabus is unique to the course per Term, per AY. Final syllabus uploaded in Animospace.</p>
-</blockquote>
+<div id="manual-calculation-for-the-first-interval-1" class="section level3 hasAnchor" number="19.2.2">
+<h3><span class="header-section-number">19.2.2</span> Manual Calculation for the First Interval<a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#manual-calculation-for-the-first-interval-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Moving from Price = 2, Quantity Supplied = 20 to Price = 3, Quantity Supplied = 35:</p>
+<p><span class="math display">\[\Delta Q = 15, \quad \Delta P = 1, \quad P_{avg} = 2.5, \quad Q_{avg} = 27.5\]</span></p>
+<p><span class="math display">\[E_s = \frac{15}{1} \cdot \frac{2.5}{27.5} = 1.364\]</span></p>
+<p><strong>Interpretation:</strong> Because elasticity is greater than 1, supply is <strong>elastic</strong> over this interval — producers respond strongly to price changes.</p>
+</div>
+<div id="r-code-for-a-supply-schedule" class="section level3 hasAnchor" number="19.2.3">
+<h3><span class="header-section-number">19.2.3</span> R Code for a Supply Schedule<a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#r-code-for-a-supply-schedule" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb447"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb447-1"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb447-1" tabindex="-1"></a>price_s    <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>)</span>
+<span id="cb447-2"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb447-2" tabindex="-1"></a>quantity_s <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">20</span>, <span class="dv">35</span>, <span class="dv">50</span>, <span class="dv">70</span>, <span class="dv">95</span>)</span>
+<span id="cb447-3"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb447-3" tabindex="-1"></a></span>
+<span id="cb447-4"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb447-4" tabindex="-1"></a>elasticity_s <span class="ot">&lt;-</span> <span class="fu">numeric</span>(<span class="fu">length</span>(price_s) <span class="sc">-</span> <span class="dv">1</span>)</span>
+<span id="cb447-5"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb447-5" tabindex="-1"></a></span>
+<span id="cb447-6"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb447-6" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>(<span class="fu">length</span>(price_s) <span class="sc">-</span> <span class="dv">1</span>)) {</span>
+<span id="cb447-7"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb447-7" tabindex="-1"></a>  dQ   <span class="ot">&lt;-</span> quantity_s[i <span class="sc">+</span> <span class="dv">1</span>] <span class="sc">-</span> quantity_s[i]</span>
+<span id="cb447-8"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb447-8" tabindex="-1"></a>  dP   <span class="ot">&lt;-</span> price_s[i <span class="sc">+</span> <span class="dv">1</span>]    <span class="sc">-</span> price_s[i]</span>
+<span id="cb447-9"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb447-9" tabindex="-1"></a>  Qavg <span class="ot">&lt;-</span> (quantity_s[i <span class="sc">+</span> <span class="dv">1</span>] <span class="sc">+</span> quantity_s[i]) <span class="sc">/</span> <span class="dv">2</span></span>
+<span id="cb447-10"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb447-10" tabindex="-1"></a>  Pavg <span class="ot">&lt;-</span> (price_s[i <span class="sc">+</span> <span class="dv">1</span>]    <span class="sc">+</span> price_s[i])    <span class="sc">/</span> <span class="dv">2</span></span>
+<span id="cb447-11"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb447-11" tabindex="-1"></a>  elasticity_s[i] <span class="ot">&lt;-</span> (dQ <span class="sc">/</span> dP) <span class="sc">*</span> (Pavg <span class="sc">/</span> Qavg)</span>
+<span id="cb447-12"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb447-12" tabindex="-1"></a>}</span>
+<span id="cb447-13"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb447-13" tabindex="-1"></a></span>
+<span id="cb447-14"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb447-14" tabindex="-1"></a>price_mid_s <span class="ot">&lt;-</span> (price_s[<span class="sc">-</span><span class="dv">1</span>] <span class="sc">+</span> price_s[<span class="sc">-</span><span class="fu">length</span>(price_s)]) <span class="sc">/</span> <span class="dv">2</span></span>
+<span id="cb447-15"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb447-15" tabindex="-1"></a></span>
+<span id="cb447-16"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb447-16" tabindex="-1"></a>supply_results <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb447-17"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb447-17" tabindex="-1"></a>  <span class="at">price_midpoint    =</span> price_mid_s,</span>
+<span id="cb447-18"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb447-18" tabindex="-1"></a>  <span class="at">elasticity_supply =</span> <span class="fu">round</span>(elasticity_s, <span class="dv">3</span>)</span>
+<span id="cb447-19"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb447-19" tabindex="-1"></a>)</span>
+<span id="cb447-20"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb447-20" tabindex="-1"></a></span>
+<span id="cb447-21"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb447-21" tabindex="-1"></a><span class="fu">print</span>(supply_results)</span></code></pre></div>
+<pre><code>##   price_midpoint elasticity_supply
+## 1            2.5             1.364
+## 2            3.5             1.235
+## 3            4.5             1.500
+## 4            5.5             1.667</code></pre>
+<p>The code structure is exactly like the demand schedule, but quantities come from the supply table. The sign and economic interpretation differ — supply slopes upward, so elasticity is positive.</p>
+</div>
+<div id="plot-2" class="section level3 hasAnchor" number="19.2.4">
+<h3><span class="header-section-number">19.2.4</span> Plot<a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#plot-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb449"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb449-1"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb449-1" tabindex="-1"></a><span class="fu">plot</span>(price_s, quantity_s,</span>
+<span id="cb449-2"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb449-2" tabindex="-1"></a>     <span class="at">type =</span> <span class="st">&quot;b&quot;</span>,</span>
+<span id="cb449-3"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb449-3" tabindex="-1"></a>     <span class="at">pch  =</span> <span class="dv">19</span>,</span>
+<span id="cb449-4"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb449-4" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">&quot;Price&quot;</span>,</span>
+<span id="cb449-5"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb449-5" tabindex="-1"></a>     <span class="at">ylab =</span> <span class="st">&quot;Quantity Supplied&quot;</span>,</span>
+<span id="cb449-6"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb449-6" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">&quot;Supply Schedule&quot;</span>)</span></code></pre></div>
+<p><img src="LBYC121_Course_Book_files/figure-html/supply-schedule-plots-1.png" alt="" width="672" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb450"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb450-1"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb450-1" tabindex="-1"></a><span class="fu">plot</span>(price_mid_s, elasticity_s,</span>
+<span id="cb450-2"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb450-2" tabindex="-1"></a>     <span class="at">type =</span> <span class="st">&quot;b&quot;</span>,</span>
+<span id="cb450-3"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb450-3" tabindex="-1"></a>     <span class="at">pch  =</span> <span class="dv">19</span>,</span>
+<span id="cb450-4"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb450-4" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">&quot;Price Midpoint&quot;</span>,</span>
+<span id="cb450-5"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb450-5" tabindex="-1"></a>     <span class="at">ylab =</span> <span class="st">&quot;Arc Elasticity of Supply&quot;</span>,</span>
+<span id="cb450-6"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb450-6" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">&quot;Elasticity from a Supply Schedule&quot;</span>)</span></code></pre></div>
+<p><img src="LBYC121_Course_Book_files/figure-html/supply-schedule-plots-2.png" alt="" width="672" style="display: block; margin: auto;" /></p>
+</div>
+</div>
+<div id="combined-classroom-example" class="section level2 hasAnchor" number="19.3">
+<h2><span class="header-section-number">19.3</span> Combined Classroom Example:<a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#combined-classroom-example" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb451"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb451-1"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb451-1" tabindex="-1"></a><span class="co"># --- Demand schedule ---</span></span>
+<span id="cb451-2"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb451-2" tabindex="-1"></a>price_d    <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>)</span>
+<span id="cb451-3"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb451-3" tabindex="-1"></a>quantity_d <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">100</span>, <span class="dv">80</span>, <span class="dv">65</span>, <span class="dv">50</span>, <span class="dv">40</span>)</span>
+<span id="cb451-4"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb451-4" tabindex="-1"></a></span>
+<span id="cb451-5"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb451-5" tabindex="-1"></a>elasticity_d <span class="ot">&lt;-</span> <span class="fu">numeric</span>(<span class="fu">length</span>(price_d) <span class="sc">-</span> <span class="dv">1</span>)</span>
+<span id="cb451-6"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb451-6" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>(<span class="fu">length</span>(price_d) <span class="sc">-</span> <span class="dv">1</span>)) {</span>
+<span id="cb451-7"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb451-7" tabindex="-1"></a>  dQ <span class="ot">&lt;-</span> quantity_d[i <span class="sc">+</span> <span class="dv">1</span>] <span class="sc">-</span> quantity_d[i]</span>
+<span id="cb451-8"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb451-8" tabindex="-1"></a>  dP <span class="ot">&lt;-</span> price_d[i <span class="sc">+</span> <span class="dv">1</span>]    <span class="sc">-</span> price_d[i]</span>
+<span id="cb451-9"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb451-9" tabindex="-1"></a>  Qavg <span class="ot">&lt;-</span> (quantity_d[i <span class="sc">+</span> <span class="dv">1</span>] <span class="sc">+</span> quantity_d[i]) <span class="sc">/</span> <span class="dv">2</span></span>
+<span id="cb451-10"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb451-10" tabindex="-1"></a>  Pavg <span class="ot">&lt;-</span> (price_d[i <span class="sc">+</span> <span class="dv">1</span>]    <span class="sc">+</span> price_d[i])    <span class="sc">/</span> <span class="dv">2</span></span>
+<span id="cb451-11"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb451-11" tabindex="-1"></a>  elasticity_d[i] <span class="ot">&lt;-</span> (dQ <span class="sc">/</span> dP) <span class="sc">*</span> (Pavg <span class="sc">/</span> Qavg)</span>
+<span id="cb451-12"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb451-12" tabindex="-1"></a>}</span>
+<span id="cb451-13"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb451-13" tabindex="-1"></a>price_mid_d <span class="ot">&lt;-</span> (price_d[<span class="sc">-</span><span class="dv">1</span>] <span class="sc">+</span> price_d[<span class="sc">-</span><span class="fu">length</span>(price_d)]) <span class="sc">/</span> <span class="dv">2</span></span>
+<span id="cb451-14"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb451-14" tabindex="-1"></a></span>
+<span id="cb451-15"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb451-15" tabindex="-1"></a><span class="co"># --- Supply schedule ---</span></span>
+<span id="cb451-16"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb451-16" tabindex="-1"></a>price_s    <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>)</span>
+<span id="cb451-17"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb451-17" tabindex="-1"></a>quantity_s <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">20</span>, <span class="dv">35</span>, <span class="dv">50</span>, <span class="dv">70</span>, <span class="dv">95</span>)</span>
+<span id="cb451-18"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb451-18" tabindex="-1"></a></span>
+<span id="cb451-19"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb451-19" tabindex="-1"></a>elasticity_s <span class="ot">&lt;-</span> <span class="fu">numeric</span>(<span class="fu">length</span>(price_s) <span class="sc">-</span> <span class="dv">1</span>)</span>
+<span id="cb451-20"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb451-20" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>(<span class="fu">length</span>(price_s) <span class="sc">-</span> <span class="dv">1</span>)) {</span>
+<span id="cb451-21"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb451-21" tabindex="-1"></a>  dQ <span class="ot">&lt;-</span> quantity_s[i <span class="sc">+</span> <span class="dv">1</span>] <span class="sc">-</span> quantity_s[i]</span>
+<span id="cb451-22"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb451-22" tabindex="-1"></a>  dP <span class="ot">&lt;-</span> price_s[i <span class="sc">+</span> <span class="dv">1</span>]    <span class="sc">-</span> price_s[i]</span>
+<span id="cb451-23"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb451-23" tabindex="-1"></a>  Qavg <span class="ot">&lt;-</span> (quantity_s[i <span class="sc">+</span> <span class="dv">1</span>] <span class="sc">+</span> quantity_s[i]) <span class="sc">/</span> <span class="dv">2</span></span>
+<span id="cb451-24"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb451-24" tabindex="-1"></a>  Pavg <span class="ot">&lt;-</span> (price_s[i <span class="sc">+</span> <span class="dv">1</span>]    <span class="sc">+</span> price_s[i])    <span class="sc">/</span> <span class="dv">2</span></span>
+<span id="cb451-25"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb451-25" tabindex="-1"></a>  elasticity_s[i] <span class="ot">&lt;-</span> (dQ <span class="sc">/</span> dP) <span class="sc">*</span> (Pavg <span class="sc">/</span> Qavg)</span>
+<span id="cb451-26"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb451-26" tabindex="-1"></a>}</span>
+<span id="cb451-27"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb451-27" tabindex="-1"></a>price_mid_s <span class="ot">&lt;-</span> (price_s[<span class="sc">-</span><span class="dv">1</span>] <span class="sc">+</span> price_s[<span class="sc">-</span><span class="fu">length</span>(price_s)]) <span class="sc">/</span> <span class="dv">2</span></span>
+<span id="cb451-28"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb451-28" tabindex="-1"></a></span>
+<span id="cb451-29"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb451-29" tabindex="-1"></a><span class="co"># --- Results tables ---</span></span>
+<span id="cb451-30"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb451-30" tabindex="-1"></a>demand_results <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb451-31"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb451-31" tabindex="-1"></a>  <span class="at">price_midpoint    =</span> price_mid_d,</span>
+<span id="cb451-32"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb451-32" tabindex="-1"></a>  <span class="at">elasticity_demand =</span> <span class="fu">round</span>(elasticity_d, <span class="dv">3</span>)</span>
+<span id="cb451-33"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb451-33" tabindex="-1"></a>)</span>
+<span id="cb451-34"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb451-34" tabindex="-1"></a></span>
+<span id="cb451-35"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb451-35" tabindex="-1"></a>supply_results <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb451-36"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb451-36" tabindex="-1"></a>  <span class="at">price_midpoint    =</span> price_mid_s,</span>
+<span id="cb451-37"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb451-37" tabindex="-1"></a>  <span class="at">elasticity_supply =</span> <span class="fu">round</span>(elasticity_s, <span class="dv">3</span>)</span>
+<span id="cb451-38"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb451-38" tabindex="-1"></a>)</span>
+<span id="cb451-39"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb451-39" tabindex="-1"></a></span>
+<span id="cb451-40"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb451-40" tabindex="-1"></a><span class="fu">print</span>(demand_results)</span></code></pre></div>
+<pre><code>##   price_midpoint elasticity_demand
+## 1            2.5            -0.556
+## 2            3.5            -0.724
+## 3            4.5            -1.174
+## 4            5.5            -1.222</code></pre>
+<div class="sourceCode" id="cb453"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb453-1"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb453-1" tabindex="-1"></a><span class="fu">print</span>(supply_results)</span></code></pre></div>
+<pre><code>##   price_midpoint elasticity_supply
+## 1            2.5             1.364
+## 2            3.5             1.235
+## 3            4.5             1.500
+## 4            5.5             1.667</code></pre>
+<div class="sourceCode" id="cb455"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb455-1"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb455-1" tabindex="-1"></a><span class="co"># --- Four graphs ---</span></span>
+<span id="cb455-2"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb455-2" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>))</span>
+<span id="cb455-3"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb455-3" tabindex="-1"></a></span>
+<span id="cb455-4"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb455-4" tabindex="-1"></a><span class="fu">plot</span>(price_d, quantity_d,</span>
+<span id="cb455-5"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb455-5" tabindex="-1"></a>     <span class="at">type =</span> <span class="st">&quot;b&quot;</span>, <span class="at">pch =</span> <span class="dv">19</span>,</span>
+<span id="cb455-6"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb455-6" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">&quot;Price&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Quantity Demanded&quot;</span>,</span>
+<span id="cb455-7"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb455-7" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">&quot;Demand Schedule&quot;</span>)</span>
+<span id="cb455-8"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb455-8" tabindex="-1"></a></span>
+<span id="cb455-9"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb455-9" tabindex="-1"></a><span class="fu">plot</span>(price_mid_d, elasticity_d,</span>
+<span id="cb455-10"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb455-10" tabindex="-1"></a>     <span class="at">type =</span> <span class="st">&quot;b&quot;</span>, <span class="at">pch =</span> <span class="dv">19</span>,</span>
+<span id="cb455-11"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb455-11" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">&quot;Price Midpoint&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Demand Elasticity&quot;</span>,</span>
+<span id="cb455-12"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb455-12" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">&quot;Elasticity from Demand Schedule&quot;</span>)</span>
+<span id="cb455-13"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb455-13" tabindex="-1"></a></span>
+<span id="cb455-14"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb455-14" tabindex="-1"></a><span class="fu">plot</span>(price_s, quantity_s,</span>
+<span id="cb455-15"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb455-15" tabindex="-1"></a>     <span class="at">type =</span> <span class="st">&quot;b&quot;</span>, <span class="at">pch =</span> <span class="dv">19</span>,</span>
+<span id="cb455-16"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb455-16" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">&quot;Price&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Quantity Supplied&quot;</span>,</span>
+<span id="cb455-17"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb455-17" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">&quot;Supply Schedule&quot;</span>)</span>
+<span id="cb455-18"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb455-18" tabindex="-1"></a></span>
+<span id="cb455-19"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb455-19" tabindex="-1"></a><span class="fu">plot</span>(price_mid_s, elasticity_s,</span>
+<span id="cb455-20"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb455-20" tabindex="-1"></a>     <span class="at">type =</span> <span class="st">&quot;b&quot;</span>, <span class="at">pch =</span> <span class="dv">19</span>,</span>
+<span id="cb455-21"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb455-21" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">&quot;Price Midpoint&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Supply Elasticity&quot;</span>,</span>
+<span id="cb455-22"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb455-22" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">&quot;Elasticity from Supply Schedule&quot;</span>)</span></code></pre></div>
+<p><img src="LBYC121_Course_Book_files/figure-html/combined-schedules-1.png" alt="" width="672" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb456"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb456-1"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#cb456-1" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>))</span></code></pre></div>
 
-</div>
 </div>
 </div>
             </section>
@@ -540,8 +719,8 @@ Generative AI is not allowed for direct generation of full solutions, R scripts,
           </div>
         </div>
       </div>
-<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="assessments.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="part-iv.-integral-calculus-in-economics.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
