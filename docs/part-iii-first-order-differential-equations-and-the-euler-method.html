@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>18 Part IV. Integral Calculus in Economics | LBYC121 Course Book</title>
+  <title>20 Part III: First-Order Differential Equations and the Euler Method | LBYC121 Course Book</title>
   <meta name="description" content="An introduction to the LBYC121 Course Book." />
   <meta name="generator" content="bookdown 0.46 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="18 Part IV. Integral Calculus in Economics | LBYC121 Course Book" />
+  <meta property="og:title" content="20 Part III: First-Order Differential Equations and the Euler Method | LBYC121 Course Book" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="An introduction to the LBYC121 Course Book." />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="18 Part IV. Integral Calculus in Economics | LBYC121 Course Book" />
+  <meta name="twitter:title" content="20 Part III: First-Order Differential Equations and the Euler Method | LBYC121 Course Book" />
   
   <meta name="twitter:description" content="An introduction to the LBYC121 Course Book." />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="part-iii.-first-order-differential-equations-and-euler-method.html"/>
-<link rel="next" href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html"/>
+<link rel="prev" href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html"/>
+<link rel="next" href="examples.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -481,67 +481,70 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="part-iv.-integral-calculus-in-economics" class="section level1 hasAnchor" number="18">
-<h1><span class="header-section-number">18</span> Part IV. Integral Calculus in Economics<a href="part-iv.-integral-calculus-in-economics.html#part-iv.-integral-calculus-in-economics" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>Integration is about <strong>accumulation</strong>.</p>
-<p>In economics, it often means:</p>
+<div id="part-iii-first-order-differential-equations-and-the-euler-method" class="section level1 hasAnchor" number="20">
+<h1><span class="header-section-number">20</span> Part III: First-Order Differential Equations and the Euler Method<a href="part-iii-first-order-differential-equations-and-the-euler-method.html#part-iii-first-order-differential-equations-and-the-euler-method" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="from-static-change-to-change-over-time-1" class="section level2 hasAnchor" number="20.1">
+<h2><span class="header-section-number">20.1</span> From Static Change to Change Over Time<a href="part-iii-first-order-differential-equations-and-the-euler-method.html#from-static-change-to-change-over-time-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Suppose capital evolves according to:</p>
+<p><span class="math display">\[\frac{dK}{dt} = sK^\alpha - \delta K\]</span></p>
+<p>This is a dynamic differential equation — it tells us the rate at which capital changes over time.</p>
 <ul>
-<li>total surplus</li>
-<li>total revenue from a marginal schedule</li>
-<li>total cost from a marginal cost schedule</li>
+<li><span class="math inline">\(sK^\alpha\)</span>: investment or accumulation</li>
+<li><span class="math inline">\(\delta K\)</span>: depreciation</li>
 </ul>
-<div id="consumer-surplus-from-an-inverse-demand-curve" class="section level2 hasAnchor" number="18.1">
-<h2><span class="header-section-number">18.1</span> Consumer Surplus from an Inverse Demand Curve<a href="part-iv.-integral-calculus-in-economics.html#consumer-surplus-from-an-inverse-demand-curve" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Suppose inverse demand is <span class="math inline">\(P(Q) = 20 - Q\)</span> and market price is 5.</p>
-<p>Consumer surplus is the area between the demand curve and the price line up to the purchased quantity.</p>
-<div class="sourceCode" id="cb440"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb440-1"><a href="part-iv.-integral-calculus-in-economics.html#cb440-1" tabindex="-1"></a>Q <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">20</span>, <span class="at">by =</span> <span class="fl">0.1</span>)</span>
-<span id="cb440-2"><a href="part-iv.-integral-calculus-in-economics.html#cb440-2" tabindex="-1"></a>P <span class="ot">&lt;-</span> <span class="dv">20</span> <span class="sc">-</span> Q</span>
-<span id="cb440-3"><a href="part-iv.-integral-calculus-in-economics.html#cb440-3" tabindex="-1"></a></span>
-<span id="cb440-4"><a href="part-iv.-integral-calculus-in-economics.html#cb440-4" tabindex="-1"></a><span class="fu">plot</span>(Q, P,</span>
-<span id="cb440-5"><a href="part-iv.-integral-calculus-in-economics.html#cb440-5" tabindex="-1"></a>     <span class="at">type =</span> <span class="st">&quot;l&quot;</span>,</span>
-<span id="cb440-6"><a href="part-iv.-integral-calculus-in-economics.html#cb440-6" tabindex="-1"></a>     <span class="at">lwd =</span> <span class="dv">2</span>,</span>
-<span id="cb440-7"><a href="part-iv.-integral-calculus-in-economics.html#cb440-7" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">&quot;Quantity&quot;</span>,</span>
-<span id="cb440-8"><a href="part-iv.-integral-calculus-in-economics.html#cb440-8" tabindex="-1"></a>     <span class="at">ylab =</span> <span class="st">&quot;Price&quot;</span>,</span>
-<span id="cb440-9"><a href="part-iv.-integral-calculus-in-economics.html#cb440-9" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">&quot;Inverse Demand Curve and Consumer Surplus&quot;</span>)</span>
-<span id="cb440-10"><a href="part-iv.-integral-calculus-in-economics.html#cb440-10" tabindex="-1"></a></span>
-<span id="cb440-11"><a href="part-iv.-integral-calculus-in-economics.html#cb440-11" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> <span class="dv">5</span>, <span class="at">lty =</span> <span class="dv">2</span>, <span class="at">lwd =</span> <span class="dv">2</span>)</span>
-<span id="cb440-12"><a href="part-iv.-integral-calculus-in-economics.html#cb440-12" tabindex="-1"></a></span>
-<span id="cb440-13"><a href="part-iv.-integral-calculus-in-economics.html#cb440-13" tabindex="-1"></a><span class="co"># Shade the consumer surplus region</span></span>
-<span id="cb440-14"><a href="part-iv.-integral-calculus-in-economics.html#cb440-14" tabindex="-1"></a>Q_shade <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">15</span>, <span class="at">by =</span> <span class="fl">0.1</span>)</span>
-<span id="cb440-15"><a href="part-iv.-integral-calculus-in-economics.html#cb440-15" tabindex="-1"></a>P_shade <span class="ot">&lt;-</span> <span class="dv">20</span> <span class="sc">-</span> Q_shade</span>
-<span id="cb440-16"><a href="part-iv.-integral-calculus-in-economics.html#cb440-16" tabindex="-1"></a><span class="fu">polygon</span>(<span class="fu">c</span>(Q_shade, <span class="fu">rev</span>(Q_shade)),</span>
-<span id="cb440-17"><a href="part-iv.-integral-calculus-in-economics.html#cb440-17" tabindex="-1"></a>        <span class="fu">c</span>(P_shade, <span class="fu">rep</span>(<span class="dv">5</span>, <span class="fu">length</span>(Q_shade))),</span>
-<span id="cb440-18"><a href="part-iv.-integral-calculus-in-economics.html#cb440-18" tabindex="-1"></a>        <span class="at">col =</span> <span class="fu">rgb</span>(<span class="fl">0.2</span>, <span class="fl">0.4</span>, <span class="fl">0.8</span>, <span class="fl">0.2</span>), <span class="at">border =</span> <span class="cn">NA</span>)</span>
-<span id="cb440-19"><a href="part-iv.-integral-calculus-in-economics.html#cb440-19" tabindex="-1"></a></span>
-<span id="cb440-20"><a href="part-iv.-integral-calculus-in-economics.html#cb440-20" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">&quot;topright&quot;</span>,</span>
-<span id="cb440-21"><a href="part-iv.-integral-calculus-in-economics.html#cb440-21" tabindex="-1"></a>       <span class="at">legend =</span> <span class="fu">c</span>(<span class="st">&quot;Inverse Demand&quot;</span>, <span class="st">&quot;Market Price = 5&quot;</span>, <span class="st">&quot;Consumer Surplus&quot;</span>),</span>
-<span id="cb440-22"><a href="part-iv.-integral-calculus-in-economics.html#cb440-22" tabindex="-1"></a>       <span class="at">lty =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="cn">NA</span>), <span class="at">lwd =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>, <span class="cn">NA</span>),</span>
-<span id="cb440-23"><a href="part-iv.-integral-calculus-in-economics.html#cb440-23" tabindex="-1"></a>       <span class="at">fill =</span> <span class="fu">c</span>(<span class="cn">NA</span>, <span class="cn">NA</span>, <span class="fu">rgb</span>(<span class="fl">0.2</span>, <span class="fl">0.4</span>, <span class="fl">0.8</span>, <span class="fl">0.2</span>)),</span>
-<span id="cb440-24"><a href="part-iv.-integral-calculus-in-economics.html#cb440-24" tabindex="-1"></a>       <span class="at">border =</span> <span class="fu">c</span>(<span class="cn">NA</span>, <span class="cn">NA</span>, <span class="st">&quot;black&quot;</span>))</span></code></pre></div>
-<p><img src="LBYC121_Course_Book_files/figure-html/consumer-surplus-1.png" alt="" width="672" style="display: block; margin: auto;" /></p>
-<div class="sourceCode" id="cb441"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb441-1"><a href="part-iv.-integral-calculus-in-economics.html#cb441-1" tabindex="-1"></a>demand <span class="ot">&lt;-</span> <span class="cf">function</span>(Q) {</span>
-<span id="cb441-2"><a href="part-iv.-integral-calculus-in-economics.html#cb441-2" tabindex="-1"></a>  <span class="dv">20</span> <span class="sc">-</span> Q</span>
-<span id="cb441-3"><a href="part-iv.-integral-calculus-in-economics.html#cb441-3" tabindex="-1"></a>}</span>
-<span id="cb441-4"><a href="part-iv.-integral-calculus-in-economics.html#cb441-4" tabindex="-1"></a></span>
-<span id="cb441-5"><a href="part-iv.-integral-calculus-in-economics.html#cb441-5" tabindex="-1"></a>CS <span class="ot">&lt;-</span> <span class="fu">integrate</span>(<span class="cf">function</span>(Q) <span class="fu">demand</span>(Q) <span class="sc">-</span> <span class="dv">5</span>,</span>
-<span id="cb441-6"><a href="part-iv.-integral-calculus-in-economics.html#cb441-6" tabindex="-1"></a>                <span class="at">lower =</span> <span class="dv">0</span>,</span>
-<span id="cb441-7"><a href="part-iv.-integral-calculus-in-economics.html#cb441-7" tabindex="-1"></a>                <span class="at">upper =</span> <span class="dv">15</span>)</span>
-<span id="cb441-8"><a href="part-iv.-integral-calculus-in-economics.html#cb441-8" tabindex="-1"></a></span>
-<span id="cb441-9"><a href="part-iv.-integral-calculus-in-economics.html#cb441-9" tabindex="-1"></a>CS</span></code></pre></div>
-<pre><code>## 112.5 with absolute error &lt; 0.0000000000012</code></pre>
+</div>
+<div id="the-euler-method-1" class="section level2 hasAnchor" number="20.2">
+<h2><span class="header-section-number">20.2</span> The Euler Method<a href="part-iii-first-order-differential-equations-and-the-euler-method.html#the-euler-method-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The Euler method approximates the differential equation with discrete steps:</p>
+<p><span class="math display">\[K_{t+1} = K_t + \Delta t \left( sK_t^\alpha - \delta K_t \right)\]</span></p>
+<p>This means: start from the current value → calculate the current rate of change → move forward by a small time step → repeat.</p>
+<div class="sourceCode" id="cb457"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb457-1"><a href="part-iii-first-order-differential-equations-and-the-euler-method.html#cb457-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb457-2"><a href="part-iii-first-order-differential-equations-and-the-euler-method.html#cb457-2" tabindex="-1"></a></span>
+<span id="cb457-3"><a href="part-iii-first-order-differential-equations-and-the-euler-method.html#cb457-3" tabindex="-1"></a>s     <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="dv">1</span>)</span>
+<span id="cb457-4"><a href="part-iii-first-order-differential-equations-and-the-euler-method.html#cb457-4" tabindex="-1"></a>alpha <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="dv">1</span>, <span class="fl">0.2</span>, <span class="fl">0.9</span>)</span>
+<span id="cb457-5"><a href="part-iii-first-order-differential-equations-and-the-euler-method.html#cb457-5" tabindex="-1"></a>delta <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="dv">1</span>)</span>
+<span id="cb457-6"><a href="part-iii-first-order-differential-equations-and-the-euler-method.html#cb457-6" tabindex="-1"></a></span>
+<span id="cb457-7"><a href="part-iii-first-order-differential-equations-and-the-euler-method.html#cb457-7" tabindex="-1"></a>dt        <span class="ot">&lt;-</span> <span class="fl">0.01</span></span>
+<span id="cb457-8"><a href="part-iii-first-order-differential-equations-and-the-euler-method.html#cb457-8" tabindex="-1"></a>T         <span class="ot">&lt;-</span> <span class="dv">300</span></span>
+<span id="cb457-9"><a href="part-iii-first-order-differential-equations-and-the-euler-method.html#cb457-9" tabindex="-1"></a>K0_values <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">1</span>, <span class="dv">10</span>, <span class="at">by =</span> <span class="dv">2</span>)</span>
+<span id="cb457-10"><a href="part-iii-first-order-differential-equations-and-the-euler-method.html#cb457-10" tabindex="-1"></a></span>
+<span id="cb457-11"><a href="part-iii-first-order-differential-equations-and-the-euler-method.html#cb457-11" tabindex="-1"></a><span class="fu">plot</span>(<span class="cn">NULL</span>,</span>
+<span id="cb457-12"><a href="part-iii-first-order-differential-equations-and-the-euler-method.html#cb457-12" tabindex="-1"></a>     <span class="at">xlim =</span> <span class="fu">c</span>(<span class="dv">1</span>, T),</span>
+<span id="cb457-13"><a href="part-iii-first-order-differential-equations-and-the-euler-method.html#cb457-13" tabindex="-1"></a>     <span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">15</span>),</span>
+<span id="cb457-14"><a href="part-iii-first-order-differential-equations-and-the-euler-method.html#cb457-14" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">&quot;Time Step&quot;</span>,</span>
+<span id="cb457-15"><a href="part-iii-first-order-differential-equations-and-the-euler-method.html#cb457-15" tabindex="-1"></a>     <span class="at">ylab =</span> <span class="st">&quot;Capital&quot;</span>,</span>
+<span id="cb457-16"><a href="part-iii-first-order-differential-equations-and-the-euler-method.html#cb457-16" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">&quot;Euler Simulation of Capital Dynamics&quot;</span>)</span>
+<span id="cb457-17"><a href="part-iii-first-order-differential-equations-and-the-euler-method.html#cb457-17" tabindex="-1"></a></span>
+<span id="cb457-18"><a href="part-iii-first-order-differential-equations-and-the-euler-method.html#cb457-18" tabindex="-1"></a><span class="cf">for</span> (K0 <span class="cf">in</span> K0_values) {</span>
+<span id="cb457-19"><a href="part-iii-first-order-differential-equations-and-the-euler-method.html#cb457-19" tabindex="-1"></a>  K    <span class="ot">&lt;-</span> <span class="fu">numeric</span>(T)</span>
+<span id="cb457-20"><a href="part-iii-first-order-differential-equations-and-the-euler-method.html#cb457-20" tabindex="-1"></a>  K[<span class="dv">1</span>] <span class="ot">&lt;-</span> K0</span>
+<span id="cb457-21"><a href="part-iii-first-order-differential-equations-and-the-euler-method.html#cb457-21" tabindex="-1"></a></span>
+<span id="cb457-22"><a href="part-iii-first-order-differential-equations-and-the-euler-method.html#cb457-22" tabindex="-1"></a>  <span class="cf">for</span> (t <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>(T <span class="sc">-</span> <span class="dv">1</span>)) {</span>
+<span id="cb457-23"><a href="part-iii-first-order-differential-equations-and-the-euler-method.html#cb457-23" tabindex="-1"></a>    K[t <span class="sc">+</span> <span class="dv">1</span>] <span class="ot">&lt;-</span> K[t] <span class="sc">+</span> dt <span class="sc">*</span> (s <span class="sc">*</span> K[t]<span class="sc">^</span>alpha <span class="sc">-</span> delta <span class="sc">*</span> K[t])</span>
+<span id="cb457-24"><a href="part-iii-first-order-differential-equations-and-the-euler-method.html#cb457-24" tabindex="-1"></a>  }</span>
+<span id="cb457-25"><a href="part-iii-first-order-differential-equations-and-the-euler-method.html#cb457-25" tabindex="-1"></a></span>
+<span id="cb457-26"><a href="part-iii-first-order-differential-equations-and-the-euler-method.html#cb457-26" tabindex="-1"></a>  <span class="fu">lines</span>(<span class="dv">1</span><span class="sc">:</span>T, K, <span class="at">lwd =</span> <span class="dv">2</span>)</span>
+<span id="cb457-27"><a href="part-iii-first-order-differential-equations-and-the-euler-method.html#cb457-27" tabindex="-1"></a>}</span></code></pre></div>
+<p><img src="LBYC121_Course_Book_files/figure-html/unnamed-chunk-250-1.png" alt="" width="672" style="display: block; margin: auto;" /></p>
 <p><strong>Notes:</strong></p>
 <ul>
-<li><code>Q &lt;- seq(0, 20, by = 0.1)</code> — many points for a smooth inverse demand curve.</li>
-<li><code>P &lt;- 20 - Q</code> — <strong>inverse demand</strong>: price as a function of quantity.</li>
-<li><code>abline(h = 5, lty = 2, lwd = 2)</code> — draws a horizontal reference line at the market price (the price consumers actually pay).</li>
-<li><code>demand &lt;- function(Q) { 20 - Q }</code> — defines a function because <code>integrate()</code> requires a function as input.</li>
-<li><code>integrate(function(Q) demand(Q) - 5, lower = 0, upper = 15)</code>:
+<li><code>s &lt;- sample(1:5, 1)</code> — chooses one integer between 1 and 5 as the savings/investment parameter.</li>
+<li><code>alpha &lt;- runif(1, 0.2, 0.9)</code> — draws a random number between 0.2 and 0.9; values <span class="math inline">\(\in (0,1)\)</span> imply diminishing returns.</li>
+<li><code>dt &lt;- 0.01</code> — a smaller time step gives a finer, more accurate approximation.</li>
+<li><code>T &lt;- 300</code> — the number of discrete steps (not continuous time).</li>
+<li><code>K0_values &lt;- seq(1, 10, by = 2)</code> — different starting values of capital, letting us ask: Do economies converge to the same long-run outcome?</li>
+<li><code>plot(NULL, ...)</code> — creates an empty graph window; then <code>lines()</code> adds each trajectory.</li>
+<li><code>K[1] &lt;- K0</code> — sets the initial condition (essential in any differential equation).</li>
+<li><code>for (t in 1:(T - 1))</code> — stops at <span class="math inline">\(T-1\)</span> because updating <span class="math inline">\(K[t+1]\)</span> requires <span class="math inline">\(t &lt; T\)</span>.</li>
+<li>The core Euler update:
 <ul>
-<li><code>demand(Q) - 5</code> — the vertical gap between willingness to pay and actual price (surplus per unit)</li>
-<li><code>lower = 0, upper = 15</code> — integration bounds. Why 15? Because <span class="math inline">\(5 = 20 - Q \Rightarrow Q = 15\)</span>.</li>
-<li>The integral adds up all those small gaps from 0 to 15, producing <strong>total consumer surplus</strong>.</li>
+<li><code>K[t]^alpha</code> — current capital raised to power alpha (<code>^</code> = exponent in R)</li>
+<li><code>s * K[t]^alpha - delta * K[t]</code> — net change in capital</li>
+<li><code>dt * (...)</code> — scales by the time step</li>
+<li><code>K[t] + ...</code> — adds the small change to current capital</li>
 </ul></li>
 </ul>
+<p><strong>Economic interpretation:</strong> Look for whether paths rise or fall, whether different starting points converge to a common steady state, and whether the system appears stable or unstable.</p>
 </div>
 </div>
             </section>
@@ -549,8 +552,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="part-iii.-first-order-differential-equations-and-euler-method.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="examples.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

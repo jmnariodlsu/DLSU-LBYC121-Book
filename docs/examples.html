@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>18 Part IV. Integral Calculus in Economics | LBYC121 Course Book</title>
+  <title>21 Examples | LBYC121 Course Book</title>
   <meta name="description" content="An introduction to the LBYC121 Course Book." />
   <meta name="generator" content="bookdown 0.46 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="18 Part IV. Integral Calculus in Economics | LBYC121 Course Book" />
+  <meta property="og:title" content="21 Examples | LBYC121 Course Book" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="An introduction to the LBYC121 Course Book." />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="18 Part IV. Integral Calculus in Economics | LBYC121 Course Book" />
+  <meta name="twitter:title" content="21 Examples | LBYC121 Course Book" />
   
   <meta name="twitter:description" content="An introduction to the LBYC121 Course Book." />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="part-iii.-first-order-differential-equations-and-euler-method.html"/>
-<link rel="next" href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html"/>
+<link rel="prev" href="part-iii-first-order-differential-equations-and-the-euler-method.html"/>
+<link rel="next" href="questions.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -481,67 +481,129 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="part-iv.-integral-calculus-in-economics" class="section level1 hasAnchor" number="18">
-<h1><span class="header-section-number">18</span> Part IV. Integral Calculus in Economics<a href="part-iv.-integral-calculus-in-economics.html#part-iv.-integral-calculus-in-economics" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>Integration is about <strong>accumulation</strong>.</p>
-<p>In economics, it often means:</p>
-<ul>
-<li>total surplus</li>
-<li>total revenue from a marginal schedule</li>
-<li>total cost from a marginal cost schedule</li>
-</ul>
-<div id="consumer-surplus-from-an-inverse-demand-curve" class="section level2 hasAnchor" number="18.1">
-<h2><span class="header-section-number">18.1</span> Consumer Surplus from an Inverse Demand Curve<a href="part-iv.-integral-calculus-in-economics.html#consumer-surplus-from-an-inverse-demand-curve" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Suppose inverse demand is <span class="math inline">\(P(Q) = 20 - Q\)</span> and market price is 5.</p>
-<p>Consumer surplus is the area between the demand curve and the price line up to the purchased quantity.</p>
-<div class="sourceCode" id="cb440"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb440-1"><a href="part-iv.-integral-calculus-in-economics.html#cb440-1" tabindex="-1"></a>Q <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">20</span>, <span class="at">by =</span> <span class="fl">0.1</span>)</span>
-<span id="cb440-2"><a href="part-iv.-integral-calculus-in-economics.html#cb440-2" tabindex="-1"></a>P <span class="ot">&lt;-</span> <span class="dv">20</span> <span class="sc">-</span> Q</span>
-<span id="cb440-3"><a href="part-iv.-integral-calculus-in-economics.html#cb440-3" tabindex="-1"></a></span>
-<span id="cb440-4"><a href="part-iv.-integral-calculus-in-economics.html#cb440-4" tabindex="-1"></a><span class="fu">plot</span>(Q, P,</span>
-<span id="cb440-5"><a href="part-iv.-integral-calculus-in-economics.html#cb440-5" tabindex="-1"></a>     <span class="at">type =</span> <span class="st">&quot;l&quot;</span>,</span>
-<span id="cb440-6"><a href="part-iv.-integral-calculus-in-economics.html#cb440-6" tabindex="-1"></a>     <span class="at">lwd =</span> <span class="dv">2</span>,</span>
-<span id="cb440-7"><a href="part-iv.-integral-calculus-in-economics.html#cb440-7" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">&quot;Quantity&quot;</span>,</span>
-<span id="cb440-8"><a href="part-iv.-integral-calculus-in-economics.html#cb440-8" tabindex="-1"></a>     <span class="at">ylab =</span> <span class="st">&quot;Price&quot;</span>,</span>
-<span id="cb440-9"><a href="part-iv.-integral-calculus-in-economics.html#cb440-9" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">&quot;Inverse Demand Curve and Consumer Surplus&quot;</span>)</span>
-<span id="cb440-10"><a href="part-iv.-integral-calculus-in-economics.html#cb440-10" tabindex="-1"></a></span>
-<span id="cb440-11"><a href="part-iv.-integral-calculus-in-economics.html#cb440-11" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> <span class="dv">5</span>, <span class="at">lty =</span> <span class="dv">2</span>, <span class="at">lwd =</span> <span class="dv">2</span>)</span>
-<span id="cb440-12"><a href="part-iv.-integral-calculus-in-economics.html#cb440-12" tabindex="-1"></a></span>
-<span id="cb440-13"><a href="part-iv.-integral-calculus-in-economics.html#cb440-13" tabindex="-1"></a><span class="co"># Shade the consumer surplus region</span></span>
-<span id="cb440-14"><a href="part-iv.-integral-calculus-in-economics.html#cb440-14" tabindex="-1"></a>Q_shade <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">15</span>, <span class="at">by =</span> <span class="fl">0.1</span>)</span>
-<span id="cb440-15"><a href="part-iv.-integral-calculus-in-economics.html#cb440-15" tabindex="-1"></a>P_shade <span class="ot">&lt;-</span> <span class="dv">20</span> <span class="sc">-</span> Q_shade</span>
-<span id="cb440-16"><a href="part-iv.-integral-calculus-in-economics.html#cb440-16" tabindex="-1"></a><span class="fu">polygon</span>(<span class="fu">c</span>(Q_shade, <span class="fu">rev</span>(Q_shade)),</span>
-<span id="cb440-17"><a href="part-iv.-integral-calculus-in-economics.html#cb440-17" tabindex="-1"></a>        <span class="fu">c</span>(P_shade, <span class="fu">rep</span>(<span class="dv">5</span>, <span class="fu">length</span>(Q_shade))),</span>
-<span id="cb440-18"><a href="part-iv.-integral-calculus-in-economics.html#cb440-18" tabindex="-1"></a>        <span class="at">col =</span> <span class="fu">rgb</span>(<span class="fl">0.2</span>, <span class="fl">0.4</span>, <span class="fl">0.8</span>, <span class="fl">0.2</span>), <span class="at">border =</span> <span class="cn">NA</span>)</span>
-<span id="cb440-19"><a href="part-iv.-integral-calculus-in-economics.html#cb440-19" tabindex="-1"></a></span>
-<span id="cb440-20"><a href="part-iv.-integral-calculus-in-economics.html#cb440-20" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">&quot;topright&quot;</span>,</span>
-<span id="cb440-21"><a href="part-iv.-integral-calculus-in-economics.html#cb440-21" tabindex="-1"></a>       <span class="at">legend =</span> <span class="fu">c</span>(<span class="st">&quot;Inverse Demand&quot;</span>, <span class="st">&quot;Market Price = 5&quot;</span>, <span class="st">&quot;Consumer Surplus&quot;</span>),</span>
-<span id="cb440-22"><a href="part-iv.-integral-calculus-in-economics.html#cb440-22" tabindex="-1"></a>       <span class="at">lty =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="cn">NA</span>), <span class="at">lwd =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>, <span class="cn">NA</span>),</span>
-<span id="cb440-23"><a href="part-iv.-integral-calculus-in-economics.html#cb440-23" tabindex="-1"></a>       <span class="at">fill =</span> <span class="fu">c</span>(<span class="cn">NA</span>, <span class="cn">NA</span>, <span class="fu">rgb</span>(<span class="fl">0.2</span>, <span class="fl">0.4</span>, <span class="fl">0.8</span>, <span class="fl">0.2</span>)),</span>
-<span id="cb440-24"><a href="part-iv.-integral-calculus-in-economics.html#cb440-24" tabindex="-1"></a>       <span class="at">border =</span> <span class="fu">c</span>(<span class="cn">NA</span>, <span class="cn">NA</span>, <span class="st">&quot;black&quot;</span>))</span></code></pre></div>
-<p><img src="LBYC121_Course_Book_files/figure-html/consumer-surplus-1.png" alt="" width="672" style="display: block; margin: auto;" /></p>
-<div class="sourceCode" id="cb441"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb441-1"><a href="part-iv.-integral-calculus-in-economics.html#cb441-1" tabindex="-1"></a>demand <span class="ot">&lt;-</span> <span class="cf">function</span>(Q) {</span>
-<span id="cb441-2"><a href="part-iv.-integral-calculus-in-economics.html#cb441-2" tabindex="-1"></a>  <span class="dv">20</span> <span class="sc">-</span> Q</span>
-<span id="cb441-3"><a href="part-iv.-integral-calculus-in-economics.html#cb441-3" tabindex="-1"></a>}</span>
-<span id="cb441-4"><a href="part-iv.-integral-calculus-in-economics.html#cb441-4" tabindex="-1"></a></span>
-<span id="cb441-5"><a href="part-iv.-integral-calculus-in-economics.html#cb441-5" tabindex="-1"></a>CS <span class="ot">&lt;-</span> <span class="fu">integrate</span>(<span class="cf">function</span>(Q) <span class="fu">demand</span>(Q) <span class="sc">-</span> <span class="dv">5</span>,</span>
-<span id="cb441-6"><a href="part-iv.-integral-calculus-in-economics.html#cb441-6" tabindex="-1"></a>                <span class="at">lower =</span> <span class="dv">0</span>,</span>
-<span id="cb441-7"><a href="part-iv.-integral-calculus-in-economics.html#cb441-7" tabindex="-1"></a>                <span class="at">upper =</span> <span class="dv">15</span>)</span>
-<span id="cb441-8"><a href="part-iv.-integral-calculus-in-economics.html#cb441-8" tabindex="-1"></a></span>
-<span id="cb441-9"><a href="part-iv.-integral-calculus-in-economics.html#cb441-9" tabindex="-1"></a>CS</span></code></pre></div>
-<pre><code>## 112.5 with absolute error &lt; 0.0000000000012</code></pre>
-<p><strong>Notes:</strong></p>
-<ul>
-<li><code>Q &lt;- seq(0, 20, by = 0.1)</code> — many points for a smooth inverse demand curve.</li>
-<li><code>P &lt;- 20 - Q</code> — <strong>inverse demand</strong>: price as a function of quantity.</li>
-<li><code>abline(h = 5, lty = 2, lwd = 2)</code> — draws a horizontal reference line at the market price (the price consumers actually pay).</li>
-<li><code>demand &lt;- function(Q) { 20 - Q }</code> — defines a function because <code>integrate()</code> requires a function as input.</li>
-<li><code>integrate(function(Q) demand(Q) - 5, lower = 0, upper = 15)</code>:
-<ul>
-<li><code>demand(Q) - 5</code> — the vertical gap between willingness to pay and actual price (surplus per unit)</li>
-<li><code>lower = 0, upper = 15</code> — integration bounds. Why 15? Because <span class="math inline">\(5 = 20 - Q \Rightarrow Q = 15\)</span>.</li>
-<li>The integral adds up all those small gaps from 0 to 15, producing <strong>total consumer surplus</strong>.</li>
-</ul></li>
-</ul>
+<div id="examples" class="section level1 hasAnchor" number="21">
+<h1><span class="header-section-number">21</span> Examples<a href="examples.html#examples" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="example-1-capital-accumulation-euler-method" class="section level2 hasAnchor" number="21.1">
+<h2><span class="header-section-number">21.1</span> Example 1: Capital Accumulation (Euler Method)<a href="examples.html#example-1-capital-accumulation-euler-method" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><strong>Economic Context:</strong> In the Solow-style model, capital grows through investment and shrinks through depreciation:</p>
+<p><span class="math display">\[\frac{dK}{dt} = sK^\alpha - \delta K\]</span></p>
+<p>At steady state: <span class="math inline">\(K^* = \left(\frac{s}{\delta}\right)^{1/(1-\alpha)}\)</span>.</p>
+<div class="sourceCode" id="cb458"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb458-1"><a href="examples.html#cb458-1" tabindex="-1"></a>s     <span class="ot">&lt;-</span> <span class="fl">0.3</span></span>
+<span id="cb458-2"><a href="examples.html#cb458-2" tabindex="-1"></a>delta <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
+<span id="cb458-3"><a href="examples.html#cb458-3" tabindex="-1"></a>alpha <span class="ot">&lt;-</span> <span class="fl">0.4</span></span>
+<span id="cb458-4"><a href="examples.html#cb458-4" tabindex="-1"></a></span>
+<span id="cb458-5"><a href="examples.html#cb458-5" tabindex="-1"></a>dt        <span class="ot">&lt;-</span> <span class="fl">0.01</span></span>
+<span id="cb458-6"><a href="examples.html#cb458-6" tabindex="-1"></a>T         <span class="ot">&lt;-</span> <span class="dv">500</span></span>
+<span id="cb458-7"><a href="examples.html#cb458-7" tabindex="-1"></a>K_low     <span class="ot">&lt;-</span> <span class="fu">numeric</span>(T)</span>
+<span id="cb458-8"><a href="examples.html#cb458-8" tabindex="-1"></a>K_high    <span class="ot">&lt;-</span> <span class="fu">numeric</span>(T)</span>
+<span id="cb458-9"><a href="examples.html#cb458-9" tabindex="-1"></a>K_low[<span class="dv">1</span>]  <span class="ot">&lt;-</span> <span class="dv">2</span></span>
+<span id="cb458-10"><a href="examples.html#cb458-10" tabindex="-1"></a>K_high[<span class="dv">1</span>] <span class="ot">&lt;-</span> <span class="dv">50</span></span>
+<span id="cb458-11"><a href="examples.html#cb458-11" tabindex="-1"></a></span>
+<span id="cb458-12"><a href="examples.html#cb458-12" tabindex="-1"></a><span class="cf">for</span> (t <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>(T <span class="sc">-</span> <span class="dv">1</span>)) {</span>
+<span id="cb458-13"><a href="examples.html#cb458-13" tabindex="-1"></a>  K_low[t<span class="sc">+</span><span class="dv">1</span>]  <span class="ot">&lt;-</span> K_low[t]  <span class="sc">+</span> dt <span class="sc">*</span> (s <span class="sc">*</span> K_low[t]<span class="sc">^</span>alpha  <span class="sc">-</span> delta <span class="sc">*</span> K_low[t])</span>
+<span id="cb458-14"><a href="examples.html#cb458-14" tabindex="-1"></a>  K_high[t<span class="sc">+</span><span class="dv">1</span>] <span class="ot">&lt;-</span> K_high[t] <span class="sc">+</span> dt <span class="sc">*</span> (s <span class="sc">*</span> K_high[t]<span class="sc">^</span>alpha <span class="sc">-</span> delta <span class="sc">*</span> K_high[t])</span>
+<span id="cb458-15"><a href="examples.html#cb458-15" tabindex="-1"></a>}</span>
+<span id="cb458-16"><a href="examples.html#cb458-16" tabindex="-1"></a></span>
+<span id="cb458-17"><a href="examples.html#cb458-17" tabindex="-1"></a>K_star <span class="ot">&lt;-</span> (s <span class="sc">/</span> delta)<span class="sc">^</span>(<span class="dv">1</span> <span class="sc">/</span> (<span class="dv">1</span> <span class="sc">-</span> alpha))</span>
+<span id="cb458-18"><a href="examples.html#cb458-18" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Analytical K* =&quot;</span>, <span class="fu">round</span>(K_star, <span class="dv">3</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## Analytical K* = 19.812</code></pre>
+<div class="sourceCode" id="cb460"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb460-1"><a href="examples.html#cb460-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;K_low  at T  =&quot;</span>, <span class="fu">round</span>(K_low[T], <span class="dv">3</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## K_low  at T  = 3.551</code></pre>
+<div class="sourceCode" id="cb462"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb462-1"><a href="examples.html#cb462-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;K_high at T  =&quot;</span>, <span class="fu">round</span>(K_high[T], <span class="dv">3</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## K_high at T  = 45.159</code></pre>
+<div class="sourceCode" id="cb464"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb464-1"><a href="examples.html#cb464-1" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb464-2"><a href="examples.html#cb464-2" tabindex="-1"></a>  <span class="at">t     =</span> <span class="fu">rep</span>(<span class="dv">1</span><span class="sc">:</span>T, <span class="dv">2</span>),</span>
+<span id="cb464-3"><a href="examples.html#cb464-3" tabindex="-1"></a>  <span class="at">K     =</span> <span class="fu">c</span>(K_low, K_high),</span>
+<span id="cb464-4"><a href="examples.html#cb464-4" tabindex="-1"></a>  <span class="at">start =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">&quot;K0 = 2&quot;</span>, <span class="st">&quot;K0 = 50&quot;</span>), <span class="at">each =</span> T)</span>
+<span id="cb464-5"><a href="examples.html#cb464-5" tabindex="-1"></a>)</span>
+<span id="cb464-6"><a href="examples.html#cb464-6" tabindex="-1"></a></span>
+<span id="cb464-7"><a href="examples.html#cb464-7" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="fu">aes</span>(<span class="at">x =</span> t, <span class="at">y =</span> K, <span class="at">color =</span> start)) <span class="sc">+</span></span>
+<span id="cb464-8"><a href="examples.html#cb464-8" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb464-9"><a href="examples.html#cb464-9" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> K_star, <span class="at">linetype =</span> <span class="st">&quot;dashed&quot;</span>) <span class="sc">+</span></span>
+<span id="cb464-10"><a href="examples.html#cb464-10" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">&quot;text&quot;</span>, <span class="at">x =</span> <span class="dv">400</span>, <span class="at">y =</span> K_star <span class="sc">+</span> <span class="fl">1.5</span>,</span>
+<span id="cb464-11"><a href="examples.html#cb464-11" tabindex="-1"></a>           <span class="at">label =</span> <span class="fu">paste0</span>(<span class="st">&quot;K* = &quot;</span>, <span class="fu">round</span>(K_star, <span class="dv">2</span>))) <span class="sc">+</span></span>
+<span id="cb464-12"><a href="examples.html#cb464-12" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Capital Accumulation — Euler Method&quot;</span>,</span>
+<span id="cb464-13"><a href="examples.html#cb464-13" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Time Step&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Capital K&quot;</span>, <span class="at">color =</span> <span class="st">&quot;Initial K&quot;</span>) <span class="sc">+</span></span>
+<span id="cb464-14"><a href="examples.html#cb464-14" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
+<p><img src="LBYC121_Course_Book_files/figure-html/example1-ode-1.png" alt="" width="672" style="display: block; margin: auto;" /></p>
+<p><strong>Interpretation:</strong> Both paths converge to <span class="math inline">\(K^*\)</span> regardless of starting point, demonstrating the global stability of the steady state.</p>
+</div>
+<div id="example-2-price-adjustment-dynamics-euler-method" class="section level2 hasAnchor" number="21.2">
+<h2><span class="header-section-number">21.2</span> Example 2: Price Adjustment Dynamics (Euler Method)<a href="examples.html#example-2-price-adjustment-dynamics-euler-method" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><strong>Economic Context:</strong> Prices adjust toward equilibrium <span class="math inline">\(P^*\)</span> at speed <span class="math inline">\(\lambda\)</span>:</p>
+<p><span class="math display">\[\frac{dP}{dt} = \lambda(P^* - P), \quad P(0) = 60\]</span></p>
+<div class="sourceCode" id="cb465"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb465-1"><a href="examples.html#cb465-1" tabindex="-1"></a>lambda <span class="ot">&lt;-</span> <span class="fl">0.3</span></span>
+<span id="cb465-2"><a href="examples.html#cb465-2" tabindex="-1"></a>P_star <span class="ot">&lt;-</span> <span class="dv">100</span></span>
+<span id="cb465-3"><a href="examples.html#cb465-3" tabindex="-1"></a>P0     <span class="ot">&lt;-</span> <span class="dv">60</span></span>
+<span id="cb465-4"><a href="examples.html#cb465-4" tabindex="-1"></a>dt     <span class="ot">&lt;-</span> <span class="fl">0.1</span></span>
+<span id="cb465-5"><a href="examples.html#cb465-5" tabindex="-1"></a>T      <span class="ot">&lt;-</span> <span class="dv">200</span></span>
+<span id="cb465-6"><a href="examples.html#cb465-6" tabindex="-1"></a>P      <span class="ot">&lt;-</span> <span class="fu">numeric</span>(T)</span>
+<span id="cb465-7"><a href="examples.html#cb465-7" tabindex="-1"></a>P[<span class="dv">1</span>]   <span class="ot">&lt;-</span> P0</span>
+<span id="cb465-8"><a href="examples.html#cb465-8" tabindex="-1"></a></span>
+<span id="cb465-9"><a href="examples.html#cb465-9" tabindex="-1"></a><span class="cf">for</span> (t <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>(T <span class="sc">-</span> <span class="dv">1</span>)) {</span>
+<span id="cb465-10"><a href="examples.html#cb465-10" tabindex="-1"></a>  P[t<span class="sc">+</span><span class="dv">1</span>] <span class="ot">&lt;-</span> P[t] <span class="sc">+</span> dt <span class="sc">*</span> lambda <span class="sc">*</span> (P_star <span class="sc">-</span> P[t])</span>
+<span id="cb465-11"><a href="examples.html#cb465-11" tabindex="-1"></a>}</span>
+<span id="cb465-12"><a href="examples.html#cb465-12" tabindex="-1"></a></span>
+<span id="cb465-13"><a href="examples.html#cb465-13" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">data.frame</span>(<span class="at">t =</span> <span class="dv">1</span><span class="sc">:</span>T, <span class="at">P =</span> P), <span class="fu">aes</span>(<span class="at">x =</span> t, <span class="at">y =</span> P)) <span class="sc">+</span></span>
+<span id="cb465-14"><a href="examples.html#cb465-14" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">color =</span> <span class="st">&quot;steelblue&quot;</span>, <span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb465-15"><a href="examples.html#cb465-15" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> P_star, <span class="at">linetype =</span> <span class="st">&quot;dashed&quot;</span>, <span class="at">color =</span> <span class="st">&quot;darkred&quot;</span>) <span class="sc">+</span></span>
+<span id="cb465-16"><a href="examples.html#cb465-16" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">&quot;text&quot;</span>, <span class="at">x =</span> <span class="dv">160</span>, <span class="at">y =</span> P_star <span class="sc">-</span> <span class="dv">3</span>, <span class="at">label =</span> <span class="st">&quot;P* = 100&quot;</span>, <span class="at">color =</span> <span class="st">&quot;darkred&quot;</span>) <span class="sc">+</span></span>
+<span id="cb465-17"><a href="examples.html#cb465-17" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Price Adjustment — Euler Method&quot;</span>,</span>
+<span id="cb465-18"><a href="examples.html#cb465-18" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Time Step&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Price P(t)&quot;</span>) <span class="sc">+</span></span>
+<span id="cb465-19"><a href="examples.html#cb465-19" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
+<p><img src="LBYC121_Course_Book_files/figure-html/example2-ode-1.png" alt="" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="example-3-consumer-surplus-integral-calculus" class="section level2 hasAnchor" number="21.3">
+<h2><span class="header-section-number">21.3</span> Example 3: Consumer Surplus (Integral Calculus)<a href="examples.html#example-3-consumer-surplus-integral-calculus" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><strong>Economic Context:</strong> Consumer surplus is the area between the demand curve and the market price:</p>
+<p><span class="math display">\[CS = \int_0^{Q^*} \left[D(Q) - P^*\right] dQ\]</span></p>
+<div class="sourceCode" id="cb466"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb466-1"><a href="examples.html#cb466-1" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="dv">10</span>; b <span class="ot">&lt;-</span> <span class="fl">0.5</span>; P_star_cs <span class="ot">&lt;-</span> <span class="dv">4</span></span>
+<span id="cb466-2"><a href="examples.html#cb466-2" tabindex="-1"></a></span>
+<span id="cb466-3"><a href="examples.html#cb466-3" tabindex="-1"></a>Q_star <span class="ot">&lt;-</span> (a <span class="sc">-</span> P_star_cs) <span class="sc">/</span> b</span>
+<span id="cb466-4"><a href="examples.html#cb466-4" tabindex="-1"></a>CS     <span class="ot">&lt;-</span> <span class="fl">0.5</span> <span class="sc">*</span> (a <span class="sc">-</span> P_star_cs) <span class="sc">*</span> Q_star</span>
+<span id="cb466-5"><a href="examples.html#cb466-5" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Q* =&quot;</span>, Q_star, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## Q* = 12</code></pre>
+<div class="sourceCode" id="cb468"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb468-1"><a href="examples.html#cb468-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Consumer Surplus (analytical) =&quot;</span>, CS, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## Consumer Surplus (analytical) = 36</code></pre>
+<div class="sourceCode" id="cb470"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb470-1"><a href="examples.html#cb470-1" tabindex="-1"></a>CS_num <span class="ot">&lt;-</span> <span class="fu">integrate</span>(<span class="cf">function</span>(Q) (a <span class="sc">-</span> b <span class="sc">*</span> Q) <span class="sc">-</span> P_star_cs, <span class="dv">0</span>, Q_star)<span class="sc">$</span>value</span>
+<span id="cb470-2"><a href="examples.html#cb470-2" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Consumer Surplus (numerical)  =&quot;</span>, <span class="fu">round</span>(CS_num, <span class="dv">4</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## Consumer Surplus (numerical)  = 36</code></pre>
+<div class="sourceCode" id="cb472"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb472-1"><a href="examples.html#cb472-1" tabindex="-1"></a>Q_seq <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, Q_star, <span class="at">length.out =</span> <span class="dv">200</span>)</span>
+<span id="cb472-2"><a href="examples.html#cb472-2" tabindex="-1"></a>df_cs <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Q =</span> Q_seq, <span class="at">P =</span> a <span class="sc">-</span> b <span class="sc">*</span> Q_seq)</span>
+<span id="cb472-3"><a href="examples.html#cb472-3" tabindex="-1"></a></span>
+<span id="cb472-4"><a href="examples.html#cb472-4" tabindex="-1"></a><span class="fu">ggplot</span>(df_cs, <span class="fu">aes</span>(<span class="at">x =</span> Q, <span class="at">y =</span> P)) <span class="sc">+</span></span>
+<span id="cb472-5"><a href="examples.html#cb472-5" tabindex="-1"></a>  <span class="fu">geom_ribbon</span>(<span class="fu">aes</span>(<span class="at">ymin =</span> P_star_cs, <span class="at">ymax =</span> P), <span class="at">fill =</span> <span class="st">&quot;lightblue&quot;</span>, <span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
+<span id="cb472-6"><a href="examples.html#cb472-6" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">size =</span> <span class="dv">1</span>, <span class="at">color =</span> <span class="st">&quot;steelblue&quot;</span>) <span class="sc">+</span></span>
+<span id="cb472-7"><a href="examples.html#cb472-7" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> P_star_cs, <span class="at">linetype =</span> <span class="st">&quot;dashed&quot;</span>, <span class="at">color =</span> <span class="st">&quot;darkred&quot;</span>) <span class="sc">+</span></span>
+<span id="cb472-8"><a href="examples.html#cb472-8" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">&quot;text&quot;</span>, <span class="at">x =</span> <span class="dv">5</span>, <span class="at">y =</span> <span class="dv">7</span>, <span class="at">label =</span> <span class="fu">paste0</span>(<span class="st">&quot;CS = &quot;</span>, CS), <span class="at">size =</span> <span class="dv">4</span>) <span class="sc">+</span></span>
+<span id="cb472-9"><a href="examples.html#cb472-9" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Consumer Surplus — Linear Demand&quot;</span>,</span>
+<span id="cb472-10"><a href="examples.html#cb472-10" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Quantity&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Price&quot;</span>) <span class="sc">+</span></span>
+<span id="cb472-11"><a href="examples.html#cb472-11" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
+<p><img src="LBYC121_Course_Book_files/figure-html/example3-integral-1.png" alt="" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="example-4-total-cost-from-marginal-cost-integral-calculus" class="section level2 hasAnchor" number="21.4">
+<h2><span class="header-section-number">21.4</span> Example 4: Total Cost from Marginal Cost (Integral Calculus)<a href="examples.html#example-4-total-cost-from-marginal-cost-integral-calculus" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><strong>Economic Context:</strong> Total variable cost is recovered by integrating marginal cost:</p>
+<p><span class="math display">\[TC(q) = \int_0^q MC(x)\, dx + F, \quad MC(q) = 3q^2 - 4q + 5\]</span></p>
+<div class="sourceCode" id="cb473"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb473-1"><a href="examples.html#cb473-1" tabindex="-1"></a>F_cost <span class="ot">&lt;-</span> <span class="dv">20</span></span>
+<span id="cb473-2"><a href="examples.html#cb473-2" tabindex="-1"></a>MC_fn  <span class="ot">&lt;-</span> <span class="cf">function</span>(q) <span class="dv">3</span> <span class="sc">*</span> q<span class="sc">^</span><span class="dv">2</span> <span class="sc">-</span> <span class="dv">4</span> <span class="sc">*</span> q <span class="sc">+</span> <span class="dv">5</span></span>
+<span id="cb473-3"><a href="examples.html#cb473-3" tabindex="-1"></a>TC_fn  <span class="ot">&lt;-</span> <span class="cf">function</span>(q) q<span class="sc">^</span><span class="dv">3</span> <span class="sc">-</span> <span class="dv">2</span> <span class="sc">*</span> q<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> <span class="dv">5</span> <span class="sc">*</span> q <span class="sc">+</span> F_cost</span>
+<span id="cb473-4"><a href="examples.html#cb473-4" tabindex="-1"></a></span>
+<span id="cb473-5"><a href="examples.html#cb473-5" tabindex="-1"></a>TC_num <span class="ot">&lt;-</span> <span class="fu">integrate</span>(MC_fn, <span class="dv">0</span>, <span class="dv">5</span>)<span class="sc">$</span>value <span class="sc">+</span> F_cost</span>
+<span id="cb473-6"><a href="examples.html#cb473-6" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;TC(5) analytical =&quot;</span>, <span class="fu">TC_fn</span>(<span class="dv">5</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## TC(5) analytical = 120</code></pre>
+<div class="sourceCode" id="cb475"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb475-1"><a href="examples.html#cb475-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;TC(5) numerical  =&quot;</span>, TC_num, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## TC(5) numerical  = 120</code></pre>
+<div class="sourceCode" id="cb477"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb477-1"><a href="examples.html#cb477-1" tabindex="-1"></a>q_vals <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">10</span>, <span class="at">by =</span> <span class="fl">0.1</span>)</span>
+<span id="cb477-2"><a href="examples.html#cb477-2" tabindex="-1"></a>df_tc  <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">q =</span> q_vals, <span class="at">MC =</span> <span class="fu">MC_fn</span>(q_vals), <span class="at">TC =</span> <span class="fu">TC_fn</span>(q_vals))</span>
+<span id="cb477-3"><a href="examples.html#cb477-3" tabindex="-1"></a></span>
+<span id="cb477-4"><a href="examples.html#cb477-4" tabindex="-1"></a><span class="fu">ggplot</span>(df_tc, <span class="fu">aes</span>(<span class="at">x =</span> q)) <span class="sc">+</span></span>
+<span id="cb477-5"><a href="examples.html#cb477-5" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">y =</span> MC, <span class="at">color =</span> <span class="st">&quot;MC&quot;</span>), <span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb477-6"><a href="examples.html#cb477-6" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">y =</span> TC, <span class="at">color =</span> <span class="st">&quot;TC&quot;</span>), <span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb477-7"><a href="examples.html#cb477-7" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Marginal Cost and Total Cost&quot;</span>,</span>
+<span id="cb477-8"><a href="examples.html#cb477-8" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Quantity&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Cost&quot;</span>, <span class="at">color =</span> <span class="st">&quot;Curve&quot;</span>) <span class="sc">+</span></span>
+<span id="cb477-9"><a href="examples.html#cb477-9" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
+<p><img src="LBYC121_Course_Book_files/figure-html/example4-integral-1.png" alt="" width="672" style="display: block; margin: auto;" /></p>
 </div>
 </div>
             </section>
@@ -549,8 +611,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="part-iii.-first-order-differential-equations-and-euler-method.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="part-iii-first-order-differential-equations-and-the-euler-method.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="questions.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

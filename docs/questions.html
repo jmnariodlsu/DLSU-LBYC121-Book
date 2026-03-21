@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>18 Part IV. Integral Calculus in Economics | LBYC121 Course Book</title>
+  <title>22 Questions | LBYC121 Course Book</title>
   <meta name="description" content="An introduction to the LBYC121 Course Book." />
   <meta name="generator" content="bookdown 0.46 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="18 Part IV. Integral Calculus in Economics | LBYC121 Course Book" />
+  <meta property="og:title" content="22 Questions | LBYC121 Course Book" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="An introduction to the LBYC121 Course Book." />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="18 Part IV. Integral Calculus in Economics | LBYC121 Course Book" />
+  <meta name="twitter:title" content="22 Questions | LBYC121 Course Book" />
   
   <meta name="twitter:description" content="An introduction to the LBYC121 Course Book." />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="part-iii.-first-order-differential-equations-and-euler-method.html"/>
-<link rel="next" href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html"/>
+<link rel="prev" href="examples.html"/>
+
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -481,67 +481,341 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="part-iv.-integral-calculus-in-economics" class="section level1 hasAnchor" number="18">
-<h1><span class="header-section-number">18</span> Part IV. Integral Calculus in Economics<a href="part-iv.-integral-calculus-in-economics.html#part-iv.-integral-calculus-in-economics" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>Integration is about <strong>accumulation</strong>.</p>
-<p>In economics, it often means:</p>
-<ul>
-<li>total surplus</li>
-<li>total revenue from a marginal schedule</li>
-<li>total cost from a marginal cost schedule</li>
-</ul>
-<div id="consumer-surplus-from-an-inverse-demand-curve" class="section level2 hasAnchor" number="18.1">
-<h2><span class="header-section-number">18.1</span> Consumer Surplus from an Inverse Demand Curve<a href="part-iv.-integral-calculus-in-economics.html#consumer-surplus-from-an-inverse-demand-curve" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Suppose inverse demand is <span class="math inline">\(P(Q) = 20 - Q\)</span> and market price is 5.</p>
-<p>Consumer surplus is the area between the demand curve and the price line up to the purchased quantity.</p>
-<div class="sourceCode" id="cb440"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb440-1"><a href="part-iv.-integral-calculus-in-economics.html#cb440-1" tabindex="-1"></a>Q <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">20</span>, <span class="at">by =</span> <span class="fl">0.1</span>)</span>
-<span id="cb440-2"><a href="part-iv.-integral-calculus-in-economics.html#cb440-2" tabindex="-1"></a>P <span class="ot">&lt;-</span> <span class="dv">20</span> <span class="sc">-</span> Q</span>
-<span id="cb440-3"><a href="part-iv.-integral-calculus-in-economics.html#cb440-3" tabindex="-1"></a></span>
-<span id="cb440-4"><a href="part-iv.-integral-calculus-in-economics.html#cb440-4" tabindex="-1"></a><span class="fu">plot</span>(Q, P,</span>
-<span id="cb440-5"><a href="part-iv.-integral-calculus-in-economics.html#cb440-5" tabindex="-1"></a>     <span class="at">type =</span> <span class="st">&quot;l&quot;</span>,</span>
-<span id="cb440-6"><a href="part-iv.-integral-calculus-in-economics.html#cb440-6" tabindex="-1"></a>     <span class="at">lwd =</span> <span class="dv">2</span>,</span>
-<span id="cb440-7"><a href="part-iv.-integral-calculus-in-economics.html#cb440-7" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">&quot;Quantity&quot;</span>,</span>
-<span id="cb440-8"><a href="part-iv.-integral-calculus-in-economics.html#cb440-8" tabindex="-1"></a>     <span class="at">ylab =</span> <span class="st">&quot;Price&quot;</span>,</span>
-<span id="cb440-9"><a href="part-iv.-integral-calculus-in-economics.html#cb440-9" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">&quot;Inverse Demand Curve and Consumer Surplus&quot;</span>)</span>
-<span id="cb440-10"><a href="part-iv.-integral-calculus-in-economics.html#cb440-10" tabindex="-1"></a></span>
-<span id="cb440-11"><a href="part-iv.-integral-calculus-in-economics.html#cb440-11" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> <span class="dv">5</span>, <span class="at">lty =</span> <span class="dv">2</span>, <span class="at">lwd =</span> <span class="dv">2</span>)</span>
-<span id="cb440-12"><a href="part-iv.-integral-calculus-in-economics.html#cb440-12" tabindex="-1"></a></span>
-<span id="cb440-13"><a href="part-iv.-integral-calculus-in-economics.html#cb440-13" tabindex="-1"></a><span class="co"># Shade the consumer surplus region</span></span>
-<span id="cb440-14"><a href="part-iv.-integral-calculus-in-economics.html#cb440-14" tabindex="-1"></a>Q_shade <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">15</span>, <span class="at">by =</span> <span class="fl">0.1</span>)</span>
-<span id="cb440-15"><a href="part-iv.-integral-calculus-in-economics.html#cb440-15" tabindex="-1"></a>P_shade <span class="ot">&lt;-</span> <span class="dv">20</span> <span class="sc">-</span> Q_shade</span>
-<span id="cb440-16"><a href="part-iv.-integral-calculus-in-economics.html#cb440-16" tabindex="-1"></a><span class="fu">polygon</span>(<span class="fu">c</span>(Q_shade, <span class="fu">rev</span>(Q_shade)),</span>
-<span id="cb440-17"><a href="part-iv.-integral-calculus-in-economics.html#cb440-17" tabindex="-1"></a>        <span class="fu">c</span>(P_shade, <span class="fu">rep</span>(<span class="dv">5</span>, <span class="fu">length</span>(Q_shade))),</span>
-<span id="cb440-18"><a href="part-iv.-integral-calculus-in-economics.html#cb440-18" tabindex="-1"></a>        <span class="at">col =</span> <span class="fu">rgb</span>(<span class="fl">0.2</span>, <span class="fl">0.4</span>, <span class="fl">0.8</span>, <span class="fl">0.2</span>), <span class="at">border =</span> <span class="cn">NA</span>)</span>
-<span id="cb440-19"><a href="part-iv.-integral-calculus-in-economics.html#cb440-19" tabindex="-1"></a></span>
-<span id="cb440-20"><a href="part-iv.-integral-calculus-in-economics.html#cb440-20" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">&quot;topright&quot;</span>,</span>
-<span id="cb440-21"><a href="part-iv.-integral-calculus-in-economics.html#cb440-21" tabindex="-1"></a>       <span class="at">legend =</span> <span class="fu">c</span>(<span class="st">&quot;Inverse Demand&quot;</span>, <span class="st">&quot;Market Price = 5&quot;</span>, <span class="st">&quot;Consumer Surplus&quot;</span>),</span>
-<span id="cb440-22"><a href="part-iv.-integral-calculus-in-economics.html#cb440-22" tabindex="-1"></a>       <span class="at">lty =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="cn">NA</span>), <span class="at">lwd =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>, <span class="cn">NA</span>),</span>
-<span id="cb440-23"><a href="part-iv.-integral-calculus-in-economics.html#cb440-23" tabindex="-1"></a>       <span class="at">fill =</span> <span class="fu">c</span>(<span class="cn">NA</span>, <span class="cn">NA</span>, <span class="fu">rgb</span>(<span class="fl">0.2</span>, <span class="fl">0.4</span>, <span class="fl">0.8</span>, <span class="fl">0.2</span>)),</span>
-<span id="cb440-24"><a href="part-iv.-integral-calculus-in-economics.html#cb440-24" tabindex="-1"></a>       <span class="at">border =</span> <span class="fu">c</span>(<span class="cn">NA</span>, <span class="cn">NA</span>, <span class="st">&quot;black&quot;</span>))</span></code></pre></div>
-<p><img src="LBYC121_Course_Book_files/figure-html/consumer-surplus-1.png" alt="" width="672" style="display: block; margin: auto;" /></p>
-<div class="sourceCode" id="cb441"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb441-1"><a href="part-iv.-integral-calculus-in-economics.html#cb441-1" tabindex="-1"></a>demand <span class="ot">&lt;-</span> <span class="cf">function</span>(Q) {</span>
-<span id="cb441-2"><a href="part-iv.-integral-calculus-in-economics.html#cb441-2" tabindex="-1"></a>  <span class="dv">20</span> <span class="sc">-</span> Q</span>
-<span id="cb441-3"><a href="part-iv.-integral-calculus-in-economics.html#cb441-3" tabindex="-1"></a>}</span>
-<span id="cb441-4"><a href="part-iv.-integral-calculus-in-economics.html#cb441-4" tabindex="-1"></a></span>
-<span id="cb441-5"><a href="part-iv.-integral-calculus-in-economics.html#cb441-5" tabindex="-1"></a>CS <span class="ot">&lt;-</span> <span class="fu">integrate</span>(<span class="cf">function</span>(Q) <span class="fu">demand</span>(Q) <span class="sc">-</span> <span class="dv">5</span>,</span>
-<span id="cb441-6"><a href="part-iv.-integral-calculus-in-economics.html#cb441-6" tabindex="-1"></a>                <span class="at">lower =</span> <span class="dv">0</span>,</span>
-<span id="cb441-7"><a href="part-iv.-integral-calculus-in-economics.html#cb441-7" tabindex="-1"></a>                <span class="at">upper =</span> <span class="dv">15</span>)</span>
-<span id="cb441-8"><a href="part-iv.-integral-calculus-in-economics.html#cb441-8" tabindex="-1"></a></span>
-<span id="cb441-9"><a href="part-iv.-integral-calculus-in-economics.html#cb441-9" tabindex="-1"></a>CS</span></code></pre></div>
-<pre><code>## 112.5 with absolute error &lt; 0.0000000000012</code></pre>
-<p><strong>Notes:</strong></p>
-<ul>
-<li><code>Q &lt;- seq(0, 20, by = 0.1)</code> — many points for a smooth inverse demand curve.</li>
-<li><code>P &lt;- 20 - Q</code> — <strong>inverse demand</strong>: price as a function of quantity.</li>
-<li><code>abline(h = 5, lty = 2, lwd = 2)</code> — draws a horizontal reference line at the market price (the price consumers actually pay).</li>
-<li><code>demand &lt;- function(Q) { 20 - Q }</code> — defines a function because <code>integrate()</code> requires a function as input.</li>
-<li><code>integrate(function(Q) demand(Q) - 5, lower = 0, upper = 15)</code>:
-<ul>
-<li><code>demand(Q) - 5</code> — the vertical gap between willingness to pay and actual price (surplus per unit)</li>
-<li><code>lower = 0, upper = 15</code> — integration bounds. Why 15? Because <span class="math inline">\(5 = 20 - Q \Rightarrow Q = 15\)</span>.</li>
-<li>The integral adds up all those small gaps from 0 to 15, producing <strong>total consumer surplus</strong>.</li>
-</ul></li>
-</ul>
+<div id="questions" class="section level1 hasAnchor" number="22">
+<h1><span class="header-section-number">22</span> Questions<a href="questions.html#questions" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<blockquote>
+<p><strong>Instructions:</strong> Use the <strong>Euler method</strong> for all differential equation questions. For integral questions, use <code>integrate()</code> unless stated otherwise. Show code, output, and a brief economic interpretation for each. Use <code>set.seed(123)</code> wherever random parameters are needed.</p>
+</blockquote>
+<div id="part-a-first-order-differential-equations-euler-method" class="section level2 hasAnchor" number="22.1">
+<h2><span class="header-section-number">22.1</span> Part A: First-Order Differential Equations (Euler Method)<a href="questions.html#part-a-first-order-differential-equations-euler-method" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="q1" class="section level3 hasAnchor" number="22.1.1">
+<h3><span class="header-section-number">22.1.1</span> Q1<a href="questions.html#q1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>A firm’s revenue grows proportionally to current revenue:</p>
+<p><span class="math display">\[\frac{dR}{dt} = 0.08R, \quad R(0) = 500\]</span></p>
+<ol style="list-style-type: lower-alpha">
+<li>Implement the Euler method with <code>dt = 0.01</code> and <code>T = 600</code> steps.</li>
+<li>Plot <span class="math inline">\(R(t)\)</span> over all steps.</li>
+<li>At approximately which time step does revenue double? Find it by scanning the vector.</li>
+</ol>
+<div class="sourceCode" id="cb478"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb478-1"><a href="questions.html#cb478-1" tabindex="-1"></a><span class="co"># Your code here</span></span></code></pre></div>
+</div>
+<div id="q2" class="section level3 hasAnchor" number="22.1.2">
+<h3><span class="header-section-number">22.1.2</span> Q2<a href="questions.html#q2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>A labor force adjusts to its long-run equilibrium <span class="math inline">\(L^* = 200\)</span>:</p>
+<p><span class="math display">\[\frac{dL}{dt} = 0.1(200 - L), \quad L(0) = 50\]</span></p>
+<ol style="list-style-type: lower-alpha">
+<li>Simulate with <code>dt = 0.1</code> and <code>T = 600</code> steps.</li>
+<li>Plot the path with a dashed line at <span class="math inline">\(L^*\)</span>.</li>
+<li>At which step does <span class="math inline">\(L\)</span> reach 95% of <span class="math inline">\(L^*\)</span>?</li>
+</ol>
+<div class="sourceCode" id="cb479"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb479-1"><a href="questions.html#cb479-1" tabindex="-1"></a><span class="co"># Your code here</span></span></code></pre></div>
+</div>
+<div id="q3" class="section level3 hasAnchor" number="22.1.3">
+<h3><span class="header-section-number">22.1.3</span> Q3<a href="questions.html#q3" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Using <code>set.seed(123)</code>, generate <span class="math inline">\(s, \delta, \alpha\)</span> via <code>runif</code>: <span class="math inline">\(s \in [0.1, 0.5]\)</span>, <span class="math inline">\(\delta \in [0.01, 0.1]\)</span>, <span class="math inline">\(\alpha \in [0.2, 0.8]\)</span>.</p>
+<p><span class="math display">\[\frac{dK}{dt} = sK^\alpha - \delta K\]</span></p>
+<ol style="list-style-type: lower-alpha">
+<li>Compute analytical <span class="math inline">\(K^* = (s/\delta)^{1/(1-\alpha)}\)</span>.</li>
+<li>Simulate from <span class="math inline">\(K_0 = 1\)</span> and <span class="math inline">\(K_0 = 100\)</span> using <code>dt = 0.01</code>, <code>T = 500</code>.</li>
+<li>Print final values. Do both converge to <span class="math inline">\(K^*\)</span>?</li>
+</ol>
+<div class="sourceCode" id="cb480"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb480-1"><a href="questions.html#cb480-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb480-2"><a href="questions.html#cb480-2" tabindex="-1"></a><span class="co"># Your code here</span></span></code></pre></div>
+</div>
+<div id="q4" class="section level3 hasAnchor" number="22.1.4">
+<h3><span class="header-section-number">22.1.4</span> Q4<a href="questions.html#q4" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Price adjusts toward <span class="math inline">\(P^* = 80\)</span> at rate <span class="math inline">\(\lambda = 0.2\)</span>:</p>
+<p><span class="math display">\[\frac{dP}{dt} = \lambda(P^* - P), \quad P(0) = 120\]</span></p>
+<ol style="list-style-type: lower-alpha">
+<li>Simulate with <code>dt = 0.1</code> and <code>T = 400</code>.</li>
+<li>At which step does <span class="math inline">\(|P - P^*|\)</span> fall below 5% of the initial gap?</li>
+<li>Overlay paths for <span class="math inline">\(\lambda = 0.05\)</span> and <span class="math inline">\(\lambda = 0.5\)</span> on the same plot. Which stabilizes faster?</li>
+</ol>
+<div class="sourceCode" id="cb481"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb481-1"><a href="questions.html#cb481-1" tabindex="-1"></a><span class="co"># Your code here</span></span></code></pre></div>
+</div>
+<div id="q5" class="section level3 hasAnchor" number="22.1.5">
+<h3><span class="header-section-number">22.1.5</span> Q5<a href="questions.html#q5" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Consumer debt evolves as:</p>
+<p><span class="math display">\[\frac{dD}{dt} = rD - Y, \quad r = 0.06,\ Y = 80,\ D(0) = 1000\]</span></p>
+<ol style="list-style-type: lower-alpha">
+<li>Simulate with <code>dt = 0.1</code> and <code>T = 800</code>. Plot the path.</li>
+<li>Compute the analytical steady state <span class="math inline">\(D^* = Y/r\)</span>. Does the path converge?</li>
+<li>What is the minimum repayment <span class="math inline">\(Y\)</span> that prevents debt from exploding? Justify.</li>
+</ol>
+<div class="sourceCode" id="cb482"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb482-1"><a href="questions.html#cb482-1" tabindex="-1"></a><span class="co"># Your code here</span></span></code></pre></div>
+</div>
+<div id="q6" class="section level3 hasAnchor" number="22.1.6">
+<h3><span class="header-section-number">22.1.6</span> Q6<a href="questions.html#q6" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>A monopolist’s output adjusts toward <span class="math inline">\(q^* = 40\)</span>:</p>
+<p><span class="math display">\[\frac{dq}{dt} = 0.15(40 - q), \quad q(0) = 10\]</span></p>
+<ol style="list-style-type: lower-alpha">
+<li>Simulate with <code>dt = 0.1</code> and <code>T = 300</code>. Plot the path.</li>
+<li>Estimate the half-life of the gap from the simulated vector.</li>
+<li>Re-run with <span class="math inline">\(\lambda = 0.05\)</span> and <span class="math inline">\(\lambda = 0.4\)</span>. Plot all three; interpret.</li>
+</ol>
+<div class="sourceCode" id="cb483"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb483-1"><a href="questions.html#cb483-1" tabindex="-1"></a><span class="co"># Your code here</span></span></code></pre></div>
+</div>
+<div id="q7" class="section level3 hasAnchor" number="22.1.7">
+<h3><span class="header-section-number">22.1.7</span> Q7<a href="questions.html#q7" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Market excess demand decays at rate 0.3:</p>
+<p><span class="math display">\[\frac{dED}{dt} = -0.3 \cdot ED, \quad ED(0) = 60\]</span></p>
+<ol style="list-style-type: lower-alpha">
+<li>Simulate with <code>dt = 0.1</code> and <code>T = 300</code>. Plot the path.</li>
+<li>At which step is <span class="math inline">\(ED &lt; 1\)</span>? Find it from the vector.</li>
+<li>What does exponential decay of excess demand mean economically?</li>
+</ol>
+<div class="sourceCode" id="cb484"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb484-1"><a href="questions.html#cb484-1" tabindex="-1"></a><span class="co"># Your code here</span></span></code></pre></div>
+</div>
+<div id="q8" class="section level3 hasAnchor" number="22.1.8">
+<h3><span class="header-section-number">22.1.8</span> Q8<a href="questions.html#q8" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Using <code>set.seed(123)</code>, generate <span class="math inline">\(Y\)</span> as an integer in <span class="math inline">\([50, 150]\)</span> via <code>sample</code>. Savings accumulation with spending rate <span class="math inline">\(c = 0.1\)</span>:</p>
+<p><span class="math display">\[\frac{dS}{dt} = Y - cS, \quad S(0) = 0\]</span></p>
+<ol style="list-style-type: lower-alpha">
+<li>Compute long-run level <span class="math inline">\(S^* = Y/c\)</span>.</li>
+<li>Simulate with <code>dt = 0.1</code>, <code>T = 1000</code>. Plot.</li>
+<li>At which step does <span class="math inline">\(S\)</span> reach 90% of <span class="math inline">\(S^*\)</span>?</li>
+</ol>
+<div class="sourceCode" id="cb485"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb485-1"><a href="questions.html#cb485-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb485-2"><a href="questions.html#cb485-2" tabindex="-1"></a><span class="co"># Your code here</span></span></code></pre></div>
+</div>
+<div id="q9" class="section level3 hasAnchor" number="22.1.9">
+<h3><span class="header-section-number">22.1.9</span> Q9<a href="questions.html#q9" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Two countries: same <span class="math inline">\(s = 0.25\)</span>, <span class="math inline">\(\alpha = 0.5\)</span>, <span class="math inline">\(K_0 = 5\)</span>. Different depreciation: <span class="math inline">\(\delta_A = 0.04\)</span>, <span class="math inline">\(\delta_B = 0.09\)</span>.</p>
+<ol style="list-style-type: lower-alpha">
+<li>Compute analytical <span class="math inline">\(K^*\)</span> for each.</li>
+<li>Simulate both with <code>dt = 0.01</code>, <code>T = 1000</code>.</li>
+<li>Plot both on the same graph. Which country is wealthier long-run, and why?</li>
+</ol>
+<div class="sourceCode" id="cb486"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb486-1"><a href="questions.html#cb486-1" tabindex="-1"></a><span class="co"># Your code here</span></span></code></pre></div>
+</div>
+<div id="q10" class="section level3 hasAnchor" number="22.1.10">
+<h3><span class="header-section-number">22.1.10</span> Q10<a href="questions.html#q10" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Advertising stock with decay <span class="math inline">\(\delta = 0.1\)</span> and investment <span class="math inline">\(I = 20\)</span>:</p>
+<p><span class="math display">\[\frac{dA}{dt} = I - \delta A, \quad A(0) = 0\]</span></p>
+<ol style="list-style-type: lower-alpha">
+<li>Compute <span class="math inline">\(A^* = I/\delta\)</span>.</li>
+<li>Simulate with <code>dt = 0.1</code>, <code>T = 600</code>. Plot.</li>
+<li>Re-run with <span class="math inline">\(I = 40\)</span>. Plot both on the same graph. Interpret the difference.</li>
+</ol>
+<div class="sourceCode" id="cb487"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb487-1"><a href="questions.html#cb487-1" tabindex="-1"></a><span class="co"># Your code here</span></span></code></pre></div>
+</div>
+<div id="q11" class="section level3 hasAnchor" number="22.1.11">
+<h3><span class="header-section-number">22.1.11</span> Q11<a href="questions.html#q11" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Wealth dynamics: <span class="math inline">\(r = 0.05\)</span>, <span class="math inline">\(E = 100\)</span>, <span class="math inline">\(C = 90\)</span>.</p>
+<p><span class="math display">\[\frac{dW}{dt} = rW + E - C\]</span></p>
+<p>Using <code>set.seed(123)</code>, generate <span class="math inline">\(W_0\)</span> as an integer in <span class="math inline">\([10, 200]\)</span>.</p>
+<ol style="list-style-type: lower-alpha">
+<li>Simulate with <code>dt = 0.1</code>, <code>T = 800</code>. Does wealth grow indefinitely?</li>
+<li>Solve for <span class="math inline">\(C^*\)</span> that produces a steady state.</li>
+<li>Re-run using <span class="math inline">\(C^*\)</span> and confirm the path flattens.</li>
+</ol>
+<div class="sourceCode" id="cb488"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb488-1"><a href="questions.html#cb488-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb488-2"><a href="questions.html#cb488-2" tabindex="-1"></a><span class="co"># Your code here</span></span></code></pre></div>
+</div>
+<div id="q12" class="section level3 hasAnchor" number="22.1.12">
+<h3><span class="header-section-number">22.1.12</span> Q12<a href="questions.html#q12" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Logistic labor supply: <span class="math inline">\(r = 0.2\)</span>, <span class="math inline">\(K = 500\)</span>, <span class="math inline">\(L(0) = 10\)</span>.</p>
+<p><span class="math display">\[\frac{dL}{dt} = rL\left(1 - \frac{L}{K}\right)\]</span></p>
+<ol style="list-style-type: lower-alpha">
+<li>Simulate with <code>dt = 0.1</code>, <code>T = 600</code>. Plot.</li>
+<li>At which step does <span class="math inline">\(L &gt; 0.9K = 450\)</span>?</li>
+<li>Re-run with <span class="math inline">\(r = 0.05\)</span> and <span class="math inline">\(r = 0.5\)</span>. Plot all three; compare speeds.</li>
+</ol>
+<div class="sourceCode" id="cb489"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb489-1"><a href="questions.html#cb489-1" tabindex="-1"></a><span class="co"># Your code here</span></span></code></pre></div>
+</div>
+<div id="q13" class="section level3 hasAnchor" number="22.1.13">
+<h3><span class="header-section-number">22.1.13</span> Q13<a href="questions.html#q13" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Using <code>set.seed(123)</code>, generate <span class="math inline">\(\lambda \in [0.05, 0.5]\)</span> via <code>runif</code> and <span class="math inline">\(P^* \in [50, 200]\)</span> via <code>sample</code>. Housing price model:</p>
+<p><span class="math display">\[\frac{dP}{dt} = \lambda(P^* - P), \quad P_0 = 30\]</span></p>
+<ol style="list-style-type: lower-alpha">
+<li>Simulate with <code>dt = 0.1</code>, <code>T = 500</code>. Plot.</li>
+<li>At which step is 90% of the gap <span class="math inline">\(|P^* - P_0|\)</span> closed?</li>
+</ol>
+<div class="sourceCode" id="cb490"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb490-1"><a href="questions.html#cb490-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb490-2"><a href="questions.html#cb490-2" tabindex="-1"></a><span class="co"># Your code here</span></span></code></pre></div>
+</div>
+<div id="q14" class="section level3 hasAnchor" number="22.1.14">
+<h3><span class="header-section-number">22.1.14</span> Q14<a href="questions.html#q14" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Inventory dynamics:</p>
+<p><span class="math display">\[\frac{dI}{dt} = 50 - 0.4I\]</span></p>
+<ol style="list-style-type: lower-alpha">
+<li>Find the analytical steady state.</li>
+<li>Simulate from <span class="math inline">\(I_0 = 10\)</span> and <span class="math inline">\(I_0 = 200\)</span> using <code>dt = 0.1</code>, <code>T = 500</code>.</li>
+<li>Plot both paths with a dashed line at the steady state.</li>
+</ol>
+<div class="sourceCode" id="cb491"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb491-1"><a href="questions.html#cb491-1" tabindex="-1"></a><span class="co"># Your code here</span></span></code></pre></div>
+</div>
+<div id="q15" class="section level3 hasAnchor" number="22.1.15">
+<h3><span class="header-section-number">22.1.15</span> Q15<a href="questions.html#q15" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Using <code>set.seed(123)</code>, generate <span class="math inline">\(s \in [0.1, 0.4]\)</span>, <span class="math inline">\(\delta \in [0.02, 0.08]\)</span>, <span class="math inline">\(\alpha \in [0.3, 0.7]\)</span> via <code>runif</code>. Golden-rule savings rate: <span class="math inline">\(s_{GR} = \alpha\)</span>.</p>
+<ol style="list-style-type: lower-alpha">
+<li>Compute <span class="math inline">\(K^*\)</span> for both <span class="math inline">\(s\)</span> and <span class="math inline">\(s_{GR}\)</span>.</li>
+<li>Simulate both using <code>dt = 0.01</code>, <code>T = 500</code>. Plot.</li>
+<li>Which produces higher long-run capital, and why?</li>
+</ol>
+<div class="sourceCode" id="cb492"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb492-1"><a href="questions.html#cb492-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb492-2"><a href="questions.html#cb492-2" tabindex="-1"></a><span class="co"># Your code here</span></span></code></pre></div>
+</div>
+</div>
+<div id="part-b-integral-calculus-in-economics" class="section level2 hasAnchor" number="22.2">
+<h2><span class="header-section-number">22.2</span> Part B: Integral Calculus in Economics<a href="questions.html#part-b-integral-calculus-in-economics" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="q16" class="section level3 hasAnchor" number="22.2.1">
+<h3><span class="header-section-number">22.2.1</span> Q16<a href="questions.html#q16" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Demand: <span class="math inline">\(P = 120 - 3Q\)</span>. Market price: <span class="math inline">\(P^* = 30\)</span>.</p>
+<ol style="list-style-type: lower-alpha">
+<li>Compute consumer surplus using the triangle formula.</li>
+<li>Verify with <code>integrate()</code>.</li>
+<li>Plot demand and shade the consumer surplus area.</li>
+</ol>
+<div class="sourceCode" id="cb493"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb493-1"><a href="questions.html#cb493-1" tabindex="-1"></a><span class="co"># Your code here</span></span></code></pre></div>
+</div>
+<div id="q17" class="section level3 hasAnchor" number="22.2.2">
+<h3><span class="header-section-number">22.2.2</span> Q17<a href="questions.html#q17" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><span class="math inline">\(MC(q) = 2q + 5\)</span>, fixed cost <span class="math inline">\(F = 50\)</span>.</p>
+<ol style="list-style-type: lower-alpha">
+<li>Recover <span class="math inline">\(TC(q)\)</span> by integrating <span class="math inline">\(MC\)</span> and adding <span class="math inline">\(F\)</span>.</li>
+<li>Verify <span class="math inline">\(TC(10)\)</span> via <code>integrate()</code> vs. the formula.</li>
+<li>Plot <span class="math inline">\(MC\)</span>, <span class="math inline">\(ATC\)</span>, and <span class="math inline">\(AVC\)</span> on the same graph.</li>
+</ol>
+<div class="sourceCode" id="cb494"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb494-1"><a href="questions.html#cb494-1" tabindex="-1"></a><span class="co"># Your code here</span></span></code></pre></div>
+</div>
+<div id="q18" class="section level3 hasAnchor" number="22.2.3">
+<h3><span class="header-section-number">22.2.3</span> Q18<a href="questions.html#q18" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Using <code>set.seed(123)</code>, generate integers <span class="math inline">\(a \in [5, 20]\)</span> and <span class="math inline">\(b \in [1, 5]\)</span>. Demand: <span class="math inline">\(P_D = a - bQ\)</span>. Supply: <span class="math inline">\(P_S = Q\)</span>.</p>
+<ol style="list-style-type: lower-alpha">
+<li>Find equilibrium <span class="math inline">\((Q^*, P^*)\)</span>.</li>
+<li>Compute consumer and producer surplus using <code>integrate()</code>.</li>
+<li>Plot both curves and shade both areas.</li>
+</ol>
+<div class="sourceCode" id="cb495"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb495-1"><a href="questions.html#cb495-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb495-2"><a href="questions.html#cb495-2" tabindex="-1"></a><span class="co"># Your code here</span></span></code></pre></div>
+</div>
+<div id="q19" class="section level3 hasAnchor" number="22.2.4">
+<h3><span class="header-section-number">22.2.4</span> Q19<a href="questions.html#q19" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><span class="math inline">\(MR(q) = 80 - 6q\)</span>. If <span class="math inline">\(MC = 20\)</span>:</p>
+<ol style="list-style-type: lower-alpha">
+<li>Recover <span class="math inline">\(TR(q)\)</span> by integrating <span class="math inline">\(MR\)</span>.</li>
+<li>Find <span class="math inline">\(q^*\)</span> where <span class="math inline">\(MR = MC\)</span>.</li>
+<li>Plot <span class="math inline">\(MR\)</span> and <span class="math inline">\(MC\)</span>; shade the area between them from 0 to <span class="math inline">\(q^*\)</span>.</li>
+</ol>
+<div class="sourceCode" id="cb496"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb496-1"><a href="questions.html#cb496-1" tabindex="-1"></a><span class="co"># Your code here</span></span></code></pre></div>
+</div>
+<div id="q20" class="section level3 hasAnchor" number="22.2.5">
+<h3><span class="header-section-number">22.2.5</span> Q20<a href="questions.html#q20" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Profit rate: <span class="math inline">\(\pi(t) = 50e^{-0.1t}\)</span>.</p>
+<ol style="list-style-type: lower-alpha">
+<li>Compute total profit over <span class="math inline">\([0, 10]\)</span> using <code>integrate()</code>.</li>
+<li>Approximate profit over <span class="math inline">\([0, \infty)\)</span> by integrating to 1000.</li>
+<li>What fraction of long-run profit is earned in the first 10 years?</li>
+</ol>
+<div class="sourceCode" id="cb497"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb497-1"><a href="questions.html#cb497-1" tabindex="-1"></a><span class="co"># Your code here</span></span></code></pre></div>
+</div>
+<div id="q21" class="section level3 hasAnchor" number="22.2.6">
+<h3><span class="header-section-number">22.2.6</span> Q21<a href="questions.html#q21" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Supply: <span class="math inline">\(P_S(Q) = Q^2 + 2\)</span>. Market price: <span class="math inline">\(P^* = 27\)</span>.</p>
+<ol style="list-style-type: lower-alpha">
+<li>Find <span class="math inline">\(Q^*\)</span> analytically.</li>
+<li>Compute producer surplus using <code>integrate()</code>.</li>
+<li>Plot the supply curve and shade the producer surplus region.</li>
+</ol>
+<div class="sourceCode" id="cb498"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb498-1"><a href="questions.html#cb498-1" tabindex="-1"></a><span class="co"># Your code here</span></span></code></pre></div>
+</div>
+<div id="q22" class="section level3 hasAnchor" number="22.2.7">
+<h3><span class="header-section-number">22.2.7</span> Q22<a href="questions.html#q22" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><span class="math inline">\(MU(x) = 10 - 2x\)</span>, with <span class="math inline">\(U(0) = 0\)</span>.</p>
+<ol style="list-style-type: lower-alpha">
+<li>Recover <span class="math inline">\(U(x)\)</span> by integration.</li>
+<li>At what <span class="math inline">\(x\)</span> is <span class="math inline">\(MU = 0\)</span>? What is maximum <span class="math inline">\(U\)</span>?</li>
+<li>Plot <span class="math inline">\(MU\)</span> and <span class="math inline">\(U(x)\)</span> side by side.</li>
+</ol>
+<div class="sourceCode" id="cb499"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb499-1"><a href="questions.html#cb499-1" tabindex="-1"></a><span class="co"># Your code here</span></span></code></pre></div>
+</div>
+<div id="q23" class="section level3 hasAnchor" number="22.2.8">
+<h3><span class="header-section-number">22.2.8</span> Q23<a href="questions.html#q23" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Using <code>set.seed(123)</code>, generate integers <span class="math inline">\(a \in [10, 30]\)</span> and <span class="math inline">\(b \in [1, 5]\)</span>. Demand: <span class="math inline">\(P = a - bQ\)</span>. Supply: <span class="math inline">\(P = 2 + Q\)</span>.</p>
+<ol style="list-style-type: lower-alpha">
+<li>Find equilibrium.</li>
+<li>Impose price ceiling <span class="math inline">\(P_{ceil} = P^* - 2\)</span>. Compute deadweight loss via <code>integrate()</code>.</li>
+<li>Plot demand, supply, ceiling, and shade the DWL area.</li>
+</ol>
+<div class="sourceCode" id="cb500"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb500-1"><a href="questions.html#cb500-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb500-2"><a href="questions.html#cb500-2" tabindex="-1"></a><span class="co"># Your code here</span></span></code></pre></div>
+</div>
+<div id="q24" class="section level3 hasAnchor" number="22.2.9">
+<h3><span class="header-section-number">22.2.9</span> Q24<a href="questions.html#q24" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Present value: <span class="math inline">\(PV = \int_0^T 100\, e^{-0.05t}\, dt\)</span>.</p>
+<ol style="list-style-type: lower-alpha">
+<li>Compute <span class="math inline">\(PV\)</span> for <span class="math inline">\(T = 5, 10, 20, 50\)</span> using <code>integrate()</code>.</li>
+<li>Compare to perpetuity formula <span class="math inline">\(PV_\infty = Y/r = 100/0.05\)</span>.</li>
+<li>Plot <span class="math inline">\(PV\)</span> as a function of <span class="math inline">\(T\)</span> from 1 to 100. At what <span class="math inline">\(T\)</span> does <span class="math inline">\(PV &gt; 0.9 \cdot PV_\infty\)</span>?</li>
+</ol>
+<div class="sourceCode" id="cb501"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb501-1"><a href="questions.html#cb501-1" tabindex="-1"></a><span class="co"># Your code here</span></span></code></pre></div>
+</div>
+<div id="q25" class="section level3 hasAnchor" number="22.2.10">
+<h3><span class="header-section-number">22.2.10</span> Q25<a href="questions.html#q25" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><span class="math inline">\(MC(q) = 0.3q^2 - 2q + 8\)</span>, price <span class="math inline">\(P = 14\)</span>.</p>
+<ol style="list-style-type: lower-alpha">
+<li>Find <span class="math inline">\(q^*\)</span> where <span class="math inline">\(MC = P\)</span> using <code>uniroot()</code>.</li>
+<li>Compute producer surplus: <span class="math inline">\(\int_0^{q^*}(P - MC)\, dq\)</span>.</li>
+<li>Verify by a grid-sum method (no <code>integrate()</code>): create a fine grid, compute the integrand, multiply by grid spacing, sum.</li>
+</ol>
+<div class="sourceCode" id="cb502"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb502-1"><a href="questions.html#cb502-1" tabindex="-1"></a><span class="co"># Your code here</span></span></code></pre></div>
+</div>
+<div id="q26" class="section level3 hasAnchor" number="22.2.11">
+<h3><span class="header-section-number">22.2.11</span> Q26<a href="questions.html#q26" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Using <code>set.seed(123)</code>, generate <span class="math inline">\(r \in [0.02, 0.10]\)</span> via <code>runif</code> and <span class="math inline">\(Y \in [50, 200]\)</span> via <code>sample</code>.</p>
+<ol style="list-style-type: lower-alpha">
+<li>Compute <span class="math inline">\(PV = Y/r\)</span> (perpetuity formula).</li>
+<li>Approximate by integrating <span class="math inline">\(\int_0^{1000} Y e^{-rt}\, dt\)</span>.</li>
+<li>Compare and explain the small difference.</li>
+</ol>
+<div class="sourceCode" id="cb503"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb503-1"><a href="questions.html#cb503-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb503-2"><a href="questions.html#cb503-2" tabindex="-1"></a><span class="co"># Your code here</span></span></code></pre></div>
+</div>
+<div id="q27" class="section level3 hasAnchor" number="22.2.12">
+<h3><span class="header-section-number">22.2.12</span> Q27<a href="questions.html#q27" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Tax <span class="math inline">\(\tau = 3\)</span>. Demand: <span class="math inline">\(P = 50 - 2Q\)</span>. Supply: <span class="math inline">\(P = 10 + Q\)</span>.</p>
+<ol style="list-style-type: lower-alpha">
+<li>Find pre-tax and post-tax equilibria.</li>
+<li>Compute deadweight loss using <code>integrate()</code>.</li>
+<li>How much of the tax burden falls on consumers vs. producers?</li>
+</ol>
+<div class="sourceCode" id="cb504"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb504-1"><a href="questions.html#cb504-1" tabindex="-1"></a><span class="co"># Your code here</span></span></code></pre></div>
+</div>
+<div id="q28" class="section level3 hasAnchor" number="22.2.13">
+<h3><span class="header-section-number">22.2.13</span> Q28<a href="questions.html#q28" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Spending rate: <span class="math inline">\(c(t) = 100(1 - t)\)</span> over <span class="math inline">\(t \in [0, 1]\)</span>.</p>
+<ol style="list-style-type: lower-alpha">
+<li>Compute total spending using <code>integrate()</code>.</li>
+<li>Find <span class="math inline">\(t^*\)</span> where cumulative spending = half of total, using <code>uniroot()</code>.</li>
+<li>Plot the cumulative spending path.</li>
+</ol>
+<div class="sourceCode" id="cb505"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb505-1"><a href="questions.html#cb505-1" tabindex="-1"></a><span class="co"># Your code here</span></span></code></pre></div>
+</div>
+<div id="q29" class="section level3 hasAnchor" number="22.2.14">
+<h3><span class="header-section-number">22.2.14</span> Q29<a href="questions.html#q29" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Using <code>set.seed(123)</code>, generate <span class="math inline">\(\alpha \in [0.3, 0.7]\)</span> via <code>runif</code>. Utility: <span class="math inline">\(U(x,y) = x^\alpha y^{1-\alpha}\)</span>. Budget: <span class="math inline">\(P_x = 4\)</span>, <span class="math inline">\(P_y = 2\)</span>, <span class="math inline">\(M = 40\)</span>.</p>
+<ol style="list-style-type: lower-alpha">
+<li>Find optimal <span class="math inline">\((x^*, y^*)\)</span> analytically.</li>
+<li>Compute indirect utility <span class="math inline">\(V = U(x^*, y^*)\)</span>.</li>
+<li>Integrate <span class="math inline">\(MU_x = \alpha x^{\alpha-1}(y^*)^{1-\alpha}\)</span> from a small value near 0 to <span class="math inline">\(x^*\)</span> using <code>integrate()</code>. Compare to <span class="math inline">\(V\)</span>.</li>
+</ol>
+<div class="sourceCode" id="cb506"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb506-1"><a href="questions.html#cb506-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb506-2"><a href="questions.html#cb506-2" tabindex="-1"></a><span class="co"># Your code here</span></span></code></pre></div>
+</div>
+<div id="q30" class="section level3 hasAnchor" number="22.2.15">
+<h3><span class="header-section-number">22.2.15</span> Q30<a href="questions.html#q30" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Firm: <span class="math inline">\(P = 25\)</span>, <span class="math inline">\(TC(q) = q^3 - 6q^2 + 15q + 10\)</span>.</p>
+<ol style="list-style-type: lower-alpha">
+<li>Derive <span class="math inline">\(MC\)</span> and find <span class="math inline">\(q^*\)</span> where <span class="math inline">\(P = MC\)</span> using <code>uniroot()</code>.</li>
+<li>Compute <span class="math inline">\(\pi = \int_0^{q^*}(P - MC)\, dq - F\)</span> using <code>integrate()</code>.</li>
+<li>Verify by computing <span class="math inline">\(TR - TC\)</span> at <span class="math inline">\(q^*\)</span>.</li>
+<li>Plot <span class="math inline">\(P\)</span>, <span class="math inline">\(MC\)</span>, and <span class="math inline">\(ATC\)</span>; shade the profit region.</li>
+</ol>
+<div class="sourceCode" id="cb507"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb507-1"><a href="questions.html#cb507-1" tabindex="-1"></a><span class="co"># Your code here</span></span></code></pre></div>
+<p><em>End of Questions</em></p>
+
+</div>
 </div>
 </div>
             </section>
@@ -549,8 +823,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="part-iii.-first-order-differential-equations-and-euler-method.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="examples.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
