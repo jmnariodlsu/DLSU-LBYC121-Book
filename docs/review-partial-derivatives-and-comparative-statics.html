@@ -1,0 +1,1223 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>23 Review: Partial Derivatives and Comparative Statics | LBYC121 Course Book</title>
+  <meta name="description" content="An introduction to the LBYC121 Course Book." />
+  <meta name="generator" content="bookdown 0.46 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="23 Review: Partial Derivatives and Comparative Statics | LBYC121 Course Book" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="An introduction to the LBYC121 Course Book." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="23 Review: Partial Derivatives and Comparative Statics | LBYC121 Course Book" />
+  
+  <meta name="twitter:description" content="An introduction to the LBYC121 Course Book." />
+  
+
+<meta name="author" content="Jem Marie M. Nario" />
+
+
+<meta name="date" content="2026-03-22" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="questions.html"/>
+
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<h1>LBYC121 Course Book</h1>
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#about-me"><i class="fa fa-check"></i><b>1.1</b> About Me</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="syllabus.html"><a href="syllabus.html"><i class="fa fa-check"></i><b>2</b> Syllabus</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="syllabus.html"><a href="syllabus.html#course-description"><i class="fa fa-check"></i><b>2.1</b> Course Description</a></li>
+<li class="chapter" data-level="2.2" data-path="syllabus.html"><a href="syllabus.html#final-course-outputs"><i class="fa fa-check"></i><b>2.2</b> Final Course Outputs</a></li>
+<li class="chapter" data-level="2.3" data-path="syllabus.html"><a href="syllabus.html#generative-ai-use-policy"><i class="fa fa-check"></i><b>2.3</b> Generative AI-Use Policy</a></li>
+<li class="chapter" data-level="2.4" data-path="syllabus.html"><a href="syllabus.html#classroom-policies"><i class="fa fa-check"></i><b>2.4</b> Classroom Policies</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="syllabus.html"><a href="syllabus.html#excused-absences-policy"><i class="fa fa-check"></i><b>2.4.1</b> <strong>EXCUSED ABSENCES POLICY:</strong></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="assessments.html"><a href="assessments.html"><i class="fa fa-check"></i><b>3</b> Assessments</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="assessments.html"><a href="assessments.html#in-weekly-exercises"><i class="fa fa-check"></i><b>3.1</b> In-Weekly Exercises</a></li>
+<li class="chapter" data-level="3.2" data-path="assessments.html"><a href="assessments.html#problem-sets-1-and-2"><i class="fa fa-check"></i><b>3.2</b> Problem Sets 1 and 2</a></li>
+<li class="chapter" data-level="3.3" data-path="assessments.html"><a href="assessments.html#grading-system"><i class="fa fa-check"></i><b>3.3</b> Grading System</a></li>
+<li class="chapter" data-level="3.4" data-path="assessments.html"><a href="assessments.html#grading-scale"><i class="fa fa-check"></i><b>3.4</b> Grading Scale</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html"><i class="fa fa-check"></i><b>4</b> Basic Introduction to R</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#session-information"><i class="fa fa-check"></i><b>4.1</b> Session Information</a></li>
+<li class="chapter" data-level="4.2" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#preliminaries"><i class="fa fa-check"></i><b>4.2</b> Preliminaries</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#understanding-the-rstudio-screen"><i class="fa fa-check"></i><b>4.2.1</b> Understanding the RStudio Screen</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#packages"><i class="fa fa-check"></i><b>4.3</b> Packages</a></li>
+<li class="chapter" data-level="4.4" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#setting-up-the-working-directory"><i class="fa fa-check"></i><b>4.4</b> Setting up the Working Directory</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#what-is-a-working-directory"><i class="fa fa-check"></i><b>4.4.1</b> What is a Working Directory?</a></li>
+<li class="chapter" data-level="4.4.2" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#required-folder-structure"><i class="fa fa-check"></i><b>4.4.2</b> Required Folder Structure</a></li>
+<li class="chapter" data-level="4.4.3" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#setting-the-working-directory-in-rstudio"><i class="fa fa-check"></i><b>4.4.3</b> Setting the Working Directory in RStudio</a></li>
+<li class="chapter" data-level="4.4.4" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#setting-the-working-directory-using-code"><i class="fa fa-check"></i><b>4.4.4</b> Setting the Working Directory Using Code</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#cleaning-the-environment-do-this-regularly"><i class="fa fa-check"></i><b>4.5</b> Cleaning the Environment (Do This Regularly)</a></li>
+<li class="chapter" data-level="4.6" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#quarto-markdown"><i class="fa fa-check"></i><b>4.6</b> Quarto Markdown</a>
+<ul>
+<li class="chapter" data-level="4.6.1" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#installing-quarto-in-r"><i class="fa fa-check"></i><b>4.6.1</b> Installing Quarto in R</a></li>
+<li class="chapter" data-level="4.6.2" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#starting-a-quarto-document"><i class="fa fa-check"></i><b>4.6.2</b> Starting a Quarto Document</a></li>
+<li class="chapter" data-level="4.6.3" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#yaml-header-use"><i class="fa fa-check"></i><b>4.6.3</b> YAML Header Use</a></li>
+<li class="chapter" data-level="4.6.4" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#quarto-key-features"><i class="fa fa-check"></i><b>4.6.4</b> Quarto Key Features</a></li>
+<li class="chapter" data-level="4.6.5" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#quarto-markdown-shortcuts"><i class="fa fa-check"></i><b>4.6.5</b> Quarto Markdown Shortcuts</a></li>
+<li class="chapter" data-level="4.6.6" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#rendering-a-quarto-document"><i class="fa fa-check"></i><b>4.6.6</b> Rendering a Quarto Document</a></li>
+</ul></li>
+<li class="chapter" data-level="4.7" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#working-directories-and-file-management"><i class="fa fa-check"></i><b>4.7</b> Working Directories and File Management</a>
+<ul>
+<li class="chapter" data-level="4.7.1" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#file-naming-convention-mandatory"><i class="fa fa-check"></i><b>4.7.1</b> File Naming Convention (Mandatory)</a></li>
+</ul></li>
+<li class="chapter" data-level="4.8" data-path="basic-introduction-to-r.html"><a href="basic-introduction-to-r.html#mini-exercise-first-quarto-render-mandatory-per-individual"><i class="fa fa-check"></i><b>4.8</b> Mini-Exercise: First Quarto Render (Mandatory per Individual)</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="differentiation-rules.html"><a href="differentiation-rules.html"><i class="fa fa-check"></i><b>5</b> Differentiation Rules</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="differentiation-rules.html"><a href="differentiation-rules.html#introduction-1"><i class="fa fa-check"></i><b>5.1</b> Introduction</a></li>
+<li class="chapter" data-level="5.2" data-path="differentiation-rules.html"><a href="differentiation-rules.html#structure-of-differentiation"><i class="fa fa-check"></i><b>5.2</b> Structure of Differentiation</a></li>
+<li class="chapter" data-level="5.3" data-path="differentiation-rules.html"><a href="differentiation-rules.html#constant-rule"><i class="fa fa-check"></i><b>5.3</b> Constant Rule</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="differentiation-rules.html"><a href="differentiation-rules.html#example"><i class="fa fa-check"></i><b>5.3.1</b> Example</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="differentiation-rules.html"><a href="differentiation-rules.html#power-rule"><i class="fa fa-check"></i><b>5.4</b> Power Rule</a>
+<ul>
+<li class="chapter" data-level="5.4.1" data-path="differentiation-rules.html"><a href="differentiation-rules.html#example-1"><i class="fa fa-check"></i><b>5.4.1</b> Example</a></li>
+<li class="chapter" data-level="5.4.2" data-path="differentiation-rules.html"><a href="differentiation-rules.html#example-2"><i class="fa fa-check"></i><b>5.4.2</b> Example</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="differentiation-rules.html"><a href="differentiation-rules.html#constant-multiple-rule"><i class="fa fa-check"></i><b>5.5</b> Constant Multiple Rule</a>
+<ul>
+<li class="chapter" data-level="5.5.1" data-path="differentiation-rules.html"><a href="differentiation-rules.html#example-3"><i class="fa fa-check"></i><b>5.5.1</b> Example</a></li>
+</ul></li>
+<li class="chapter" data-level="5.6" data-path="differentiation-rules.html"><a href="differentiation-rules.html#sum-and-difference-rule"><i class="fa fa-check"></i><b>5.6</b> Sum and Difference Rule</a>
+<ul>
+<li class="chapter" data-level="5.6.1" data-path="differentiation-rules.html"><a href="differentiation-rules.html#example-4"><i class="fa fa-check"></i><b>5.6.1</b> Example</a></li>
+</ul></li>
+<li class="chapter" data-level="5.7" data-path="differentiation-rules.html"><a href="differentiation-rules.html#polynomial-functions-combined-rules"><i class="fa fa-check"></i><b>5.7</b> Polynomial Functions (Combined Rules)</a>
+<ul>
+<li class="chapter" data-level="5.7.1" data-path="differentiation-rules.html"><a href="differentiation-rules.html#example-5"><i class="fa fa-check"></i><b>5.7.1</b> Example</a></li>
+</ul></li>
+<li class="chapter" data-level="5.8" data-path="differentiation-rules.html"><a href="differentiation-rules.html#exponential-functions"><i class="fa fa-check"></i><b>5.8</b> Exponential Functions</a>
+<ul>
+<li class="chapter" data-level="5.8.1" data-path="differentiation-rules.html"><a href="differentiation-rules.html#example-6"><i class="fa fa-check"></i><b>5.8.1</b> Example</a></li>
+<li class="chapter" data-level="5.8.2" data-path="differentiation-rules.html"><a href="differentiation-rules.html#example-7"><i class="fa fa-check"></i><b>5.8.2</b> Example</a></li>
+</ul></li>
+<li class="chapter" data-level="5.9" data-path="differentiation-rules.html"><a href="differentiation-rules.html#logarithmic-functions"><i class="fa fa-check"></i><b>5.9</b> Logarithmic Functions</a>
+<ul>
+<li class="chapter" data-level="5.9.1" data-path="differentiation-rules.html"><a href="differentiation-rules.html#example-8"><i class="fa fa-check"></i><b>5.9.1</b> Example</a></li>
+<li class="chapter" data-level="5.9.2" data-path="differentiation-rules.html"><a href="differentiation-rules.html#example-9"><i class="fa fa-check"></i><b>5.9.2</b> Example</a></li>
+</ul></li>
+<li class="chapter" data-level="5.10" data-path="differentiation-rules.html"><a href="differentiation-rules.html#product-rule"><i class="fa fa-check"></i><b>5.10</b> Product Rule</a>
+<ul>
+<li class="chapter" data-level="5.10.1" data-path="differentiation-rules.html"><a href="differentiation-rules.html#example-10"><i class="fa fa-check"></i><b>5.10.1</b> Example</a></li>
+</ul></li>
+<li class="chapter" data-level="5.11" data-path="differentiation-rules.html"><a href="differentiation-rules.html#quotient-rule"><i class="fa fa-check"></i><b>5.11</b> Quotient Rule</a>
+<ul>
+<li class="chapter" data-level="5.11.1" data-path="differentiation-rules.html"><a href="differentiation-rules.html#example-11"><i class="fa fa-check"></i><b>5.11.1</b> Example</a></li>
+<li class="chapter" data-level="5.11.2" data-path="differentiation-rules.html"><a href="differentiation-rules.html#example-12"><i class="fa fa-check"></i><b>5.11.2</b> Example</a></li>
+</ul></li>
+<li class="chapter" data-level="5.12" data-path="differentiation-rules.html"><a href="differentiation-rules.html#chain-rule"><i class="fa fa-check"></i><b>5.12</b> Chain Rule</a>
+<ul>
+<li class="chapter" data-level="5.12.1" data-path="differentiation-rules.html"><a href="differentiation-rules.html#example-13"><i class="fa fa-check"></i><b>5.12.1</b> Example</a></li>
+</ul></li>
+<li class="chapter" data-level="5.13" data-path="differentiation-rules.html"><a href="differentiation-rules.html#things-to-note"><i class="fa fa-check"></i><b>5.13</b> Things to Note:</a></li>
+<li class="chapter" data-level="5.14" data-path="differentiation-rules.html"><a href="differentiation-rules.html#exercises"><i class="fa fa-check"></i><b>5.14</b> Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="review-of-single-variable-differentiation-rules-and-visualizing-functions.html"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html"><i class="fa fa-check"></i><b>6</b> Review of Single-Variable Differentiation Rules and Visualizing Functions</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="review-of-single-variable-differentiation-rules-and-visualizing-functions.html"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#economic-example"><i class="fa fa-check"></i><b>6.1</b> Economic Example</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="review-of-single-variable-differentiation-rules-and-visualizing-functions.html"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#total-cost-function-definition"><i class="fa fa-check"></i><b>6.1.1</b> Total Cost Function Definition</a></li>
+<li class="chapter" data-level="6.1.2" data-path="review-of-single-variable-differentiation-rules-and-visualizing-functions.html"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#average-cost-function-definition"><i class="fa fa-check"></i><b>6.1.2</b> Average Cost Function Definition</a></li>
+<li class="chapter" data-level="6.1.3" data-path="review-of-single-variable-differentiation-rules-and-visualizing-functions.html"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#marginal-cost-using-deriv"><i class="fa fa-check"></i><b>6.1.3</b> Marginal Cost using <code>Deriv</code></a></li>
+<li class="chapter" data-level="6.1.4" data-path="review-of-single-variable-differentiation-rules-and-visualizing-functions.html"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#evaluating-at-a-specific-quantity"><i class="fa fa-check"></i><b>6.1.4</b> Evaluating at a specific quantity</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="review-of-single-variable-differentiation-rules-and-visualizing-functions.html"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#writing-greek-letters"><i class="fa fa-check"></i><b>6.2</b> Writing Greek Letters</a></li>
+<li class="chapter" data-level="6.3" data-path="review-of-single-variable-differentiation-rules-and-visualizing-functions.html"><a href="review-of-single-variable-differentiation-rules-and-visualizing-functions.html#square-roots-and-powers"><i class="fa fa-check"></i><b>6.3</b> Square Roots and Powers</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="visualizing-functions-with-ggplot2.html"><a href="visualizing-functions-with-ggplot2.html"><i class="fa fa-check"></i><b>7</b> Visualizing Functions with ggplot2</a>
+<ul>
+<li class="chapter" data-level="7.0.1" data-path="visualizing-functions-with-ggplot2.html"><a href="visualizing-functions-with-ggplot2.html#pre-plotting-check"><i class="fa fa-check"></i><b>7.0.1</b> Pre-plotting Check</a></li>
+<li class="chapter" data-level="7.0.2" data-path="visualizing-functions-with-ggplot2.html"><a href="visualizing-functions-with-ggplot2.html#plotting-a-single-function"><i class="fa fa-check"></i><b>7.0.2</b> 1. Plotting a Single Function</a></li>
+<li class="chapter" data-level="7.0.3" data-path="visualizing-functions-with-ggplot2.html"><a href="visualizing-functions-with-ggplot2.html#multiple-functions-in-one-plot-mc-and-ac"><i class="fa fa-check"></i><b>7.0.3</b> 2. Multiple Functions in One Plot (MC and AC)</a></li>
+<li class="chapter" data-level="7.0.4" data-path="visualizing-functions-with-ggplot2.html"><a href="visualizing-functions-with-ggplot2.html#multiple-functions-in-one-plot-mr-mc-ac"><i class="fa fa-check"></i><b>7.0.4</b> 3. Multiple Functions in One Plot (MR, MC, AC)</a></li>
+<li class="chapter" data-level="7.1" data-path="visualizing-functions-with-ggplot2.html"><a href="visualizing-functions-with-ggplot2.html#interpretation-guide"><i class="fa fa-check"></i><b>7.1</b> Interpretation Guide:</a></li>
+<li class="chapter" data-level="7.2" data-path="visualizing-functions-with-ggplot2.html"><a href="visualizing-functions-with-ggplot2.html#mini-exercise-2.1"><i class="fa fa-check"></i><b>7.2</b> Mini-Exercise 2.1</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="partial-derivatives.html"><a href="partial-derivatives.html"><i class="fa fa-check"></i><b>8</b> Partial Derivatives</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="partial-derivatives.html"><a href="partial-derivatives.html#cobb-douglas-production-function"><i class="fa fa-check"></i><b>8.1</b> Cobb-Douglas Production Function</a></li>
+<li class="chapter" data-level="8.2" data-path="partial-derivatives.html"><a href="partial-derivatives.html#utility-function"><i class="fa fa-check"></i><b>8.2</b> Utility Function</a></li>
+<li class="chapter" data-level="8.3" data-path="partial-derivatives.html"><a href="partial-derivatives.html#exercise-3"><i class="fa fa-check"></i><b>8.3</b> Exercise 3</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="answer-key.html"><a href="answer-key.html"><i class="fa fa-check"></i><b>9</b> Answer Key</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="answer-key.html"><a href="answer-key.html#introduction-2"><i class="fa fa-check"></i><b>9.1</b> Introduction</a></li>
+<li class="chapter" data-level="9.2" data-path="answer-key.html"><a href="answer-key.html#weekly-exercise-1"><i class="fa fa-check"></i><b>9.2</b> Weekly Exercise 1</a>
+<ul>
+<li class="chapter" data-level="9.2.1" data-path="answer-key.html"><a href="answer-key.html#final-answers"><i class="fa fa-check"></i><b>9.2.1</b> Final Answers</a></li>
+<li class="chapter" data-level="9.2.2" data-path="answer-key.html"><a href="answer-key.html#r-codes"><i class="fa fa-check"></i><b>9.2.2</b> R Codes</a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="answer-key.html"><a href="answer-key.html#weekly-exercise-2"><i class="fa fa-check"></i><b>9.3</b> Weekly Exercise 2</a>
+<ul>
+<li class="chapter" data-level="9.3.1" data-path="answer-key.html"><a href="answer-key.html#final-answers-1"><i class="fa fa-check"></i><b>9.3.1</b> Final Answers</a></li>
+<li class="chapter" data-level="9.3.2" data-path="answer-key.html"><a href="answer-key.html#r-codes-1"><i class="fa fa-check"></i><b>9.3.2</b> R Codes</a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="answer-key.html"><a href="answer-key.html#weekly-exercise-2.1"><i class="fa fa-check"></i><b>9.4</b> Weekly Exercise 2.1</a>
+<ul>
+<li class="chapter" data-level="9.4.1" data-path="answer-key.html"><a href="answer-key.html#final-answers-2"><i class="fa fa-check"></i><b>9.4.1</b> Final Answers</a></li>
+<li class="chapter" data-level="9.4.2" data-path="answer-key.html"><a href="answer-key.html#r-codes-2"><i class="fa fa-check"></i><b>9.4.2</b> R Codes</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="review-of-derivatives-and-visualizations.html"><a href="review-of-derivatives-and-visualizations.html"><i class="fa fa-check"></i><b>10</b> Review of Derivatives and Visualizations</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="review-of-derivatives-and-visualizations.html"><a href="review-of-derivatives-and-visualizations.html#review-of-visualizing-functions"><i class="fa fa-check"></i><b>10.1</b> Review of Visualizing Functions</a>
+<ul>
+<li class="chapter" data-level="10.1.1" data-path="review-of-derivatives-and-visualizations.html"><a href="review-of-derivatives-and-visualizations.html#linear-function"><i class="fa fa-check"></i><b>10.1.1</b> Linear Function</a></li>
+<li class="chapter" data-level="10.1.2" data-path="review-of-derivatives-and-visualizations.html"><a href="review-of-derivatives-and-visualizations.html#quadratic-function"><i class="fa fa-check"></i><b>10.1.2</b> Quadratic Function</a></li>
+<li class="chapter" data-level="10.1.3" data-path="review-of-derivatives-and-visualizations.html"><a href="review-of-derivatives-and-visualizations.html#exponential-function"><i class="fa fa-check"></i><b>10.1.3</b> Exponential Function</a></li>
+</ul></li>
+<li class="chapter" data-level="10.2" data-path="review-of-derivatives-and-visualizations.html"><a href="review-of-derivatives-and-visualizations.html#review-of-partial-derivatives"><i class="fa fa-check"></i><b>10.2</b> Review of Partial Derivatives</a>
+<ul>
+<li class="chapter" data-level="10.2.1" data-path="review-of-derivatives-and-visualizations.html"><a href="review-of-derivatives-and-visualizations.html#production-function"><i class="fa fa-check"></i><b>10.2.1</b> Production Function</a></li>
+<li class="chapter" data-level="10.2.2" data-path="review-of-derivatives-and-visualizations.html"><a href="review-of-derivatives-and-visualizations.html#utility-function-1"><i class="fa fa-check"></i><b>10.2.2</b> Utility Function</a></li>
+<li class="chapter" data-level="10.2.3" data-path="review-of-derivatives-and-visualizations.html"><a href="review-of-derivatives-and-visualizations.html#profit-function"><i class="fa fa-check"></i><b>10.2.3</b> Profit Function</a></li>
+<li class="chapter" data-level="10.2.4" data-path="review-of-derivatives-and-visualizations.html"><a href="review-of-derivatives-and-visualizations.html#revenue-function"><i class="fa fa-check"></i><b>10.2.4</b> Revenue Function</a></li>
+<li class="chapter" data-level="10.2.5" data-path="review-of-derivatives-and-visualizations.html"><a href="review-of-derivatives-and-visualizations.html#cost-function"><i class="fa fa-check"></i><b>10.2.5</b> Cost Function</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html"><i class="fa fa-check"></i><b>11</b> Total Differentiation, Young’s Theorem, Hessian Matrix and Bordered Hessian Matrix</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#total-differentiation"><i class="fa fa-check"></i><b>11.1</b> Total Differentiation</a>
+<ul>
+<li class="chapter" data-level="11.1.1" data-path="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cobb-douglas-production-function-1"><i class="fa fa-check"></i><b>11.1.1</b> Cobb-Douglas Production Function</a></li>
+<li class="chapter" data-level="11.1.2" data-path="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#profit-function-1"><i class="fa fa-check"></i><b>11.1.2</b> Profit Function</a></li>
+</ul></li>
+<li class="chapter" data-level="11.2" data-path="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#youngs-theorem"><i class="fa fa-check"></i><b>11.2</b> Young’s Theorem</a>
+<ul>
+<li class="chapter" data-level="11.2.1" data-path="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#utility-function-2"><i class="fa fa-check"></i><b>11.2.1</b> Utility Function</a></li>
+<li class="chapter" data-level="11.2.2" data-path="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#production-function-1"><i class="fa fa-check"></i><b>11.2.2</b> Production Function</a></li>
+<li class="chapter" data-level="11.2.3" data-path="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#profit-interaction"><i class="fa fa-check"></i><b>11.2.3</b> Profit Interaction</a></li>
+<li class="chapter" data-level="11.2.4" data-path="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#cost-interaction"><i class="fa fa-check"></i><b>11.2.4</b> Cost Interaction</a></li>
+</ul></li>
+<li class="chapter" data-level="11.3" data-path="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#hessian-matrix"><i class="fa fa-check"></i><b>11.3</b> Hessian Matrix</a>
+<ul>
+<li class="chapter" data-level="11.3.1" data-path="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#decision-rule-2-variables"><i class="fa fa-check"></i><b>11.3.1</b> Decision Rule (2 variables)</a></li>
+<li class="chapter" data-level="11.3.2" data-path="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#local-minimum"><i class="fa fa-check"></i><b>11.3.2</b> Local Minimum</a></li>
+<li class="chapter" data-level="11.3.3" data-path="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#function-2"><i class="fa fa-check"></i><b>11.3.3</b> Function 2</a></li>
+<li class="chapter" data-level="11.3.4" data-path="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#function-3"><i class="fa fa-check"></i><b>11.3.4</b> Function 3</a></li>
+<li class="chapter" data-level="11.3.5" data-path="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#function-4"><i class="fa fa-check"></i><b>11.3.5</b> Function 4</a></li>
+</ul></li>
+<li class="chapter" data-level="11.4" data-path="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#bordered-hessian"><i class="fa fa-check"></i><b>11.4</b> Bordered Hessian</a>
+<ul>
+<li class="chapter" data-level="11.4.1" data-path="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#setup-example"><i class="fa fa-check"></i><b>11.4.1</b> Setup Example:</a></li>
+</ul></li>
+<li class="chapter" data-level="11.5" data-path="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#example-1-1"><i class="fa fa-check"></i><b>11.5</b> Example 1</a>
+<ul>
+<li class="chapter" data-level="11.5.1" data-path="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#example-2-1"><i class="fa fa-check"></i><b>11.5.1</b> Example 2</a></li>
+</ul></li>
+<li class="chapter" data-level="11.6" data-path="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#interpretations"><i class="fa fa-check"></i><b>11.6</b> Interpretations:</a></li>
+<li class="chapter" data-level="11.7" data-path="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html"><a href="total-differentiation-youngs-theorem-hessian-matrix-and-bordered-hessian-matrix.html#exercise"><i class="fa fa-check"></i><b>11.7</b> Exercise:</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="review-hessian-matrix-and-bordered-hessian.html"><a href="review-hessian-matrix-and-bordered-hessian.html"><i class="fa fa-check"></i><b>12</b> Review: Hessian Matrix and Bordered Hessian</a>
+<ul>
+<li class="chapter" data-level="12.0.1" data-path="review-hessian-matrix-and-bordered-hessian.html"><a href="review-hessian-matrix-and-bordered-hessian.html#structure-of-hessian-1"><i class="fa fa-check"></i><b>12.0.1</b> Structure of Hessian</a></li>
+<li class="chapter" data-level="12.1" data-path="review-hessian-matrix-and-bordered-hessian.html"><a href="review-hessian-matrix-and-bordered-hessian.html#example-in-class"><i class="fa fa-check"></i><b>12.1</b> Example in Class</a>
+<ul>
+<li class="chapter" data-level="12.1.1" data-path="review-hessian-matrix-and-bordered-hessian.html"><a href="review-hessian-matrix-and-bordered-hessian.html#general-hessian-template"><i class="fa fa-check"></i><b>12.1.1</b> General Hessian Template</a></li>
+</ul></li>
+<li class="chapter" data-level="12.2" data-path="review-hessian-matrix-and-bordered-hessian.html"><a href="review-hessian-matrix-and-bordered-hessian.html#bordered-hessian-1"><i class="fa fa-check"></i><b>12.2</b> Bordered Hessian</a></li>
+<li class="chapter" data-level="12.3" data-path="review-hessian-matrix-and-bordered-hessian.html"><a href="review-hessian-matrix-and-bordered-hessian.html#example-in-class-1"><i class="fa fa-check"></i><b>12.3</b> Example in Class:</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="plotting-and-optimization-in-microeconomic-models.html"><a href="plotting-and-optimization-in-microeconomic-models.html"><i class="fa fa-check"></i><b>13</b> Plotting and Optimization in Microeconomic Models</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="plotting-and-optimization-in-microeconomic-models.html"><a href="plotting-and-optimization-in-microeconomic-models.html#basic-contour-plot"><i class="fa fa-check"></i><b>13.1</b> Basic Contour Plot</a></li>
+<li class="chapter" data-level="13.2" data-path="plotting-and-optimization-in-microeconomic-models.html"><a href="plotting-and-optimization-in-microeconomic-models.html#economic-example-production-isoquants-and-isocosts"><i class="fa fa-check"></i><b>13.2</b> Economic Example: Production Isoquants and Isocosts</a></li>
+<li class="chapter" data-level="13.3" data-path="plotting-and-optimization-in-microeconomic-models.html"><a href="plotting-and-optimization-in-microeconomic-models.html#utility-contour-and-gradient-vectors"><i class="fa fa-check"></i><b>13.3</b> Utility Contour and Gradient Vectors</a>
+<ul>
+<li class="chapter" data-level="13.3.1" data-path="plotting-and-optimization-in-microeconomic-models.html"><a href="plotting-and-optimization-in-microeconomic-models.html#lets-add-budget-line"><i class="fa fa-check"></i><b>13.3.1</b> Let’s Add Budget Line</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="returns-to-scale.html"><a href="returns-to-scale.html"><i class="fa fa-check"></i><b>14</b> Returns to Scale</a>
+<ul>
+<li class="chapter" data-level="14.1" data-path="returns-to-scale.html"><a href="returns-to-scale.html#production-function-2"><i class="fa fa-check"></i><b>14.1</b> Production Function</a>
+<ul>
+<li class="chapter" data-level="14.1.1" data-path="returns-to-scale.html"><a href="returns-to-scale.html#plotting-the-comparison"><i class="fa fa-check"></i><b>14.1.1</b> Plotting the comparison</a></li>
+</ul></li>
+<li class="chapter" data-level="14.2" data-path="returns-to-scale.html"><a href="returns-to-scale.html#exercise-march-10"><i class="fa fa-check"></i><b>14.2</b> Exercise March 10:</a></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="part-i.-elasticity-calculations-what-if-changes-and-visualization.html"><a href="part-i.-elasticity-calculations-what-if-changes-and-visualization.html"><i class="fa fa-check"></i><b>15</b> Part I. Elasticity: Calculations, “What If” Changes, and Visualization</a>
+<ul>
+<li class="chapter" data-level="15.1" data-path="part-i.-elasticity-calculations-what-if-changes-and-visualization.html"><a href="part-i.-elasticity-calculations-what-if-changes-and-visualization.html#what-elasticity-means"><i class="fa fa-check"></i><b>15.1</b> What Elasticity Means</a></li>
+<li class="chapter" data-level="15.2" data-path="part-i.-elasticity-calculations-what-if-changes-and-visualization.html"><a href="part-i.-elasticity-calculations-what-if-changes-and-visualization.html#elasticity-when-a-demand-curve-is-given"><i class="fa fa-check"></i><b>15.2</b> Elasticity When a Demand Curve Is Given</a></li>
+<li class="chapter" data-level="15.3" data-path="part-i.-elasticity-calculations-what-if-changes-and-visualization.html"><a href="part-i.-elasticity-calculations-what-if-changes-and-visualization.html#code-plotting-the-demand-curve-and-elasticity"><i class="fa fa-check"></i><b>15.3</b> Code: Plotting the Demand Curve and Elasticity</a></li>
+<li class="chapter" data-level="15.4" data-path="part-i.-elasticity-calculations-what-if-changes-and-visualization.html"><a href="part-i.-elasticity-calculations-what-if-changes-and-visualization.html#deep-code-explanation"><i class="fa fa-check"></i><b>15.4</b> Deep Code Explanation</a></li>
+<li class="chapter" data-level="15.5" data-path="part-i.-elasticity-calculations-what-if-changes-and-visualization.html"><a href="part-i.-elasticity-calculations-what-if-changes-and-visualization.html#what-if-elasticity-changes-when-the-demand-curve-changes"><i class="fa fa-check"></i><b>15.5</b> “What If?” Elasticity Changes When the Demand Curve Changes</a>
+<ul>
+<li class="chapter" data-level="15.5.1" data-path="part-i.-elasticity-calculations-what-if-changes-and-visualization.html"><a href="part-i.-elasticity-calculations-what-if-changes-and-visualization.html#example-a-what-if-the-slope-changes"><i class="fa fa-check"></i><b>15.5.1</b> Example A: What If the Slope Changes?</a></li>
+<li class="chapter" data-level="15.5.2" data-path="part-i.-elasticity-calculations-what-if-changes-and-visualization.html"><a href="part-i.-elasticity-calculations-what-if-changes-and-visualization.html#example-b-what-if-the-intercept-changes"><i class="fa fa-check"></i><b>15.5.2</b> Example B: What If the Intercept Changes?</a></li>
+</ul></li>
+<li class="chapter" data-level="15.6" data-path="part-i.-elasticity-calculations-what-if-changes-and-visualization.html"><a href="part-i.-elasticity-calculations-what-if-changes-and-visualization.html#elasticity-when-a-supply-curve-is-given"><i class="fa fa-check"></i><b>15.6</b> Elasticity When a Supply Curve Is Given</a></li>
+</ul></li>
+<li class="chapter" data-level="16" data-path="part-ii.-comparative-statics.html"><a href="part-ii.-comparative-statics.html"><i class="fa fa-check"></i><b>16</b> Part II. Comparative Statics</a>
+<ul>
+<li class="chapter" data-level="16.1" data-path="part-ii.-comparative-statics.html"><a href="part-ii.-comparative-statics.html#example-1-market-equilibrium-when-demand-shifts"><i class="fa fa-check"></i><b>16.1</b> Example 1: Market Equilibrium When Demand Shifts</a></li>
+<li class="chapter" data-level="16.2" data-path="part-ii.-comparative-statics.html"><a href="part-ii.-comparative-statics.html#example-2-wage-changes-and-labor-demand"><i class="fa fa-check"></i><b>16.2</b> Example 2: Wage Changes and Labor Demand</a></li>
+<li class="chapter" data-level="16.3" data-path="part-ii.-comparative-statics.html"><a href="part-ii.-comparative-statics.html#example-3-productivity-changes"><i class="fa fa-check"></i><b>16.3</b> Example 3: Productivity Changes</a></li>
+<li class="chapter" data-level="16.4" data-path="part-ii.-comparative-statics.html"><a href="part-ii.-comparative-statics.html#example-4-rental-rate-of-capital-and-optimal-inputs"><i class="fa fa-check"></i><b>16.4</b> Example 4: Rental Rate of Capital and Optimal Inputs</a></li>
+</ul></li>
+<li class="chapter" data-level="17" data-path="part-iii.-first-order-differential-equations-and-euler-method.html"><a href="part-iii.-first-order-differential-equations-and-euler-method.html"><i class="fa fa-check"></i><b>17</b> Part III. First-Order Differential Equations and Euler Method</a>
+<ul>
+<li class="chapter" data-level="17.1" data-path="part-iii.-first-order-differential-equations-and-euler-method.html"><a href="part-iii.-first-order-differential-equations-and-euler-method.html#from-static-change-to-change-over-time"><i class="fa fa-check"></i><b>17.1</b> From Static Change to Change Over Time</a></li>
+<li class="chapter" data-level="17.2" data-path="part-iii.-first-order-differential-equations-and-euler-method.html"><a href="part-iii.-first-order-differential-equations-and-euler-method.html#the-euler-method"><i class="fa fa-check"></i><b>17.2</b> The Euler Method</a></li>
+</ul></li>
+<li class="chapter" data-level="18" data-path="part-iv.-integral-calculus-in-economics.html"><a href="part-iv.-integral-calculus-in-economics.html"><i class="fa fa-check"></i><b>18</b> Part IV. Integral Calculus in Economics</a>
+<ul>
+<li class="chapter" data-level="18.1" data-path="part-iv.-integral-calculus-in-economics.html"><a href="part-iv.-integral-calculus-in-economics.html#consumer-surplus-from-an-inverse-demand-curve"><i class="fa fa-check"></i><b>18.1</b> Consumer Surplus from an Inverse Demand Curve</a></li>
+</ul></li>
+<li class="chapter" data-level="19" data-path="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html"><i class="fa fa-check"></i><b>19</b> Part V. Elasticity When Demand and Supply Schedules Are Given</a>
+<ul>
+<li class="chapter" data-level="19.1" data-path="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#price-elasticity-from-a-demand-schedule"><i class="fa fa-check"></i><b>19.1</b> Price Elasticity from a Demand Schedule</a>
+<ul>
+<li class="chapter" data-level="19.1.1" data-path="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#economic-idea"><i class="fa fa-check"></i><b>19.1.1</b> Economic Idea</a></li>
+<li class="chapter" data-level="19.1.2" data-path="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#arc-elasticity-formula"><i class="fa fa-check"></i><b>19.1.2</b> Arc Elasticity Formula</a></li>
+<li class="chapter" data-level="19.1.3" data-path="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#manual-calculation-for-the-first-interval"><i class="fa fa-check"></i><b>19.1.3</b> Manual Calculation for the First Interval</a></li>
+<li class="chapter" data-level="19.1.4" data-path="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#r-code-for-a-demand-schedule"><i class="fa fa-check"></i><b>19.1.4</b> R Code for a Demand Schedule</a></li>
+<li class="chapter" data-level="19.1.5" data-path="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#plot-1"><i class="fa fa-check"></i><b>19.1.5</b> Plot</a></li>
+</ul></li>
+<li class="chapter" data-level="19.2" data-path="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#price-elasticity-from-a-supply-schedule"><i class="fa fa-check"></i><b>19.2</b> Price Elasticity from a Supply Schedule</a>
+<ul>
+<li class="chapter" data-level="19.2.1" data-path="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#economic-idea-1"><i class="fa fa-check"></i><b>19.2.1</b> Economic Idea</a></li>
+<li class="chapter" data-level="19.2.2" data-path="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#manual-calculation-for-the-first-interval-1"><i class="fa fa-check"></i><b>19.2.2</b> Manual Calculation for the First Interval</a></li>
+<li class="chapter" data-level="19.2.3" data-path="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#r-code-for-a-supply-schedule"><i class="fa fa-check"></i><b>19.2.3</b> R Code for a Supply Schedule</a></li>
+<li class="chapter" data-level="19.2.4" data-path="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#plot-2"><i class="fa fa-check"></i><b>19.2.4</b> Plot</a></li>
+</ul></li>
+<li class="chapter" data-level="19.3" data-path="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html"><a href="part-v.-elasticity-when-demand-and-supply-schedules-are-given.html#combined-classroom-example"><i class="fa fa-check"></i><b>19.3</b> Combined Classroom Example:</a></li>
+</ul></li>
+<li class="chapter" data-level="20" data-path="part-iii-first-order-differential-equations-and-the-euler-method.html"><a href="part-iii-first-order-differential-equations-and-the-euler-method.html"><i class="fa fa-check"></i><b>20</b> Part III: First-Order Differential Equations and the Euler Method</a>
+<ul>
+<li class="chapter" data-level="20.1" data-path="part-iii-first-order-differential-equations-and-the-euler-method.html"><a href="part-iii-first-order-differential-equations-and-the-euler-method.html#from-static-change-to-change-over-time-1"><i class="fa fa-check"></i><b>20.1</b> From Static Change to Change Over Time</a></li>
+<li class="chapter" data-level="20.2" data-path="part-iii-first-order-differential-equations-and-the-euler-method.html"><a href="part-iii-first-order-differential-equations-and-the-euler-method.html#the-euler-method-1"><i class="fa fa-check"></i><b>20.2</b> The Euler Method</a></li>
+</ul></li>
+<li class="chapter" data-level="21" data-path="examples.html"><a href="examples.html"><i class="fa fa-check"></i><b>21</b> Examples</a>
+<ul>
+<li class="chapter" data-level="21.1" data-path="examples.html"><a href="examples.html#example-1-capital-accumulation-euler-method"><i class="fa fa-check"></i><b>21.1</b> Example 1: Capital Accumulation (Euler Method)</a></li>
+<li class="chapter" data-level="21.2" data-path="examples.html"><a href="examples.html#example-2-price-adjustment-dynamics-euler-method"><i class="fa fa-check"></i><b>21.2</b> Example 2: Price Adjustment Dynamics (Euler Method)</a></li>
+<li class="chapter" data-level="21.3" data-path="examples.html"><a href="examples.html#example-3-consumer-surplus-integral-calculus"><i class="fa fa-check"></i><b>21.3</b> Example 3: Consumer Surplus (Integral Calculus)</a></li>
+<li class="chapter" data-level="21.4" data-path="examples.html"><a href="examples.html#example-4-total-cost-from-marginal-cost-integral-calculus"><i class="fa fa-check"></i><b>21.4</b> Example 4: Total Cost from Marginal Cost (Integral Calculus)</a></li>
+</ul></li>
+<li class="chapter" data-level="22" data-path="questions.html"><a href="questions.html"><i class="fa fa-check"></i><b>22</b> Questions</a>
+<ul>
+<li class="chapter" data-level="22.1" data-path="questions.html"><a href="questions.html#part-a-first-order-differential-equations-euler-method"><i class="fa fa-check"></i><b>22.1</b> Part A: First-Order Differential Equations (Euler Method)</a>
+<ul>
+<li class="chapter" data-level="22.1.1" data-path="questions.html"><a href="questions.html#q1"><i class="fa fa-check"></i><b>22.1.1</b> Q1</a></li>
+<li class="chapter" data-level="22.1.2" data-path="questions.html"><a href="questions.html#q2"><i class="fa fa-check"></i><b>22.1.2</b> Q2</a></li>
+<li class="chapter" data-level="22.1.3" data-path="questions.html"><a href="questions.html#q3"><i class="fa fa-check"></i><b>22.1.3</b> Q3</a></li>
+<li class="chapter" data-level="22.1.4" data-path="questions.html"><a href="questions.html#q4"><i class="fa fa-check"></i><b>22.1.4</b> Q4</a></li>
+<li class="chapter" data-level="22.1.5" data-path="questions.html"><a href="questions.html#q5"><i class="fa fa-check"></i><b>22.1.5</b> Q5</a></li>
+<li class="chapter" data-level="22.1.6" data-path="questions.html"><a href="questions.html#q6"><i class="fa fa-check"></i><b>22.1.6</b> Q6</a></li>
+<li class="chapter" data-level="22.1.7" data-path="questions.html"><a href="questions.html#q7"><i class="fa fa-check"></i><b>22.1.7</b> Q7</a></li>
+<li class="chapter" data-level="22.1.8" data-path="questions.html"><a href="questions.html#q8"><i class="fa fa-check"></i><b>22.1.8</b> Q8</a></li>
+<li class="chapter" data-level="22.1.9" data-path="questions.html"><a href="questions.html#q9"><i class="fa fa-check"></i><b>22.1.9</b> Q9</a></li>
+<li class="chapter" data-level="22.1.10" data-path="questions.html"><a href="questions.html#q10"><i class="fa fa-check"></i><b>22.1.10</b> Q10</a></li>
+<li class="chapter" data-level="22.1.11" data-path="questions.html"><a href="questions.html#q11"><i class="fa fa-check"></i><b>22.1.11</b> Q11</a></li>
+<li class="chapter" data-level="22.1.12" data-path="questions.html"><a href="questions.html#q12"><i class="fa fa-check"></i><b>22.1.12</b> Q12</a></li>
+<li class="chapter" data-level="22.1.13" data-path="questions.html"><a href="questions.html#q13"><i class="fa fa-check"></i><b>22.1.13</b> Q13</a></li>
+<li class="chapter" data-level="22.1.14" data-path="questions.html"><a href="questions.html#q14"><i class="fa fa-check"></i><b>22.1.14</b> Q14</a></li>
+<li class="chapter" data-level="22.1.15" data-path="questions.html"><a href="questions.html#q15"><i class="fa fa-check"></i><b>22.1.15</b> Q15</a></li>
+</ul></li>
+<li class="chapter" data-level="22.2" data-path="questions.html"><a href="questions.html#part-b-integral-calculus-in-economics"><i class="fa fa-check"></i><b>22.2</b> Part B: Integral Calculus in Economics</a>
+<ul>
+<li class="chapter" data-level="22.2.1" data-path="questions.html"><a href="questions.html#q16"><i class="fa fa-check"></i><b>22.2.1</b> Q16</a></li>
+<li class="chapter" data-level="22.2.2" data-path="questions.html"><a href="questions.html#q17"><i class="fa fa-check"></i><b>22.2.2</b> Q17</a></li>
+<li class="chapter" data-level="22.2.3" data-path="questions.html"><a href="questions.html#q18"><i class="fa fa-check"></i><b>22.2.3</b> Q18</a></li>
+<li class="chapter" data-level="22.2.4" data-path="questions.html"><a href="questions.html#q19"><i class="fa fa-check"></i><b>22.2.4</b> Q19</a></li>
+<li class="chapter" data-level="22.2.5" data-path="questions.html"><a href="questions.html#q20"><i class="fa fa-check"></i><b>22.2.5</b> Q20</a></li>
+<li class="chapter" data-level="22.2.6" data-path="questions.html"><a href="questions.html#q21"><i class="fa fa-check"></i><b>22.2.6</b> Q21</a></li>
+<li class="chapter" data-level="22.2.7" data-path="questions.html"><a href="questions.html#q22"><i class="fa fa-check"></i><b>22.2.7</b> Q22</a></li>
+<li class="chapter" data-level="22.2.8" data-path="questions.html"><a href="questions.html#q23"><i class="fa fa-check"></i><b>22.2.8</b> Q23</a></li>
+<li class="chapter" data-level="22.2.9" data-path="questions.html"><a href="questions.html#q24"><i class="fa fa-check"></i><b>22.2.9</b> Q24</a></li>
+<li class="chapter" data-level="22.2.10" data-path="questions.html"><a href="questions.html#q25"><i class="fa fa-check"></i><b>22.2.10</b> Q25</a></li>
+<li class="chapter" data-level="22.2.11" data-path="questions.html"><a href="questions.html#q26"><i class="fa fa-check"></i><b>22.2.11</b> Q26</a></li>
+<li class="chapter" data-level="22.2.12" data-path="questions.html"><a href="questions.html#q27"><i class="fa fa-check"></i><b>22.2.12</b> Q27</a></li>
+<li class="chapter" data-level="22.2.13" data-path="questions.html"><a href="questions.html#q28"><i class="fa fa-check"></i><b>22.2.13</b> Q28</a></li>
+<li class="chapter" data-level="22.2.14" data-path="questions.html"><a href="questions.html#q29"><i class="fa fa-check"></i><b>22.2.14</b> Q29</a></li>
+<li class="chapter" data-level="22.2.15" data-path="questions.html"><a href="questions.html#q30"><i class="fa fa-check"></i><b>22.2.15</b> Q30</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="23" data-path="review-partial-derivatives-and-comparative-statics.html"><a href="review-partial-derivatives-and-comparative-statics.html"><i class="fa fa-check"></i><b>23</b> Review: Partial Derivatives and Comparative Statics</a>
+<ul>
+<li class="chapter" data-level="23.1" data-path="review-partial-derivatives-and-comparative-statics.html"><a href="review-partial-derivatives-and-comparative-statics.html#partial-derivatives-2"><i class="fa fa-check"></i><b>23.1</b> Partial Derivatives</a>
+<ul>
+<li class="chapter" data-level="23.1.1" data-path="review-partial-derivatives-and-comparative-statics.html"><a href="review-partial-derivatives-and-comparative-statics.html#definition"><i class="fa fa-check"></i><b>23.1.1</b> Definition</a></li>
+<li class="chapter" data-level="23.1.2" data-path="review-partial-derivatives-and-comparative-statics.html"><a href="review-partial-derivatives-and-comparative-statics.html#notation"><i class="fa fa-check"></i><b>23.1.2</b> Notation</a></li>
+<li class="chapter" data-level="23.1.3" data-path="review-partial-derivatives-and-comparative-statics.html"><a href="review-partial-derivatives-and-comparative-statics.html#techniques-of-partial-differentiation"><i class="fa fa-check"></i><b>23.1.3</b> Techniques of Partial Differentiation</a></li>
+</ul></li>
+<li class="chapter" data-level="23.2" data-path="review-partial-derivatives-and-comparative-statics.html"><a href="review-partial-derivatives-and-comparative-statics.html#visualizing-different-functions"><i class="fa fa-check"></i><b>23.2</b> Visualizing Different Functions</a>
+<ul>
+<li class="chapter" data-level="23.2.1" data-path="review-partial-derivatives-and-comparative-statics.html"><a href="review-partial-derivatives-and-comparative-statics.html#marginal-analysis"><i class="fa fa-check"></i><b>23.2.1</b> Marginal Analysis</a></li>
+<li class="chapter" data-level="23.2.2" data-path="review-partial-derivatives-and-comparative-statics.html"><a href="review-partial-derivatives-and-comparative-statics.html#marginal-product-of-labor-and-capital"><i class="fa fa-check"></i><b>23.2.2</b> Marginal Product of Labor and Capital</a></li>
+</ul></li>
+<li class="chapter" data-level="23.3" data-path="review-partial-derivatives-and-comparative-statics.html"><a href="review-partial-derivatives-and-comparative-statics.html#comparative-statics"><i class="fa fa-check"></i><b>23.3</b> Comparative Statics</a>
+<ul>
+<li class="chapter" data-level="23.3.1" data-path="review-partial-derivatives-and-comparative-statics.html"><a href="review-partial-derivatives-and-comparative-statics.html#what-is-comparative-statics"><i class="fa fa-check"></i><b>23.3.1</b> What Is Comparative Statics?</a></li>
+<li class="chapter" data-level="23.3.2" data-path="review-partial-derivatives-and-comparative-statics.html"><a href="review-partial-derivatives-and-comparative-statics.html#the-market-model"><i class="fa fa-check"></i><b>23.3.2</b> The Market Model</a></li>
+<li class="chapter" data-level="23.3.3" data-path="review-partial-derivatives-and-comparative-statics.html"><a href="review-partial-derivatives-and-comparative-statics.html#partial-derivatives-of-p-with-respect-to-each-parameter"><i class="fa fa-check"></i><b>23.3.3</b> Partial Derivatives of P* with Respect to Each Parameter</a></li>
+<li class="chapter" data-level="23.3.4" data-path="review-partial-derivatives-and-comparative-statics.html"><a href="review-partial-derivatives-and-comparative-statics.html#visualizing-the-supply-demand-equilibrium"><i class="fa fa-check"></i><b>23.3.4</b> Visualizing the Supply-Demand Equilibrium</a></li>
+<li class="chapter" data-level="23.3.5" data-path="review-partial-derivatives-and-comparative-statics.html"><a href="review-partial-derivatives-and-comparative-statics.html#effect-of-changing-the-demand-intercept-a-pa-0"><i class="fa fa-check"></i><b>23.3.5</b> Effect of Changing the Demand Intercept <span class="math inline">\(a\)</span> (∂P*/∂a &gt; 0)</a></li>
+<li class="chapter" data-level="23.3.6" data-path="review-partial-derivatives-and-comparative-statics.html"><a href="review-partial-derivatives-and-comparative-statics.html#effect-of-changing-the-demand-slope-b-pb-0"><i class="fa fa-check"></i><b>23.3.6</b> Effect of Changing the Demand Slope <span class="math inline">\(b\)</span> (∂P*/∂b &lt; 0)</a></li>
+<li class="chapter" data-level="23.3.7" data-path="review-partial-derivatives-and-comparative-statics.html"><a href="review-partial-derivatives-and-comparative-statics.html#effect-of-changing-the-supply-intercept-c-pc-0"><i class="fa fa-check"></i><b>23.3.7</b> Effect of Changing the Supply Intercept <span class="math inline">\(c\)</span> (∂P*/∂c &gt; 0)</a></li>
+<li class="chapter" data-level="23.3.8" data-path="review-partial-derivatives-and-comparative-statics.html"><a href="review-partial-derivatives-and-comparative-statics.html#effect-of-changing-the-supply-slope-d-pd-0"><i class="fa fa-check"></i><b>23.3.8</b> Effect of Changing the Supply Slope <span class="math inline">\(d\)</span> (∂P*/∂d &lt; 0)</a></li>
+<li class="chapter" data-level="23.3.9" data-path="review-partial-derivatives-and-comparative-statics.html"><a href="review-partial-derivatives-and-comparative-statics.html#summary-table-of-p-comparative-statics"><i class="fa fa-check"></i><b>23.3.9</b> Summary Table of P* Comparative Statics</a></li>
+</ul></li>
+<li class="chapter" data-level="23.4" data-path="review-partial-derivatives-and-comparative-statics.html"><a href="review-partial-derivatives-and-comparative-statics.html#additional-comparative-statics-examples-from-lbyc121"><i class="fa fa-check"></i><b>23.4</b> Additional Comparative Statics Examples (from LBYC121)</a>
+<ul>
+<li class="chapter" data-level="23.4.1" data-path="review-partial-derivatives-and-comparative-statics.html"><a href="review-partial-derivatives-and-comparative-statics.html#example-1-demand-shift-and-equilibrium-with-explicit-sd"><i class="fa fa-check"></i><b>23.4.1</b> Example 1: Demand Shift and Equilibrium (with explicit S&amp;D)</a></li>
+<li class="chapter" data-level="23.4.2" data-path="review-partial-derivatives-and-comparative-statics.html"><a href="review-partial-derivatives-and-comparative-statics.html#example-2-wage-changes-and-labor-demand-1"><i class="fa fa-check"></i><b>23.4.2</b> Example 2: Wage Changes and Labor Demand</a></li>
+<li class="chapter" data-level="23.4.3" data-path="review-partial-derivatives-and-comparative-statics.html"><a href="review-partial-derivatives-and-comparative-statics.html#example-3-technology-and-output"><i class="fa fa-check"></i><b>23.4.3</b> Example 3: Technology and Output</a></li>
+<li class="chapter" data-level="23.4.4" data-path="review-partial-derivatives-and-comparative-statics.html"><a href="review-partial-derivatives-and-comparative-statics.html#example-4-rental-rate-of-capital-and-optimal-inputs-1"><i class="fa fa-check"></i><b>23.4.4</b> Example 4: Rental Rate of Capital and Optimal Inputs</a></li>
+</ul></li>
+<li class="chapter" data-level="23.5" data-path="review-partial-derivatives-and-comparative-statics.html"><a href="review-partial-derivatives-and-comparative-statics.html#quick-reference-key-r-syntax-used"><i class="fa fa-check"></i><b>23.5</b> Quick Reference: Key R Syntax Used</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">LBYC121 Course Book</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="review-partial-derivatives-and-comparative-statics" class="section level1 hasAnchor" number="23">
+<h1><span class="header-section-number">23</span> Review: Partial Derivatives and Comparative Statics<a href="review-partial-derivatives-and-comparative-statics.html#review-partial-derivatives-and-comparative-statics" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="partial-derivatives-2" class="section level2 hasAnchor" number="23.1">
+<h2><span class="header-section-number">23.1</span> Partial Derivatives<a href="review-partial-derivatives-and-comparative-statics.html#partial-derivatives-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="definition" class="section level3 hasAnchor" number="23.1.1">
+<h3><span class="header-section-number">23.1.1</span> Definition<a href="review-partial-derivatives-and-comparative-statics.html#definition" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Consider a function</p>
+<p><span class="math display">\[y = f(x_1, x_2, \ldots, x_n)\]</span></p>
+<p>where the variables <span class="math inline">\(x_i\)</span> (<span class="math inline">\(i = 1, 2, \ldots, n\)</span>) are all <strong>independent</strong> of one another, so each can vary on its own without affecting the others.</p>
+<p>If <span class="math inline">\(x_1\)</span> changes by <span class="math inline">\(\Delta x_1\)</span> while <span class="math inline">\(x_2, \ldots, x_n\)</span> remain fixed, the difference quotient is:</p>
+<p><span class="math display">\[\frac{\Delta y}{\Delta x_1} = \frac{f(x_1 + \Delta x_1,\, x_2,\, \ldots,\, x_n) - f(x_1,\, x_2,\, \ldots,\, x_n)}{\Delta x_1}\]</span></p>
+<p>Taking the limit as <span class="math inline">\(\Delta x_1 \to 0\)</span> gives the <strong>partial derivative</strong> of <span class="math inline">\(y\)</span> with respect to <span class="math inline">\(x_1\)</span>:</p>
+<p><span class="math display">\[\frac{\partial y}{\partial x_1} = \lim_{\Delta x_1 \to 0} \frac{f(x_1 + \Delta x_1, x_2, \ldots, x_n) - f(x_1, x_2, \ldots, x_n)}{\Delta x_1}\]</span></p>
+<p>The process of taking partial derivatives is called <strong>partial differentiation</strong>.</p>
+</div>
+<div id="notation" class="section level3 hasAnchor" number="23.1.2">
+<h3><span class="header-section-number">23.1.2</span> Notation<a href="review-partial-derivatives-and-comparative-statics.html#notation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Instead of <span class="math inline">\(d\)</span> (as in <span class="math inline">\(dy/dx\)</span>), the symbol <span class="math inline">\(\partial\)</span> is used:</p>
+<p><span class="math display">\[\frac{\partial y}{\partial x_i} = \frac{\partial}{\partial x_i} f = \partial_{x_i} y\]</span></p>
+<p>For <span class="math inline">\(y = f(x, z, w)\)</span>, partial derivatives are denoted <span class="math inline">\(f_x\)</span>, <span class="math inline">\(f_z\)</span>, and <span class="math inline">\(f_w\)</span>.</p>
+</div>
+<div id="techniques-of-partial-differentiation" class="section level3 hasAnchor" number="23.1.3">
+<h3><span class="header-section-number">23.1.3</span> Techniques of Partial Differentiation<a href="review-partial-derivatives-and-comparative-statics.html#techniques-of-partial-differentiation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The key rule: <strong>treat all other variables as constants</strong>, then differentiate normally using the usual rules.</p>
+<p><strong>Example 1.</strong> Given <span class="math inline">\(y = f(x_1, x_2) = 3x_1^2 + x_1 x_2 + 4x_2^2\)</span>, find the partial derivatives.</p>
+<p><span class="math display">\[\frac{\partial y}{\partial x_1} = 6x_1 + x_2, \qquad \frac{\partial y}{\partial x_2} = x_1 + 8x_2\]</span></p>
+<p><strong>Example 2.</strong> Given <span class="math inline">\(z = f(x, y) = (x + 4)(3y + 2x)\)</span>, find the partial derivatives.</p>
+<p>Expand: <span class="math inline">\(z = 3xy + 2x^2 + 12y + 8x\)</span></p>
+<p><span class="math display">\[f_x = 3y + 4x + 8, \qquad f_y = 3x + 12\]</span></p>
+</div>
+</div>
+<div id="visualizing-different-functions" class="section level2 hasAnchor" number="23.2">
+<h2><span class="header-section-number">23.2</span> Visualizing Different Functions<a href="review-partial-derivatives-and-comparative-statics.html#visualizing-different-functions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><strong>Linear:</strong> has a constant slope, and the second derivative is zero. This means it is both concave and convex (weakly), but neither strictly. In economics, linear demand or supply curves assume a constant price sensitivity throughout. The <code>curve()</code> function is the cleanest way to plot a mathematical expression directly without creating a separate x-vector.</p>
+<p><span class="math inline">\(y=a_0+a_1x\)</span></p>
+<div class="sourceCode" id="cb508"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb508-1"><a href="review-partial-derivatives-and-comparative-statics.html#cb508-1" tabindex="-1"></a>a0 <span class="ot">&lt;-</span> <span class="dv">2</span></span>
+<span id="cb508-2"><a href="review-partial-derivatives-and-comparative-statics.html#cb508-2" tabindex="-1"></a>a1 <span class="ot">&lt;-</span> <span class="fl">0.8</span></span>
+<span id="cb508-3"><a href="review-partial-derivatives-and-comparative-statics.html#cb508-3" tabindex="-1"></a></span>
+<span id="cb508-4"><a href="review-partial-derivatives-and-comparative-statics.html#cb508-4" tabindex="-1"></a><span class="fu">curve</span>(a0 <span class="sc">+</span> a1 <span class="sc">*</span> x,</span>
+<span id="cb508-5"><a href="review-partial-derivatives-and-comparative-statics.html#cb508-5" tabindex="-1"></a>      <span class="at">from =</span> <span class="sc">-</span><span class="dv">3</span>, <span class="at">to =</span> <span class="dv">3</span>,</span>
+<span id="cb508-6"><a href="review-partial-derivatives-and-comparative-statics.html#cb508-6" tabindex="-1"></a>      <span class="at">lwd  =</span> <span class="dv">2</span>, <span class="at">col =</span> <span class="st">&quot;steelblue&quot;</span>,</span>
+<span id="cb508-7"><a href="review-partial-derivatives-and-comparative-statics.html#cb508-7" tabindex="-1"></a>      <span class="at">xlab =</span> <span class="st">&quot;x&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;y&quot;</span>,</span>
+<span id="cb508-8"><a href="review-partial-derivatives-and-comparative-statics.html#cb508-8" tabindex="-1"></a>      <span class="at">main =</span> <span class="st">&quot;Linear: y = a0 + a1*x&quot;</span>)</span>
+<span id="cb508-9"><a href="review-partial-derivatives-and-comparative-statics.html#cb508-9" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> <span class="dv">0</span>, <span class="at">v =</span> <span class="dv">0</span>, <span class="at">col =</span> <span class="st">&quot;gray80&quot;</span>, <span class="at">lty =</span> <span class="dv">2</span>)</span></code></pre></div>
+<p><img src="LBYC121_Course_Book_files/figure-html/linear-1.png" alt="" width="576" style="display: block; margin: auto;" /></p>
+<p><strong>Quadratic:</strong> produces a parabola. Whether it opens upward or downward depends on the sign of a2: positive gives a convex (U-shaped) curve, negative gives a concave (∩-shaped) curve. The second derivative is 2*a2 — a constant — so curvature is the same everywhere. In economics, total cost functions are often quadratic (U-shaped average cost), and downward-opening quadratics appear in profit functions.</p>
+<p><span class="math inline">\(y=a_0+a_1x+a_2x^2\)</span></p>
+<div class="sourceCode" id="cb509"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb509-1"><a href="review-partial-derivatives-and-comparative-statics.html#cb509-1" tabindex="-1"></a>a0 <span class="ot">&lt;-</span> <span class="dv">1</span>;  a1 <span class="ot">&lt;-</span> <span class="sc">-</span><span class="dv">1</span>;  a2 <span class="ot">&lt;-</span> <span class="fl">0.5</span></span>
+<span id="cb509-2"><a href="review-partial-derivatives-and-comparative-statics.html#cb509-2" tabindex="-1"></a></span>
+<span id="cb509-3"><a href="review-partial-derivatives-and-comparative-statics.html#cb509-3" tabindex="-1"></a><span class="fu">curve</span>(a0 <span class="sc">+</span> a1<span class="sc">*</span>x <span class="sc">+</span> a2<span class="sc">*</span>x<span class="sc">^</span><span class="dv">2</span>,</span>
+<span id="cb509-4"><a href="review-partial-derivatives-and-comparative-statics.html#cb509-4" tabindex="-1"></a>      <span class="at">from =</span> <span class="sc">-</span><span class="dv">3</span>, <span class="at">to =</span> <span class="dv">3</span>,</span>
+<span id="cb509-5"><a href="review-partial-derivatives-and-comparative-statics.html#cb509-5" tabindex="-1"></a>      <span class="at">lwd  =</span> <span class="dv">2</span>, <span class="at">col =</span> <span class="st">&quot;steelblue&quot;</span>,</span>
+<span id="cb509-6"><a href="review-partial-derivatives-and-comparative-statics.html#cb509-6" tabindex="-1"></a>      <span class="at">xlab =</span> <span class="st">&quot;x&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;y&quot;</span>,</span>
+<span id="cb509-7"><a href="review-partial-derivatives-and-comparative-statics.html#cb509-7" tabindex="-1"></a>      <span class="at">main =</span> <span class="st">&quot;Quadratic: y = a0 + a1*x + a2*x^2&quot;</span>)</span>
+<span id="cb509-8"><a href="review-partial-derivatives-and-comparative-statics.html#cb509-8" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> <span class="dv">0</span>, <span class="at">v =</span> <span class="dv">0</span>, <span class="at">col =</span> <span class="st">&quot;gray80&quot;</span>, <span class="at">lty =</span> <span class="dv">2</span>)</span>
+<span id="cb509-9"><a href="review-partial-derivatives-and-comparative-statics.html#cb509-9" tabindex="-1"></a></span>
+<span id="cb509-10"><a href="review-partial-derivatives-and-comparative-statics.html#cb509-10" tabindex="-1"></a><span class="co"># Vertex (minimum/maximum) at x = -a1 / (2*a2)</span></span>
+<span id="cb509-11"><a href="review-partial-derivatives-and-comparative-statics.html#cb509-11" tabindex="-1"></a>x_vertex <span class="ot">&lt;-</span> <span class="sc">-</span>a1 <span class="sc">/</span> (<span class="dv">2</span> <span class="sc">*</span> a2)</span>
+<span id="cb509-12"><a href="review-partial-derivatives-and-comparative-statics.html#cb509-12" tabindex="-1"></a>y_vertex <span class="ot">&lt;-</span> a0 <span class="sc">+</span> a1<span class="sc">*</span>x_vertex <span class="sc">+</span> a2<span class="sc">*</span>x_vertex<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb509-13"><a href="review-partial-derivatives-and-comparative-statics.html#cb509-13" tabindex="-1"></a><span class="fu">points</span>(x_vertex, y_vertex, <span class="at">pch =</span> <span class="dv">19</span>, <span class="at">col =</span> <span class="st">&quot;tomato&quot;</span>)</span>
+<span id="cb509-14"><a href="review-partial-derivatives-and-comparative-statics.html#cb509-14" tabindex="-1"></a><span class="fu">text</span>(x_vertex, y_vertex <span class="sc">+</span> <span class="fl">0.3</span>,</span>
+<span id="cb509-15"><a href="review-partial-derivatives-and-comparative-statics.html#cb509-15" tabindex="-1"></a>     <span class="fu">paste0</span>(<span class="st">&quot;vertex (&quot;</span>, <span class="fu">round</span>(x_vertex,<span class="dv">2</span>), <span class="st">&quot;, &quot;</span>, <span class="fu">round</span>(y_vertex,<span class="dv">2</span>), <span class="st">&quot;)&quot;</span>),</span>
+<span id="cb509-16"><a href="review-partial-derivatives-and-comparative-statics.html#cb509-16" tabindex="-1"></a>     <span class="at">cex =</span> <span class="fl">0.8</span>)</span></code></pre></div>
+<p><img src="LBYC121_Course_Book_files/figure-html/quadratic-1.png" alt="" width="576" style="display: block; margin: auto;" /></p>
+<p><strong>Cubic:</strong> changes concavity exactly once — at the inflection point, where f’’(x) = 0. To the left it may be convex; to the right, concave (or vice versa). This makes it ideal for modeling the three stages of production: initially increasing returns (convex), then diminishing returns (concave), then negative returns. The second derivative 6<em>a3</em>x + 2<em>a2 changes sign at x = -a2/(3</em>a3).</p>
+<p><span class="math inline">\(y=a_0+a_1x+a_2x^2+a_3x^3\)</span></p>
+<div class="sourceCode" id="cb510"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb510-1"><a href="review-partial-derivatives-and-comparative-statics.html#cb510-1" tabindex="-1"></a>a0 <span class="ot">&lt;-</span> <span class="dv">0</span>;  a1 <span class="ot">&lt;-</span> <span class="sc">-</span><span class="fl">0.75</span>;  a2 <span class="ot">&lt;-</span> <span class="dv">0</span>;  a3 <span class="ot">&lt;-</span> <span class="fl">0.25</span></span>
+<span id="cb510-2"><a href="review-partial-derivatives-and-comparative-statics.html#cb510-2" tabindex="-1"></a></span>
+<span id="cb510-3"><a href="review-partial-derivatives-and-comparative-statics.html#cb510-3" tabindex="-1"></a><span class="fu">curve</span>(a0 <span class="sc">+</span> a1<span class="sc">*</span>x <span class="sc">+</span> a2<span class="sc">*</span>x<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> a3<span class="sc">*</span>x<span class="sc">^</span><span class="dv">3</span>,</span>
+<span id="cb510-4"><a href="review-partial-derivatives-and-comparative-statics.html#cb510-4" tabindex="-1"></a>      <span class="at">from =</span> <span class="sc">-</span><span class="dv">3</span>, <span class="at">to =</span> <span class="dv">3</span>,</span>
+<span id="cb510-5"><a href="review-partial-derivatives-and-comparative-statics.html#cb510-5" tabindex="-1"></a>      <span class="at">lwd  =</span> <span class="dv">2</span>, <span class="at">col =</span> <span class="st">&quot;steelblue&quot;</span>,</span>
+<span id="cb510-6"><a href="review-partial-derivatives-and-comparative-statics.html#cb510-6" tabindex="-1"></a>      <span class="at">xlab =</span> <span class="st">&quot;x&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;y&quot;</span>,</span>
+<span id="cb510-7"><a href="review-partial-derivatives-and-comparative-statics.html#cb510-7" tabindex="-1"></a>      <span class="at">main =</span> <span class="st">&quot;Cubic function&quot;</span>)</span>
+<span id="cb510-8"><a href="review-partial-derivatives-and-comparative-statics.html#cb510-8" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> <span class="dv">0</span>, <span class="at">v =</span> <span class="dv">0</span>, <span class="at">col =</span> <span class="st">&quot;gray80&quot;</span>, <span class="at">lty =</span> <span class="dv">2</span>)</span>
+<span id="cb510-9"><a href="review-partial-derivatives-and-comparative-statics.html#cb510-9" tabindex="-1"></a></span>
+<span id="cb510-10"><a href="review-partial-derivatives-and-comparative-statics.html#cb510-10" tabindex="-1"></a><span class="co"># Inflection point: f&#39;&#39;(x) = 6*a3*x + 2*a2 = 0  →  x = -a2/(3*a3)</span></span>
+<span id="cb510-11"><a href="review-partial-derivatives-and-comparative-statics.html#cb510-11" tabindex="-1"></a>x_infl <span class="ot">&lt;-</span> <span class="sc">-</span>a2 <span class="sc">/</span> (<span class="dv">3</span> <span class="sc">*</span> a3)</span>
+<span id="cb510-12"><a href="review-partial-derivatives-and-comparative-statics.html#cb510-12" tabindex="-1"></a>y_infl <span class="ot">&lt;-</span> a0 <span class="sc">+</span> a1<span class="sc">*</span>x_infl <span class="sc">+</span> a2<span class="sc">*</span>x_infl<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> a3<span class="sc">*</span>x_infl<span class="sc">^</span><span class="dv">3</span></span>
+<span id="cb510-13"><a href="review-partial-derivatives-and-comparative-statics.html#cb510-13" tabindex="-1"></a><span class="fu">points</span>(x_infl, y_infl, <span class="at">pch =</span> <span class="dv">17</span>, <span class="at">col =</span> <span class="st">&quot;tomato&quot;</span>, <span class="at">cex =</span> <span class="fl">1.2</span>)</span>
+<span id="cb510-14"><a href="review-partial-derivatives-and-comparative-statics.html#cb510-14" tabindex="-1"></a><span class="fu">text</span>(x_infl <span class="sc">+</span> <span class="fl">0.2</span>, y_infl, <span class="st">&quot;inflection&quot;</span>, <span class="at">cex =</span> <span class="fl">0.8</span>, <span class="at">adj =</span> <span class="dv">0</span>)</span></code></pre></div>
+<p><img src="LBYC121_Course_Book_files/figure-html/cubic-1.png" alt="" width="576" style="display: block; margin: auto;" /></p>
+<p><strong>Sine:</strong> periodic with period 2π. Its second derivative is -sin(x), which alternates sign — so the function is concave on intervals where sin(x) &gt; 0 and convex where sin(x) &lt; 0. In economics, sine (and cosine) functions appear in models of cyclical behavior such as seasonal demand fluctuations or business cycle oscillations. <code>pi</code> is a built-in constant in R.</p>
+<p><span class="math inline">\(y=sin(x)\)</span></p>
+<div class="sourceCode" id="cb511"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb511-1"><a href="review-partial-derivatives-and-comparative-statics.html#cb511-1" tabindex="-1"></a><span class="fu">curve</span>(<span class="fu">sin</span>(x),</span>
+<span id="cb511-2"><a href="review-partial-derivatives-and-comparative-statics.html#cb511-2" tabindex="-1"></a>      <span class="at">from =</span> <span class="sc">-</span><span class="dv">2</span><span class="sc">*</span>pi, <span class="at">to =</span> <span class="dv">2</span><span class="sc">*</span>pi,</span>
+<span id="cb511-3"><a href="review-partial-derivatives-and-comparative-statics.html#cb511-3" tabindex="-1"></a>      <span class="at">lwd  =</span> <span class="dv">2</span>, <span class="at">col =</span> <span class="st">&quot;steelblue&quot;</span>,</span>
+<span id="cb511-4"><a href="review-partial-derivatives-and-comparative-statics.html#cb511-4" tabindex="-1"></a>      <span class="at">xlab =</span> <span class="st">&quot;x&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;y&quot;</span>,</span>
+<span id="cb511-5"><a href="review-partial-derivatives-and-comparative-statics.html#cb511-5" tabindex="-1"></a>      <span class="at">main =</span> <span class="st">&quot;Sine: y = sin(x)&quot;</span>)</span>
+<span id="cb511-6"><a href="review-partial-derivatives-and-comparative-statics.html#cb511-6" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> <span class="dv">0</span>, <span class="at">col =</span> <span class="st">&quot;gray80&quot;</span>, <span class="at">lty =</span> <span class="dv">2</span>)</span>
+<span id="cb511-7"><a href="review-partial-derivatives-and-comparative-statics.html#cb511-7" tabindex="-1"></a></span>
+<span id="cb511-8"><a href="review-partial-derivatives-and-comparative-statics.html#cb511-8" tabindex="-1"></a><span class="co"># Mark inflection points (where f&#39;&#39; = -sin(x) = 0, i.e. x = kπ)</span></span>
+<span id="cb511-9"><a href="review-partial-derivatives-and-comparative-statics.html#cb511-9" tabindex="-1"></a>x_infl <span class="ot">&lt;-</span> (<span class="sc">-</span><span class="dv">2</span><span class="sc">:</span><span class="dv">2</span>) <span class="sc">*</span> pi</span>
+<span id="cb511-10"><a href="review-partial-derivatives-and-comparative-statics.html#cb511-10" tabindex="-1"></a><span class="fu">points</span>(x_infl, <span class="fu">sin</span>(x_infl), <span class="at">pch =</span> <span class="dv">17</span>, <span class="at">col =</span> <span class="st">&quot;tomato&quot;</span>)</span></code></pre></div>
+<p><img src="LBYC121_Course_Book_files/figure-html/sine-1.png" alt="" width="576" style="display: block; margin: auto;" /></p>
+<p><strong>Cosine:</strong> the sine function shifted left by π/2. Its second derivative is -cos(x), so it is concave where cos(x) &gt; 0 and convex where cos(x) &lt; 0. In practice, cosine appears when a cyclical process starts at a peak (e.g., a price index at its highest point at t = 0). Plotting both sin and cos on one graph with lines() illustrates the phase relationship.</p>
+<p><span class="math inline">\(y=cos(x)\)</span></p>
+<div class="sourceCode" id="cb512"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb512-1"><a href="review-partial-derivatives-and-comparative-statics.html#cb512-1" tabindex="-1"></a><span class="fu">curve</span>(<span class="fu">cos</span>(x),</span>
+<span id="cb512-2"><a href="review-partial-derivatives-and-comparative-statics.html#cb512-2" tabindex="-1"></a>      <span class="at">from =</span> <span class="sc">-</span><span class="dv">2</span><span class="sc">*</span>pi, <span class="at">to =</span> <span class="dv">2</span><span class="sc">*</span>pi,</span>
+<span id="cb512-3"><a href="review-partial-derivatives-and-comparative-statics.html#cb512-3" tabindex="-1"></a>      <span class="at">lwd  =</span> <span class="dv">2</span>, <span class="at">col =</span> <span class="st">&quot;steelblue&quot;</span>,</span>
+<span id="cb512-4"><a href="review-partial-derivatives-and-comparative-statics.html#cb512-4" tabindex="-1"></a>      <span class="at">xlab =</span> <span class="st">&quot;x&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;y&quot;</span>,</span>
+<span id="cb512-5"><a href="review-partial-derivatives-and-comparative-statics.html#cb512-5" tabindex="-1"></a>      <span class="at">main =</span> <span class="st">&quot;Cosine: y = cos(x)&quot;</span>)</span>
+<span id="cb512-6"><a href="review-partial-derivatives-and-comparative-statics.html#cb512-6" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> <span class="dv">0</span>, <span class="at">col =</span> <span class="st">&quot;gray80&quot;</span>, <span class="at">lty =</span> <span class="dv">2</span>)</span>
+<span id="cb512-7"><a href="review-partial-derivatives-and-comparative-statics.html#cb512-7" tabindex="-1"></a></span>
+<span id="cb512-8"><a href="review-partial-derivatives-and-comparative-statics.html#cb512-8" tabindex="-1"></a><span class="co"># Overlay sine for comparison</span></span>
+<span id="cb512-9"><a href="review-partial-derivatives-and-comparative-statics.html#cb512-9" tabindex="-1"></a><span class="fu">curve</span>(<span class="fu">sin</span>(x), <span class="at">add =</span> <span class="cn">TRUE</span>, <span class="at">lty =</span> <span class="dv">2</span>, <span class="at">col =</span> <span class="st">&quot;gray60&quot;</span>)</span>
+<span id="cb512-10"><a href="review-partial-derivatives-and-comparative-statics.html#cb512-10" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">&quot;topright&quot;</span>, <span class="at">legend =</span> <span class="fu">c</span>(<span class="st">&quot;cos(x)&quot;</span>, <span class="st">&quot;sin(x)&quot;</span>),</span>
+<span id="cb512-11"><a href="review-partial-derivatives-and-comparative-statics.html#cb512-11" tabindex="-1"></a>       <span class="at">lty =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>), <span class="at">col =</span> <span class="fu">c</span>(<span class="st">&quot;steelblue&quot;</span>, <span class="st">&quot;gray60&quot;</span>),</span>
+<span id="cb512-12"><a href="review-partial-derivatives-and-comparative-statics.html#cb512-12" tabindex="-1"></a>       <span class="at">bty =</span> <span class="st">&quot;n&quot;</span>, <span class="at">cex =</span> <span class="fl">0.85</span>)</span></code></pre></div>
+<p><img src="LBYC121_Course_Book_files/figure-html/cosine-1.png" alt="" width="576" style="display: block; margin: auto;" /></p>
+<p><strong>Rational:</strong> has two branches separated by a vertical asymptote at x = 0. For x &gt; 0, the second derivative is 2/x³ &gt; 0 — strictly convex. For x &lt; 0, it is 2/x³ &lt; 0 — strictly concave. In economics this shape appears in average cost curves (AC = TC/Q) and in downward-sloping demand. Since R would draw a spurious vertical line across the asymptote, we exclude x = 0 by plotting two separate segments using add = TRUE.</p>
+<p><span class="math inline">\(y=1/x\)</span></p>
+<div class="sourceCode" id="cb513"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb513-1"><a href="review-partial-derivatives-and-comparative-statics.html#cb513-1" tabindex="-1"></a><span class="fu">curve</span>(<span class="dv">1</span><span class="sc">/</span>x, <span class="at">from =</span> <span class="fl">0.1</span>, <span class="at">to =</span> <span class="dv">4</span>,</span>
+<span id="cb513-2"><a href="review-partial-derivatives-and-comparative-statics.html#cb513-2" tabindex="-1"></a>      <span class="at">lwd  =</span> <span class="dv">2</span>, <span class="at">col =</span> <span class="st">&quot;steelblue&quot;</span>,</span>
+<span id="cb513-3"><a href="review-partial-derivatives-and-comparative-statics.html#cb513-3" tabindex="-1"></a>      <span class="at">xlim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">4</span>, <span class="dv">4</span>), <span class="at">ylim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">5</span>, <span class="dv">5</span>),</span>
+<span id="cb513-4"><a href="review-partial-derivatives-and-comparative-statics.html#cb513-4" tabindex="-1"></a>      <span class="at">xlab =</span> <span class="st">&quot;x&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;y&quot;</span>,</span>
+<span id="cb513-5"><a href="review-partial-derivatives-and-comparative-statics.html#cb513-5" tabindex="-1"></a>      <span class="at">main =</span> <span class="st">&quot;Rational: y = 1/x&quot;</span>)</span>
+<span id="cb513-6"><a href="review-partial-derivatives-and-comparative-statics.html#cb513-6" tabindex="-1"></a><span class="co"># Second branch — use add = TRUE to avoid opening a new plot</span></span>
+<span id="cb513-7"><a href="review-partial-derivatives-and-comparative-statics.html#cb513-7" tabindex="-1"></a><span class="fu">curve</span>(<span class="dv">1</span><span class="sc">/</span>x, <span class="at">from =</span> <span class="sc">-</span><span class="dv">4</span>, <span class="at">to =</span> <span class="sc">-</span><span class="fl">0.1</span>,</span>
+<span id="cb513-8"><a href="review-partial-derivatives-and-comparative-statics.html#cb513-8" tabindex="-1"></a>      <span class="at">add =</span> <span class="cn">TRUE</span>, <span class="at">lwd =</span> <span class="dv">2</span>, <span class="at">col =</span> <span class="st">&quot;steelblue&quot;</span>)</span>
+<span id="cb513-9"><a href="review-partial-derivatives-and-comparative-statics.html#cb513-9" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> <span class="dv">0</span>, <span class="at">v =</span> <span class="dv">0</span>, <span class="at">col =</span> <span class="st">&quot;gray80&quot;</span>, <span class="at">lty =</span> <span class="dv">2</span>)</span></code></pre></div>
+<p><img src="LBYC121_Course_Book_files/figure-html/unnamed-chunk-252-1.png" alt="" width="576" style="display: block; margin: auto;" /></p>
+<p><strong>Exponential:</strong> exp(x) = eˣ is its own derivative — both f’(x) and f’’(x) equal eˣ, which is always positive. This makes it strictly increasing and strictly convex everywhere. In economics it models compound interest (A = P·e^(rt)), exponential population growth, and continuous discounting. The horizontal asymptote at y = 0 as x → -∞ is worth noting: output never reaches zero.</p>
+<p><span class="math inline">\(y=exp(x)\)</span></p>
+<div class="sourceCode" id="cb514"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb514-1"><a href="review-partial-derivatives-and-comparative-statics.html#cb514-1" tabindex="-1"></a><span class="fu">curve</span>(<span class="fu">exp</span>(x),</span>
+<span id="cb514-2"><a href="review-partial-derivatives-and-comparative-statics.html#cb514-2" tabindex="-1"></a>      <span class="at">from =</span> <span class="sc">-</span><span class="dv">3</span>, <span class="at">to =</span> <span class="fl">2.5</span>,</span>
+<span id="cb514-3"><a href="review-partial-derivatives-and-comparative-statics.html#cb514-3" tabindex="-1"></a>      <span class="at">lwd  =</span> <span class="dv">2</span>, <span class="at">col =</span> <span class="st">&quot;steelblue&quot;</span>,</span>
+<span id="cb514-4"><a href="review-partial-derivatives-and-comparative-statics.html#cb514-4" tabindex="-1"></a>      <span class="at">xlab =</span> <span class="st">&quot;x&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;y&quot;</span>,</span>
+<span id="cb514-5"><a href="review-partial-derivatives-and-comparative-statics.html#cb514-5" tabindex="-1"></a>      <span class="at">main =</span> <span class="st">&quot;Exponential: y = exp(x)&quot;</span>)</span>
+<span id="cb514-6"><a href="review-partial-derivatives-and-comparative-statics.html#cb514-6" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> <span class="dv">0</span>, <span class="at">v =</span> <span class="dv">0</span>, <span class="at">col =</span> <span class="st">&quot;gray80&quot;</span>, <span class="at">lty =</span> <span class="dv">2</span>)</span>
+<span id="cb514-7"><a href="review-partial-derivatives-and-comparative-statics.html#cb514-7" tabindex="-1"></a></span>
+<span id="cb514-8"><a href="review-partial-derivatives-and-comparative-statics.html#cb514-8" tabindex="-1"></a><span class="co"># Tangent line at x = 1: slope = exp(1), intercept = exp(1) - exp(1)*1 = 0</span></span>
+<span id="cb514-9"><a href="review-partial-derivatives-and-comparative-statics.html#cb514-9" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">a =</span> <span class="dv">0</span>, <span class="at">b =</span> <span class="fu">exp</span>(<span class="dv">1</span>), <span class="at">lty =</span> <span class="dv">3</span>, <span class="at">col =</span> <span class="st">&quot;tomato&quot;</span>)</span>
+<span id="cb514-10"><a href="review-partial-derivatives-and-comparative-statics.html#cb514-10" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">&quot;topleft&quot;</span>, <span class="at">legend =</span> <span class="fu">c</span>(<span class="st">&quot;exp(x)&quot;</span>, <span class="st">&quot;tangent at x=1&quot;</span>),</span>
+<span id="cb514-11"><a href="review-partial-derivatives-and-comparative-statics.html#cb514-11" tabindex="-1"></a>       <span class="at">lty =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>), <span class="at">col =</span> <span class="fu">c</span>(<span class="st">&quot;steelblue&quot;</span>, <span class="st">&quot;tomato&quot;</span>),</span>
+<span id="cb514-12"><a href="review-partial-derivatives-and-comparative-statics.html#cb514-12" tabindex="-1"></a>       <span class="at">bty =</span> <span class="st">&quot;n&quot;</span>, <span class="at">cex =</span> <span class="fl">0.85</span>)</span></code></pre></div>
+<p><img src="LBYC121_Course_Book_files/figure-html/unnamed-chunk-253-1.png" alt="" width="576" style="display: block; margin: auto;" /></p>
+<p><strong>Logarithmic:</strong> only defined for x &gt; 0. Its first derivative 1/x &gt; 0 confirms it is always increasing, and its second derivative -1/x² &lt; 0 confirms it is strictly concave — each extra unit of input yields a smaller and smaller increment in output. This is the formal definition of diminishing marginal utility. In R, log(x) computes the natural log; use log(x, base = 10) for log base 10. The vertical asymptote at x = 0 means the function is undefined (and returns -Inf) at zero.</p>
+<p><span class="math inline">\(y=log(x)\)</span></p>
+<div class="sourceCode" id="cb515"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb515-1"><a href="review-partial-derivatives-and-comparative-statics.html#cb515-1" tabindex="-1"></a><span class="fu">curve</span>(<span class="fu">log</span>(x),          <span class="co"># log() in R = natural log (ln)</span></span>
+<span id="cb515-2"><a href="review-partial-derivatives-and-comparative-statics.html#cb515-2" tabindex="-1"></a>      <span class="at">from =</span> <span class="fl">0.01</span>, <span class="at">to =</span> <span class="dv">8</span>,</span>
+<span id="cb515-3"><a href="review-partial-derivatives-and-comparative-statics.html#cb515-3" tabindex="-1"></a>      <span class="at">lwd  =</span> <span class="dv">2</span>, <span class="at">col =</span> <span class="st">&quot;steelblue&quot;</span>,</span>
+<span id="cb515-4"><a href="review-partial-derivatives-and-comparative-statics.html#cb515-4" tabindex="-1"></a>      <span class="at">xlab =</span> <span class="st">&quot;x&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;y&quot;</span>,</span>
+<span id="cb515-5"><a href="review-partial-derivatives-and-comparative-statics.html#cb515-5" tabindex="-1"></a>      <span class="at">main =</span> <span class="st">&quot;Logarithmic: y = ln(x)&quot;</span>)</span>
+<span id="cb515-6"><a href="review-partial-derivatives-and-comparative-statics.html#cb515-6" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> <span class="dv">0</span>, <span class="at">v =</span> <span class="dv">0</span>, <span class="at">col =</span> <span class="st">&quot;gray80&quot;</span>, <span class="at">lty =</span> <span class="dv">2</span>)</span></code></pre></div>
+<p><img src="LBYC121_Course_Book_files/figure-html/log-1.png" alt="" width="576" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb516"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb516-1"><a href="review-partial-derivatives-and-comparative-statics.html#cb516-1" tabindex="-1"></a><span class="co"># Second derivative test: f&#39;&#39;(x) = -1/x^2</span></span>
+<span id="cb516-2"><a href="review-partial-derivatives-and-comparative-statics.html#cb516-2" tabindex="-1"></a>x_check <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">4</span>)</span>
+<span id="cb516-3"><a href="review-partial-derivatives-and-comparative-statics.html#cb516-3" tabindex="-1"></a>f2 <span class="ot">&lt;-</span> <span class="sc">-</span><span class="dv">1</span> <span class="sc">/</span> x_check<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb516-4"><a href="review-partial-derivatives-and-comparative-statics.html#cb516-4" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;f&#39;&#39;(x) at x = 1, 2, 4:&quot;</span>, <span class="fu">round</span>(f2, <span class="dv">4</span>), <span class="st">&quot;</span></span>
+<span id="cb516-5"><a href="review-partial-derivatives-and-comparative-statics.html#cb516-5" tabindex="-1"></a><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## f&#39;&#39;(x) at x = 1, 2, 4: -1 -0.25 -0.0625</code></pre>
+<div class="sourceCode" id="cb518"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb518-1"><a href="review-partial-derivatives-and-comparative-statics.html#cb518-1" tabindex="-1"></a><span class="co"># All negative → strictly concave ✓</span></span></code></pre></div>
+<div id="marginal-analysis" class="section level3 hasAnchor" number="23.2.1">
+<h3><span class="header-section-number">23.2.1</span> Marginal Analysis<a href="review-partial-derivatives-and-comparative-statics.html#marginal-analysis" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>In economics, derivatives describe changes “on the margin”:</p>
+<ul>
+<li>The derivative of a <strong>total cost function</strong> → <strong>marginal cost</strong></li>
+<li>The derivative of a <strong>total revenue function</strong> → <strong>marginal revenue</strong></li>
+<li>The partial derivative of a <strong>production function</strong> with respect to an input → <strong>marginal product</strong> of that input</li>
+</ul>
+</div>
+<div id="marginal-product-of-labor-and-capital" class="section level3 hasAnchor" number="23.2.2">
+<h3><span class="header-section-number">23.2.2</span> Marginal Product of Labor and Capital<a href="review-partial-derivatives-and-comparative-statics.html#marginal-product-of-labor-and-capital" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Given the production function:</p>
+<p><span class="math display">\[Q = f(K, L) = K^{0.3} L^{0.7}\]</span></p>
+<p>The <strong>marginal product of capital</strong> (<span class="math inline">\(MP_K\)</span>) and <strong>marginal product of labor</strong> (<span class="math inline">\(MP_L\)</span>) are:</p>
+<p><span class="math display">\[MP_K = f_K = 0.3 K^{-0.7} L^{0.7}, \qquad MP_L = f_L = 0.7 K^{0.3} L^{-0.3}\]</span></p>
+<p><strong>Do these exhibit diminishing marginal products?</strong></p>
+<ul>
+<li><span class="math inline">\(\frac{\partial MP_K}{\partial K} = \frac{\partial^2 Q}{\partial K^2} = 0.3 \times (-0.7)\, K^{-1.7} L^{0.7} = -0.21\, K^{-1.7} L^{0.7} &lt; 0\)</span> ✓ diminishing</li>
+<li><span class="math inline">\(\frac{\partial MP_L}{\partial L} = \frac{\partial^2 Q}{\partial L^2} = 0.7 \times (-0.3)\, K^{0.3} L^{-1.3} = -0.21\, K^{0.3} L^{-1.3} &lt; 0\)</span> ✓ diminishing</li>
+</ul>
+<p>Let’s visualize these:</p>
+<div class="sourceCode" id="cb519"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb519-1"><a href="review-partial-derivatives-and-comparative-statics.html#cb519-1" tabindex="-1"></a><span class="co"># Fix K = 16; vary L</span></span>
+<span id="cb519-2"><a href="review-partial-derivatives-and-comparative-statics.html#cb519-2" tabindex="-1"></a>K_fixed <span class="ot">&lt;-</span> <span class="dv">16</span></span>
+<span id="cb519-3"><a href="review-partial-derivatives-and-comparative-statics.html#cb519-3" tabindex="-1"></a>L_vals  <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">1</span>, <span class="dv">100</span>, <span class="at">by =</span> <span class="dv">1</span>)</span>
+<span id="cb519-4"><a href="review-partial-derivatives-and-comparative-statics.html#cb519-4" tabindex="-1"></a></span>
+<span id="cb519-5"><a href="review-partial-derivatives-and-comparative-statics.html#cb519-5" tabindex="-1"></a>MP_L <span class="ot">&lt;-</span> <span class="fl">0.7</span> <span class="sc">*</span> K_fixed<span class="sc">^</span><span class="fl">0.3</span> <span class="sc">*</span> L_vals<span class="sc">^</span>(<span class="sc">-</span><span class="fl">0.3</span>)   <span class="co"># partial deriv wrt L</span></span>
+<span id="cb519-6"><a href="review-partial-derivatives-and-comparative-statics.html#cb519-6" tabindex="-1"></a>Q    <span class="ot">&lt;-</span> K_fixed<span class="sc">^</span><span class="fl">0.3</span> <span class="sc">*</span> L_vals<span class="sc">^</span><span class="fl">0.7</span>             <span class="co"># total output</span></span>
+<span id="cb519-7"><a href="review-partial-derivatives-and-comparative-statics.html#cb519-7" tabindex="-1"></a></span>
+<span id="cb519-8"><a href="review-partial-derivatives-and-comparative-statics.html#cb519-8" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>))</span>
+<span id="cb519-9"><a href="review-partial-derivatives-and-comparative-statics.html#cb519-9" tabindex="-1"></a></span>
+<span id="cb519-10"><a href="review-partial-derivatives-and-comparative-statics.html#cb519-10" tabindex="-1"></a><span class="fu">plot</span>(L_vals, Q,</span>
+<span id="cb519-11"><a href="review-partial-derivatives-and-comparative-statics.html#cb519-11" tabindex="-1"></a>     <span class="at">type =</span> <span class="st">&quot;l&quot;</span>, <span class="at">lwd =</span> <span class="dv">2</span>, <span class="at">col =</span> <span class="st">&quot;steelblue&quot;</span>,</span>
+<span id="cb519-12"><a href="review-partial-derivatives-and-comparative-statics.html#cb519-12" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">&quot;Labor (L)&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Output (Q)&quot;</span>,</span>
+<span id="cb519-13"><a href="review-partial-derivatives-and-comparative-statics.html#cb519-13" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">&quot;Total Output (K fixed)&quot;</span>)</span>
+<span id="cb519-14"><a href="review-partial-derivatives-and-comparative-statics.html#cb519-14" tabindex="-1"></a></span>
+<span id="cb519-15"><a href="review-partial-derivatives-and-comparative-statics.html#cb519-15" tabindex="-1"></a><span class="fu">plot</span>(L_vals, MP_L,</span>
+<span id="cb519-16"><a href="review-partial-derivatives-and-comparative-statics.html#cb519-16" tabindex="-1"></a>     <span class="at">type =</span> <span class="st">&quot;l&quot;</span>, <span class="at">lwd =</span> <span class="dv">2</span>, <span class="at">col =</span> <span class="st">&quot;tomato&quot;</span>,</span>
+<span id="cb519-17"><a href="review-partial-derivatives-and-comparative-statics.html#cb519-17" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">&quot;Labor (L)&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;MP_L&quot;</span>,</span>
+<span id="cb519-18"><a href="review-partial-derivatives-and-comparative-statics.html#cb519-18" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">&quot;Marginal Product of Labor&quot;</span>)</span>
+<span id="cb519-19"><a href="review-partial-derivatives-and-comparative-statics.html#cb519-19" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> <span class="dv">0</span>, <span class="at">lty =</span> <span class="dv">2</span>, <span class="at">col =</span> <span class="st">&quot;gray50&quot;</span>)</span></code></pre></div>
+<p><img src="LBYC121_Course_Book_files/figure-html/marginal-product-1.png" alt="" width="576" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb520"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb520-1"><a href="review-partial-derivatives-and-comparative-statics.html#cb520-1" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>))</span></code></pre></div>
+<blockquote>
+<p><strong>Economic interpretation:</strong> As more labor is added (holding capital fixed), total output increases but at a <em>decreasing rate</em> — the classic law of diminishing marginal returns. <span class="math inline">\(MP_L &gt; 0\)</span> throughout but is declining, confirmed by <span class="math inline">\(\partial MP_L / \partial L &lt; 0\)</span>.</p>
+</blockquote>
+</div>
+</div>
+<div id="comparative-statics" class="section level2 hasAnchor" number="23.3">
+<h2><span class="header-section-number">23.3</span> Comparative Statics<a href="review-partial-derivatives-and-comparative-statics.html#comparative-statics" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="what-is-comparative-statics" class="section level3 hasAnchor" number="23.3.1">
+<h3><span class="header-section-number">23.3.1</span> What Is Comparative Statics?<a href="review-partial-derivatives-and-comparative-statics.html#what-is-comparative-statics" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Comparative statics asks:</p>
+<blockquote>
+<p><em>If one parameter changes, what happens to the equilibrium outcome?</em></p>
+</blockquote>
+<p>We use <strong>partial derivatives</strong> to answer this question analytically, then visualize the result in R.</p>
+</div>
+<div id="the-market-model" class="section level3 hasAnchor" number="23.3.2">
+<h3><span class="header-section-number">23.3.2</span> The Market Model<a href="review-partial-derivatives-and-comparative-statics.html#the-market-model" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Consider a simple one-commodity market:</p>
+<p><span class="math display">\[Q^d = a - bP \qquad (a, b &gt; 0) \qquad \text{[Demand]}\]</span> <span class="math display">\[Q^s = -c + dP \qquad (c, d &gt; 0) \qquad \text{[Supply]}\]</span></p>
+<p>Setting <span class="math inline">\(Q^d = Q^s\)</span> and solving:</p>
+<p><span class="math display">\[P^* = \frac{a + c}{b + d}, \qquad Q^* = \frac{ad - bc}{b + d}\]</span></p>
+<p>The endogenous variables <span class="math inline">\(P^*\)</span> and <span class="math inline">\(Q^*\)</span> are explicit functions of the four parameters <span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span>, <span class="math inline">\(c\)</span>, <span class="math inline">\(d\)</span>.</p>
+</div>
+<div id="partial-derivatives-of-p-with-respect-to-each-parameter" class="section level3 hasAnchor" number="23.3.3">
+<h3><span class="header-section-number">23.3.3</span> Partial Derivatives of P* with Respect to Each Parameter<a href="review-partial-derivatives-and-comparative-statics.html#partial-derivatives-of-p-with-respect-to-each-parameter" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Taking partial derivatives of <span class="math inline">\(P^* = \frac{a + c}{b + d}\)</span>:</p>
+<p><span class="math display">\[\frac{\partial P^*}{\partial a} = \frac{1}{b+d} &gt; 0\]</span></p>
+<p>An increase in the <strong>demand intercept</strong> <span class="math inline">\(a\)</span> (demand shifts right) raises the equilibrium price.</p>
+<p><span class="math display">\[\frac{\partial P^*}{\partial b} = -\frac{a+c}{(b+d)^2} &lt; 0\]</span></p>
+<p>An increase in the <strong>demand slope</strong> <span class="math inline">\(b\)</span> (demand becomes steeper/less elastic) lowers the equilibrium price.</p>
+<p><span class="math display">\[\frac{\partial P^*}{\partial c} = \frac{1}{b+d} &gt; 0\]</span></p>
+<p>An increase in the <strong>supply intercept</strong> <span class="math inline">\(c\)</span> (supply shifts left) raises the equilibrium price.</p>
+<p><span class="math display">\[\frac{\partial P^*}{\partial d} = -\frac{a+c}{(b+d)^2} &lt; 0\]</span></p>
+<p>An increase in the <strong>supply slope</strong> <span class="math inline">\(d\)</span> (supply becomes more elastic) lowers the equilibrium price.</p>
+</div>
+<div id="visualizing-the-supply-demand-equilibrium" class="section level3 hasAnchor" number="23.3.4">
+<h3><span class="header-section-number">23.3.4</span> Visualizing the Supply-Demand Equilibrium<a href="review-partial-derivatives-and-comparative-statics.html#visualizing-the-supply-demand-equilibrium" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Let’s first draw the baseline supply and demand curves and find equilibrium:</p>
+<div class="sourceCode" id="cb521"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb521-1"><a href="review-partial-derivatives-and-comparative-statics.html#cb521-1" tabindex="-1"></a><span class="co"># Baseline parameters</span></span>
+<span id="cb521-2"><a href="review-partial-derivatives-and-comparative-statics.html#cb521-2" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="dv">60</span>; b <span class="ot">&lt;-</span> <span class="dv">2</span>; c <span class="ot">&lt;-</span> <span class="dv">10</span>; d <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb521-3"><a href="review-partial-derivatives-and-comparative-statics.html#cb521-3" tabindex="-1"></a></span>
+<span id="cb521-4"><a href="review-partial-derivatives-and-comparative-statics.html#cb521-4" tabindex="-1"></a><span class="co"># Equilibrium</span></span>
+<span id="cb521-5"><a href="review-partial-derivatives-and-comparative-statics.html#cb521-5" tabindex="-1"></a>P_star <span class="ot">&lt;-</span> (a <span class="sc">+</span> c) <span class="sc">/</span> (b <span class="sc">+</span> d)</span>
+<span id="cb521-6"><a href="review-partial-derivatives-and-comparative-statics.html#cb521-6" tabindex="-1"></a>Q_star <span class="ot">&lt;-</span> (a <span class="sc">*</span> d <span class="sc">-</span> b <span class="sc">*</span> c) <span class="sc">/</span> (b <span class="sc">+</span> d)</span>
+<span id="cb521-7"><a href="review-partial-derivatives-and-comparative-statics.html#cb521-7" tabindex="-1"></a></span>
+<span id="cb521-8"><a href="review-partial-derivatives-and-comparative-statics.html#cb521-8" tabindex="-1"></a><span class="co"># Price range for plotting</span></span>
+<span id="cb521-9"><a href="review-partial-derivatives-and-comparative-statics.html#cb521-9" tabindex="-1"></a>P_seq <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">35</span>, <span class="at">length.out =</span> <span class="dv">200</span>)</span>
+<span id="cb521-10"><a href="review-partial-derivatives-and-comparative-statics.html#cb521-10" tabindex="-1"></a>Qd    <span class="ot">&lt;-</span> a <span class="sc">-</span> b <span class="sc">*</span> P_seq        <span class="co"># Demand: Q = a - bP</span></span>
+<span id="cb521-11"><a href="review-partial-derivatives-and-comparative-statics.html#cb521-11" tabindex="-1"></a>Qs    <span class="ot">&lt;-</span> <span class="sc">-</span>c <span class="sc">+</span> d <span class="sc">*</span> P_seq       <span class="co"># Supply: Q = -c + dP</span></span>
+<span id="cb521-12"><a href="review-partial-derivatives-and-comparative-statics.html#cb521-12" tabindex="-1"></a></span>
+<span id="cb521-13"><a href="review-partial-derivatives-and-comparative-statics.html#cb521-13" tabindex="-1"></a><span class="fu">plot</span>(Qd, P_seq,</span>
+<span id="cb521-14"><a href="review-partial-derivatives-and-comparative-statics.html#cb521-14" tabindex="-1"></a>     <span class="at">type =</span> <span class="st">&quot;l&quot;</span>, <span class="at">lwd =</span> <span class="dv">2</span>, <span class="at">col =</span> <span class="st">&quot;tomato&quot;</span>,</span>
+<span id="cb521-15"><a href="review-partial-derivatives-and-comparative-statics.html#cb521-15" tabindex="-1"></a>     <span class="at">xlim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">70</span>), <span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">35</span>),</span>
+<span id="cb521-16"><a href="review-partial-derivatives-and-comparative-statics.html#cb521-16" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">&quot;Quantity (Q)&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Price (P)&quot;</span>,</span>
+<span id="cb521-17"><a href="review-partial-derivatives-and-comparative-statics.html#cb521-17" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">&quot;Supply and Demand: Baseline Equilibrium&quot;</span>)</span>
+<span id="cb521-18"><a href="review-partial-derivatives-and-comparative-statics.html#cb521-18" tabindex="-1"></a><span class="fu">lines</span>(Qs, P_seq, <span class="at">lwd =</span> <span class="dv">2</span>, <span class="at">col =</span> <span class="st">&quot;steelblue&quot;</span>)</span>
+<span id="cb521-19"><a href="review-partial-derivatives-and-comparative-statics.html#cb521-19" tabindex="-1"></a><span class="fu">points</span>(Q_star, P_star, <span class="at">pch =</span> <span class="dv">19</span>, <span class="at">cex =</span> <span class="fl">1.5</span>, <span class="at">col =</span> <span class="st">&quot;black&quot;</span>)</span>
+<span id="cb521-20"><a href="review-partial-derivatives-and-comparative-statics.html#cb521-20" tabindex="-1"></a><span class="fu">text</span>(Q_star <span class="sc">+</span> <span class="dv">2</span>, P_star <span class="sc">+</span> <span class="fl">1.5</span>,</span>
+<span id="cb521-21"><a href="review-partial-derivatives-and-comparative-statics.html#cb521-21" tabindex="-1"></a>     <span class="at">labels =</span> <span class="fu">paste0</span>(<span class="st">&quot;E(Q*=&quot;</span>, <span class="fu">round</span>(Q_star,<span class="dv">1</span>), <span class="st">&quot;, P*=&quot;</span>, <span class="fu">round</span>(P_star,<span class="dv">1</span>), <span class="st">&quot;)&quot;</span>),</span>
+<span id="cb521-22"><a href="review-partial-derivatives-and-comparative-statics.html#cb521-22" tabindex="-1"></a>     <span class="at">cex =</span> <span class="fl">0.85</span>)</span>
+<span id="cb521-23"><a href="review-partial-derivatives-and-comparative-statics.html#cb521-23" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">&quot;topright&quot;</span>, <span class="at">legend =</span> <span class="fu">c</span>(<span class="st">&quot;Demand&quot;</span>, <span class="st">&quot;Supply&quot;</span>),</span>
+<span id="cb521-24"><a href="review-partial-derivatives-and-comparative-statics.html#cb521-24" tabindex="-1"></a>       <span class="at">col =</span> <span class="fu">c</span>(<span class="st">&quot;tomato&quot;</span>, <span class="st">&quot;steelblue&quot;</span>), <span class="at">lwd =</span> <span class="dv">2</span>, <span class="at">bty =</span> <span class="st">&quot;n&quot;</span>)</span></code></pre></div>
+<p><img src="LBYC121_Course_Book_files/figure-html/sd-baseline-1.png" alt="" width="576" style="display: block; margin: auto;" /></p>
+</div>
+<div id="effect-of-changing-the-demand-intercept-a-pa-0" class="section level3 hasAnchor" number="23.3.5">
+<h3><span class="header-section-number">23.3.5</span> Effect of Changing the Demand Intercept <span class="math inline">\(a\)</span> (∂P*/∂a &gt; 0)<a href="review-partial-derivatives-and-comparative-statics.html#effect-of-changing-the-demand-intercept-a-pa-0" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>When <span class="math inline">\(a\)</span> increases, demand shifts <strong>rightward</strong> — at every price, consumers want more. Both equilibrium price and quantity rise.</p>
+<div class="sourceCode" id="cb522"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb522-1"><a href="review-partial-derivatives-and-comparative-statics.html#cb522-1" tabindex="-1"></a>a_values <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">40</span>, <span class="dv">80</span>, <span class="at">by =</span> <span class="dv">5</span>)</span>
+<span id="cb522-2"><a href="review-partial-derivatives-and-comparative-statics.html#cb522-2" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="dv">2</span>; c <span class="ot">&lt;-</span> <span class="dv">10</span>; d <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb522-3"><a href="review-partial-derivatives-and-comparative-statics.html#cb522-3" tabindex="-1"></a></span>
+<span id="cb522-4"><a href="review-partial-derivatives-and-comparative-statics.html#cb522-4" tabindex="-1"></a>P_eq <span class="ot">&lt;-</span> (a_values <span class="sc">+</span> c) <span class="sc">/</span> (b <span class="sc">+</span> d)</span>
+<span id="cb522-5"><a href="review-partial-derivatives-and-comparative-statics.html#cb522-5" tabindex="-1"></a>Q_eq <span class="ot">&lt;-</span> (a_values <span class="sc">*</span> d <span class="sc">-</span> b <span class="sc">*</span> c) <span class="sc">/</span> (b <span class="sc">+</span> d)</span>
+<span id="cb522-6"><a href="review-partial-derivatives-and-comparative-statics.html#cb522-6" tabindex="-1"></a></span>
+<span id="cb522-7"><a href="review-partial-derivatives-and-comparative-statics.html#cb522-7" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>))</span>
+<span id="cb522-8"><a href="review-partial-derivatives-and-comparative-statics.html#cb522-8" tabindex="-1"></a></span>
+<span id="cb522-9"><a href="review-partial-derivatives-and-comparative-statics.html#cb522-9" tabindex="-1"></a><span class="co"># --- Supply-Demand shifts panel ---</span></span>
+<span id="cb522-10"><a href="review-partial-derivatives-and-comparative-statics.html#cb522-10" tabindex="-1"></a>P_seq <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">40</span>, <span class="at">length.out =</span> <span class="dv">200</span>)</span>
+<span id="cb522-11"><a href="review-partial-derivatives-and-comparative-statics.html#cb522-11" tabindex="-1"></a><span class="fu">plot</span>(<span class="cn">NULL</span>, <span class="at">xlim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">90</span>), <span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">40</span>),</span>
+<span id="cb522-12"><a href="review-partial-derivatives-and-comparative-statics.html#cb522-12" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">&quot;Quantity&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Price&quot;</span>,</span>
+<span id="cb522-13"><a href="review-partial-derivatives-and-comparative-statics.html#cb522-13" tabindex="-1"></a>     <span class="at">main =</span> <span class="fu">expression</span>(<span class="fu">paste</span>(<span class="st">&quot;Demand shifts as &quot;</span>, <span class="fu">italic</span>(a), <span class="st">&quot; increases&quot;</span>)))</span>
+<span id="cb522-14"><a href="review-partial-derivatives-and-comparative-statics.html#cb522-14" tabindex="-1"></a></span>
+<span id="cb522-15"><a href="review-partial-derivatives-and-comparative-statics.html#cb522-15" tabindex="-1"></a>cols <span class="ot">&lt;-</span> <span class="fu">colorRampPalette</span>(<span class="fu">c</span>(<span class="st">&quot;lightcoral&quot;</span>, <span class="st">&quot;darkred&quot;</span>))(<span class="fu">length</span>(a_values))</span>
+<span id="cb522-16"><a href="review-partial-derivatives-and-comparative-statics.html#cb522-16" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="fu">seq_along</span>(a_values)) {</span>
+<span id="cb522-17"><a href="review-partial-derivatives-and-comparative-statics.html#cb522-17" tabindex="-1"></a>  Qd_i <span class="ot">&lt;-</span> a_values[i] <span class="sc">-</span> b <span class="sc">*</span> P_seq</span>
+<span id="cb522-18"><a href="review-partial-derivatives-and-comparative-statics.html#cb522-18" tabindex="-1"></a>  <span class="fu">lines</span>(Qd_i, P_seq, <span class="at">col =</span> cols[i], <span class="at">lwd =</span> <span class="fl">1.5</span>)</span>
+<span id="cb522-19"><a href="review-partial-derivatives-and-comparative-statics.html#cb522-19" tabindex="-1"></a>}</span>
+<span id="cb522-20"><a href="review-partial-derivatives-and-comparative-statics.html#cb522-20" tabindex="-1"></a><span class="co"># Supply (fixed)</span></span>
+<span id="cb522-21"><a href="review-partial-derivatives-and-comparative-statics.html#cb522-21" tabindex="-1"></a>Qs_base <span class="ot">&lt;-</span> <span class="sc">-</span>c <span class="sc">+</span> d <span class="sc">*</span> P_seq</span>
+<span id="cb522-22"><a href="review-partial-derivatives-and-comparative-statics.html#cb522-22" tabindex="-1"></a><span class="fu">lines</span>(Qs_base, P_seq, <span class="at">col =</span> <span class="st">&quot;steelblue&quot;</span>, <span class="at">lwd =</span> <span class="dv">2</span>)</span>
+<span id="cb522-23"><a href="review-partial-derivatives-and-comparative-statics.html#cb522-23" tabindex="-1"></a></span>
+<span id="cb522-24"><a href="review-partial-derivatives-and-comparative-statics.html#cb522-24" tabindex="-1"></a><span class="co"># Equilibrium points</span></span>
+<span id="cb522-25"><a href="review-partial-derivatives-and-comparative-statics.html#cb522-25" tabindex="-1"></a><span class="fu">points</span>(Q_eq, P_eq, <span class="at">pch =</span> <span class="dv">19</span>, <span class="at">col =</span> <span class="st">&quot;black&quot;</span>, <span class="at">cex =</span> <span class="fl">0.9</span>)</span>
+<span id="cb522-26"><a href="review-partial-derivatives-and-comparative-statics.html#cb522-26" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">&quot;topright&quot;</span>, <span class="at">legend =</span> <span class="fu">c</span>(<span class="st">&quot;Demand (varies)&quot;</span>, <span class="st">&quot;Supply (fixed)&quot;</span>, <span class="st">&quot;Equilibria&quot;</span>),</span>
+<span id="cb522-27"><a href="review-partial-derivatives-and-comparative-statics.html#cb522-27" tabindex="-1"></a>       <span class="at">col =</span> <span class="fu">c</span>(<span class="st">&quot;tomato&quot;</span>, <span class="st">&quot;steelblue&quot;</span>, <span class="st">&quot;black&quot;</span>),</span>
+<span id="cb522-28"><a href="review-partial-derivatives-and-comparative-statics.html#cb522-28" tabindex="-1"></a>       <span class="at">lwd =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>, <span class="cn">NA</span>), <span class="at">pch =</span> <span class="fu">c</span>(<span class="cn">NA</span>, <span class="cn">NA</span>, <span class="dv">19</span>), <span class="at">bty =</span> <span class="st">&quot;n&quot;</span>, <span class="at">cex =</span> <span class="fl">0.8</span>)</span>
+<span id="cb522-29"><a href="review-partial-derivatives-and-comparative-statics.html#cb522-29" tabindex="-1"></a></span>
+<span id="cb522-30"><a href="review-partial-derivatives-and-comparative-statics.html#cb522-30" tabindex="-1"></a><span class="co"># --- Comparative statics panel ---</span></span>
+<span id="cb522-31"><a href="review-partial-derivatives-and-comparative-statics.html#cb522-31" tabindex="-1"></a><span class="fu">plot</span>(a_values, P_eq,</span>
+<span id="cb522-32"><a href="review-partial-derivatives-and-comparative-statics.html#cb522-32" tabindex="-1"></a>     <span class="at">type =</span> <span class="st">&quot;b&quot;</span>, <span class="at">pch =</span> <span class="dv">19</span>, <span class="at">col =</span> <span class="st">&quot;tomato&quot;</span>, <span class="at">lwd =</span> <span class="dv">2</span>,</span>
+<span id="cb522-33"><a href="review-partial-derivatives-and-comparative-statics.html#cb522-33" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">&quot;Demand Intercept (a)&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Equilibrium Price (P*)&quot;</span>,</span>
+<span id="cb522-34"><a href="review-partial-derivatives-and-comparative-statics.html#cb522-34" tabindex="-1"></a>     <span class="at">main =</span> <span class="fu">expression</span>(<span class="fu">paste</span>(<span class="st">&quot;Comparative Statics: &quot;</span>, <span class="fu">italic</span>(a), <span class="st">&quot; and P*&quot;</span>)))</span></code></pre></div>
+<p><img src="LBYC121_Course_Book_files/figure-html/da-shift-1.png" alt="" width="576" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb523"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb523-1"><a href="review-partial-derivatives-and-comparative-statics.html#cb523-1" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>))</span></code></pre></div>
+<blockquote>
+<p><strong>Result:</strong> <span class="math inline">\(\partial P^*/\partial a = 1/(b+d) &gt; 0\)</span>. As the demand curve shifts right, the equilibrium price rises. This is confirmed in the left panel: each rightward shift of demand (holding supply fixed) intersects supply at a higher price.</p>
+</blockquote>
+</div>
+<div id="effect-of-changing-the-demand-slope-b-pb-0" class="section level3 hasAnchor" number="23.3.6">
+<h3><span class="header-section-number">23.3.6</span> Effect of Changing the Demand Slope <span class="math inline">\(b\)</span> (∂P*/∂b &lt; 0)<a href="review-partial-derivatives-and-comparative-statics.html#effect-of-changing-the-demand-slope-b-pb-0" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>A larger <span class="math inline">\(b\)</span> means demand is <strong>steeper</strong> (less price-responsive). This compresses the quantity range, and the equilibrium price falls.</p>
+<div class="sourceCode" id="cb524"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb524-1"><a href="review-partial-derivatives-and-comparative-statics.html#cb524-1" tabindex="-1"></a>b_values <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">1</span>, <span class="dv">5</span>, <span class="at">by =</span> <span class="fl">0.5</span>)</span>
+<span id="cb524-2"><a href="review-partial-derivatives-and-comparative-statics.html#cb524-2" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="dv">60</span>; c <span class="ot">&lt;-</span> <span class="dv">10</span>; d <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb524-3"><a href="review-partial-derivatives-and-comparative-statics.html#cb524-3" tabindex="-1"></a></span>
+<span id="cb524-4"><a href="review-partial-derivatives-and-comparative-statics.html#cb524-4" tabindex="-1"></a>P_eq_b <span class="ot">&lt;-</span> (a <span class="sc">+</span> c) <span class="sc">/</span> (b_values <span class="sc">+</span> d)</span>
+<span id="cb524-5"><a href="review-partial-derivatives-and-comparative-statics.html#cb524-5" tabindex="-1"></a>Q_eq_b <span class="ot">&lt;-</span> (a <span class="sc">*</span> d <span class="sc">-</span> b_values <span class="sc">*</span> c) <span class="sc">/</span> (b_values <span class="sc">+</span> d)</span>
+<span id="cb524-6"><a href="review-partial-derivatives-and-comparative-statics.html#cb524-6" tabindex="-1"></a></span>
+<span id="cb524-7"><a href="review-partial-derivatives-and-comparative-statics.html#cb524-7" tabindex="-1"></a>P_seq <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">70</span>, <span class="at">length.out =</span> <span class="dv">200</span>)</span>
+<span id="cb524-8"><a href="review-partial-derivatives-and-comparative-statics.html#cb524-8" tabindex="-1"></a></span>
+<span id="cb524-9"><a href="review-partial-derivatives-and-comparative-statics.html#cb524-9" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>))</span>
+<span id="cb524-10"><a href="review-partial-derivatives-and-comparative-statics.html#cb524-10" tabindex="-1"></a></span>
+<span id="cb524-11"><a href="review-partial-derivatives-and-comparative-statics.html#cb524-11" tabindex="-1"></a><span class="fu">plot</span>(<span class="cn">NULL</span>, <span class="at">xlim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">5</span>, <span class="dv">65</span>), <span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">70</span>),</span>
+<span id="cb524-12"><a href="review-partial-derivatives-and-comparative-statics.html#cb524-12" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">&quot;Quantity&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Price&quot;</span>,</span>
+<span id="cb524-13"><a href="review-partial-derivatives-and-comparative-statics.html#cb524-13" tabindex="-1"></a>     <span class="at">main =</span> <span class="fu">expression</span>(<span class="fu">paste</span>(<span class="st">&quot;Demand slope &quot;</span>, <span class="fu">italic</span>(b), <span class="st">&quot; increases&quot;</span>)))</span>
+<span id="cb524-14"><a href="review-partial-derivatives-and-comparative-statics.html#cb524-14" tabindex="-1"></a>cols2 <span class="ot">&lt;-</span> <span class="fu">colorRampPalette</span>(<span class="fu">c</span>(<span class="st">&quot;lightcoral&quot;</span>, <span class="st">&quot;darkred&quot;</span>))(<span class="fu">length</span>(b_values))</span>
+<span id="cb524-15"><a href="review-partial-derivatives-and-comparative-statics.html#cb524-15" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="fu">seq_along</span>(b_values)) {</span>
+<span id="cb524-16"><a href="review-partial-derivatives-and-comparative-statics.html#cb524-16" tabindex="-1"></a>  Qd_i <span class="ot">&lt;-</span> a <span class="sc">-</span> b_values[i] <span class="sc">*</span> P_seq</span>
+<span id="cb524-17"><a href="review-partial-derivatives-and-comparative-statics.html#cb524-17" tabindex="-1"></a>  <span class="fu">lines</span>(Qd_i, P_seq, <span class="at">col =</span> cols2[i], <span class="at">lwd =</span> <span class="fl">1.5</span>)</span>
+<span id="cb524-18"><a href="review-partial-derivatives-and-comparative-statics.html#cb524-18" tabindex="-1"></a>}</span>
+<span id="cb524-19"><a href="review-partial-derivatives-and-comparative-statics.html#cb524-19" tabindex="-1"></a>Qs_base <span class="ot">&lt;-</span> <span class="sc">-</span>c <span class="sc">+</span> d <span class="sc">*</span> P_seq</span>
+<span id="cb524-20"><a href="review-partial-derivatives-and-comparative-statics.html#cb524-20" tabindex="-1"></a><span class="fu">lines</span>(Qs_base, P_seq, <span class="at">col =</span> <span class="st">&quot;steelblue&quot;</span>, <span class="at">lwd =</span> <span class="dv">2</span>)</span>
+<span id="cb524-21"><a href="review-partial-derivatives-and-comparative-statics.html#cb524-21" tabindex="-1"></a><span class="fu">points</span>(Q_eq_b, P_eq_b, <span class="at">pch =</span> <span class="dv">19</span>, <span class="at">col =</span> <span class="st">&quot;black&quot;</span>, <span class="at">cex =</span> <span class="fl">0.9</span>)</span>
+<span id="cb524-22"><a href="review-partial-derivatives-and-comparative-statics.html#cb524-22" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">&quot;topright&quot;</span>, <span class="at">legend =</span> <span class="fu">c</span>(<span class="st">&quot;Demand (varies b)&quot;</span>, <span class="st">&quot;Supply (fixed)&quot;</span>, <span class="st">&quot;Equilibria&quot;</span>),</span>
+<span id="cb524-23"><a href="review-partial-derivatives-and-comparative-statics.html#cb524-23" tabindex="-1"></a>       <span class="at">col =</span> <span class="fu">c</span>(<span class="st">&quot;tomato&quot;</span>, <span class="st">&quot;steelblue&quot;</span>, <span class="st">&quot;black&quot;</span>),</span>
+<span id="cb524-24"><a href="review-partial-derivatives-and-comparative-statics.html#cb524-24" tabindex="-1"></a>       <span class="at">lwd =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>, <span class="cn">NA</span>), <span class="at">pch =</span> <span class="fu">c</span>(<span class="cn">NA</span>, <span class="cn">NA</span>, <span class="dv">19</span>), <span class="at">bty =</span> <span class="st">&quot;n&quot;</span>, <span class="at">cex =</span> <span class="fl">0.8</span>)</span>
+<span id="cb524-25"><a href="review-partial-derivatives-and-comparative-statics.html#cb524-25" tabindex="-1"></a></span>
+<span id="cb524-26"><a href="review-partial-derivatives-and-comparative-statics.html#cb524-26" tabindex="-1"></a><span class="fu">plot</span>(b_values, P_eq_b,</span>
+<span id="cb524-27"><a href="review-partial-derivatives-and-comparative-statics.html#cb524-27" tabindex="-1"></a>     <span class="at">type =</span> <span class="st">&quot;b&quot;</span>, <span class="at">pch =</span> <span class="dv">19</span>, <span class="at">col =</span> <span class="st">&quot;tomato&quot;</span>, <span class="at">lwd =</span> <span class="dv">2</span>,</span>
+<span id="cb524-28"><a href="review-partial-derivatives-and-comparative-statics.html#cb524-28" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">&quot;Demand Slope (b)&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Equilibrium Price (P*)&quot;</span>,</span>
+<span id="cb524-29"><a href="review-partial-derivatives-and-comparative-statics.html#cb524-29" tabindex="-1"></a>     <span class="at">main =</span> <span class="fu">expression</span>(<span class="fu">paste</span>(<span class="st">&quot;Comparative Statics: &quot;</span>, <span class="fu">italic</span>(b), <span class="st">&quot; and P*&quot;</span>)))</span></code></pre></div>
+<p><img src="LBYC121_Course_Book_files/figure-html/db-shift-1.png" alt="" width="576" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb525"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb525-1"><a href="review-partial-derivatives-and-comparative-statics.html#cb525-1" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>))</span></code></pre></div>
+<blockquote>
+<p><strong>Result:</strong> <span class="math inline">\(\partial P^*/\partial b = -(a+c)/(b+d)^2 &lt; 0\)</span>. A steeper demand curve lowers the equilibrium price.</p>
+</blockquote>
+</div>
+<div id="effect-of-changing-the-supply-intercept-c-pc-0" class="section level3 hasAnchor" number="23.3.7">
+<h3><span class="header-section-number">23.3.7</span> Effect of Changing the Supply Intercept <span class="math inline">\(c\)</span> (∂P*/∂c &gt; 0)<a href="review-partial-derivatives-and-comparative-statics.html#effect-of-changing-the-supply-intercept-c-pc-0" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>A larger <span class="math inline">\(c\)</span> shifts the supply curve <strong>leftward</strong> (at every price, firms supply less). This raises the equilibrium price.</p>
+<div class="sourceCode" id="cb526"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb526-1"><a href="review-partial-derivatives-and-comparative-statics.html#cb526-1" tabindex="-1"></a>c_values <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">5</span>, <span class="dv">25</span>, <span class="at">by =</span> <span class="dv">2</span>)</span>
+<span id="cb526-2"><a href="review-partial-derivatives-and-comparative-statics.html#cb526-2" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="dv">60</span>; b <span class="ot">&lt;-</span> <span class="dv">2</span>; d <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb526-3"><a href="review-partial-derivatives-and-comparative-statics.html#cb526-3" tabindex="-1"></a></span>
+<span id="cb526-4"><a href="review-partial-derivatives-and-comparative-statics.html#cb526-4" tabindex="-1"></a>P_eq_c <span class="ot">&lt;-</span> (a <span class="sc">+</span> c_values) <span class="sc">/</span> (b <span class="sc">+</span> d)</span>
+<span id="cb526-5"><a href="review-partial-derivatives-and-comparative-statics.html#cb526-5" tabindex="-1"></a>Q_eq_c <span class="ot">&lt;-</span> (a <span class="sc">*</span> d <span class="sc">-</span> b <span class="sc">*</span> c_values) <span class="sc">/</span> (b <span class="sc">+</span> d)</span>
+<span id="cb526-6"><a href="review-partial-derivatives-and-comparative-statics.html#cb526-6" tabindex="-1"></a></span>
+<span id="cb526-7"><a href="review-partial-derivatives-and-comparative-statics.html#cb526-7" tabindex="-1"></a>P_seq <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">40</span>, <span class="at">length.out =</span> <span class="dv">200</span>)</span>
+<span id="cb526-8"><a href="review-partial-derivatives-and-comparative-statics.html#cb526-8" tabindex="-1"></a></span>
+<span id="cb526-9"><a href="review-partial-derivatives-and-comparative-statics.html#cb526-9" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>))</span>
+<span id="cb526-10"><a href="review-partial-derivatives-and-comparative-statics.html#cb526-10" tabindex="-1"></a></span>
+<span id="cb526-11"><a href="review-partial-derivatives-and-comparative-statics.html#cb526-11" tabindex="-1"></a><span class="fu">plot</span>(<span class="cn">NULL</span>, <span class="at">xlim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">10</span>, <span class="dv">70</span>), <span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">40</span>),</span>
+<span id="cb526-12"><a href="review-partial-derivatives-and-comparative-statics.html#cb526-12" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">&quot;Quantity&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Price&quot;</span>,</span>
+<span id="cb526-13"><a href="review-partial-derivatives-and-comparative-statics.html#cb526-13" tabindex="-1"></a>     <span class="at">main =</span> <span class="fu">expression</span>(<span class="fu">paste</span>(<span class="st">&quot;Supply shifts as &quot;</span>, <span class="fu">italic</span>(c), <span class="st">&quot; increases&quot;</span>)))</span>
+<span id="cb526-14"><a href="review-partial-derivatives-and-comparative-statics.html#cb526-14" tabindex="-1"></a><span class="co"># Demand fixed</span></span>
+<span id="cb526-15"><a href="review-partial-derivatives-and-comparative-statics.html#cb526-15" tabindex="-1"></a>Qd_base <span class="ot">&lt;-</span> a <span class="sc">-</span> b <span class="sc">*</span> P_seq</span>
+<span id="cb526-16"><a href="review-partial-derivatives-and-comparative-statics.html#cb526-16" tabindex="-1"></a><span class="fu">lines</span>(Qd_base, P_seq, <span class="at">col =</span> <span class="st">&quot;tomato&quot;</span>, <span class="at">lwd =</span> <span class="dv">2</span>)</span>
+<span id="cb526-17"><a href="review-partial-derivatives-and-comparative-statics.html#cb526-17" tabindex="-1"></a><span class="co"># Supply curves</span></span>
+<span id="cb526-18"><a href="review-partial-derivatives-and-comparative-statics.html#cb526-18" tabindex="-1"></a>cols3 <span class="ot">&lt;-</span> <span class="fu">colorRampPalette</span>(<span class="fu">c</span>(<span class="st">&quot;lightblue&quot;</span>, <span class="st">&quot;darkblue&quot;</span>))(<span class="fu">length</span>(c_values))</span>
+<span id="cb526-19"><a href="review-partial-derivatives-and-comparative-statics.html#cb526-19" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="fu">seq_along</span>(c_values)) {</span>
+<span id="cb526-20"><a href="review-partial-derivatives-and-comparative-statics.html#cb526-20" tabindex="-1"></a>  Qs_i <span class="ot">&lt;-</span> <span class="sc">-</span>c_values[i] <span class="sc">+</span> d <span class="sc">*</span> P_seq</span>
+<span id="cb526-21"><a href="review-partial-derivatives-and-comparative-statics.html#cb526-21" tabindex="-1"></a>  <span class="fu">lines</span>(Qs_i, P_seq, <span class="at">col =</span> cols3[i], <span class="at">lwd =</span> <span class="fl">1.5</span>)</span>
+<span id="cb526-22"><a href="review-partial-derivatives-and-comparative-statics.html#cb526-22" tabindex="-1"></a>}</span>
+<span id="cb526-23"><a href="review-partial-derivatives-and-comparative-statics.html#cb526-23" tabindex="-1"></a><span class="fu">points</span>(Q_eq_c, P_eq_c, <span class="at">pch =</span> <span class="dv">19</span>, <span class="at">col =</span> <span class="st">&quot;black&quot;</span>, <span class="at">cex =</span> <span class="fl">0.9</span>)</span>
+<span id="cb526-24"><a href="review-partial-derivatives-and-comparative-statics.html#cb526-24" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">&quot;topright&quot;</span>, <span class="at">legend =</span> <span class="fu">c</span>(<span class="st">&quot;Demand (fixed)&quot;</span>, <span class="st">&quot;Supply (varies c)&quot;</span>, <span class="st">&quot;Equilibria&quot;</span>),</span>
+<span id="cb526-25"><a href="review-partial-derivatives-and-comparative-statics.html#cb526-25" tabindex="-1"></a>       <span class="at">col =</span> <span class="fu">c</span>(<span class="st">&quot;tomato&quot;</span>, <span class="st">&quot;steelblue&quot;</span>, <span class="st">&quot;black&quot;</span>),</span>
+<span id="cb526-26"><a href="review-partial-derivatives-and-comparative-statics.html#cb526-26" tabindex="-1"></a>       <span class="at">lwd =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>, <span class="cn">NA</span>), <span class="at">pch =</span> <span class="fu">c</span>(<span class="cn">NA</span>, <span class="cn">NA</span>, <span class="dv">19</span>), <span class="at">bty =</span> <span class="st">&quot;n&quot;</span>, <span class="at">cex =</span> <span class="fl">0.8</span>)</span>
+<span id="cb526-27"><a href="review-partial-derivatives-and-comparative-statics.html#cb526-27" tabindex="-1"></a></span>
+<span id="cb526-28"><a href="review-partial-derivatives-and-comparative-statics.html#cb526-28" tabindex="-1"></a><span class="fu">plot</span>(c_values, P_eq_c,</span>
+<span id="cb526-29"><a href="review-partial-derivatives-and-comparative-statics.html#cb526-29" tabindex="-1"></a>     <span class="at">type =</span> <span class="st">&quot;b&quot;</span>, <span class="at">pch =</span> <span class="dv">19</span>, <span class="at">col =</span> <span class="st">&quot;steelblue&quot;</span>, <span class="at">lwd =</span> <span class="dv">2</span>,</span>
+<span id="cb526-30"><a href="review-partial-derivatives-and-comparative-statics.html#cb526-30" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">&quot;Supply Intercept (c)&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Equilibrium Price (P*)&quot;</span>,</span>
+<span id="cb526-31"><a href="review-partial-derivatives-and-comparative-statics.html#cb526-31" tabindex="-1"></a>     <span class="at">main =</span> <span class="fu">expression</span>(<span class="fu">paste</span>(<span class="st">&quot;Comparative Statics: &quot;</span>, <span class="fu">italic</span>(c), <span class="st">&quot; and P*&quot;</span>)))</span></code></pre></div>
+<p><img src="LBYC121_Course_Book_files/figure-html/dc-shift-1.png" alt="" width="576" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb527"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb527-1"><a href="review-partial-derivatives-and-comparative-statics.html#cb527-1" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>))</span></code></pre></div>
+<blockquote>
+<p><strong>Result:</strong> <span class="math inline">\(\partial P^*/\partial c = 1/(b+d) &gt; 0\)</span>. As the supply curve shifts left (higher <span class="math inline">\(c\)</span>), the equilibrium price rises — a supply reduction drives up prices.</p>
+</blockquote>
+</div>
+<div id="effect-of-changing-the-supply-slope-d-pd-0" class="section level3 hasAnchor" number="23.3.8">
+<h3><span class="header-section-number">23.3.8</span> Effect of Changing the Supply Slope <span class="math inline">\(d\)</span> (∂P*/∂d &lt; 0)<a href="review-partial-derivatives-and-comparative-statics.html#effect-of-changing-the-supply-slope-d-pd-0" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>A larger <span class="math inline">\(d\)</span> means the supply curve is <strong>flatter</strong> (more price-responsive). This lowers the equilibrium price.</p>
+<div class="sourceCode" id="cb528"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb528-1"><a href="review-partial-derivatives-and-comparative-statics.html#cb528-1" tabindex="-1"></a>d_values <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="fl">0.5</span>, <span class="dv">4</span>, <span class="at">by =</span> <span class="fl">0.5</span>)</span>
+<span id="cb528-2"><a href="review-partial-derivatives-and-comparative-statics.html#cb528-2" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="dv">60</span>; b <span class="ot">&lt;-</span> <span class="dv">2</span>; c <span class="ot">&lt;-</span> <span class="dv">10</span></span>
+<span id="cb528-3"><a href="review-partial-derivatives-and-comparative-statics.html#cb528-3" tabindex="-1"></a></span>
+<span id="cb528-4"><a href="review-partial-derivatives-and-comparative-statics.html#cb528-4" tabindex="-1"></a>P_eq_d <span class="ot">&lt;-</span> (a <span class="sc">+</span> c) <span class="sc">/</span> (b <span class="sc">+</span> d_values)</span>
+<span id="cb528-5"><a href="review-partial-derivatives-and-comparative-statics.html#cb528-5" tabindex="-1"></a>Q_eq_d <span class="ot">&lt;-</span> (a <span class="sc">*</span> d_values <span class="sc">-</span> b <span class="sc">*</span> c) <span class="sc">/</span> (b <span class="sc">+</span> d_values)</span>
+<span id="cb528-6"><a href="review-partial-derivatives-and-comparative-statics.html#cb528-6" tabindex="-1"></a></span>
+<span id="cb528-7"><a href="review-partial-derivatives-and-comparative-statics.html#cb528-7" tabindex="-1"></a>P_seq <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">40</span>, <span class="at">length.out =</span> <span class="dv">200</span>)</span>
+<span id="cb528-8"><a href="review-partial-derivatives-and-comparative-statics.html#cb528-8" tabindex="-1"></a></span>
+<span id="cb528-9"><a href="review-partial-derivatives-and-comparative-statics.html#cb528-9" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>))</span>
+<span id="cb528-10"><a href="review-partial-derivatives-and-comparative-statics.html#cb528-10" tabindex="-1"></a></span>
+<span id="cb528-11"><a href="review-partial-derivatives-and-comparative-statics.html#cb528-11" tabindex="-1"></a><span class="fu">plot</span>(<span class="cn">NULL</span>, <span class="at">xlim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">10</span>, <span class="dv">70</span>), <span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">40</span>),</span>
+<span id="cb528-12"><a href="review-partial-derivatives-and-comparative-statics.html#cb528-12" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">&quot;Quantity&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Price&quot;</span>,</span>
+<span id="cb528-13"><a href="review-partial-derivatives-and-comparative-statics.html#cb528-13" tabindex="-1"></a>     <span class="at">main =</span> <span class="fu">expression</span>(<span class="fu">paste</span>(<span class="st">&quot;Supply slope &quot;</span>, <span class="fu">italic</span>(d), <span class="st">&quot; increases&quot;</span>)))</span>
+<span id="cb528-14"><a href="review-partial-derivatives-and-comparative-statics.html#cb528-14" tabindex="-1"></a>Qd_base <span class="ot">&lt;-</span> a <span class="sc">-</span> b <span class="sc">*</span> P_seq</span>
+<span id="cb528-15"><a href="review-partial-derivatives-and-comparative-statics.html#cb528-15" tabindex="-1"></a><span class="fu">lines</span>(Qd_base, P_seq, <span class="at">col =</span> <span class="st">&quot;tomato&quot;</span>, <span class="at">lwd =</span> <span class="dv">2</span>)</span>
+<span id="cb528-16"><a href="review-partial-derivatives-and-comparative-statics.html#cb528-16" tabindex="-1"></a>cols4 <span class="ot">&lt;-</span> <span class="fu">colorRampPalette</span>(<span class="fu">c</span>(<span class="st">&quot;lightblue&quot;</span>, <span class="st">&quot;darkblue&quot;</span>))(<span class="fu">length</span>(d_values))</span>
+<span id="cb528-17"><a href="review-partial-derivatives-and-comparative-statics.html#cb528-17" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="fu">seq_along</span>(d_values)) {</span>
+<span id="cb528-18"><a href="review-partial-derivatives-and-comparative-statics.html#cb528-18" tabindex="-1"></a>  Qs_i <span class="ot">&lt;-</span> <span class="sc">-</span>c <span class="sc">+</span> d_values[i] <span class="sc">*</span> P_seq</span>
+<span id="cb528-19"><a href="review-partial-derivatives-and-comparative-statics.html#cb528-19" tabindex="-1"></a>  <span class="fu">lines</span>(Qs_i, P_seq, <span class="at">col =</span> cols4[i], <span class="at">lwd =</span> <span class="fl">1.5</span>)</span>
+<span id="cb528-20"><a href="review-partial-derivatives-and-comparative-statics.html#cb528-20" tabindex="-1"></a>}</span>
+<span id="cb528-21"><a href="review-partial-derivatives-and-comparative-statics.html#cb528-21" tabindex="-1"></a><span class="fu">points</span>(Q_eq_d, P_eq_d, <span class="at">pch =</span> <span class="dv">19</span>, <span class="at">col =</span> <span class="st">&quot;black&quot;</span>, <span class="at">cex =</span> <span class="fl">0.9</span>)</span>
+<span id="cb528-22"><a href="review-partial-derivatives-and-comparative-statics.html#cb528-22" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">&quot;topright&quot;</span>, <span class="at">legend =</span> <span class="fu">c</span>(<span class="st">&quot;Demand (fixed)&quot;</span>, <span class="st">&quot;Supply (varies d)&quot;</span>, <span class="st">&quot;Equilibria&quot;</span>),</span>
+<span id="cb528-23"><a href="review-partial-derivatives-and-comparative-statics.html#cb528-23" tabindex="-1"></a>       <span class="at">col =</span> <span class="fu">c</span>(<span class="st">&quot;tomato&quot;</span>, <span class="st">&quot;steelblue&quot;</span>, <span class="st">&quot;black&quot;</span>),</span>
+<span id="cb528-24"><a href="review-partial-derivatives-and-comparative-statics.html#cb528-24" tabindex="-1"></a>       <span class="at">lwd =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>, <span class="cn">NA</span>), <span class="at">pch =</span> <span class="fu">c</span>(<span class="cn">NA</span>, <span class="cn">NA</span>, <span class="dv">19</span>), <span class="at">bty =</span> <span class="st">&quot;n&quot;</span>, <span class="at">cex =</span> <span class="fl">0.8</span>)</span>
+<span id="cb528-25"><a href="review-partial-derivatives-and-comparative-statics.html#cb528-25" tabindex="-1"></a></span>
+<span id="cb528-26"><a href="review-partial-derivatives-and-comparative-statics.html#cb528-26" tabindex="-1"></a><span class="fu">plot</span>(d_values, P_eq_d,</span>
+<span id="cb528-27"><a href="review-partial-derivatives-and-comparative-statics.html#cb528-27" tabindex="-1"></a>     <span class="at">type =</span> <span class="st">&quot;b&quot;</span>, <span class="at">pch =</span> <span class="dv">19</span>, <span class="at">col =</span> <span class="st">&quot;steelblue&quot;</span>, <span class="at">lwd =</span> <span class="dv">2</span>,</span>
+<span id="cb528-28"><a href="review-partial-derivatives-and-comparative-statics.html#cb528-28" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">&quot;Supply Slope (d)&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Equilibrium Price (P*)&quot;</span>,</span>
+<span id="cb528-29"><a href="review-partial-derivatives-and-comparative-statics.html#cb528-29" tabindex="-1"></a>     <span class="at">main =</span> <span class="fu">expression</span>(<span class="fu">paste</span>(<span class="st">&quot;Comparative Statics: &quot;</span>, <span class="fu">italic</span>(d), <span class="st">&quot; and P*&quot;</span>)))</span></code></pre></div>
+<p><img src="LBYC121_Course_Book_files/figure-html/dd-shift-1.png" alt="" width="576" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb529"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb529-1"><a href="review-partial-derivatives-and-comparative-statics.html#cb529-1" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>))</span></code></pre></div>
+<blockquote>
+<p><strong>Result:</strong> <span class="math inline">\(\partial P^*/\partial d = -(a+c)/(b+d)^2 &lt; 0\)</span>. A more price-responsive supply curve lowers the equilibrium price.</p>
+</blockquote>
+</div>
+<div id="summary-table-of-p-comparative-statics" class="section level3 hasAnchor" number="23.3.9">
+<h3><span class="header-section-number">23.3.9</span> Summary Table of P* Comparative Statics<a href="review-partial-derivatives-and-comparative-statics.html#summary-table-of-p-comparative-statics" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<table>
+<colgroup>
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Parameter</th>
+<th>Economic Meaning</th>
+<th><span class="math inline">\(\partial P^*/\partial \cdot\)</span></th>
+<th>Sign</th>
+<th>Direction</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(a\)</span></td>
+<td>Demand intercept (demand level)</td>
+<td><span class="math inline">\(\frac{1}{b+d}\)</span></td>
+<td><span class="math inline">\(+\)</span></td>
+<td>↑ demand → ↑ P*</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(b\)</span></td>
+<td>Demand slope (price sensitivity)</td>
+<td><span class="math inline">\(-\frac{a+c}{(b+d)^2}\)</span></td>
+<td><span class="math inline">\(-\)</span></td>
+<td>↑ steepness → ↓ P*</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(c\)</span></td>
+<td>Supply intercept (supply level)</td>
+<td><span class="math inline">\(\frac{1}{b+d}\)</span></td>
+<td><span class="math inline">\(+\)</span></td>
+<td>↓ supply → ↑ P*</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(d\)</span></td>
+<td>Supply slope (price responsiveness)</td>
+<td><span class="math inline">\(-\frac{a+c}{(b+d)^2}\)</span></td>
+<td><span class="math inline">\(-\)</span></td>
+<td>↑ elasticity → ↓ P*</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+</div>
+<div id="additional-comparative-statics-examples-from-lbyc121" class="section level2 hasAnchor" number="23.4">
+<h2><span class="header-section-number">23.4</span> Additional Comparative Statics Examples (from LBYC121)<a href="review-partial-derivatives-and-comparative-statics.html#additional-comparative-statics-examples-from-lbyc121" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="example-1-demand-shift-and-equilibrium-with-explicit-sd" class="section level3 hasAnchor" number="23.4.1">
+<h3><span class="header-section-number">23.4.1</span> Example 1: Demand Shift and Equilibrium (with explicit S&amp;D)<a href="review-partial-derivatives-and-comparative-statics.html#example-1-demand-shift-and-equilibrium-with-explicit-sd" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>From the course book: <span class="math inline">\(Q^d = a - 2P\)</span>, <span class="math inline">\(Q^s = 10 + P\)</span>. Here <span class="math inline">\(b = 2\)</span>, <span class="math inline">\(c = -10\)</span> (rewritten: <span class="math inline">\(Q^s = -(-10) + 1 \cdot P\)</span>), <span class="math inline">\(d = 1\)</span>.</p>
+<p>Equilibrium: <span class="math inline">\(P^* = (a - 10)/3\)</span>, <span class="math inline">\(Q^* = 10 + P^*\)</span>.</p>
+<div class="sourceCode" id="cb530"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb530-1"><a href="review-partial-derivatives-and-comparative-statics.html#cb530-1" tabindex="-1"></a>a_values <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">40</span>, <span class="dv">80</span>, <span class="at">by =</span> <span class="dv">5</span>)</span>
+<span id="cb530-2"><a href="review-partial-derivatives-and-comparative-statics.html#cb530-2" tabindex="-1"></a>b2 <span class="ot">&lt;-</span> <span class="dv">2</span>; d2 <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb530-3"><a href="review-partial-derivatives-and-comparative-statics.html#cb530-3" tabindex="-1"></a></span>
+<span id="cb530-4"><a href="review-partial-derivatives-and-comparative-statics.html#cb530-4" tabindex="-1"></a>P_eq2 <span class="ot">&lt;-</span> (a_values <span class="sc">-</span> <span class="dv">10</span>) <span class="sc">/</span> <span class="dv">3</span></span>
+<span id="cb530-5"><a href="review-partial-derivatives-and-comparative-statics.html#cb530-5" tabindex="-1"></a>Q_eq2 <span class="ot">&lt;-</span> <span class="dv">10</span> <span class="sc">+</span> P_eq2</span>
+<span id="cb530-6"><a href="review-partial-derivatives-and-comparative-statics.html#cb530-6" tabindex="-1"></a></span>
+<span id="cb530-7"><a href="review-partial-derivatives-and-comparative-statics.html#cb530-7" tabindex="-1"></a>P_seq2 <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">30</span>, <span class="at">length.out =</span> <span class="dv">200</span>)</span>
+<span id="cb530-8"><a href="review-partial-derivatives-and-comparative-statics.html#cb530-8" tabindex="-1"></a></span>
+<span id="cb530-9"><a href="review-partial-derivatives-and-comparative-statics.html#cb530-9" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>))</span>
+<span id="cb530-10"><a href="review-partial-derivatives-and-comparative-statics.html#cb530-10" tabindex="-1"></a></span>
+<span id="cb530-11"><a href="review-partial-derivatives-and-comparative-statics.html#cb530-11" tabindex="-1"></a><span class="co"># Supply-Demand diagram with shifting demand</span></span>
+<span id="cb530-12"><a href="review-partial-derivatives-and-comparative-statics.html#cb530-12" tabindex="-1"></a><span class="fu">plot</span>(<span class="cn">NULL</span>, <span class="at">xlim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">90</span>), <span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">30</span>),</span>
+<span id="cb530-13"><a href="review-partial-derivatives-and-comparative-statics.html#cb530-13" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">&quot;Quantity&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Price&quot;</span>,</span>
+<span id="cb530-14"><a href="review-partial-derivatives-and-comparative-statics.html#cb530-14" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">&quot;Demand Shifts (a increases)&quot;</span>)</span>
+<span id="cb530-15"><a href="review-partial-derivatives-and-comparative-statics.html#cb530-15" tabindex="-1"></a>cols5 <span class="ot">&lt;-</span> <span class="fu">colorRampPalette</span>(<span class="fu">c</span>(<span class="st">&quot;lightcoral&quot;</span>, <span class="st">&quot;darkred&quot;</span>))(<span class="fu">length</span>(a_values))</span>
+<span id="cb530-16"><a href="review-partial-derivatives-and-comparative-statics.html#cb530-16" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="fu">seq_along</span>(a_values)) {</span>
+<span id="cb530-17"><a href="review-partial-derivatives-and-comparative-statics.html#cb530-17" tabindex="-1"></a>  Qd_i <span class="ot">&lt;-</span> a_values[i] <span class="sc">-</span> b2 <span class="sc">*</span> P_seq2</span>
+<span id="cb530-18"><a href="review-partial-derivatives-and-comparative-statics.html#cb530-18" tabindex="-1"></a>  <span class="fu">lines</span>(Qd_i, P_seq2, <span class="at">col =</span> cols5[i], <span class="at">lwd =</span> <span class="fl">1.4</span>)</span>
+<span id="cb530-19"><a href="review-partial-derivatives-and-comparative-statics.html#cb530-19" tabindex="-1"></a>}</span>
+<span id="cb530-20"><a href="review-partial-derivatives-and-comparative-statics.html#cb530-20" tabindex="-1"></a>Qs2 <span class="ot">&lt;-</span> <span class="dv">10</span> <span class="sc">+</span> d2 <span class="sc">*</span> P_seq2</span>
+<span id="cb530-21"><a href="review-partial-derivatives-and-comparative-statics.html#cb530-21" tabindex="-1"></a><span class="fu">lines</span>(Qs2, P_seq2, <span class="at">col =</span> <span class="st">&quot;steelblue&quot;</span>, <span class="at">lwd =</span> <span class="dv">2</span>)</span>
+<span id="cb530-22"><a href="review-partial-derivatives-and-comparative-statics.html#cb530-22" tabindex="-1"></a><span class="fu">points</span>(Q_eq2, P_eq2, <span class="at">pch =</span> <span class="dv">19</span>, <span class="at">col =</span> <span class="st">&quot;black&quot;</span>, <span class="at">cex =</span> <span class="fl">0.9</span>)</span>
+<span id="cb530-23"><a href="review-partial-derivatives-and-comparative-statics.html#cb530-23" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">&quot;topright&quot;</span>, <span class="at">legend =</span> <span class="fu">c</span>(<span class="st">&quot;Demand&quot;</span>, <span class="st">&quot;Supply&quot;</span>, <span class="st">&quot;Equilibria&quot;</span>),</span>
+<span id="cb530-24"><a href="review-partial-derivatives-and-comparative-statics.html#cb530-24" tabindex="-1"></a>       <span class="at">col =</span> <span class="fu">c</span>(<span class="st">&quot;tomato&quot;</span>, <span class="st">&quot;steelblue&quot;</span>, <span class="st">&quot;black&quot;</span>),</span>
+<span id="cb530-25"><a href="review-partial-derivatives-and-comparative-statics.html#cb530-25" tabindex="-1"></a>       <span class="at">lwd =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>, <span class="cn">NA</span>), <span class="at">pch =</span> <span class="fu">c</span>(<span class="cn">NA</span>, <span class="cn">NA</span>, <span class="dv">19</span>), <span class="at">bty =</span> <span class="st">&quot;n&quot;</span>, <span class="at">cex =</span> <span class="fl">0.8</span>)</span>
+<span id="cb530-26"><a href="review-partial-derivatives-and-comparative-statics.html#cb530-26" tabindex="-1"></a></span>
+<span id="cb530-27"><a href="review-partial-derivatives-and-comparative-statics.html#cb530-27" tabindex="-1"></a><span class="fu">plot</span>(a_values, P_eq2, <span class="at">type =</span> <span class="st">&quot;b&quot;</span>, <span class="at">pch =</span> <span class="dv">19</span>, <span class="at">col =</span> <span class="st">&quot;tomato&quot;</span>, <span class="at">lwd =</span> <span class="dv">2</span>,</span>
+<span id="cb530-28"><a href="review-partial-derivatives-and-comparative-statics.html#cb530-28" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">&quot;Demand Intercept (a)&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Equilibrium Price&quot;</span>,</span>
+<span id="cb530-29"><a href="review-partial-derivatives-and-comparative-statics.html#cb530-29" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">&quot;Demand Shift → P*&quot;</span>)</span>
+<span id="cb530-30"><a href="review-partial-derivatives-and-comparative-statics.html#cb530-30" tabindex="-1"></a></span>
+<span id="cb530-31"><a href="review-partial-derivatives-and-comparative-statics.html#cb530-31" tabindex="-1"></a><span class="fu">plot</span>(a_values, Q_eq2, <span class="at">type =</span> <span class="st">&quot;b&quot;</span>, <span class="at">pch =</span> <span class="dv">19</span>, <span class="at">col =</span> <span class="st">&quot;steelblue&quot;</span>, <span class="at">lwd =</span> <span class="dv">2</span>,</span>
+<span id="cb530-32"><a href="review-partial-derivatives-and-comparative-statics.html#cb530-32" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">&quot;Demand Intercept (a)&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Equilibrium Quantity&quot;</span>,</span>
+<span id="cb530-33"><a href="review-partial-derivatives-and-comparative-statics.html#cb530-33" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">&quot;Demand Shift → Q*&quot;</span>)</span></code></pre></div>
+<p><img src="LBYC121_Course_Book_files/figure-html/example1-sd-1.png" alt="" width="576" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb531"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb531-1"><a href="review-partial-derivatives-and-comparative-statics.html#cb531-1" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>))</span></code></pre></div>
+</div>
+<div id="example-2-wage-changes-and-labor-demand-1" class="section level3 hasAnchor" number="23.4.2">
+<h3><span class="header-section-number">23.4.2</span> Example 2: Wage Changes and Labor Demand<a href="review-partial-derivatives-and-comparative-statics.html#example-2-wage-changes-and-labor-demand-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Labor demand: <span class="math inline">\(L = 80/w\)</span>. As wages rise, labor demand falls.</p>
+<div class="sourceCode" id="cb532"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb532-1"><a href="review-partial-derivatives-and-comparative-statics.html#cb532-1" tabindex="-1"></a>w_grid <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">1</span>, <span class="dv">10</span>, <span class="at">by =</span> <span class="fl">0.5</span>)</span>
+<span id="cb532-2"><a href="review-partial-derivatives-and-comparative-statics.html#cb532-2" tabindex="-1"></a>L_star <span class="ot">&lt;-</span> <span class="dv">80</span> <span class="sc">/</span> w_grid</span>
+<span id="cb532-3"><a href="review-partial-derivatives-and-comparative-statics.html#cb532-3" tabindex="-1"></a></span>
+<span id="cb532-4"><a href="review-partial-derivatives-and-comparative-statics.html#cb532-4" tabindex="-1"></a><span class="fu">plot</span>(w_grid, L_star,</span>
+<span id="cb532-5"><a href="review-partial-derivatives-and-comparative-statics.html#cb532-5" tabindex="-1"></a>     <span class="at">type =</span> <span class="st">&quot;b&quot;</span>, <span class="at">pch =</span> <span class="dv">19</span>, <span class="at">col =</span> <span class="st">&quot;steelblue&quot;</span>, <span class="at">lwd =</span> <span class="dv">2</span>,</span>
+<span id="cb532-6"><a href="review-partial-derivatives-and-comparative-statics.html#cb532-6" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">&quot;Wage (w)&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Labor Demand (L)&quot;</span>,</span>
+<span id="cb532-7"><a href="review-partial-derivatives-and-comparative-statics.html#cb532-7" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">&quot;Comparative Statics: Wage and Labor Demand&quot;</span>)</span></code></pre></div>
+<p><img src="LBYC121_Course_Book_files/figure-html/example2-labor-1.png" alt="" width="576" style="display: block; margin: auto;" /></p>
+<blockquote>
+<p><strong>Economic interpretation:</strong> <span class="math inline">\(\partial L / \partial w = -80/w^2 &lt; 0\)</span>. Higher wages make labor more expensive; the firm hires less. This is the <strong>own-price effect</strong> on a factor of production.</p>
+</blockquote>
+</div>
+<div id="example-3-technology-and-output" class="section level3 hasAnchor" number="23.4.3">
+<h3><span class="header-section-number">23.4.3</span> Example 3: Technology and Output<a href="review-partial-derivatives-and-comparative-statics.html#example-3-technology-and-output" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Production function: <span class="math inline">\(Q = A K^{0.4} L^{0.6}\)</span>. Hold <span class="math inline">\(K = 16\)</span>, <span class="math inline">\(L = 25\)</span>, vary <span class="math inline">\(A\)</span>.</p>
+<div class="sourceCode" id="cb533"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb533-1"><a href="review-partial-derivatives-and-comparative-statics.html#cb533-1" tabindex="-1"></a>K3 <span class="ot">&lt;-</span> <span class="dv">16</span>; L3 <span class="ot">&lt;-</span> <span class="dv">25</span></span>
+<span id="cb533-2"><a href="review-partial-derivatives-and-comparative-statics.html#cb533-2" tabindex="-1"></a>A_values <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">1</span>, <span class="dv">5</span>, <span class="at">by =</span> <span class="fl">0.25</span>)</span>
+<span id="cb533-3"><a href="review-partial-derivatives-and-comparative-statics.html#cb533-3" tabindex="-1"></a>Q3 <span class="ot">&lt;-</span> A_values <span class="sc">*</span> K3<span class="sc">^</span><span class="fl">0.4</span> <span class="sc">*</span> L3<span class="sc">^</span><span class="fl">0.6</span></span>
+<span id="cb533-4"><a href="review-partial-derivatives-and-comparative-statics.html#cb533-4" tabindex="-1"></a></span>
+<span id="cb533-5"><a href="review-partial-derivatives-and-comparative-statics.html#cb533-5" tabindex="-1"></a><span class="fu">plot</span>(A_values, Q3,</span>
+<span id="cb533-6"><a href="review-partial-derivatives-and-comparative-statics.html#cb533-6" tabindex="-1"></a>     <span class="at">type =</span> <span class="st">&quot;b&quot;</span>, <span class="at">pch =</span> <span class="dv">19</span>, <span class="at">col =</span> <span class="st">&quot;darkgreen&quot;</span>, <span class="at">lwd =</span> <span class="dv">2</span>,</span>
+<span id="cb533-7"><a href="review-partial-derivatives-and-comparative-statics.html#cb533-7" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">&quot;Technology Parameter (A)&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Output (Q)&quot;</span>,</span>
+<span id="cb533-8"><a href="review-partial-derivatives-and-comparative-statics.html#cb533-8" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">&quot;Comparative Statics: Technology and Output&quot;</span>)</span></code></pre></div>
+<p><img src="LBYC121_Course_Book_files/figure-html/example3-tech-1.png" alt="" width="576" style="display: block; margin: auto;" /></p>
+<blockquote>
+<p><strong>Economic interpretation:</strong> <span class="math inline">\(\partial Q / \partial A = K^{0.4} L^{0.6} &gt; 0\)</span>. Technological progress raises output <strong>proportionally</strong> when inputs are fixed. This is a <strong>total factor productivity</strong> (TFP) effect.</p>
+</blockquote>
+</div>
+<div id="example-4-rental-rate-of-capital-and-optimal-inputs-1" class="section level3 hasAnchor" number="23.4.4">
+<h3><span class="header-section-number">23.4.4</span> Example 4: Rental Rate of Capital and Optimal Inputs<a href="review-partial-derivatives-and-comparative-statics.html#example-4-rental-rate-of-capital-and-optimal-inputs-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Production function: <span class="math inline">\(Q = 2 K^{0.5} L^{0.5}\)</span>, target output <span class="math inline">\(\bar{Q} = 20\)</span>, wage <span class="math inline">\(w = 4\)</span>. Vary rental rate <span class="math inline">\(r\)</span>.</p>
+<div class="sourceCode" id="cb534"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb534-1"><a href="review-partial-derivatives-and-comparative-statics.html#cb534-1" tabindex="-1"></a>A4 <span class="ot">&lt;-</span> <span class="dv">2</span>; Qbar <span class="ot">&lt;-</span> <span class="dv">20</span>; w4 <span class="ot">&lt;-</span> <span class="dv">4</span></span>
+<span id="cb534-2"><a href="review-partial-derivatives-and-comparative-statics.html#cb534-2" tabindex="-1"></a>r_grid <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">1</span>, <span class="dv">10</span>, <span class="at">by =</span> <span class="dv">1</span>)</span>
+<span id="cb534-3"><a href="review-partial-derivatives-and-comparative-statics.html#cb534-3" tabindex="-1"></a></span>
+<span id="cb534-4"><a href="review-partial-derivatives-and-comparative-statics.html#cb534-4" tabindex="-1"></a>K_star <span class="ot">&lt;-</span> <span class="dv">10</span> <span class="sc">/</span> <span class="fu">sqrt</span>(r_grid)</span>
+<span id="cb534-5"><a href="review-partial-derivatives-and-comparative-statics.html#cb534-5" tabindex="-1"></a>L_star4 <span class="ot">&lt;-</span> <span class="dv">10</span> <span class="sc">*</span> <span class="fu">sqrt</span>(r_grid) <span class="sc">/</span> w4</span>
+<span id="cb534-6"><a href="review-partial-derivatives-and-comparative-statics.html#cb534-6" tabindex="-1"></a>cost_star <span class="ot">&lt;-</span> r_grid <span class="sc">*</span> K_star <span class="sc">+</span> w4 <span class="sc">*</span> L_star4</span>
+<span id="cb534-7"><a href="review-partial-derivatives-and-comparative-statics.html#cb534-7" tabindex="-1"></a></span>
+<span id="cb534-8"><a href="review-partial-derivatives-and-comparative-statics.html#cb534-8" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>))</span>
+<span id="cb534-9"><a href="review-partial-derivatives-and-comparative-statics.html#cb534-9" tabindex="-1"></a></span>
+<span id="cb534-10"><a href="review-partial-derivatives-and-comparative-statics.html#cb534-10" tabindex="-1"></a><span class="fu">plot</span>(r_grid, K_star, <span class="at">type =</span> <span class="st">&quot;b&quot;</span>, <span class="at">pch =</span> <span class="dv">19</span>, <span class="at">col =</span> <span class="st">&quot;steelblue&quot;</span>, <span class="at">lwd =</span> <span class="dv">2</span>,</span>
+<span id="cb534-11"><a href="review-partial-derivatives-and-comparative-statics.html#cb534-11" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">&quot;Rental Rate (r)&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Capital (K*)&quot;</span>,</span>
+<span id="cb534-12"><a href="review-partial-derivatives-and-comparative-statics.html#cb534-12" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">&quot;r and K*&quot;</span>)</span>
+<span id="cb534-13"><a href="review-partial-derivatives-and-comparative-statics.html#cb534-13" tabindex="-1"></a></span>
+<span id="cb534-14"><a href="review-partial-derivatives-and-comparative-statics.html#cb534-14" tabindex="-1"></a><span class="fu">plot</span>(r_grid, L_star4, <span class="at">type =</span> <span class="st">&quot;b&quot;</span>, <span class="at">pch =</span> <span class="dv">19</span>, <span class="at">col =</span> <span class="st">&quot;tomato&quot;</span>, <span class="at">lwd =</span> <span class="dv">2</span>,</span>
+<span id="cb534-15"><a href="review-partial-derivatives-and-comparative-statics.html#cb534-15" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">&quot;Rental Rate (r)&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Labor (L*)&quot;</span>,</span>
+<span id="cb534-16"><a href="review-partial-derivatives-and-comparative-statics.html#cb534-16" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">&quot;r and L*&quot;</span>)</span>
+<span id="cb534-17"><a href="review-partial-derivatives-and-comparative-statics.html#cb534-17" tabindex="-1"></a></span>
+<span id="cb534-18"><a href="review-partial-derivatives-and-comparative-statics.html#cb534-18" tabindex="-1"></a><span class="fu">plot</span>(r_grid, cost_star, <span class="at">type =</span> <span class="st">&quot;b&quot;</span>, <span class="at">pch =</span> <span class="dv">19</span>, <span class="at">col =</span> <span class="st">&quot;darkgreen&quot;</span>, <span class="at">lwd =</span> <span class="dv">2</span>,</span>
+<span id="cb534-19"><a href="review-partial-derivatives-and-comparative-statics.html#cb534-19" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">&quot;Rental Rate (r)&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Total Cost&quot;</span>,</span>
+<span id="cb534-20"><a href="review-partial-derivatives-and-comparative-statics.html#cb534-20" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">&quot;r and Total Cost&quot;</span>)</span></code></pre></div>
+<p><img src="LBYC121_Course_Book_files/figure-html/example4-capital-1.png" alt="" width="576" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb535"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb535-1"><a href="review-partial-derivatives-and-comparative-statics.html#cb535-1" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>))</span></code></pre></div>
+<blockquote>
+<p><strong>Economic interpretation:</strong> As <span class="math inline">\(r\)</span> rises, capital becomes more expensive so the cost-minimizing firm substitutes toward labor (<span class="math inline">\(K^*\)</span> falls, <span class="math inline">\(L^*\)</span> rises). Total cost still increases because no substitution is perfect — the firm is “squeezed.”</p>
+</blockquote>
+</div>
+</div>
+<div id="quick-reference-key-r-syntax-used" class="section level2 hasAnchor" number="23.5">
+<h2><span class="header-section-number">23.5</span> Quick Reference: Key R Syntax Used<a href="review-partial-derivatives-and-comparative-statics.html#quick-reference-key-r-syntax-used" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<table>
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>R Code</th>
+<th>What It Does</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>seq(a, b, by = s)</code></td>
+<td>Creates a sequence from <code>a</code> to <code>b</code> in steps of <code>s</code></td>
+</tr>
+<tr class="even">
+<td><code>numeric(n)</code></td>
+<td>Creates an empty numeric vector of length <code>n</code></td>
+</tr>
+<tr class="odd">
+<td><code>for (i in seq_along(x))</code></td>
+<td>Loops safely over indices of vector <code>x</code></td>
+</tr>
+<tr class="even">
+<td><code>colorRampPalette(c(...))(n)</code></td>
+<td>Generates <code>n</code> colors between specified colors</td>
+</tr>
+<tr class="odd">
+<td><code>par(mfrow = c(r, c))</code></td>
+<td>Sets up a multi-panel plot with <code>r</code> rows and <code>c</code> columns</td>
+</tr>
+<tr class="even">
+<td><code>lines(x, y)</code></td>
+<td>Adds a line to an existing plot</td>
+</tr>
+<tr class="odd">
+<td><code>points(x, y)</code></td>
+<td>Adds points to an existing plot</td>
+</tr>
+<tr class="even">
+<td><code>legend(...)</code></td>
+<td>Adds a legend</td>
+</tr>
+<tr class="odd">
+<td><code>expression(paste(...))</code></td>
+<td>Renders math-style labels using <code>italic()</code>, <code>bold()</code>, etc.</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="questions.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": null,
+    "text": null
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": ["LBYC121_Course_Book.pdf", "LBYC121_Course_Book.epub"],
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "section",
+    "depth": 4
+  }
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
